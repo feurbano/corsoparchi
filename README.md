@@ -15,4 +15,4 @@ ccc
 * SEZIONE 4  
 ddd  
 
-Il programma dettagliato è disponibile **[QUI]**(https://github.com/feurbano/gestione_dati_parchi/blob/master/programma.md)
+Il programma dettagliato è disponibile **[QUI](https://github.com/feurbano/gestione_dati_parchi/blob/master/programma.md)**
