@@ -1,15 +1,15 @@
-# <p align="center">Corso introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani</p>  
+# Corso introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani 
 
-descrizione corso
-docente  
-periodo  
-SEZIONE 1  
+Descrizione corso
+Docente  
+Periodo  
+* SEZIONE 1  
 aaa  
-SEZIONE 2  
+* SEZIONE 2  
 bbb  
-SEZIONE 3  
+* SEZIONE 3  
 ccc  
-SEZIONE 4  
+* SEZIONE 4  
 ddd  
 
 Link programma dettagliato
