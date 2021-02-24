@@ -14,4 +14,4 @@
 * **Materiale**: Il materiale del corso (presentazioni, lezioni, esercizi) è disponibile in questo sito. Nelle 4 mezze giornate di corso il materiale verrà presentato e spiegato, rimando poi a disposizione di tutti per approfondirne lo studio. Se possibile, le lezioni online verranno registrate e condivise. Ulteriore materiale di approfondimento sui database, PosgtreSQL e la gestione dei dati può facilmente essere reperito online (libri, tutorial, corsi sia gratuiti sia a pagamento).  
 * **Risultati attesi**: Il personale dei parchi e i loro collaboratori sanno utilizzare e aggiornare i database dei Parchi e possibilmente hanno le nozioni di base per programmarne l'estensione a nuovi dataset.  
 
-Il programma dettagliato è disponibile [**QUI**](https://github.com/feurbano/gestione_dati_parchi/blob/master/programma.md).
+Il **programma dettagliato** è disponibile [**QUI**](https://github.com/feurbano/gestione_dati_parchi/blob/master/programma.md).
