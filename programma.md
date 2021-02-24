@@ -1,6 +1,10 @@
 GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI
 -----------------------------------------------
 
+```diff
+- IN EVOLUZIONE -
+```
+
 MODULO 1: Gestione dei dati [1 ora; Presentazione]
 - A cosa serve un database
 	- Problemi gestione dei dati
