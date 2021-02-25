@@ -1,15 +1,15 @@
-# Corso introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani
+# CORSO INTRODUTTIVO ALLA GESTIONE DEI DATI PER I PARCHI NAZIONALI ALPINI ITALIANI
 
 * **Docente**: Ferdinando Urbano  
 * **Periodo**: [*PROPOSTO*] Lunedì 22/3/2021 09:00-13:00 (Modulo 1), Martedì 23/3/2021 09:00-13:00 (Modulo 2), Lunedì 29/3/2021 09:00-13:00 (Modulo 3), Martedì 30/3/2021 09:00-13:00 (Modulo 4).  
 * **Obiettivo**: L'obiettivo del corso è rendere il più possibile autonomi i Parchi nella gestione e aggiornamento dei propri database e favorirne l'ulteriore sviluppo.  
 * **Utenti**: Coordinatori tecnici, tecnici faunistici ed esperti informatici dei Parchi; consulenti e collaboratori dei Parchi per la raccolta e la gestione dei dati.  
 * **Motivo del corso**: Tutti i 4 Parchi Nazionali Alpini Italiani (Parco Nazionale del Grand Paradiso, Parco dello Stelvio, Parco Nazionale della Val Grande, Parco Nazionale delle Dolomiti Bellunesi) hanno deciso di gestire ed archiviare i dati raccolti nell'ambito del progetto Biodiversità tramite database relazionali (su piattaforma PostgreSQL) armonizzati fra loro. Allo stesso tempo, i Parchi hanno cominciato a controllare, formalizzare, documentare, armonizzare ed inserire nel proprio database centralizzato anche gli altri dataset storici e attuali con i dati raccolta sulla fauna. In questo processo sono stati accompagnati da un consulente esterno che ha creato i database, definito il modello dei dati, sviluppato delle procedure di controllo e verifica dei dati e definito dei protocolli per l'aggiornamento dei dataset esistenti. Finita questa fase preliminare, i Parchi hanno la necessità di acquisire più autonomia nell'uso, aggiornamento e gestione dei propri database e per questo motivo hanno fato richiesta di un training specifico.  
-* **Struttura del corso**:  Il corso è strutturato in 4 moduli con obiettivi distinti, in modo da permettere ai partecipanti di scegliere a quali moduli partecipare in base ai loro interessi e livelli pregressi di conoscenza dei database.
-  * *Modulo 1*:  Gestione dei dati [A cosa serve un database; Requisiti per la gestione dei dati; ]
-  * *Modulo 2*:  
-  * *Modulo 3*:  
-  * *Modulo 4*:    
+* **Struttura del corso**:  Il corso è strutturato in 4 moduli con obiettivi distinti, suddivisi in 12 lezioni, in modo da permettere ai partecipanti di scegliere a quali moduli partecipare in base ai loro interessi e livelli pregressi di conoscenza dei database. Prima di passare a un modulo successivo, si cercherà di consolidare le conoscenze acquisite nel modulo precedente, in caso riducendo il tempo per i moduli avanzati.
+  * *Modulo 1*: Introduzione alla gestione dei dati e database
+  * *Modulo 2*: Introduzione a SQL
+  * *Modulo 3*: Comandi SQL per interagire con il database in modo complesso
+  * *Modulo 4*: Gestione e aggiornamento del database
 * **Materiale**: Il materiale del corso (presentazioni, lezioni, esercizi) è disponibile in questo sito. Nelle 4 mezze giornate di corso il materiale verrà presentato e spiegato, rimanendo poi a disposizione di tutti per approfondirne lo studio. Se possibile, le lezioni online verranno registrate e condivise. Ulteriore materiale di approfondimento sui database, PosgtreSQL e la gestione dei dati può facilmente essere reperito online (libri, tutorial, corsi sia gratuiti sia a pagamento).  
 * **Requisiti**: Conoscenze di base degli strumenti informatici, familiarità con fogli di calcolo e con dataset ecologici. Per svolgere gli esercizi è necessario un computer con connessione a Internet, la possibilità di installare PgAdmin4 e accesso al Database Biodiversità condiviso dei Parchi o al database del proprio Parco.  
 * **Risultati attesi**: Il personale dei parchi e i loro collaboratori sanno utilizzare e aggiornare i database dei Parchi e possibilmente hanno le nozioni di base per programmarne l'estensione a nuovi dataset.  

@@ -1,4 +1,5 @@
-## Corso introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani: PROGRAMMA
+### Introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani
+## PROGRAMMA DEL CORSO
 
 ### MODULO 1: Introduzione alla gestione dei dati e database  
 
@@ -89,7 +90,7 @@
 11. CAST
 12. Esercizi ricapitolativi
 
-### MODULO 3: Comandi SQL per interagire con le tabelle in modo complesso
+### MODULO 3: Comandi SQL per interagire con il database in modo complesso
 
 #### Lezione 8. Comandi SQL per unire dati da tabelle diverse e per raggrupparli [3 ore; Lezione + Esercizi]
 1. DATE, TIMESTAMP, EXTRACT, TIMEZONE
