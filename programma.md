@@ -75,18 +75,18 @@
 	- Modello dati di altri data sets dei parchi
 
 ### Comandi SQL base per interrogare i dati [3.5 ore; Lezione + Esercizi]
-2.1 SELECT, FROM
-2.2 WHERE, =
-2.3 AND, OR
-2.4 IN
-2.5 !=
-2.6 NULL
-2.7 Alias
-2.8 ORDER BY, LIMIT
-2.9 DISTINCT
-2.10 INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN
-2.11 CAST
-2.12 Esercizi ricapitolativi
+2.1. SELECT, FROM
+2.2. WHERE, =
+2.3. AND, OR
+2.4. IN
+2.5. !=
+2.6. NULL
+2.7. Alias
+2.8. ORDER BY, LIMIT
+2.9. DISTINCT
+2.10. INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN
+2.11. CAST
+2.12. Esercizi ricapitolativi
 
 ## MODULO 3: Comandi SQL per interagire con le tabelle in modo complesso
 
