@@ -1,8 +1,8 @@
-# GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI - PROGRAMMA
+## Corso introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani: PROGRAMMA
 
-## MODULO 1: Introduzione alla gestione dei dati e database  
+### MODULO 1: Introduzione alla gestione dei dati e database  
 
-### Lezione 1. Problemi tipici nella gestione dei dati [0,5 ora; Presentazione]
+#### Lezione 1. Problemi tipici nella gestione dei dati [0,5 ora; Presentazione]
 	- Versioni dei dati
 	- Documentazione dei dati
 	- Accessibilità dei dati
@@ -11,7 +11,7 @@
 	- Formalizzazione dei dati
 	- Qualità dei dati
 
-### Lezione 2. Requisiti per la gestione dei dati [0,5 ora; Presentazione]
+#### Lezione 2. Requisiti per la gestione dei dati [0,5 ora; Presentazione]
 	- Completezza
 	- Validità
 	- Correttezza
@@ -20,7 +20,7 @@
 	- Accessibilità
 	- Opzioni per l'archiviazione dei dati
 
-### Lezione 3. Piano per la gestione dei dati [0,5 ora; Presentazione]  
+#### Lezione 3. Piano per la gestione dei dati [0,5 ora; Presentazione]  
 	- Acquisizione dei dati
 	- Controllo di qualità dei dati
 	- Archiviazione dei dati
@@ -29,7 +29,7 @@
 	- Responsabile dei dati
 	- Costo per la gestione dei dati
 
-### Lezione 4. Introduzione ai database relazionali [0,5 ora; Presentazione]
+#### Lezione 4. Introduzione ai database relazionali [0,5 ora; Presentazione]
 	- Definizione di database relazionale
 	- Cosa è PostgreSQL
 	- Architettura Server-Client
@@ -44,7 +44,7 @@
 	- Trigger e funzioni
 	- Cosa è il linguaggio SQL
 
-### Lezione 5. Visualizzare e gestire i dati di un database [2 ore; DEMO + Esercizi]
+#### Lezione 5. Visualizzare e gestire i dati di un database [2 ore; DEMO + Esercizi]
 	- Installare PgAdmin
 	- Collegarsi a un database
 	- Collegarsi ai database di ogni Parco
@@ -64,9 +64,9 @@
 	- Collegarsi al database con Libre Office
 	- Esercizi riassuntivi
 
-## MODULO 2: Introduzione a SQL
+### MODULO 2: Introduzione a SQL
 
-### Lezione 6. Organizzazione dei dati del Progetto Biodiversità [0.5 ora; Demo]
+#### Lezione 6. Organizzazione dei dati del Progetto Biodiversità [0.5 ora; Demo]
 	- Modello dati Biodiversità
 	- Review della struttura delle singole tabelle
 	- Tassonomia nei database Biodiversità
@@ -75,7 +75,7 @@
 	- VIEWS del database biodiversità condiviso
 	- Modello dati di altri data sets dei parchi
 
-### Lezione 7. Comandi SQL base per interrogare i dati [3.5 ore; Lezione + Esercizi]
+#### Lezione 7. Comandi SQL base per interrogare i dati [3.5 ore; Lezione + Esercizi]
 1. SELECT, FROM
 2. WHERE, =
 3. AND, OR
@@ -89,9 +89,9 @@
 11. CAST
 12. Esercizi ricapitolativi
 
-## MODULO 3: Comandi SQL per interagire con le tabelle in modo complesso
+### MODULO 3: Comandi SQL per interagire con le tabelle in modo complesso
 
-### Lezione 8. Comandi SQL per unire dati da tabelle diverse e per raggrupparli [3 ore; Lezione + Esercizi]
+#### Lezione 8. Comandi SQL per unire dati da tabelle diverse e per raggrupparli [3 ore; Lezione + Esercizi]
 1. DATE, TIMESTAMP, EXTRACT, TIMEZONE
 2. JOIN di tabelle
 3. LEFT JOIN
@@ -102,7 +102,7 @@
 8. CASE
 9. Creare una VIEW
 
-### Lezione 9. Dati spaziali [1 ora; Lezione + Esercizi]
+#### Lezione 9. Dati spaziali [1 ora; Lezione + Esercizi]
 1. Oggetti spaziali in PostGIS
 2. Creare un punto a partire dalle coordinate
 3. Sistemi di riferimento e coordinate
@@ -110,9 +110,9 @@
 5. Riproiettare un punto
 6. Creare una VIEW e visualizzarla in QGIS
 
-## MODULO 4: Gestione e aggiornamento del database
+### MODULO 4: Gestione e aggiornamento del database
 
-### Lezione 10. Comandi SQL avanzati [1 ora; Lezione + Esercizi]
+#### Lezione 10. Comandi SQL avanzati [1 ora; Lezione + Esercizi]
 1. INSERT
 2. UPDATE
 3. DELETE
@@ -120,7 +120,7 @@
 5. Subquery used in WHERE statements
 6. WINDOW functions
 
-### Lezione 11. Inserimento di nuovi dati [2,5 ore; Demo]
+#### Lezione 11. Inserimento di nuovi dati [2,5 ore; Demo]
 	- Controllo preliminare dei dati
 	- Verifica della completezza e correttezza dei dati nei fogli di calcolo
 	- Formattazione dei dati per l'importazione
@@ -131,7 +131,7 @@
 	- Caricamento dei dati nella tabella finale
 	- Estensione del database con nuovi dataset
 
-### Lezione 12. Manutenzione del Database [0.5 ore; Lezione + Esercizi]
+#### Lezione 12. Manutenzione del Database [0.5 ore; Lezione + Esercizi]
 1. Backup
 2. Restore
 3. Creazione di utenti
