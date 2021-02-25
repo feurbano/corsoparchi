@@ -137,4 +137,4 @@
 2. Restore
 3. Creazione di utenti
 4. Creazione di gruppi
-3. Assegnazione dei permessi
+5. Assegnazione dei permessi
