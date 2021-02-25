@@ -5,25 +5,26 @@ GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI - PROGRAMMA
 - IN EVOLUZIONE -
 ```
 
-MODULO 1: Gestione dei dati [1 ora; Presentazione]
-- A cosa serve un database
-	- Problemi gestione dei dati
+## MODULO 1: Gestione dei dati e database  
+
+### Parte 1: Introduzione alla gestione dei dati [1.5 ore]
+#### Problemi tipici nella gestione dei dati [Presentazione]
 	- Versioni dei dati
-	- Formalizazione dei dati
 	- Documentazione dei dati
 	- Accessibilità dei dati
 	- Preservazione dei dati
-	- Gestione di utenze mutiple
-	- Opzioni per l'archiviazione dei dati
-- Requisiti dei dati
-	- Completi
-	- Validi
-	- Corretti
-	- Coerenti
-	- Espliciti
-	- Comprensibili
-	- Codificati
-- Piano per la gestione dei dati
+	- Gestione di utenze multiple
+	- Formalizzazione dei dati
+	- Qualità dei dati
+#### Requisiti per la gestione dei dati [Presentazione]
+	- Completezza
+	- Validità
+	- Correttezza
+	- Coerenza
+	- Documentazione
+	- Accessibilità
+	- Opzioni per l'archiviazione dei dati [Presentazione]
+#### Piano per la gestione dei dati
 	- Acquisizione dei dati
 	- Controllo di qualità dei dati
 	- Archiviazione dei dati
@@ -32,43 +33,42 @@ MODULO 1: Gestione dei dati [1 ora; Presentazione]
 	- Responsabile dei dati
 	- Costo per la gestione dei dati
 
-MODULO 2: Introduzione ai database relazionali [0.5 ora; Presentazione]
-- Cosa è un database relazionale
-- Cosa è PostgreSQL
-- Architettura Server-Client
-- Schemi
-- Tabelle
-- Tipi di dato
-- Vincoli ai dati
-- Vincoli fra tabelle
-- Modello dati ER
-- Utenti
-- Viste
-- Trigger e funzioni
-- Cosa è il linguaggio SQL
+### Parte 2: Introduzione ai database relazionali [2.5 ore]  
+#### Cosa è un database relazione [Presentazione]
+	- Definizione di database relazionale
+	- Cosa è PostgreSQL
+	- Architettura Server-Client
+	- Schemi
+	- Tabelle
+	- Tipi di dato
+	- Vincoli ai dati
+	- Vincoli fra tabelle
+	- Modello dati ER
+	- Utenti
+	- Viste
+	- Trigger e funzioni
+	- Cosa è il linguaggio SQL
+#### Visualizzare e gestire i dati di un database [DEMO + esercizi]
+	- Installare PgAdmin
+	- Collegarsi a un database
+	- Collegarsi ai database di ogni Parco
+	- Collegarsi al database biodiversità condiviso
+	- Gli elementi dell'interfaccia
+	- Gli oggetti del database
+	- Visualizzare i dati
+	- Visualizzare la struttura dell tabelle
+	- Visualizzare i dati spaziali
+	- SQL per creare oggetti
+	- SQL per interrogare i dati
+	- Eseguire una query
+	- Modificare i dati
+	- Esportare i dati
+	- Collegarsi al database con QGIS
+	- Collegarsi al database con R
+	- Collegarsi al database con Libre Office
+	- Esercizi riassuntivi
 
-MODULO 3: Visualizzare e gestire i dati di un database [2.5 ore; DEMO]
-- Installare PgAdmin
-- Collegarsi a un database
-- Collegarsi ai database di ogni Parco
-- Collegarsi al database biodiversità condiviso
-- Gli elementi dell'interfaccia
-- Gli oggetti del database
-- Visualizzare i dati
-- Visualizzare la struttura dell tabelle
-- Visualizzare i dati spaziali
-- SQL per creare oggetti
-- SQL per interrogare i dati
-- Eseguire una query
-- Modificare i dati
-- Esportare i dati
-- Collegarsi al database con QGIS
-- Collegarsi al database con R
-- Collegarsi al database con Libre Office
-
------------------------------------------------
-
-MODULO 3: SQL base [4 ore; Esercitazione]
+## MODULO 2: SQL base [4 ore; Esercitazione]
 - SELECT, FROM
 - WHERE, =
 - AND, OR
