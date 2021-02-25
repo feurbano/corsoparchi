@@ -1,9 +1,4 @@
-GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI - PROGRAMMA
------------------------------------------------
-
-```diff
-- IN EVOLUZIONE -
-```
+# GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI - PROGRAMMA
 
 ## MODULO 1: Gestione dei dati e database  
 
@@ -23,8 +18,8 @@ GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI - PROGRAMMA
 	- Coerenza
 	- Documentazione
 	- Accessibilità
-	- Opzioni per l'archiviazione dei dati [Presentazione]
-#### Piano per la gestione dei dati
+	- Opzioni per l'archiviazione dei dati
+#### Piano per la gestione dei dati [Presentazione]  
 	- Acquisizione dei dati
 	- Controllo di qualità dei dati
 	- Archiviazione dei dati
@@ -48,7 +43,7 @@ GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI - PROGRAMMA
 	- Viste
 	- Trigger e funzioni
 	- Cosa è il linguaggio SQL
-#### Visualizzare e gestire i dati di un database [DEMO + esercizi]
+#### Visualizzare e gestire i dati di un database [DEMO + Esercizi]
 	- Installare PgAdmin
 	- Collegarsi a un database
 	- Collegarsi ai database di ogni Parco
@@ -68,62 +63,71 @@ GESTIONE DEI DATI NEI PARCHI NAZIONALI ALPINI - PROGRAMMA
 	- Collegarsi al database con Libre Office
 	- Esercizi riassuntivi
 
-## MODULO 2: SQL base [4 ore; Esercitazione]
-- SELECT, FROM
-- WHERE, =
-- AND, OR
-- IN
-- !=
-- NULL
-- Alias
-- ORDER BY, LIMIT
-- DISTINCT
-- JOIN di tabelle
+## MODULO 2: Introduzione a SQL
 
------------------------------------------------
+### Organizzazione dei dati del Progetto Biodiversità [0.5 ora; Demo]
+	- Modello dati Biodiversità
+	- Review della struttura delle singole tabelle
+	- Tassonomia nei database Biodiversità
+	- Tabelle esterne
+	- Tabelle di Look up
+	- VIEWS del database biodiversità condiviso
+	- Modello dati di altri data sets dei parchi
 
-MODULO 3: Dati del progetto biodiversità [1 ora; Demo]
-- Modello dati biodiversità
-- Review della struttura delle singole tabelle
-- Tassonomia nel database biodiversità
-- Tabelle esterne
-- Look up tables
-- VIEWS database biodiversità condiviso
-- Modello dati di altri data sets dei parchi
+### Comandi SQL base per interrogare i dati [3.5 ore; Lezione + Esercizi]
+2.1 SELECT, FROM
+2.2 WHERE, =
+2.3 AND, OR
+2.4 IN
+2.5 !=
+2.6 NULL
+2.7 Alias
+2.8 ORDER BY, LIMIT
+2.9 DISTINCT
+2.10 INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN
+2.11 CAST
+2.12 Esercizi ricapitolativi
 
------------------------------------------------
+## MODULO 3: Comandi SQL per interagire con le tabelle in modo complesso
 
-MODULO 5: SQL intermedio [3 ore; Esercitazione]
-- CASE
-- CAST
-- LIKE
-- GROUP BY
-- HAVING
-- COALESCE
-- LEFT JOIN
-- Dati temporali (date, time, timezone, EXTRACT)
-- Oggetti spaziali in PostGIS
-- Creare un punto a partire dalle coordinate
-- Sistemi di riferimento e coordinate
-- INSERT, UPDATE, DELETE
-- Subquery used in FROM statements
-- Subquery used in WHERE statements
-- Creare una VIEW
-- WINDOW functions
-- Cosa è un Trigger
-- Trovare in quale comune ricade un punto
+### Comandi SQL per unire dati da tabelle diverse e per raggrupparli [3 ore; Lezione + Esercizi]
+3.1 DATE, TIMESTAMP, EXTRACT, TIMEZONE
+3.2 JOIN di tabelle
+3.3 LEFT JOIN
+3.4 LIKE
+3.5 GROUP BY
+3.6 HAVING
+3.7 COALESCE
+3.8 CASE
+3.9 Creare una VIEW
+### Dati spaziali [1 ora;  Lezione + Esercizi]
+3.10 Oggetti spaziali in PostGIS
+3.11 Creare un punto a partire dalle coordinate
+3.12 Sistemi di riferimento e coordinate
+3.13 Trovare in quale comune ricade un punto
+3.14 Riproiettare un punto
+3.15 Creare una VIEW e visualizzarla in QGIS
 
------------------------------------------------
+## MODULO 4: Gestione e aggiornamento del database
+### Comandi SQL avanzati [1 ora;  Lezione + Esercizi]
+4.1 INSERT
+4.2 UPDATE
+4.3 DELETE
+4.4 Subquery used in FROM statements
+4.5 Subquery used in WHERE statements
+4.6 WINDOW functions
 
-MODULO 6: Verifica dei dati e inserimento nel database [4 ore; DEMO]
-Controllo preliminare dei dati
-- Verifica della completezza e correttezza dei dati nei fogli di calcolo
-- Formattazione dei dati per l'importazione
-Creare tabelle
-- Creazione di una tabella di importazione nel database
-Importare i dati
-- Importazione dei dati nel database
-Validazione dei dati
-- Validazione dei valori dei dati
-- Verifica della coerenza dei dati
-- Caricamento dei dati nella tabella finale
+### Inserimento di nuovi dati [2,5 ore; Demo]
+4.7 Controllo preliminare dei dati
+4.8 Verifica della completezza e correttezza dei dati nei fogli di calcolo
+4.9 Formattazione dei dati per l'importazione
+4.10 Creazione di una tabella di importazione nel database
+4.11 Importazione dei dati nel database
+4.12 Validazione dei valori dei dati
+4.13 Verifica della coerenza dei dati
+4.14 Caricamento dei dati nella tabella finale
+4.15 Estensione del database con nuovi dataset
+
+### Manutenzione del Database [0.5 ore; Demo]
+4.16 Backup e restore
+4.17 Gestione dei permessi
