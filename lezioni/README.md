@@ -1,4 +1,4 @@
-### Introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani
+### Introduzione alla gestione dei dati per i Parchi Nazionali Alpini Italiani
 ## LEZIONI DEL CORSO
 
 ### MODULO 1: Introduzione alla gestione dei dati e database  

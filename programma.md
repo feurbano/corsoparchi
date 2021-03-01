@@ -1,4 +1,4 @@
-### Introduttivo alla gestione dei dati per i Parchi Nazionali Alpini Italiani
+### Introduzione alla gestione dei dati per i Parchi Nazionali Alpini Italiani
 ## PROGRAMMA DEL CORSO
 
 ### MODULO 1: Introduzione alla gestione dei dati e database  
@@ -80,9 +80,9 @@
 1. SELECT, FROM
 2. WHERE, =
 3. AND, OR
-4. IN
-5. !=
-6. NULL
+4. IN, NOT IN
+5. !=, >, <
+6. NULL, IS NULL, IS NOT NULL
 7. Alias
 8. ORDER BY, LIMIT
 9. DISTINCT
@@ -131,6 +131,7 @@
 	- Verifica della coerenza dei dati
 	- Caricamento dei dati nella tabella finale
 	- Estensione del database con nuovi dataset
+	- Esercitazione pratica con i dati sugli uccelli raccolti dal PNDB
 
 #### Lezione 12. Manutenzione del Database [0.5 ore; Lezione + Esercizi]
 1. Backup
