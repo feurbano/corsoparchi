@@ -4,15 +4,15 @@
 ### MODULO 1: Introduzione alla gestione dei dati e database  
 
 #### Lezione 1. Gestione dei dati: problemi e soluzioni [1,5 ora; Presentazione]
-	Problemi tipici nella gestione dei dati
-		- Versioni dei dati
-		- Documentazione dei dati
-		- Accessibilità dei dati
-		- Preservazione dei dati
-		- Gestione di utenze multiple
-		- Formalizzazione dei dati
-		- Qualità dei dati
-	Requisiti per la gestione dei dati
+- Problemi tipici nella gestione dei dati
+	- Versioni dei dati
+	- Documentazione dei dati
+	- Accessibilità dei dati
+	- Preservazione dei dati
+	- Gestione di utenze multiple
+	- Formalizzazione dei dati
+	- Qualità dei dati
+- Requisiti per la gestione dei dati
 	  - Completezza
 	  - Validità
 	  - Correttezza
