@@ -4,39 +4,40 @@
 ### MODULO 1: Introduzione alla gestione dei dati e database  
 
 #### Lezione 1. Gestione dei dati: problemi e soluzioni [1,5 ora; Presentazione]
-- Problemi tipici nella gestione dei dati
-	- Versioni dei dati
-	- Documentazione dei dati
-	- Accessibilità dei dati
-	- Preservazione dei dati
-	- Gestione di utenze multiple
-	- Formalizzazione dei dati
-	- Qualità dei dati
-- Requisiti per la gestione dei dati
+	- Problemi tipici nella gestione dei dati
+	  - Versioni dei dati
+	  - Documentazione dei dati
+	  - Accessibilità dei dati
+	  - Preservazione dei dati
+	  - Gestione di utenze multiple
+	  - Formalizzazione dei dati
+	  - Qualità dei dati
+	  - Riuso dei dati
+	- Requisiti per la gestione dei dati
 	  - Completezza
 	  - Validità
 	  - Correttezza
 	  - Coerenza
 	  - Documentazione
 	  - Accessibilità
-	Opzioni per l'archiviazione dei dati
+	- Opzioni per l'archiviazione dei dati
 	  - CSV file e documentazione
 	  - Fogli di calcolo
-		- Database locali
-		- Archivi web condivisi
-		- Database centralizzati
-	Principali caratteristiche dei database relazionali
-		- a
-		- b
-		- c
-	Piano per la gestione dei dati
-	- Acquisizione dei dati
-	- Controllo di qualità dei dati
-	- Archiviazione dei dati
-	- Aggiornamento dei dati
-	- Accessibilità dei dati
-	- Responsabile dei dati
-	- Costo per la gestione dei dati
+	  - Database locali
+	  - Archivi web condivisi
+	  - Database centralizzati
+	- Principali caratteristiche dei database relazionali
+	  - a
+	  - b
+	  - c
+	- Piano per la gestione dei dati
+	  - Acquisizione dei dati
+	  - Controllo di qualità dei dati
+	  - Archiviazione dei dati
+	  - Aggiornamento dei dati
+	  - Accessibilità dei dati
+	  - Responsabile dei dati
+	  - Costo per la gestione dei dati
 
 #### Lezione 2. Introduzione ai database relazionali [0,5 ora; Presentazione]
 	- Definizione di database relazionale
@@ -117,7 +118,7 @@
 3. Sistemi di riferimento e coordinate
 4. Trovare in quale comune ricade un punto
 5. Riproiettare un punto
-6. Creare una VIEW e visualizzarla in QGIS
+6. Visualizzare una view in QGIS
 
 ### MODULO 4: Gestione e aggiornamento del database
 
@@ -130,20 +131,20 @@
 6. WINDOW functions
 
 #### Lezione 9. Inserimento di nuovi dati [2,5 ore; Demo]
-	- Controllo preliminare dei dati
-	- Verifica della completezza e correttezza dei dati nei fogli di calcolo
-	- Formattazione dei dati per l'importazione
-	- Creazione di una tabella di importazione nel database
-	- Importazione dei dati nel database
-	- Validazione dei valori dei dati
-	- Verifica della coerenza dei dati
-	- Caricamento dei dati nella tabella finale
-	- Estensione del database con nuovi dataset
-	- Esercitazione pratica con i dati sugli uccelli raccolti dal PNDB
+- Controllo preliminare dei dati
+- Verifica della completezza e correttezza dei dati nei fogli di calcolo
+- Formattazione dei dati per l'importazione
+- Creazione di una tabella di importazione nel database
+- Importazione dei dati nel database
+- Validazione dei valori dei dati
+- Verifica della coerenza dei dati
+- Caricamento dei dati nella tabella finale
+- Estensione del database con nuovi dataset
+- Esercitazione pratica con i dati sugli uccelli raccolti dal PNDB
 
 #### Lezione 10. Manutenzione del Database [0.5 ore; Lezione + Esercizi]
-1. Backup
-2. Restore
-3. Creazione di utenti
-4. Creazione di gruppi
-5. Assegnazione dei permessi
+- Backup
+- Restore
+- Creazione di utenti
+- Creazione di gruppi
+- Assegnazione dei permessi
