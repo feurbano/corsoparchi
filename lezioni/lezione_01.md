@@ -1,6 +1,7 @@
 # Lezione 1. Gestione dei dati: problemi e soluzioni
-
-   Descrizione veloce e materiale
+```
+Descrizione veloce e materiale
+```
 
 - Problemi tipici nella gestione dei dati
 - Requisiti per la gestione dei dati
