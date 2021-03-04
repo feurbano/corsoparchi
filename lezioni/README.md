@@ -17,4 +17,4 @@
 ### MODULO 4: Gestione e aggiornamento del database
 * [**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati
 * [**Lezione 9.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati
-* [**Lezione 19.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_10.md) Manutenzione del Database
+* [**Lezione 10.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_10.md) Manutenzione del Database

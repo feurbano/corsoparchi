@@ -1,60 +1,14 @@
 ### Introduzione alla gestione dei dati per i Parchi Nazionali Alpini Italiani
 ## PROGRAMMA DEL CORSO
 
-### ❗ MODULO 1: Introduzione alla gestione dei dati e database  
+### MODULO 1: Introduzione alla gestione dei dati e database  
 
 #### Lezione 1. Gestione dei dati: problemi e soluzioni [1 ora; Presentazione]
 - Problemi tipici nella gestione dei dati
-  - Versioni dei dati
-  - Documentazione dei dati
-  - Accessibilità dei dati
-  - Preservazione dei dati
-  - Gestione di utenze multiple
-  - Formalizzazione dei dati
-  - Qualità dei dati
-  - Riuso dei dati
 - Requisiti per la gestione dei dati
-  - Completezza
-  - Validità
-  - Correttezza
-  - Coerenza
-  - Documentazione
-  - Accessibilità
 - Opzioni per l'archiviazione dei dati
-  - CSV file e documentazione
-  - Fogli di calcolo
-  - Database locali
-  - Archivi web condivisi
-  - Database centralizzati
 - Principali caratteristiche dei database relazionali
-  - Correttezza dei dati
-  - Consistenza dei Dati
-  - Normalizzazione: eliminazione della ridondanza dei dati
-  - Sistema centralizzato
-  - Accesso da remoto
-  - Accesso utenti multipli
-  - Controllo della concorrenza
-  - Politica differenziata di accesso ai dati
-  - Funzionalità di backup e restore
-  - Capacità di archiviazione dati
-  - Possibilità di interrogare i dati con un linguaggio specifico (SQL)
-  - Velocità nell'interrogare e processare grandi moli di dati
-  - Definizione esplicita degli oggetti di studio e delle loro relazioni
-  - Struttura server/client (applicazioni integrate in una piattaforma modulare)
-  - Politiche di sicurezza
-  - Possibilità di automazione dei processi
-  - Standard industriali per i formati dei dati
-  - Interoperabilità fra diversi database
-  - Tecnologia consolidata
-  - Gestione dei dati spaziali nello stesso ambiente degli altri dati
 - Piano per la gestione dei dati
-  - Acquisizione dei dati
-  - Controllo di qualità dei dati
-  - Archiviazione dei dati
-  - Aggiornamento dei dati
-  - Accessibilità dei dati
-  - Responsabile dei dati
-  - Costo per la gestione dei dati
 
 #### Lezione 2. Introduzione ai database relazionali [1 ora; Presentazione]
 - Definizione di database relazionale
@@ -92,6 +46,8 @@
 - Collegarsi al database con Libre Office
 - Esercizi riassuntivi
 
+---
+
 ### MODULO 2: Introduzione a SQL
 
 #### Lezione 4. Organizzazione dei dati del Progetto Biodiversità [0.5 ora; Demo]
@@ -113,10 +69,13 @@
 7. Alias di colonne e tabelle AS
 8. ORDER BY, LIMIT
 9. DISTINCT
-10. INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN
+10. INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN, SERIAL number
 11. Cambiare tipo di dato: CAST
 12. Ricerca nelle stringhe di testo: LIKE
+13. Scaricare i dati di una query in un file .csv
 13. Esercizi ricapitolativi
+
+---
 
 ### MODULO 3: Comandi SQL per interagire con il database in modo complesso
 
@@ -128,16 +87,19 @@
 5. HAVING
 6. COALESCE
 7. CASE
+7. Creare una tabella
 8. Creare una VIEW
 
 #### Lezione 7. Dati spaziali [1 ora; Lezione + Esercizi]
 1. Oggetti spaziali in PostGIS
-2. Visualizazione dei dati spaziali in PgAdmin
+2. Visualizzazione dei dati spaziali in PgAdmin
 3. Creare un punto a partire dalle coordinate
 4. Sistemi di riferimento e coordinate
 5. Trovare in quale comune ricade un punto
 6. Riproiettare le coordinate di un punto
 7. Visualizzare una view in QGIS
+
+---
 
 ### MODULO 4: Gestione e aggiornamento del database
 
