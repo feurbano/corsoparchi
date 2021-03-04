@@ -1,13 +1,7 @@
 # CORSO INTRODUTTIVO ALLA GESTIONE DEI DATI PER I PARCHI NAZIONALI ALPINI ITALIANI
 
 * **Docente**: Ferdinando Urbano  
-* **Periodo**:
-  * Lunedì  22/3/2021 09:00-13:00 (Modulo 1)
-  * Martedì 23/3/2021 09:00-13:00 (Modulo 2)
-  * Lunedì  29/3/2021 09:00-13:00 (Modulo 3)
-  * Martedì 30/3/2021 09:00-13:00 (Modulo 4)
-* **Piattaforma di videoconferenza**: da definire  
-* **Link alle lezioni**:
+* **Lezioni**:
   * [**Lezione 1.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni
   * [**Lezione 2.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_02.md) Introduzione ai database relazionali
   * [**Lezione 3.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_03.md) Visualizzare e gestire i dati di un database
@@ -18,7 +12,13 @@
   * [**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati
   * [**Lezione 9.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati
   * [**Lezione 10.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_10.md) Manutenzione del database
-* **Obiettivo**: L'obiettivo del corso è rendere i Parchi il più possibile autonomi nella gestione e aggiornamento dei propri database e favorirne l'ulteriore sviluppo.  
+* **Date**:
+  * Lunedì  22/3/2021 09:00-13:00 (Modulo 1)
+  * Martedì 23/3/2021 09:00-13:00 (Modulo 2)
+  * Lunedì  29/3/2021 09:00-13:00 (Modulo 3)
+  * Martedì 30/3/2021 09:00-13:00 (Modulo 4)
+* **Piattaforma di videoconferenza**: da definire  
+* **Obiettivo**: L'obiettivo del corso è rendere i Parchi il più possibile autonomi nella gestione e aggiornamento dei propri database e favorirne l'ulteriore sviluppo.
 * **Utenti**: Coordinatori tecnici, tecnici faunistici, esperti informatici e potenziali curatori dei dati dei Parchi; consulenti e collaboratori dei Parchi per la raccolta e la gestione dei dati.  
 * **Motivo del corso**: Tutti i 4 Parchi Nazionali Alpini Italiani (Parco Nazionale del Grand Paradiso, Parco dello Stelvio, Parco Nazionale della Val Grande, Parco Nazionale delle Dolomiti Bellunesi) hanno deciso di gestire ed archiviare i dati raccolti nell'ambito del progetto Biodiversità in database (su piattaforma PostgreSQL) armonizzati fra loro. Allo stesso tempo, i Parchi hanno cominciato a controllare, formalizzare, documentare, armonizzare ed inserire nel proprio database centralizzato anche altri dataset sulla fauna (raccolti nel passato o tuttora in corso). In questo processo sono stati accompagnati da un consulente esterno che ha creato i database, definito il modello dei dati, sviluppato le procedure di controllo e verifica dei dati e definito i protocolli per l'aggiornamento dei dataset esistenti. Finita questa fase preliminare, i Parchi hanno la necessità di acquisire più autonomia nell'uso, aggiornamento e gestione dei propri database per garantirne la continuità e l'uso e per questo motivo hanno fato richiesta di un training specifico.  
 * **Struttura del corso e risultati attesi**:  Il corso è strutturato in 4 moduli con obiettivi distinti, suddivisi in 10 lezioni, in modo da permettere ai partecipanti di scegliere a quali moduli partecipare in base ai loro interessi e livelli pregressi di conoscenza dei database. Prima di passare a un modulo successivo, si cercherà di consolidare le conoscenze acquisite nel modulo precedente, in caso riducendo il tempo per i moduli avanzati. Alla fine del corso il personale dei Parchi e i loro collaboratori sapranno utilizzare e aggiornare il proprio database e coordinarne tramite eventuali collaboratori esterni.
