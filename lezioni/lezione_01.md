@@ -1,6 +1,6 @@
 # Lezione 1. Gestione dei dati: problemi e soluzioni
 
-  Descrizione veloce e materiale
+   Descrizione veloce e materiale
 
 - Problemi tipici nella gestione dei dati
 - Requisiti per la gestione dei dati
@@ -24,13 +24,13 @@
 - Coerenza
 - Documentazione
 - Accessibilità
-# Opzioni per l'archiviazione dei dati
+## Opzioni per l'archiviazione dei dati
 - CSV file e documentazione
 - Fogli di calcolo
 - Database locali
 - Archivi web condivisi
 - Database centralizzati
-# Principali caratteristiche dei database relazionali
+## Principali caratteristiche dei database relazionali
 - Correttezza dei dati
 - Consistenza dei Dati
 - Normalizzazione: eliminazione della ridondanza dei dati
@@ -51,7 +51,7 @@
 - Interoperabilità fra diversi database
 - Tecnologia consolidata
 - Gestione dei dati spaziali nello stesso ambiente degli altri dati
-# Piano per la gestione dei dati
+## Piano per la gestione dei dati
 - Acquisizione dei dati
 - Controllo di qualità dei dati
 - Archiviazione dei dati
