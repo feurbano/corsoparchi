@@ -7,23 +7,30 @@
 - Problemi tipici nella gestione dei dati
 - Requisiti per la gestione dei dati
 - Opzioni per l'archiviazione dei dati
-- Principali caratteristiche dei database relazionali
 - Piano per la gestione dei dati
+- Principali caratteristiche dei database relazionali
 
 #### Lezione 2. Introduzione ai database relazionali [1 ora; Presentazione]
-- Definizione di database relazionale
-- Cosa è PostgreSQL
-- Architettura Server-Client
-- Schemi
-- Tabelle
-- Tipi di dato
-- Vincoli ai dati
-- Vincoli fra tabelle
-- Modello dati ER
-- Utenti
-- Viste
-- Trigger e funzioni
-- Cosa è il linguaggio SQL
+- Cosa è un database
+  - Definizione di database relazionale
+  - Cosa è PostgreSQL
+  - Cosa è PgAdmin
+  - Cosa è PostGIS
+  - Architettura Server-Client
+- Principali oggetti di un database
+  - Schemi
+  - Tabelle
+  - Tipi di dato
+  - Viste
+  - Utenti
+  - Trigger e funzioni
+- Vincoli formalizzati
+  - Vincoli ai dati
+  - Vincoli fra tabelle
+- Modello dati
+  - Modello Entità-Relazioni
+- Il linguaggio di un database relazionale
+  - Cosa è il linguaggio SQL
 
 #### Lezione 3. Visualizzare e gestire i dati di un database [2 ore; DEMO + Esercizi]
 - Installare PgAdmin
@@ -122,8 +129,9 @@
 6. Validazione dei valori dei dati
 7. Verifica della coerenza dei dati
 8. Caricamento dei dati nella tabella finale
-9. Estensione del database con nuovi dataset
-10. Esercitazione pratica con i dati sugli uccelli raccolti dal PNDB
+9. Documentazione della qualità dei dati
+10. Estensione del database con nuovi dataset
+11. Esercitazione pratica con i dati sugli uccelli raccolti dal PNDB
 
 #### Lezione 10. Manutenzione del Database [0.5 ore; Lezione + Esercizi]
 1. Backup
