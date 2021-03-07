@@ -28,6 +28,7 @@
   - Vincoli ai dati
   - Vincoli fra tabelle
 - Modello dati
+  - Normalizzazione
   - Modello Entità-Relazioni
 - Il linguaggio di un database relazionale
   - Cosa è il linguaggio SQL
