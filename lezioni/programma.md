@@ -9,29 +9,31 @@
 - Opzioni per l'archiviazione dei dati
 - Piano per la gestione dei dati
 - Principali caratteristiche dei database relazionali
+- Perché i Parchi stanno creando i propri database
 
 #### Lezione 2. Introduzione ai database relazionali [1 ora; Presentazione]
 - Cosa è un database
-  - Definizione di database relazionale
+  - Cosa è un database relazionale
   - Cosa è PostgreSQL
   - Cosa è PgAdmin
   - Cosa è PostGIS
   - Architettura Server-Client
+  - Database server
 - Principali oggetti di un database
   - Schemi
   - Tabelle
   - Tipi di dato
-  - Viste
   - Utenti
+  - Viste
   - Trigger e funzioni
-- Vincoli formalizzati
+- Vincoli formali
   - Vincoli ai dati
   - Vincoli fra tabelle
 - Modello dati
-  - Normalizzazione
   - Modello Entità-Relazioni
+  - Normalizzazione
 - Il linguaggio di un database relazionale
-  - Cosa è il linguaggio SQL
+  - Il linguaggio SQL
 
 #### Lezione 3. Visualizzare e gestire i dati di un database [2 ore; DEMO + Esercizi]
 - Installare PgAdmin
