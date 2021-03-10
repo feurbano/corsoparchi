@@ -1,3 +1,21 @@
+OPZIONI PER PROCEDURA DA CAMPO A DB
+- chi
+- con che strumento
+- con che procedura
+- con che controlli
+
+
+  - tablet
+	- carta -> db
+	  - manuale
+		  - operatore (validazione successiva)
+			- data curator
+		- interfaccia web
+		- altre interfacce
+	- carta -> excel -> db
+  - da csv a database
+	  - tabella temporanea
+		- tabella finale
 ESEMPIO FILE UCCELLI PNDB
 
 - Analizzare struttura file
