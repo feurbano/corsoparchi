@@ -1,5 +1,5 @@
-# Presentazione del corso
-
+# PRESENTAZIONE DEL CORSO
+---
 ## Docente
 Ferdinando Urbano
 
@@ -12,13 +12,12 @@ MODULO 2
 [**Lezione 4.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_04.md) Comandi SQL base per interrogare i dati  
 [**Lezione 5.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_05.md) Organizzazione dei dati del Progetto Biodiversità    
 MODULO 3  
-  * [**Lezione 6.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse e per raggrupparli
-  * [**Lezione 7.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_07.md) Dati spaziali
-
-MODULO 4
-  * [**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati
-  * [**Lezione 9.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati
-  * [**Lezione 10.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_10.md) Manutenzione del database
+[**Lezione 6.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse e per raggrupparli  
+[**Lezione 7.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_07.md) Dati spaziali  
+MODULO 4  
+[**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
+[**Lezione 9.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati  
+[**Lezione 10.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_10.md) Manutenzione del database  
 
 ## Date
   * Lunedì  22/3/2021 09:00-13:00 (Modulo 1)
