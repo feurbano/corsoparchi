@@ -5,7 +5,7 @@ Ferdinando Urbano
 
 ### Lezioni
 MODULO 1  
-[**Lezione 1.**](https://github.com/feurbano/dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni - [<ins>[**Link pagina web**](https://feurbano.github.io/dati_parchi//lezioni/lezione_01.html)</ins>]  
+[**Lezione 1.**](https://github.com/feurbano/dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni - [<ins>[**Link pagina web**](https://feurbano.github.io/dati_parchi/lezioni/lezione_01.html)</ins>]  
 [**Lezione 2.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_02.md) Introduzione ai database relazionali  
 [**Lezione 3.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_03.md) Visualizzare e gestire i dati di un database  
 MODULO 2  
