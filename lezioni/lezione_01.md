@@ -1,4 +1,5 @@
 ## Lezione 1. GESTIONE DEI DATI: PROBLEMI E SOLUZIONI
+---
 
 Materiale in formato [<ins>[**PRESENTAZIONE**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
 
