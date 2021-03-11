@@ -5,14 +5,14 @@ Ferdinando Urbano
 
 ### Lezioni
 MODULO 1  
-[**Lezione 1.**](https://github.com/feurbano/dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni - [<ins>[**Link pagina web**](https://feurbano.github.io/dati_parchi/lezioni/lezione_01.html)</ins>], [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]
+[**Lezione 1.**](https://github.com/feurbano/dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni - [<ins>[**Link pagina web**](https://feurbano.github.io/dati_parchi/lezioni/lezione_01.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
 [**Lezione 2.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_02.md) Introduzione ai database relazionali  
 [**Lezione 3.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_03.md) Visualizzare e gestire i dati di un database  
 MODULO 2  
 [**Lezione 4.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_04.md) Comandi SQL base per interrogare i dati  
 [**Lezione 5.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_05.md) Organizzazione dei dati del Progetto Biodiversità    
 MODULO 3  
-[**Lezione 6.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse e per raggrupparli  
+[**Lezione 6.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse  
 [**Lezione 7.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_07.md) Dati spaziali  
 MODULO 4  
 [**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
