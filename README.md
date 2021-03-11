@@ -4,7 +4,7 @@
 
 * **Lezioni**:
 
-  * [**Lezione 1.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni
+  * [**Lezione 1.**](https://github.com/feurbano/dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni
   * [**Lezione 2.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_02.md) Introduzione ai database relazionali
   * [**Lezione 3.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_03.md) Visualizzare e gestire i dati di un database
   * [**Lezione 4.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_04.md) Comandi SQL base per interrogare i dati
