@@ -5,19 +5,19 @@ Ferdinando Urbano
 
 ### Lezioni
 MODULO 1  
-[**Lezione 1.**](https://github.com/feurbano/dati_parchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_01.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
+[**Lezione 1.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_01.md) Gestione dei dati: problemi e soluzioni - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_01.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
 [**Lezione 2.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_02.md) Introduzione ai database relazionali - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_02.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]  
-[**Lezione 3.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_03.md) Visualizzare e gestire i dati di un database  
+[**Lezione 3.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_03.md) Visualizzare e gestire i dati di un database  
 MODULO 2  
-[**Lezione 4.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_04.md) Comandi SQL base per interrogare i dati  
-[**Lezione 5.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_05.md) Organizzazione dei dati del Progetto Biodiversità    
+[**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base per interrogare i dati  
+[**Lezione 5.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_05.md) Organizzazione dei dati del Progetto Biodiversità    
 MODULO 3  
-[**Lezione 6.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse  
-[**Lezione 7.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_07.md) Dati spaziali  
+[**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse  
+[**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali  
 MODULO 4  
-[**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
-[**Lezione 9.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati  
-[**Lezione 10.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_10.md) Manutenzione del database  
+[**Lezione 8.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
+[**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati  
+[**Lezione 10.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_10.md) Manutenzione del database  
 
 ### Date
   * Lunedì  22/3/2021 09:00-13:00 (Modulo 1)
@@ -56,4 +56,4 @@ Il materiale del corso (presentazioni, lezioni, esercizi) è disponibile in ques
 ### Requisiti
 Conoscenze di base degli strumenti informatici, familiarità con fogli di calcolo e con dataset ecologici. Per svolgere gli esercizi è necessario un computer con connessione a Internet, la possibilità di installare PgAdmin4 e accesso al Database Biodiversità condiviso dei Parchi o al database del proprio Parco.  
 
-Il **programma dettagliato** è disponibile [**QUI**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/programma.md).
+Il **programma dettagliato** è disponibile [**QUI**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/programma.md).
