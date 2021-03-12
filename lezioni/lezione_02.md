@@ -1,6 +1,7 @@
 <p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
 
-## Lezione 2. INTRODUZIONE AI DATABASE
+#### Lezione 2 
+## INTRODUZIONE AI DATABASE
 ---
 Materiale in formato [<ins>[**PRESENTAZIONE**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]  
 Autore: Ferdinando Urbano
@@ -85,28 +86,35 @@ Le tabelle sono simili ai fogli di lavoro dei fogli di calcolo. Una tabella è d
 ### TIPI DI DATO 1  
 In un database, viene definita formalmente a priori la tipologia di valori che ogni colonna (attributo) potrà contenere.  
 Ogni colonna deve contenere una singola informazione.  
+
 **Numerici**  
 * integer: intero con segno a 4 byte  
 * bigint: intero con segno a 8 byte  
 * numeric [(p, s)]: numerico di precisione selezionabile  
 * double precision: numero a virgola mobile (8 bytes)  
 * serial: intero auto incrementale a 4-byte  
+
 **Caratteri**  
 * character varying [(n)]: stringa a lunghezza variabile  
 * character [(n)]: stringa di caratteri a lunghezza fissa  
 * text: stringa di caratteri a lunghezza variabile  
+
 **Data/ora**  
 * time without time zone: orario del giorno (senza fuso)  
 * time with time zone: orario del giorno, incluso il fuso  
 * timestamp without time zone: data e orario (senza fuso)  
 * timestamp with time zone: data e orario, incluso il fuso  
 * date: data di calendario (anno, mese, giorno)  
+
 **Booleani**  
 * boolean: valore Booleano (vero/falso)  
+
 **Dati spaziali**  
 * Point, line, polygon (georeferenziati), raster  
+
 **Binari**  
 * bytea: dato binario («array di byte»)  
+
 **Altri tipi di dato**  
 * Money, xml, URL, ...  
 
