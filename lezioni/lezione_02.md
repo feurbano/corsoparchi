@@ -50,9 +50,7 @@ Client-server è l'architettura di una applicazione divisa in due componenti dis
 Il client è di solito una interfaccia attraverso cui un utente fa una richiesta al server. Il client converte poi la risposta del server nella forma richiesta dall'utilizzatore.  
 PostgreSQL è il server, e riceve le richieste tramite comandi SQL dai client. Alcuni esempi di possibili client sono PgAdmin, QGIS, R, Calc, Excel, interface web, Access, ArcGIS.  
 I dati vengono visualizzati dai client ma sono archiviati solo nel DB. Ogni utente ha la possibilità a di usare il tool di interazione con il database che preferisce.  
-
-### Database Server  
-Database server è il sistema back-end di un'applicazione di database che utilizza l'architettura client/server (fornisce le funzionalità di database alle applicazioni client).  
+Il database server è il sistema back-end di un'applicazione di database che utilizza l'architettura client/server (fornisce le funzionalità di database alle applicazioni client).  
 Un database server è installato su un computer fisico (server), o in servizi nel cloud (ad esempio, AWS).  
 Su uno stesso server fisico possono essere installati più database server. All'interno dello stesso database server possono essere creati diversi database.  
 Gli utenti sono creati a livello di database server, ma i permessi sono assegnati per i singoli oggetti di ogni database.  
