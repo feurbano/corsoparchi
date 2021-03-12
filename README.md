@@ -1,9 +1,7 @@
-<p align="center"> <img src="lezioni/materiale/loghi.png" width="420" height="128" /></p>
+<p align="center"> <img src="lezioni/materiale/loghi.png" width="315" height="100" /></p>
 
 ## PRESENTAZIONE DEL CORSO
 ---
-### Docente
-Ferdinando Urbano
 
 ### Lezioni
 MODULO 1  
@@ -20,6 +18,9 @@ MODULO 4
 [**Lezione 8.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
 [**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati  
 [**Lezione 10.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_10.md) Manutenzione del database  
+
+### Docente
+Ferdinando Urbano
 
 ### Date
   * Lunedì  22/3/2021 09:00-13:00 (Modulo 1)
