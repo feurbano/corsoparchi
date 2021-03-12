@@ -1,6 +1,7 @@
 <p align="center"> <img src="materiale/loghi.png" width="315" height="100"> </p>
 
-## Lezione 1. INTRODUZIONE ALLA GESTIONE DEI DATI
+#### Lezione 1
+## INTRODUZIONE ALLA GESTIONE DEI DATI
 ---
 Materiale in formato [<ins>[**PRESENTAZIONE**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
 Autore: Ferdinando Urbano  
