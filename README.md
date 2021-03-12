@@ -1,3 +1,5 @@
+<p align="center"> <img src="lezioni/materiale/loghi.png" width="630" height="200" /> </p>
+
 ## PRESENTAZIONE DEL CORSO
 ---
 ### Docente
