@@ -182,7 +182,7 @@ Un progetto di monitoraggio prevede l’installazione di fototrappole in varie p
 
 <img src="materiale/er_fototrappole.png"/>  
 
-### MODELLO DATI: un altro esempio  
+### MODELLO DATI: esempio  
 Monitoraggio di ungulati con collari GPS  
 * Sensori  
 * Collari  
