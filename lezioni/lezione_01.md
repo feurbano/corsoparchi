@@ -1,4 +1,4 @@
-<p align="center"> <img src="materiale/loghi.png" width="630" height="200"> </p>
+<p align="center"> <img src="materiale/loghi.png" width="315" height="100"> </p>
 
 ## Lezione 1. GESTIONE DEI DATI: PROBLEMI E SOLUZIONI
 ---
