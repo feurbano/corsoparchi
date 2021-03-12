@@ -12,7 +12,7 @@ Autore: Ferdinando Urbano
 * Modello dati  
 * Il linguaggio dei database  
 
-### Database relazionali 
+### Database relazionali
 In informatica, con base di dati, banca dati, database o anche DB, si indica un insieme di dati organizzati in modo da facilitarne la gestione, l'uso e l'aggiornamento, memorizzati in un computer.  
 Il modello relazionale è un modello logico di strutturazione dei dati di un database. Tutti i dati sono rappresentati come relazioni (tabelle) collegate fra loro.  
 I dati vengono manipolati con gli operatori dell'algebra relazionale attraverso il linguaggio SQL.  
@@ -158,7 +158,6 @@ Il modello dati è la rappresentazione concettuale del mondo reale nelle struttu
 La definizione del modello dati è necessaria non solo per strutturare coerentemente il database, ma è anche un modo estremamente utile per spingere i responsabili di una raccolta dati a definire formalmente gli oggetti di uno studio e i legami logici e biologici tra i gruppi di dati raccolti.  
 La modellazione dei dati è banale nel caso di set di dati semplici, ma è fondamentale quando devono essere gestiti moli di dati grandi e complesse.  
 
-### Sviluppare un MODELLO DATI  
 Lo sviluppo di un modello dati e la sua implementazione in un database ha tre fasi iniziali:  
 Il livello concettuale rappresenta concetti e relazioni tra concetti. È completamente indipendente dal database che gestirà le strutture dati.  
 Il livello logico genera un modello dettagliato, guidato dalle relazioni di significato tra i dati (definizione delle tabelle con indicazione di colonne e data type, chiavi primarie, regole di integrità).  
@@ -177,11 +176,10 @@ Altri oggetti:
 * Altre look up tables  
 <img src="materiale/er_ortotteri.png"/>
 
-### MODELLO DATI: un caso studio  
+### MODELLO DATI: caso studio  
 Monitoraggio con fototrappole  
 Un progetto di monitoraggio prevede l’installazione di fototrappole in varie postazioni fisse. Le fototrappole generano delle immagini che vengono poi analizzare dagli operatori. In ogni immagine può poi essere identificata una o più specie.  
 
-### MODELLO DATI: schema generale del caso studio  
 <img src="materiale/er_fototrappole.png"/>  
 
 ### MODELLO DATI: un altro esempio  
