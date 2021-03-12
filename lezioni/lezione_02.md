@@ -12,7 +12,7 @@ Autore: Ferdinando Urbano
 * Modello dati  
 * Il linguaggio dei database  
 
-### Database relazionali e PostgreSQL  
+### Database relazionali 
 In informatica, con base di dati, banca dati, database o anche DB, si indica un insieme di dati organizzati in modo da facilitarne la gestione, l'uso e l'aggiornamento, memorizzati in un computer.  
 Il modello relazionale è un modello logico di strutturazione dei dati di un database. Tutti i dati sono rappresentati come relazioni (tabelle) collegate fra loro.  
 I dati vengono manipolati con gli operatori dell'algebra relazionale attraverso il linguaggio SQL.  
@@ -33,7 +33,7 @@ PostgreSQL è un sistema avanzato di gestione di basi di dati relaziionali (Data
 * Implementazione di funzionalità avanzate  
 * Molti linguaggi procedurali  
 
-### Vantaggi del software open source  
+### Vantaggi dell'open source  
 * Non ci sono costi associati alle licenze  
 * Non ci sono limitazioni all’uso  
 * Non ci sono politiche vendor-lock  
@@ -69,20 +69,20 @@ PostGIS è un'estensione (opensource) di PostgreSQL che permette di includere tu
 PostGIS estende il linguaggio SQL con tutti i comandi tipici dei sistemi GIS. I dati possono poi essere visualizzati in un qualsiasi desktop GIS (ad esempio, QGIS e ArcGIS).  
 Usando un database spaziale (PostgreSQL + PostGIS) i dati spaziali non devono essere gestiti in un formato specifico (ad esempio, ESRI Shapefile), ma sono perfettamente integrati con tutte le altre informazioni, sia per l’archiviazione, sia per l’analisi.  
 
-### Oggetti di un DB - SCHEMI  
+### SCHEMI  
 Schemi: Un database contiene uno o più schemi, che a loro volta contengono tabelle e altri tipi di oggetti come le viste, le sequenze e le funzioni. Un oggetto con lo stesso nome può essere usato in schemi diversi ma non nello stesso schema.  
 Gli schemi sono analoghi alle cartelle di un file system, eccetto che gli schemi non possono essere annidati.  
 Gli schemi vengono usati per:  
-organizzare gli oggetti del database in gruppi logici per renderli più gestibili;  
-permettere a molti utenti di usare un database senza interferire l'uno con l'altro;  
-applicazioni di terze parti possono essere messe in schemi separati in modo che non collidano con i nomi di altri oggetti.  
+* organizzare gli oggetti del database in gruppi logici per renderli più gestibili;  
+* permettere a molti utenti di usare un database senza interferire l'uno con l'altro;  
+* applicazioni di terze parti possono essere messe in schemi separati in modo che non collidano con i nomi di altri oggetti.  
 
-### Oggetti di un DB - TABELLE  
+### TABELLE  
 Tabelle: Nei database relazionali i dati sono organizzati in tabelle relazionate fra di loro. Una tabella è strutturata in righe e colonne che formano una griglia. Il numero di colonne è definito a priori, mentre ci può essere un qualsiasi numero di righe.  
 In generale, ogni tabella rappresenta un tipo di oggetto del mondo reale (ad esempio un plot, una trappola, un individuo catturato). Gli attributi di quell'oggetto solo le colonne, mentre una riga rappresenta un oggetto specifico, chiamato anche entità.  
 Le tabelle sono simili ai fogli di lavoro dei fogli di calcolo. Una tabella è diversa da un foglio di calcolo per la presenza di vincoli sugli attributi (tipologia e dominio) e perché non può avere righe uguali. Ogni riga è univocamente identificata dai valori di un sottoinsieme di colonne (chiave primaria).  
 
-### Oggetti di un DB - TIPI DI DATO 1  
+### TIPI DI DATO 1  
 In un database, viene definita formalmente a priori la tipologia di valori che ogni colonna (attributo) potrà contenere.  
 Ogni colonna deve contenere una singola informazione.  
 **Numerici**  
@@ -95,8 +95,6 @@ Ogni colonna deve contenere una singola informazione.
 * character varying [(n)]: stringa a lunghezza variabile  
 * character [(n)]: stringa di caratteri a lunghezza fissa  
 * text: stringa di caratteri a lunghezza variabile  
-
-### Oggetti di un DB - TIPI DI DATO 2**  
 **Data/ora**  
 * time without time zone: orario del giorno (senza fuso)  
 * time with time zone: orario del giorno, incluso il fuso  
@@ -112,7 +110,7 @@ Ogni colonna deve contenere una singola informazione.
 **Altri tipi di dato**  
 * Money, xml, URL, ...  
 
-### Oggetti di un DB - RUOLI  
+### RUOLI  
 PostgreSQL gestisce i permessi di accesso al database attraverso i ruoli.  
 Un ruolo è un'entità che può possedere oggetti e avere privilegi sul database. Può essere un utente individuale o un gruppo di utenti.  
 Si possono raggruppare gli utenti per facilitare la gestione dei privilegi: così i privilegi possono essere concessi a, o revocati da, un gruppo nel suo insieme. Questo viene fatto creando un ruolo che rappresenta il gruppo, e poi concedendo l'appartenenza al ruolo di gruppo ai singoli ruoli utente.  
@@ -121,7 +119,7 @@ Esempi di permessi sono: lettura, modifica, inserimento, cancellazione.
 Ad ogni utente assieme al ruolo è assegnata una password per garantire la sicurezza dei dati. Lo stesso accesso al server può essere limitato ad alcuni indirizzi IP.  
 In PostgreSQL i permessi possono arrivare fino al livello di singolo record.  
 
-### Oggetti di un DB - VISTE  
+### VISTE  
 Le VIEW (o viste) sono una importante funzionalità che consente di vedere in modo semplice i dati nella forma desiderata, combinando varie tabelle e calcolando valori derivati.  
 Le esigenze di visualizzazione degli utenti sono così soddisfatte senza condizionare l’organizzazione dei dati all'interno del DB.  
 I dati dentro il DB sono strutturati secondo precise regole logiche. Le necessità degli utenti vengono soddisfatte tramite altre funzionalità.  
@@ -129,18 +127,18 @@ Una vista è una tabella "virtuale". Per l'utente è una come una tabella, ma ne
 I dati nella vista sono sempre aggiornati in base ai dati contenuti nelle tabelle di origine al momento in cui l'utente ne fa richiesta.  
 Le viste semplificano la gestione dei permessi. Ad un utente che non deve modificare i dati, si possono assegnare permessi solo su una vista rendendo la cosa più semplice per l’utente e più sicura per il DB.  
 
-### Oggetti di un DB - SEQUENZE  
+### SEQUENZE  
 Una sequenza è un oggetto che genera una sequenza di valori numerici interi. Ogni volta che viene richiesto un numero, la sequenza incrementa del valore specificato (generalmente 1) in modo da non generare mai due volte lo stesso numero.  
 In una tabella si può usare il campo SERIAL che genera in modo automatico una sequenza ed è spesso utilizzato come chiave primaria quando non c'è una chiave primaria naturale.  
 Un sequenza non è strettamente legata a una singola tabella. Un campo SERIAL è gestito dal database e non dovrebbero essere inseriti valori da parte degli utenti.  
 La sequenza genera numeri, ma non controlla come vengono usati. In un campo SERIAL possono esserci gap se si è provato a inserire dei record senza successo o se dei record sono stati cancellati.  
 
-### Oggetti di un DB - TRIGGER E FUNZIONI  
+### TRIGGER E FUNZIONI  
 Il trigger è una procedura che viene eseguita in maniera automatica dal database in coincidenza di un determinato evento, come ad esempio la cancellazione, l'inserimento o la modifica di un record di una tabella. In questo modo si possono specificare e mantenere vincoli di integrità complessi o compilare automaticamente dei campi in base ad altri che sono stati inseriti.  
 Una funzione è un codice di programma che viene creato nel DB usando SQL o altri linguaggi (ad esempio PSQL, Python, C, R) per creare processi e algoritmi complessi. Una volta creata, una funzione diventa parte della libreria del database e può essere chiamata all'interno delle query SQL o da un trigger.  
 Come utenti del DB non dovete creare funzioni e trigger, ma è utile sapere che esistono perché il vostro database del Parco li usa.  
 
-### Oggetti di un DB - VINCOLI SUI DATI  
+### VINCOLI SUI DATI  
 In un database ci sono molti modi di porre dei vincoli sui dati che possono essere inseriti, in modo da garantire la correttezza delle informazioni. Il database non permetterà l’inserimento di dati che non rispettano queste regole. In particolare:  
 * Tipi di dato (as esempio, un numero intero)  
 * Valore unico (ad esempio, lo stesso nome non può essere usato per due operatori)  
@@ -148,7 +146,7 @@ In un database ci sono molti modi di porre dei vincoli sui dati che possono esse
 * Un campo può avere valori solo in un certo set o range(ad esempio fra 1 e 10, o nella lista [“Sereno”, “Coperto”])  
 * Il valore deve esistere in una tabella collegata (chiamata look up table)  
 
-### Oggetti di un DB - VINCOLI FRA TABELLE  
+### VINCOLI FRA TABELLE  
 Il modello relazione che lega fra loro le tabelle si realizza concretamente con dei vincoli fra le tabelle chiamate chiavi esterne (foreign keys).  
 Una chiave esterna specifica che un valore in una tabella può esistere se e solo se quel valore è presente in una tabella madre.  
 Ad esempio, se in una tabella ho la lista dei plot e in un’altra ho la lista delle trappole, non posso creare una trappola se nella tabella plot non esiste il plot corrispondente.  

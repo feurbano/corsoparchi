@@ -7,7 +7,7 @@
 MODULO 1  
 [**Lezione 1.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_01.md) Introduzione alla gestione dei dati - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_01.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
 [**Lezione 2.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_02.md) Introduzione ai database - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_02.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]  
-[**Lezione 3.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_03.md) Gestire e usare un database - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html)</ins>]  
+[**Lezione 3.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_03.md) Gestire e usare un database - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html)</ins>]   
 MODULO 2  
 [**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base per interrogare i dati  
 [**Lezione 5.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_05.md) Organizzazione dei dati del Progetto Biodiversità    
