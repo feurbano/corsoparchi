@@ -1,6 +1,6 @@
-<p align="center"> <img src="lezioni/materiale/loghi.png" width="315" height="100" /></p>
+<p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
 
-## Lezione 1. GESTIONE DEI DATI: PROBLEMI E SOLUZIONI
+## Lezione 2. INTRODUZIONE ALLA GESTIONE DEI DATI E AI DATABASE
 ---
 Materiale in formato [<ins>[**PRESENTAZIONE**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]  
 Autore: Ferdinando Urbano
@@ -177,12 +177,14 @@ Altri oggetti:
 * Lista nomi specie  
 * Operatori  
 * Altre look up tables  
+<img src="materiale/er_ortotteri.png"/>
 
 ### MODELLO DATI: un caso studio  
 Monitoraggio con fototrappole  
 Un progetto di monitoraggio prevede l’installazione di fototrappole in varie postazioni fisse. Le fototrappole generano delle immagini che vengono poi analizzare dagli operatori. In ogni immagine può poi essere identificata una o più specie.  
 
 ### MODELLO DATI: schema generale del caso studio  
+<img src="materiale/er_fototrappole.png"/>  
 
 ### MODELLO DATI: un altro esempio  
 Monitoraggio di ungulati con collari GPS  
