@@ -1,4 +1,4 @@
-<p align="center"> <img src="lezioni/materiale/loghi.png" width="630" height="200" /> </p>
+<p align="center"> <img src="lezioni/materiale/loghi.png" width="315" height="100" /> </p>
 
 ## PRESENTAZIONE DEL CORSO
 ---
