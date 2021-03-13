@@ -4,29 +4,23 @@
 ---
 
 ### Lezioni
-MODULO 1  
+MODULO 1 - Lunedì  22/3/2021 09:00-13:00  
 [**Lezione 1.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_01.md) Introduzione alla gestione dei dati - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_01.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
 [**Lezione 2.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_02.md) Introduzione ai database - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_02.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]  
 [**Lezione 3.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_03.md) Gestire e usare un database - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html)</ins>]   
-MODULO 2  
-[**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base 
+MODULO 2 - Martedì 23/3/2021 09:00-13:00  
+[**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base
 [**Lezione 5.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_05.md) Organizzazione dei dati del Progetto Biodiversità    
-MODULO 3  
+MODULO 3 - Lunedì 29/3/2021 09:00-13:00  
 [**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse  
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali  
-MODULO 4  
+MODULO 4 - Martedì 30/3/2021 09:00-13:00   
 [**Lezione 8.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
 [**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati  
 [**Lezione 10.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_10.md) Manutenzione del database  
 
 ### Docente
 Ferdinando Urbano
-
-### Date
-  * Lunedì  22/3/2021 09:00-13:00 (Modulo 1)
-  * Martedì 23/3/2021 09:00-13:00 (Modulo 2)
-  * Lunedì  29/3/2021 09:00-13:00 (Modulo 3)
-  * Martedì 30/3/2021 09:00-13:00 (Modulo 4)
 
 ### Piattaforma di videoconferenza
 Da definire  
