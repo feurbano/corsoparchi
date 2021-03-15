@@ -17,7 +17,10 @@ Autore: Ferdinando Urbano
 In informatica, con base di dati, banca dati, database o anche DB, si indica un insieme di dati organizzati in modo da facilitarne la gestione, l'uso e l'aggiornamento, memorizzati in un computer.  
 Il modello relazionale è un modello logico di strutturazione dei dati di un database. Tutti i dati sono rappresentati come relazioni (tabelle) collegate fra loro.  
 I dati vengono manipolati con gli operatori dell'algebra relazionale attraverso il linguaggio SQL.  
-PostgreSQL è un sistema avanzato di gestione di basi di dati relaziionali (Database Management System, DBMS) orientato a oggetti. PostgreSQL è un software open surce.  
+PostgreSQL è un sistema avanzato di gestione di basi di dati relazionali (Database Management System, DBMS) orientato a oggetti. PostgreSQL è un software open source.  
+
+L'uso dei database per gestire i dati implica uno sforzo considerevole per chi non ha già familiarità con questi strumenti, ma questo è necessario per essere in grado di gestire set di dati grandi e/o complessi in un contesto multi-utente dove i dati dovrebbero essere riutilizzati per diversi progetti, minimizzando allo stesso tempo la possibilità che i dati siano affetti da errori.  
+Il tempo speso per imparare a  utilizzare database sarà ripagato poi con il tempo risparmiato per la gestione e l'elaborazione dei dati rispetto ad approcci di gestione dei dati più semplici (ad esempio, fogli elettronici) e la qualità e possibilità di riutilizzare i dati in futuro.   Esistono anche altri sistemi avanzati di gestione dei dati (es. database NoSQL), ma al momento nella maggior parte dei casi i database relazionali rimangono la soluzione migliore per la gestione dei dati in ecologia.
 
 ### Punti di forza di PostgreSQL  
 * Ottima qualità  
@@ -181,13 +184,13 @@ Altri oggetti:
 * Operatori  
 * Altre look up tables  
 
-<img src="materiale/er_ortotteri.png"/>
+<img src="materiale/l02_er_ortotteri.png"/>
 
 ### Modello dati: caso studio  
 **Monitoraggio con fototrappole**  
 Un progetto di monitoraggio prevede l’installazione di fototrappole in varie postazioni fisse. Le fototrappole generano delle immagini che vengono poi analizzare dagli operatori. In ogni immagine può poi essere identificata una o più specie.  
 
-<img src="materiale/er_fototrappole.png"/>  
+<img src="materiale/l02_er_fototrappole.png"/>  
 
 ### Modello dati: esempio  
 Monitoraggio di ungulati con collari GPS  
@@ -205,7 +208,8 @@ Regole delle prime 3 forme normali:
 * Ogni colonna fa riferimento a dei dati atomici  
 * I campi non chiave dipendono dall’intera chiave primaria e non da una parte di essa  
 * I campi non chiave non dipendono da altri campi non chiave  
-I dati non devono essere organizzati nel DB in base a come si vuole visualizzarli. Tabelle riassuntive si possono generare con le VISTE.  
+In un database relazionale, i dati non devono essere organizzati in base a come si vuole visualizzarli. I criteri per la progettazione di un database sono in buona misura indipendente da una specifica applicazione in modo da poter essere utilizzati anche per altri scopi.  
+Tabelle riassuntive che riportano i dati come richiesto da un singolo utente o da una specifica applicazioni possono essere create tramite le VISTE, soddisfacendo queste esigenze senza compromettere la struttura logica del modello dati.  
 
 ### Il linguaggio SQL  
 SQL (Structured Query Language) è il linguaggio di definizione e manipolazione dei dati universalmente usato (e standardizzato) nei database relazionali. Non richiede la stesura di sequenze di operazioni, ma di specificare le proprietà logiche delle informazioni ricercate (linguaggio dichiarativo). Si divide in:  

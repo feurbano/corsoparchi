@@ -4,16 +4,40 @@
 ## USARE E GESTIRE UN DATABASE
 ---
 ### Installare PgAdmin
-PgAdmin è la più comune interfaccia grafica per interrogazione dei dati e la gestione di PostgreSQL. È possibile visualizzare le tabelle, interrogare e scaricare i dati, creare nuove tabelle o view, modificare e inserire dati, gestire gli utenti, fare backup.  
-Le versioni fino a PgAdmin4 v4.50 sono base su browser. Dalla versione PgAdmin4 v5.0 il tool è stand alone.  È un software open source e ha aggiornamenti molto frequenti. Se si installa PostgreSQL, PgAdmin4 viene installato automaticamente.  
-PgAdmin non è l'unico client che si può usare per manipolare i dati e gli oggetti nel database. Alcuni tool per finalità specifiche sono presentati di seguito, invece una alternativa a PgAdmin4 è dBeaver (https://dbeaver.io/download/, versione Community), molto utile anche per generare i diagrammi ER.  
+Per interagire con un database PostgreSQL non è necessario installare PostgreSQL, ma è sufficiente installare un client che si collega al database, fisicamente installato su un server del Parco (o nel cloud). PostgreSQL è necessario solo se dovete creare un nuovo database nel vostro computer.
+
+PgAdmin è la più comune interfaccia grafica per l'interrogazione dei dati e la gestione di PostgreSQL. È possibile visualizzare le tabelle, interrogare e scaricare i dati, creare nuove tabelle e view, modificare e inserire dati, gestire gli utenti, fare backup.  
+Le versioni fino a PgAdmin4 v4.50 sono basate su browser (il tool viene aperto in Google Chrome, Firefox, Safari o altro). Dalla versione PgAdmin4 v5.0 il tool è stand alone (si apre come programma a se). Le due versioni sono comunque equivalenti.  
+PgAdmin è un software open source e ha aggiornamenti molto frequenti. Se si installa PostgreSQL, PgAdmin4 viene installato automaticamente.  
+PgAdmin non è l'unico client che si può usare per manipolare i dati e gli oggetti nel database. Alcuni tool per finalità specifiche sono presentati di seguito, invece una alternativa a PgAdmin4 è dBeaver (https://dbeaver.io/download/, versione Community), molto utile anche per generare i diagrammi ER (è il tool utilizzato per creare le immagini riportate in queste pagine).  
 
 Si può scaricare PgAdmin4 da qui:  
-Windows: https://www.pgadmin.org/download/pgadmin-4-windows/  
-MAC: https://www.pgadmin.org/download/pgadmin-4-macos/  
+[<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html)</ins>]
+
+
+* <ins>[**Download PgAdmin for WINDOWS**](https://www.pgadmin.org/download/pgadmin-4-windows/)</ins>  
+* <ins>[**Download PgAdmin for MAC**](https://www.pgadmin.org/download/pgadmin-4-macos/)</ins>  
 Versione consigliata: ...
 
+Quando viene aperto la prima volta, PgAdmin chiede di creare una password. Questa non è la password di accesso ai database, ma solo la password di accesso a PgAdmin (visto che poi PgAdmin salva al suo interno tutte le password di accesso ai database). Potete mettere qualsiasi password facile da ricordare (ad esempio 'postgres').
+
+
+
 ### Struttura di PgAdmin
+
+
+
+Le tre parti principali del client pgAdmin4 sono la barra dei menu pgAdmin, il controllo della struttura pgAdmin e il controllo del browser a schede . Ogni parte è utilizzata per eseguire diversi tipi di attività di gestione. L’utente può facilmente creare un nuovo database utente o ruolo e postgres utilizzando il controllo ad albero pgAdmin. Come è possibile creare un nuovo utente e un database con le tabelle sotto quell’utente è mostrato in questo tutorial.
+
+Prima di iniziare questo tutorial, è necessario verificare che pgAdmin4 sia installato e funzioni correttamente nel sistema operativo Ubuntu. Se pgAdmin4 non è installato nel sistema, è possibile seguire i passaggi del seguente tutorial per installare prima pgAdmin4 e avviare questo tutorial.
+
+https://linuxiano.altervista.org/installa-pgadmin4-su-ubuntu/
+
+Dopo aver completato correttamente l’installazione di pgAdmin4, aprite il seguente collegamento da qualsiasi browser per aprire il client pgAdmin4 .
+
+http: // localhost: 5050
+
+
 
 * Finestra principale  
 * Descrizione dei pannelli  
