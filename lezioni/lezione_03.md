@@ -35,31 +35,52 @@ Usa il dialogo Preferenze per personalizzare il contenuto e il comportamento del
 
 I pulsanti di aiuto nell'angolo in basso a sinistra di ogni finestra di dialogo apriranno la guida in linea per la finestra stessa. Puoi accedere ad un aiuto aggiuntivo di Postgres navigando attraverso il menu Help, e selezionando il nome della risorsa che vuoi aprire.
 
-Tradotto con www.DeepL.com/Translator (versione gratuita)
+
 
 Le tre parti principali del client pgAdmin4 sono la barra dei menu pgAdmin, il controllo della struttura pgAdmin e il controllo del browser a schede . Ogni parte è utilizzata per eseguire diversi tipi di attività di gestione. L’utente può facilmente creare un nuovo database utente o ruolo e postgres utilizzando il controllo ad albero pgAdmin. Come è possibile creare un nuovo utente e un database con le tabelle sotto quell’utente è mostrato in questo tutorial.
 
 Prima di iniziare questo tutorial, è necessario verificare che pgAdmin4 sia installato e funzioni correttamente nel sistema operativo Ubuntu. Se pgAdmin4 non è installato nel sistema, è possibile seguire i passaggi del seguente tutorial per installare prima pgAdmin4 e avviare questo tutorial.
 
-https://linuxiano.altervista.org/installa-pgadmin4-su-ubuntu/
+<p align="center"> <img src="materiale/l03_pgadmin_panels_.png" /></p>
 
 Dopo aver completato correttamente l’installazione di pgAdmin4, aprite il seguente collegamento da qualsiasi browser per aprire il client pgAdmin4 .
 
 http: // localhost: 5050
 
+The left pane of the main window displays a tree control (the pgAdmin tree control) that provides access to the objects that reside on a server.
 
 
-* Finestra principale  
+
 * Descrizione dei pannelli  
-* Descrizione dei principali elementi visualizzati all'interno di un database (server, database, schema, tabelle)  
-* Opzioni di visualizzazione  
+
+<img src="materiale/l03_pgadmin_panels.png"/>
+
+* Opzioni di visualizzazione
 * Aggiunta di un nuovo server  
-Nome: database test  
-Host: localhost  
-Porta: 5432  
-Utente: postgres  
-Password: -  
-* Interfaccia SQL    
+  Nome: database test  
+  Host: localhost  
+  Porta: 5432  
+  Utente: postgres  
+  Password: -  
+* Descrizione dei principali elementi visualizzati all'interno di un database (server, database, schema, tabelle)  
+  schema  
+  tabelle  
+  campi  
+  vincoli  
+  viste
+  sequenze
+  utenti e gruppi di utenti  
+* Interagire con una tabella
+  visualizzare tabella
+  modificare un valore
+  cancellare un valore
+
+* Interfaccia SQL  
+semplice query
+aprire più tab
+chiudere un tab
+
+
 
 
 ---
