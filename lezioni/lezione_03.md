@@ -25,7 +25,17 @@ Quando viene aperto la prima volta, PgAdmin chiede di creare una password. Quest
 
 ### Struttura di PgAdmin
 
+Il client di pgAdmin 4 è dotato di un display altamente personalizzabile con pannelli drag-and-drop che puoi organizzare per fare il miglior uso del tuo ambiente desktop.
 
+Il controllo ad albero fornisce un'elegante panoramica dei server gestiti e degli oggetti che risiedono su ogni server. Fai clic con il tasto destro del mouse su un nodo all'interno del controllo ad albero per accedere a menu sensibili al contesto che forniscono un rapido accesso alle attività di gestione per l'oggetto selezionato.
+
+Il browser a schede fornisce un rapido accesso alle informazioni statistiche su ogni oggetto nel controllo ad albero e agli strumenti e alle utilità di pgAdmin (come lo strumento Query e il debugger). pgAdmin apre ulteriori schede di funzionalità ogni volta che si accede alle funzionalità estese offerte dagli strumenti di pgAdmin; è possibile aprire, chiudere e riorganizzare le schede di funzionalità secondo necessità.
+
+Usa il dialogo Preferenze per personalizzare il contenuto e il comportamento del display di pgAdmin. Per aprire la finestra delle Preferenze, seleziona Preferenze dal menu File.
+
+I pulsanti di aiuto nell'angolo in basso a sinistra di ogni finestra di dialogo apriranno la guida in linea per la finestra stessa. Puoi accedere ad un aiuto aggiuntivo di Postgres navigando attraverso il menu Help, e selezionando il nome della risorsa che vuoi aprire.
+
+Tradotto con www.DeepL.com/Translator (versione gratuita)
 
 Le tre parti principali del client pgAdmin4 sono la barra dei menu pgAdmin, il controllo della struttura pgAdmin e il controllo del browser a schede . Ogni parte è utilizzata per eseguire diversi tipi di attività di gestione. L’utente può facilmente creare un nuovo database utente o ruolo e postgres utilizzando il controllo ad albero pgAdmin. Come è possibile creare un nuovo utente e un database con le tabelle sotto quell’utente è mostrato in questo tutorial.
 
