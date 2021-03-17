@@ -115,13 +115,30 @@ Per creare una connessione al database di test del corso con PgAdmin  bisogna se
 Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'icona *Server*.
 
 ### Oggetti del database
-Descrizione dei principali elementi visualizzati all'interno di un database (server, database, schema, tabelle)  
-#### Schema  
+Nel menù ad albero del pannello di sinistra è ora disponibile la nuova connessione. Espandendo l'icona *Server* si vedono tutti server a cui si è creata una connessione. Aprendo la connessione che è stata creata, vengono visualizzati tutti i database creati in quel server. Anche se il nome degli oggetti negli altri database è visibile, l'utente *corso_user* non potrà visualizzare i dati in essi contenuti ad eccezione del database *corsoparchi*.  
+Cliccando sul database *corsoparchi*, si visualizza il primo livello di classi di oggetti contenuti nel database. Gli oggetti visibili dipendono dagli elementi selezioni nelle opzioni *Nodi* (vedi figura sotto). L'elemento più rilevante nel primo livello della struttura ad albero sotto il database è lo **SCHEMA**.   
+#### Schemi
+L'unico elemento rilevante nel primo livello della struttura ad albero sotto il database è **SCHEMA**. Gli schemi sono dei contenitori logici usati per organizzare gli elementi del database secondo specific criteri, ma non hanno nessun effetto sugli oggetti stessi. Sono sostanzialmente analoghi alle cartelle a un file system. Nel database utilizzato per il corso ci sono 4 schemi:
+* basedata  
+* biodiversita  
+* public  
+* test  
+Nel primo schema *basedata* ci sono tutte le tabelle e le view con i dati di interesse generale per tutti i data set (ad esempio informazioni sulla tassonomia, confini comunali, confini regionali, confini dei parchi). In *biodiversita* ci sono tutte le tabelle e le view relative al Progetto Biodiversità dei 4 parchi utilizzati durante il corso. Lo schema *public* è invece usato dal database per mettere degli oggetti "di sistema", e non dovrebbe essere usato dagli utenti. Lo schema *test* è invece utilizzato per creare nuovi oggetti per esercitarsi durante il corso.  
+Espandendo uno schema, verranno visualizzati gli oggetti che contiene, sempre in base alle opzioni selezionate in *Nodi*. I due elementi più importanti sono le **VISTE** e le **TABELLE**.
+#### Viste  
+Le VIEW (o viste) sono delle tabelle "virtuali" che consentono di vedere in modo semplice i dati nella forma desiderata. I dati sono fisicamente contenuti nelle tabelle, ma per l'utente finale le viste equivalgono a delle tabelle, con la differenza (nella loro versione più semplice) che non possono essere modificate. La vista viene costruite con una query SQL preparata a priori dal gestore del database in base alle richieste degli utenti.  
 #### Tabelle  
+Le tabelle sono le strutture in cui vengono fisicamente archiviati i dati organizzati per colonne (o campi). Oltre che dai campi, una tabella è caratterizzata dai vincoli interni ed esterni. I **CAMPI** e i **VINCOLI** sono visibili quando una specifica tabella viene selezionata nel menù ad albero del pannello di sinistra.  
 #### Campi  
+I campi sono le colonne di cui è composta una tabella. La lista dei campi è visibile nel menù ad albero, mentre nelle proprietà degli oggetti si può vedere il tipo di dato associato ad ogni campo.  
 #### Vincoli  
-#### Viste
+Associata ad ogni tabelle ci sono una serie di vincoli:  
+* Unique constraint (non accetta valori ripetuti per un campo o un set di campi)  
+* Check (specifica il domini di valori validi per un certo campo)  
+* Primary keys (un campo o combinazione di campi che identifica univocamente un record e che non può essere nullo)  
+* Foreign keys (dipendenza di un campo o di una combinazione di campi dai valori contenuti in una tabella esterna "padre")  
 #### Sequenze
+All'interno di uno schema, oltre alle tabelle e alle viste sono contenute anche le **SEQUENZE**.
 #### Utenti e gruppi di utenti  
 PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.
 
@@ -136,20 +153,6 @@ PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti pos
 
   Per ogni livello esiste un "gruppo" a cui vengono associati i singoli utenti. Ogni operatore del Parco che usa il database ha la sua utenza specifica con associata password. Questa utenza è associata a uno o più dei tre gruppi da cui eredita i relativi permessi. In questo modo i permessi di accesso alle tabelle vengono associati ai 3 gruppi e non devono essere riassegnati ogni volta che viene creato un nuovo utente (ad esempio, un nuovo collaboratore del parco).
   Gli operatori del parco possono ottenere un nome utente e una password contattando l'amministrazione del sistema.
-
-  PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.
-
-  Al momento ci sono 3 livelli di utenza:
-
-      Amministratore del database
-      (possibilità di modificare, creare o eliminare ogni oggetto del database, ed assegnare i permessi alle tabelle)
-      Editor del database
-      (possibilità di leggere e modificare i dati di tutte le tabelle ma non di creare/cancella/modificare oggetti del database)
-      Lettore
-      (possibilità di leggere i dati di tutte le tabelle del database)
-
-  Per ogni livello esiste un "gruppo" a cui vengono associati i singoli utenti. Ogni soggetto che usa il database ha la sua utenza specifica con associata password. Questa utenza è associata a uno o più dei tre gruppi da cui eredita i relativi permessi. In questo modo i permessi di accesso alle tabelle vengono associati ai 3 gruppi e non devono essere riassegnati ogni volta che viene creato un nuovo utente (ad esempio, un nuovo collaboratore del parco).
-  I soggetti interessati (e autorizzati) possono ottenere un nome utente e una password contattando l'amministrazione del sistema.
   In futuro potranno essere create ulteriori tipologie di utenza per dati o per gruppi specifici.
 
 ### Interagire con una tabella
