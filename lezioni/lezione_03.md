@@ -108,20 +108,35 @@ Il nome utente e la password possono essere creati dal gestore del database. Nel
 * Porta: 2345  
 * Nome database: corsoparchi  
 * Utente: corso_user
-* Password: LA PASSWORD SARÀ comunicata durante le lezioni
+* Password: LA PASSWORD SARÀ COMUNICATA DURANTE LE LEZIONI
 
-Per connettersi con il database
+Per creare una connessione al database di test del corso con PgAdmin  bisogna selezionare dal menù *Object/Create/Server* (oppure cliccare con il pulsante destro sull'icona Server nel pannello con il menu ad albero e selezionare *Create/Server*). Si apre una finestra in cui vanno inseriti i parametri di connessione elencati sopra. Nella scheda *General* va solo inserito un nome (qualsiasi) da dare alla connessione, ad esempio 'database corso'. Nella scheda *Connection* vanno inseriti indirizzo IP del server, nome del database, porta, utente e password (vedi figura sotto). Per non dover inserire la password a ogni nuova connessione, attivare l'opzione *Save password*.
+[<img src="materiale/l03_connessione_server.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_connessione_server.png)  
+
+Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'icona *Server*.
 
 ### Oggetti del database
 Descrizione dei principali elementi visualizzati all'interno di un database (server, database, schema, tabelle)  
-  schema  
-  tabelle  
-  campi  
-  vincoli  
-  viste
-  sequenze
-  utenti e gruppi di utenti  
+#### Schema  
+#### Tabelle  
+#### Campi  
+#### Vincoli  
+#### Viste
+#### Sequenze
+#### Utenti e gruppi di utenti  
+PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.
 
+  Al momento ci sono 3 livelli di utenza:
+
+      Amministratore del database
+      (possibilità di modificare, creare o eliminare ogni oggetto del database, ed assegnare i permessi alle tabelle)
+      Curatore di ogni dataset
+      (possibilità di leggere e modificare le tabelle di uno specifico dataset ma nessun accesso alle tabelle degli altri dataset)
+      Lettore
+      (possibilità di leggere tutte le tabelle del database)
+
+  Per ogni livello esiste un "gruppo" a cui vengono associati i singoli utenti. Ogni operatore del Parco che usa il database ha la sua utenza specifica con associata password. Questa utenza è associata a uno o più dei tre gruppi da cui eredita i relativi permessi. In questo modo i permessi di accesso alle tabelle vengono associati ai 3 gruppi e non devono essere riassegnati ogni volta che viene creato un nuovo utente (ad esempio, un nuovo collaboratore del parco).
+  Gli operatori del parco possono ottenere un nome utente e una password contattando l'amministrazione del sistema.
 
   PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.
 

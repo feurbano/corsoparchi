@@ -1,5 +1,6 @@
 # WORK IN PROGRESS
 
+Di solito, l'interazione fra utenti e database, in particolare per l'inserimento dei dati, passa attraverso l'uso di applicativi specifici (ad esempio maschere) che permettono all'utente di immettere i dati in modo semplice e diretto, riorganizzando le informazioni "dietro le quinte" prima di essere inserite nel database.
 
 OPZIONI PER PROCEDURA DA CAMPO A DB
 - chi
