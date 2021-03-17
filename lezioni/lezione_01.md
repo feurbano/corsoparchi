@@ -51,6 +51,22 @@ Autore: Ferdinando Urbano
 * Archivi web condivisi (e.g. GBIF, Ornitho, Movebank)
 * Database centralizzati (e.g. PostgreSQL, Oracle, MySQL)
 
+Quando i dati vengono archiviati in un database centralizzato, ci sono varie opzioni per inserire i dati nel database, ad esempio:  
+* Tablet con applicazioni apposite collegate al DB (dati da validare)  
+* Adattamento di applicazioni esistenti (e.g. Ornitho, ODK)  
+* Tablet, scaricamento dei file, validazione e upload nel DB  
+* Utilizzo di interfacce web per l’inserimento dei dati dalle schede  
+* Fogli di calcolo non strutturati per inserimento da schede e upload nel DB  
+* Fogli di calcolo strutturati per inserimento da schede e poi upload nel DB  
+
+In ogni caso la definizione dei protocolli di raccolta, la registrazione dei dati, la struttura dati nel database e la procedura di informatizzazione devono essere coordinate e pensate come fasi di uno stesso processo.
+
+Per i dati storici, tipicamente archiviati in fogli di calcolo non strutturati, le fasi di lavoro per integrarli in un database sono:  
+1. Validazione dei dati (fatta dal curatore dei dati per il controllo della qualità assieme a chi ha raccolto i dati)  
+2. Creazione della struttura dati nel database (fatta dal gestore del database)  
+3. L’importazione dei dati nel database (fatta dal curatore dei dati)  
+4. La documentazione dei dati (campi, struttura, protocollo di raccolta)  
+
 ### Piano per la gestione dei dati: cos’è
 
 * Un Data Management Plan è un documento da preparare all’inizio di un progetto (e poi da aggiornare) che descrive come devono essere gestiti i dati durante e dopo la loro raccolta.

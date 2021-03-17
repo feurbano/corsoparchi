@@ -184,7 +184,7 @@ Altri oggetti:
 * Operatori  
 * Altre look up tables  
 
-<img src="materiale/l02_er_ortotteri.png"/>
+[<img src="materiale/l02_er_ortotteri.png"/>](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l02_er_ortotteri.png)
 
 ### Modello dati: caso studio  
 **Monitoraggio con fototrappole**  
