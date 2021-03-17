@@ -130,6 +130,7 @@ L'unico elemento rilevante nel primo livello della struttura ad albero sotto il 
 * biodiversita  
 * public  
 * test  
+
 Nel primo schema *basedata* ci sono tutte le tabelle e le view con i dati di interesse generale per tutti i data set (ad esempio informazioni sulla tassonomia, confini comunali, confini regionali, confini dei parchi). In *biodiversita* ci sono tutte le tabelle e le view relative al Progetto Biodiversità dei 4 parchi utilizzati durante il corso. Lo schema *public* è invece usato dal database per mettere degli oggetti "di sistema", e non dovrebbe essere usato dagli utenti. Lo schema *test* è invece utilizzato per creare nuovi oggetti per esercitarsi durante il corso.  
 Espandendo uno schema, verranno visualizzati gli oggetti che contiene, sempre in base alle opzioni selezionate in *Nodi*. I due elementi più importanti sono le **VISTE** e le **TABELLE**.
 #### Viste  
@@ -144,8 +145,10 @@ Associata ad ogni tabelle ci sono una serie di vincoli:
 * Check (specifica il domini di valori validi per un certo campo)  
 * Primary keys (un campo o combinazione di campi che identifica univocamente un record e che non può essere nullo)  
 * Foreign keys (dipendenza di un campo o di una combinazione di campi dai valori contenuti in una tabella esterna "padre")  
+
 #### Sequenze
 All'interno di uno schema, oltre alle tabelle e alle viste sono contenute anche le **SEQUENZE**. Una sequenza è un oggetto che genera valori numerici interi incrementali. Ogni volta che viene richiesto un numero, la sequenza aumenta del valore specificato (generalmente 1) in modo da non generare mai due volte lo stesso numero. Di solito è associata a una tabella e crea i valori utilizzati come chiave primari (tramite il tipo di dato serial), ma può essere utilizzata anche da più tabelle o query degli utenti. Questi oggetti non dovrebbero essere modificati dagli utenti.
+
 #### Utenti e gruppi di utenti  
 PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.  
 Gli utenti vengono creati a livello di database server e possono quindi essere utilizzati per tutti i database ivi contenuti. I permessi invece vengono dati a livello di singolo oggetto dentro ogni database. Per questo nel menù ad albero del pannello di sinistra, i *Login/Group roles* sono visibili allo stesso livello dei database, in fondo alla lista di elementi.
@@ -184,6 +187,7 @@ Ci sono client che possono essere usati per applicazioni specifiche, ad esempio 
 * creare una connessione al database  
 * aprire la connessione  
 * carica i dati  
+
 La prima volta che ci si collega al database, è necessario creare la connessione utilizzando l'icona **Open data source manager** (vedere la schermata seguente) e inserire i parametri di connessione.  
 
 [![](images/client_qgis_connection.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_qgis_connection.png?raw=true)
@@ -200,7 +204,8 @@ Per importare dati dal database in [R](https://www.r-project.org/) è sufficient
 ```
 library(RPostgreSQL)
 drv <- dbDriver("PostgreSQL")
-con <- dbConnect(drv, dbname="corsoparchi", host="db.parco.gran-paradiso.g3wsuite.it",
+con <- dbConnect(drv, dbname="corsoparchi",
+host="db.parco.gran-paradiso.g3wsuite.it",
 port="2345", user="corso_user", password="YOURPASSWORD")
 rs <- dbSendQuery(con, "select * from biodiversita.biodiversita_animali")
 df <- fetch(rs,-1)
