@@ -11,7 +11,7 @@ Per interagire con un database PostgreSQL non è necessario installare PostgreSQ
 PgAdmin è la più comune interfaccia grafica per l'interrogazione dei dati e la gestione di PostgreSQL. È possibile visualizzare le tabelle, interrogare e scaricare i dati, creare nuove tabelle e view, modificare e inserire dati, gestire gli utenti, fare backup.  
 Le versioni fino alla PgAdmin4 v4.50 sono basate su browser (il tool viene aperto in Google Chrome, Firefox, Safari o altro). Dalla versione PgAdmin4 v5.0 il tool è invece stand alone (si apre come programma a se). Le due versioni sono comunque equivalenti.  
 PgAdmin è un software open source e ha aggiornamenti molto frequenti. Se si installa PostgreSQL, PgAdmin4 viene installato automaticamente.  
-PgAdmin non è l'unico client che si può usare per manipolare i dati e gli oggetti nel database. Alcuni tool per finalità specifiche sono presentati in  seguito. Una alternativa a PgAdmin4 per la gestione del database è ad esempio dBeaver (https://dbeaver.io/download/, versione Community), molto utile anche per generare i diagrammi ER (è il tool utilizzato per creare le immagini riportate in queste pagine).  
+PgAdmin non è l'unico client che si può usare per manipolare i dati e gli oggetti nel database. Alcuni tool per finalità specifiche sono presentati in  seguito. Una alternativa a PgAdmin4 per la gestione del database è ad esempio dBeaver ([https://dbeaver.io/download/](https://dbeaver.io/download/), versione Community), molto utile anche per generare i diagrammi ER (è il tool utilizzato per creare le immagini riportate in queste pagine).  
 
 Si può scaricare PgAdmin4 da qui:  
 [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html)</ins>]
@@ -26,7 +26,7 @@ Quando viene aperto la prima volta, PgAdmin chiede di creare una password. Quest
 
 L'interfaccia di PgAdmin è organizzata in 5 sezioni principali (vedi immagine). La visualizzazione degli elementi può essere ottimizzata attraverso le opzioni di personalizzazione.  
 
-<img src="materiale/l03_pgadmin_panels.png" />  
+[<img src="materiale/l03_pgadmin_panels.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_pgadmin_panels.png)  
 
 Le 5 sezioni (o pannelli) sono:
 1. La barra dei menù
@@ -41,7 +41,7 @@ Ogni parte è utilizzata per eseguire diversi tipi di attività di gestione. L'e
 
 #### PANNELLO 1. La barra dei menù
 La barra dei menu di pgAdmin fornisce menu a tendina per l'accesso a opzioni, comandi e utilità. La barra dei menu mostra le seguenti selezioni: *File*, *Object*, *Tools* e *Help*. Le selezioni possono essere grigie, il che indica che sono disabilitate per l'oggetto attualmente selezionato nel menù ad albero (pannello 4). A molte di queste opzioni si può accedere anche selezionando un oggetto del database e cliccando sul pulsante destro.   
-Si possono utilizzare le opzioni della finestra di dialogo Preferenze (*File/Preferences**) per personalizzare l'interfaccia di PgAdmin. Il pannello a sinistra della finestra Preferenze mostra un menù ad albero: ogni nodo del controllo ad albero fornisce l'accesso alle opzioni che sono relative al nodo sotto il quale sono visualizzate. Le opzioni più utili da modificare sono *Browser/nodes* e *Browser/Tab settings*. In Nodi si possono selezionare gli oggetti del database che vengono visualizzati nel menù ad albero (pannello 4). La maggior parte degli oggetti non ha nessun interesse per l'utente di base e posso essere nascosti, rendendo l'esplorazione del database più immeditata. Gli oggetti (nodi) da tenere sono (gli altri, se volete potete nasconderli):  
+Si possono utilizzare le opzioni della finestra di dialogo Preferenze (*File/Preferences*) per personalizzare l'interfaccia di PgAdmin. Il pannello a sinistra della finestra Preferenze mostra un menù ad albero: ogni nodo del controllo ad albero fornisce l'accesso alle opzioni che sono relative al nodo sotto il quale sono visualizzate. Le opzioni più utili da modificare sono *Browser/nodes* e *Browser/Tab settings*. In Nodi si possono selezionare gli oggetti del database che vengono visualizzati nel menù ad albero (pannello 4). La maggior parte degli oggetti non ha nessun interesse per l'utente di base e posso essere nascosti, rendendo l'esplorazione del database più immeditata. Gli oggetti (nodi) da tenere sono (gli altri, se volete potete nasconderli):  
 * Check Constraints  
 * Columns  
 * Constraints  
@@ -62,7 +62,7 @@ Si possono utilizzare le opzioni della finestra di dialogo Preferenze (*File/Pre
 
 In Tab Settings, è consigliato settare com *Query tool tab title* = %DATABASE% e come *View/Edit data tab title* = %DATABASE%/%USERNAME%. Visto che tutti gli oggetti che vengono aperti sono aggiunti al pannello 3 come tab aggiuntive, questi parametri rendono più breve il titolo del tab e quindi più piccolo il singolo tab, facilitando la selezione del tab corretto quando sono aperti molti tab (ad esempio, molte tabelle o molte finestre di inserimento di codice SQL). Con l'opzione *Open in new browser tab* si può scegliere di aprire nuovi oggetti come finestre separate invece che come tab aggiuntivi. In ogni caso tutte queste modifiche sono opzionali e potete lasciare i parametri di default.
 
-In *Query tool* si potranno invece modificare in seguito i parametri di default per la visualizzazione del codice SQL (utile le prossime lezioni) e per l'esportazione delle tabelle (ad esempio, se i campi vengono separati separati da virgole o punti e virgola)
+In *Query tool* si potranno invece modificare in seguito i parametri di default per la visualizzazione del codice SQL (utile le prossime lezioni) e per l'esportazione delle tabelle (ad esempio, se i campi vengono separati da virgole o punti e virgola)
 Usa i campi del pannello Nodi per selezionare i tipi di oggetti che verranno visualizzati nel controllo ad albero Browser:
 Il pannello visualizza un elenco di oggetti del database; fai scorrere l'interruttore situato accanto a ciascun oggetto per mostrare o nascondere l'oggetto del database. Quando si interrogano i cataloghi di sistema, è possibile ridurre il numero di tipi di oggetti visualizzati per aumentare la velocità.
 
@@ -89,30 +89,29 @@ Usa l'icona di chiusura (X) situata nell'angolo superiore destro di ogni scheda 
 #### PANNELLO 4. Il menù ad albero  
 Il menù ad albero, simile al menù di un file system, fornisce una panoramica dei database e dei loro oggetti che risiedono su un server. Fai clic con il tasto destro del mouse su un nodo all'interno del controllo ad albero per accedere ale sue proprietà. Con un click ogni nodo viene espanso e mostra gli oggetti contenuti al suo interno (ad esempio, le colonne di una tabella). Nel tab SQL è visibile il codice SQL che genera quell'oggetto.  
 
-#### PANNELLO 5. Contenuto della scheda
+#### PANNELLO 5. Contenuto delle schede
 In questo pannello viene visualizzato il contenuto nel tab selezionato nel pannello 3. Il contenuto varia a seconda dell'oggetto selezionato (ad esempio, la lista delle proprietà di un oggetto, i dati di una tabella, un editor per scrivere una interrogazione SQL).  
 
-### Creare il collegamento a un server
+### Collegarsi a un server
+I database con i dati dei Parchi sono fisicamente installati su dei server istituzionali e sono accessibile da ovunque, sia dentro sia fuori la rete interna dei Parco, una volta che si hanno le credenziali (utente e password). I database funziona come un server centralizzato che invia i dati quando richiesto dalle applicazioni client, che li mostrano poi all'utente nella forma desiderata. Un client è un software che accede ad un servizio remoto (il database) installato su un altro computer (il server), tramite una rete (Internet). Il client può essere installato su un qualsiasi computer/device e il database può gestire più connessioni contemporaneamente (il database può essere usato allo stesso momento da più utenti senza rischio di corrompere i dati). In generale, praticamente tutti i software per la gestione, visualizzazione e analisi dei dati si possono interfacciare con un database PostgreSQL.
 
+Per collegarsi al database, qualunque sia il client utilizzato sono in generale necessari 5 parametri:
 
-Il database è fisicamente installato su una macchina gestita dal Parco ed è accessibile da ovunque, sia dentro sia fuori la rete interna del Parco. Funziona come un server centralizzato che invia i dati, quando richiesto, alle applicazioni client. Un client è un software che accede ad un servizio remoto (il database) installato su un altro computer (il server), tramite una rete (Internet). Il client può essere installato su un qualsiasi computer/device e il database può gestire più connessioni contemporaneamente (il database può essere usato allo stesso momento da più utenti senza rischio di corrompere i dati). Esempi di applicazioni client sono pgAdmin (per la gestione del database, per interagire con le tabelle e per interrogare i dati), QGIS e volendo anche ArcGIS (per visualizzare i dati spaziali), R (per analisi statistiche), fogli di calcolo come Calc di Libreoffice o anche Excel (per visualizzare ma non modificare i dati delle tabelle). Un altro client interessante è DBeaver (per interrogare i dati e per creare degli schemi con il modello dati come quelli riportati in questo documento). In generale, praticamente tutti i software per la gestione, visualizzazione e analisi dei dati si possono interfacciare con il database.
+1. Indirizzo IP del server  
+2. Porta  
+3. Nome utente
+4. Password utente
+5. Nome del database
 
-Per collegarsi al database, qualunque sia il client utilizzato sono necessari 5 parametri:
+Il nome utente e la password possono essere creati dal gestore del database. Nelle sezioni seguenti verrà illustrato in modo sintetico come collegarsi a un database con i client più comunemente usati. Per illustrare gli esempi discussi in queste lezioni e per poter fare pratica, il Parco del Gran Paradiso ha gentilmente offerto la sua infrastruttura per ospitare un database "di lavoro" dove sono stati caricati alcuni dati del progetto Biodiversità relativi ai 4 Parchi. Sullo stesso server sono presenti altri database del Parco che non sono però accessibile dall'utente create appositamente per questo corso. I parametri di connessione sono i seguenti:
+* Indirizzo IP: db.parco.gran-paradiso.g3wsuite.it  
+* Porta: 2345  
+* Nome database: corsoparchi  
+* Utente: corso_user
+* Password: LA PASSWORD SARÀ comunicata durante le lezioni
 
-    Indirizzo IP del server: richiedi questa informazione al coordinatore scientifico [pnsnas]
-    Nome utente: richiedi questa informazione al coordinatore scientifico
-    Password utente: richiedi questa informazione al coordinatore scientifico
-    Porta: 5433
-    Nome del database: pstelvio_db
+Per connettersi con il database
 
-Per accedere al database è necessario richiedere un nome utente e password al responsabile del database.
-Nelle sezioni seguenti verrà illustrato in modo sintetico come collegarsi al database con i client più comunemente usati.
-Sul server PostgresSQL del Parco sono presenti anche altri database. Per poter accedere è necessario fare richiesta al responsabile scientifico del Parco.
-  Nome: database test  
-  Host: localhost  
-  Porta: 5432  
-  Utente: postgres  
-  Password: -  
 ### Oggetti del database
 Descrizione dei principali elementi visualizzati all'interno di un database (server, database, schema, tabelle)  
   schema  
@@ -150,6 +149,8 @@ Descrizione dei principali elementi visualizzati all'interno di un database (ser
   creare una tabella con interfaccia grafica
 
 ### Collegarsi al DB con altri tool
+ Esempi di applicazioni client sono pgAdmin (per la gestione del database, per interagire con le tabelle e per interrogare i dati), QGIS e volendo anche ArcGIS (per visualizzare i dati spaziali), R (per analisi statistiche), fogli di calcolo come Calc di Libreoffice o anche Excel (per visualizzare ma non modificare i dati delle tabelle). Un altro client interessante è DBeaver (per interrogare i dati e per creare degli schemi con il modello dati come quelli riportati in questo documento).
+
 #### Collegarsi al database con QGIS
 #### Collegarsi al database con R
 #### Collegarsi al database con Libre Office
