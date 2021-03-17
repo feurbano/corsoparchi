@@ -25,66 +25,74 @@ Quando viene aperto la prima volta, PgAdmin chiede di creare una password. Quest
 ### Struttura di PgAdmin
 
 L'interfaccia di PgAdmin è organizzata in 5 sezioni principali (vedi immagine). La visualizzazione degli elementi può essere ottimizzata attraverso le opzioni di personalizzazione.  
+
 <img src="materiale/l03_pgadmin_panels.png" />  
+
 Le 5 sezioni (o pannelli) sono:
-1. La barra dei menu
+1. La barra dei menù
 2. La barra degli strumenti
-3.
-4.
-5.
+3. La barra delle schede (tab)
+4. Il menù ad albero con gli oggetti del database
+5. Contenuto della scheda selezionata (proprietà di un oggetto, tabelle, editor SQL)
 
- la barra dei menu pgAdmin, il controllo della struttura pgAdmin e il controllo del browser a schede . Ogni parte è utilizzata per eseguire diversi tipi di attività di gestione. L’utente può facilmente creare un nuovo database utente o ruolo e postgres utilizzando il controllo ad albero pgAdmin. Come è possibile creare un nuovo utente e un database con le tabelle sotto quell’utente è mostrato in questo tutorial.
+Ogni parte è utilizzata per eseguire diversi tipi di attività di gestione. L'esempio di operazione più comune è la selezione di un oggetto del database nel menù ad albero del pannello 4 (ad esempio, una tabella) e la sua visualizzazione nel pannello 5 (contenuto della scheda). I pulsanti *Help* nell'angolo in basso a sinistra di ogni finestra di dialogo aprono la guida in linea per la finestra stessa. Si può accedere ad informazioni aggiuntive navigando attraverso il menu Help.  
 
-Quando pgAdmin si apre, l'interfaccia presenta una barra dei menu e una finestra divisa in due riquadri: il controllo dell'albero del Browser nel pannello di sinistra e un browser a schede nel pannello di destra.
+### Descrizione dei pannelli
 
+#### PANNELLO 1. La barra dei menù
+La barra dei menu di pgAdmin fornisce menu a tendina per l'accesso a opzioni, comandi e utilità. La barra dei menu mostra le seguenti selezioni: *File*, *Object*, *Tools* e *Help*. Le selezioni possono essere grigie, il che indica che sono disabilitate per l'oggetto attualmente selezionato nel menù ad albero (pannello 4). A molte di queste opzioni si può accedere anche selezionando un oggetto del database e cliccando sul pulsante destro.   
+Si possono utilizzare le opzioni della finestra di dialogo Preferenze (*File/Preferences**) per personalizzare l'interfaccia di PgAdmin. Il pannello a sinistra della finestra Preferenze mostra un menù ad albero: ogni nodo del controllo ad albero fornisce l'accesso alle opzioni che sono relative al nodo sotto il quale sono visualizzate. Le opzioni più utili da modificare sono *Browser/nodes* e *Browser/Tab settings*. In Nodi si possono selezionare gli oggetti del database che vengono visualizzati nel menù ad albero (pannello 4). La maggior parte degli oggetti non ha nessun interesse per l'utente di base e posso essere nascosti, rendendo l'esplorazione del database più immeditata. Gli oggetti (nodi) da tenere sono (gli altri, se volete potete nasconderli):  
+* Check Constraints  
+* Columns  
+* Constraints  
+* Extensions  
+* Foreign Keys  
+* Functions  
+* Indexes  
+* Login/Group Roles  
+* Primary Key  
+* Rules  
+* Schemas  
+* Sequences  
+* Tables  
+* Triggers  
+* Trigger Functions  
+* Unique Constraint  
+* Views  
 
+In Tab Settings, è consigliato settare com *Query tool tab title* = %DATABASE% e come *View/Edit data tab title* = %DATABASE%/%USERNAME%. Visto che tutti gli oggetti che vengono aperti sono aggiunti al pannello 3 come tab aggiuntive, questi parametri rendono più breve il titolo del tab e quindi più piccolo il singolo tab, facilitando la selezione del tab corretto quando sono aperti molti tab (ad esempio, molte tabelle o molte finestre di inserimento di codice SQL). Con l'opzione *Open in new browser tab* si può scegliere di aprire nuovi oggetti come finestre separate invece che come tab aggiuntivi. In ogni caso tutte queste modifiche sono opzionali e potete lasciare i parametri di default.
 
-* Descrizione dei pannelli
-Il primo pannello (1)
-La barra dei menu di pgAdmin fornisce menu a discesa per l'accesso a opzioni, comandi e utilità. La barra dei menu mostra le seguenti selezioni: File, Object, Tools* e Help. Le selezioni possono essere grigie, il che indica che sono disabilitate per l'oggetto attualmente selezionato nel controllo ad albero di pgAdmin.
-Usa le opzioni della finestra di dialogo Preferenze per personalizzare il comportamento del client. Per aprire la finestra di dialogo Preferenze, selezionare Preferenze dal menu File. Il pannello sinistro della finestra di dialogo Preferenze mostra un controllo ad albero; ogni nodo del controllo ad albero fornisce l'accesso alle opzioni che sono relative al nodo sotto il quale sono visualizzate.
+In *Query tool* si potranno invece modificare in seguito i parametri di default per la visualizzazione del codice SQL (utile le prossime lezioni) e per l'esportazione delle tabelle (ad esempio, se i campi vengono separati separati da virgole o punti e virgola)
 Usa i campi del pannello Nodi per selezionare i tipi di oggetti che verranno visualizzati nel controllo ad albero Browser:
 Il pannello visualizza un elenco di oggetti del database; fai scorrere l'interruttore situato accanto a ciascun oggetto per mostrare o nascondere l'oggetto del database. Quando si interrogano i cataloghi di sistema, è possibile ridurre il numero di tipi di oggetti visualizzati per aumentare la velocità.
 
-Il secondo pannello (2)
-La barra degli strumenti di pgAdmin fornisce i pulsanti di scelta rapida per le funzioni utilizzate più di frequente come View Data e lo strumento Query che sono utilizzati più frequentemente in pgAdmin. Questa barra degli strumenti è visibile nel pannello Browser. I pulsanti vengono abilitati/disabilitati in base al nodo del browser selezionato.
+#### PANNELLO 2. La barra degli strumenti
+La barra degli strumenti mostra i pulsanti di scelta rapida per le funzioni utilizzate più di frequente come aprire una tabella o aprire una nuova finestra per fare delle interrogazioni in SQL.  I pulsanti vengono abilitati/disabilitati in base al nodo del browser selezionato.
 Barra degli strumenti pgAdmin
     Usare il pulsante Query Tool per aprire il Query Tool nel contesto del database corrente.
     Usa il pulsante Visualizza dati per visualizzare/modificare i dati memorizzati in una tabella selezionata.
     Usate il pulsante Righe filtrate per accedere al popup Filtro dati per applicare un filtro a un insieme di dati da visualizzare/modificare.
     Usa il pulsante Cerca oggetti per accedere alla finestra di dialogo degli oggetti di ricerca. Ti aiuta a cercare qualsiasi oggetto del database.
 
-Il terzo pannello (3)
-Usa il campo sul pannello delle impostazioni della scheda per specificare le proprietà relative alla scheda.
-La scheda Properties visualizza le informazioni sull'oggetto selezionato.
-La scheda SQL visualizza lo script SQL che ha creato l'oggetto evidenziato e, quando applicabile, un'istruzione SQL (commentata) che elimina l'oggetto selezionato. Puoi copiare le istruzioni SQL nell'editor di tua scelta usando le scorciatoie taglia e incolla.
-I grafici sulla scheda Dashboard forniscono un'analisi attiva delle statistiche di utilizzo per il server o il database selezionato.
-La scheda Statistics visualizza le statistiche raccolte per ogni oggetto sul controllo ad albero;
-La scheda Dipendenze visualizza gli oggetti da cui dipende l'oggetto attualmente selezionato.
-La scheda Dipendenze visualizza una tabella di oggetti che dipendono dall'oggetto attualmente selezionato nel browser pgAdmin.
-Altre schede si aprono quando si accede alle funzionalità estese offerte dagli strumenti di pgAdmin (come lo strumento Query, il Debugger o l'editor SQL). Usa l'icona di chiusura (X) situata nell'angolo superiore destro di ogni scheda per chiudere la scheda quando hai finito di usare lo strumento. Come le schede permanenti, queste schede possono essere riposizionate nella finestra client di pgAdmin.
+#### PANNELLO 3. La barra delle schede
+Nella barra delle schede, si trovano tutti gli oggetti selezionati, in particolare tabelle e finestre per interrogazioni SQL. Si può aprire un numero indefinito di tab, anche se la navigazione può diventare complicata con molte schede aperte. Selezionando una scheda (tab) si visualizza in suo contenuto nel pannello sottostante (5).  
+Di default vengono visualizzate 5 schede:
+* La scheda Dashboard mostra le statistiche di utilizzo del server e dei database.
+* La scheda Properties visualizza le informazioni sull'oggetto selezionato.
+* La scheda SQL visualizza lo script SQL che ha creato l'oggetto evidenziato e, quando applicabile, un'istruzione SQL (commentata) che elimina l'oggetto selezionato. Si possono copiare le istruzioni SQL facendo copia/incolla, operazione spesso molto utile per chi deve creare nuovi oggetti del database.
+* La scheda Statistics visualizza le statistiche tecniche relative all'oggetto selezionato. In questa scheda non è possibile inserire dei comandi SQL, che vanno invece inseriti nell'apposito editor che viene aperto in un tab separato.
+* La scheda Dependencies visualizza gli oggetti da cui dipende l'oggetto attualmente selezionato.
+* La scheda Dependents visualizza una tabella di oggetti che dipendono dall'oggetto attualmente selezionato nel browser pgAdmin.  
 
-Il quarto pannello (4)
-The left pane of the main window displays a tree control (the pgAdmin tree control) that provides access to the objects that reside on a server.
-Il controllo ad albero fornisce un'elegante panoramica dei server gestiti e degli oggetti che risiedono su ogni server. Fai clic con il tasto destro del mouse su un nodo all'interno del controllo ad albero per accedere a menu sensibili al contesto che forniscono un rapido accesso alle attività di gestione per l'oggetto selezionato.
-Il pannello sinistro della finestra principale mostra un controllo ad albero (il controllo ad albero di pgAdmin) che fornisce l'accesso agli oggetti che risiedono su un server.
-Puoi espandere i nodi nel controllo ad albero per visualizzare gli oggetti del database che risiedono su un server selezionato.
+Usa l'icona di chiusura (X) situata nell'angolo superiore destro di ogni scheda per chiudere la scheda. Si consiglia di chiudere tutte le schede di default ad eccezione di SQL e Properties. Altre schede si aprono quando vengono aperti altri oggetti(come una tabella o l'editor SQL). Una volta che non sono più necessarie, anche queste schede possono essere rimosse con icona di chiusura (X).  
 
-Il quinto pannello (5)
-Il browser a schede fornisce un rapido accesso alle informazioni statistiche su ogni oggetto nel controllo ad albero e agli strumenti e alle utilità di pgAdmin (come lo strumento Query e il debugger). pgAdmin apre ulteriori schede di funzionalità ogni volta che si accede alle funzionalità estese offerte dagli strumenti di pgAdmin; è possibile aprire, chiudere e riorganizzare le schede di funzionalità secondo necessità.
+#### PANNELLO 4. Il menù ad albero  
+Il menù ad albero, simile al menù di un file system, fornisce una panoramica dei database e dei loro oggetti che risiedono su un server. Fai clic con il tasto destro del mouse su un nodo all'interno del controllo ad albero per accedere ale sue proprietà. Con un click ogni nodo viene espanso e mostra gli oggetti contenuti al suo interno (ad esempio, le colonne di una tabella). Nel tab SQL è visibile il codice SQL che genera quell'oggetto.  
 
-* Opzioni di visualizzazione
-Usa il dialogo Preferenze per personalizzare il contenuto e il comportamento del display di pgAdmin. Per aprire la finestra delle Preferenze, seleziona Preferenze dal menu File.
-I pulsanti di aiuto nell'angolo in basso a sinistra di ogni finestra di dialogo apriranno la guida in linea per la finestra stessa. Puoi accedere ad un aiuto aggiuntivo di Postgres navigando attraverso il menu Help, e selezionando il nome della risorsa che vuoi aprire.
+#### PANNELLO 5. Contenuto della scheda
+In questo pannello viene visualizzato il contenuto nel tab selezionato nel pannello 3. Il contenuto varia a seconda dell'oggetto selezionato (ad esempio, la lista delle proprietà di un oggetto, i dati di una tabella, un editor per scrivere una interrogazione SQL).  
 
-Per impostazione predefinita, ogni volta che si apre uno strumento, pgAdmin aprirà una nuova scheda del browser. Puoi controllare questo comportamento modificando il nodo Display della finestra di dialogo Preferenze per ogni strumento. Per aprire la finestra di dialogo delle preferenze, selezionare Preferenze dal menu File.
-    Utilizzare il campo Segnaposto del titolo della scheda Debugger per personalizzare il titolo della scheda Debugger.
-    Quando la dimensione dinamica della scheda è impostata su True, le schede assumeranno la dimensione completa come da titolo, ciò sarà applicabile anche alle schede già aperte
-    Quando l'opzione Apri in una nuova scheda del browser è selezionata per Query tool, Schema Diff o Debugger, si aprirà in una nuova scheda del browser quando richiamata.
-    Usa il campo Segnaposto del titolo della scheda dello strumento Query per personalizzare il titolo della scheda dello strumento Query.
-    Usa il campo segnaposto del titolo della scheda Visualizza/Modifica per personalizzare il titolo della scheda Visualizza/Modifica dati.
-
-* Aggiunta di un nuovo server  
+### Creare il collegamento a un server
 
 
 Il database è fisicamente installato su una macchina gestita dal Parco ed è accessibile da ovunque, sia dentro sia fuori la rete interna del Parco. Funziona come un server centralizzato che invia i dati, quando richiesto, alle applicazioni client. Un client è un software che accede ad un servizio remoto (il database) installato su un altro computer (il server), tramite una rete (Internet). Il client può essere installato su un qualsiasi computer/device e il database può gestire più connessioni contemporaneamente (il database può essere usato allo stesso momento da più utenti senza rischio di corrompere i dati). Esempi di applicazioni client sono pgAdmin (per la gestione del database, per interagire con le tabelle e per interrogare i dati), QGIS e volendo anche ArcGIS (per visualizzare i dati spaziali), R (per analisi statistiche), fogli di calcolo come Calc di Libreoffice o anche Excel (per visualizzare ma non modificare i dati delle tabelle). Un altro client interessante è DBeaver (per interrogare i dati e per creare degli schemi con il modello dati come quelli riportati in questo documento). In generale, praticamente tutti i software per la gestione, visualizzazione e analisi dei dati si possono interfacciare con il database.
@@ -105,7 +113,8 @@ Sul server PostgresSQL del Parco sono presenti anche altri database. Per poter a
   Porta: 5432  
   Utente: postgres  
   Password: -  
-* Descrizione dei principali elementi visualizzati all'interno di un database (server, database, schema, tabelle)  
+### Oggetti del database
+Descrizione dei principali elementi visualizzati all'interno di un database (server, database, schema, tabelle)  
   schema  
   tabelle  
   campi  
@@ -130,7 +139,7 @@ Sul server PostgresSQL del Parco sono presenti anche altri database. Per poter a
   I soggetti interessati (e autorizzati) possono ottenere un nome utente e una password contattando l'amministrazione del sistema.
   In futuro potranno essere create ulteriori tipologie di utenza per dati o per gruppi specifici.
 
-* Interagire con una tabella
+### Interagire con una tabella
   visualizzare tabella
   modificare un valore
   cancellare un valore
@@ -139,16 +148,14 @@ Sul server PostgresSQL del Parco sono presenti anche altri database. Per poter a
   visualizzare i dati spaziali
   visualizzare ed esportare una view
   creare una tabella con interfaccia grafica
-* Interfaccia SQL  
-  semplice query
-  aprire più tab
-  chiudere un tab
-  creare una tabella con sql
 
-* Collegarsi al database con QGIS
-* Collegarsi al database con R
-* Collegarsi al database con Libre Office
-* Esercizi riassuntivi
+### Collegarsi al DB con altri tool
+#### Collegarsi al database con QGIS
+#### Collegarsi al database con R
+#### Collegarsi al database con Libre Office
+
+
+### Esercizio riassuntivo
 
 
 ---
