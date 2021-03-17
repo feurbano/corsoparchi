@@ -120,13 +120,7 @@ Ogni colonna deve contenere una singola informazione.
 * Money, xml, URL, ...  
 
 ### Ruoli  
-PostgreSQL gestisce i permessi di accesso al database attraverso i ruoli.  
-Un ruolo è un'entità che può possedere oggetti e avere privilegi sul database. Può essere un utente individuale o un gruppo di utenti.  
-Si possono raggruppare gli utenti per facilitare la gestione dei privilegi: così i privilegi possono essere concessi a, o revocati da, un gruppo nel suo insieme. Questo viene fatto creando un ruolo che rappresenta il gruppo, e poi concedendo l'appartenenza al ruolo di gruppo ai singoli ruoli utente.  
-I ruoli del database valgono per tutti i database in un cluster, ma i permessi sono poi associati ai singoli oggetti di ogni database.  
-Esempi di permessi sono: lettura, modifica, inserimento, cancellazione.  
-Ad ogni utente assieme al ruolo è assegnata una password per garantire la sicurezza dei dati. Lo stesso accesso al server può essere limitato ad alcuni indirizzi IP.  
-In PostgreSQL i permessi possono arrivare fino al livello di singolo record.  
+PostgreSQL gestisce i permessi di accesso al database attraverso i ruoli. Un ruolo è un'entità che può possedere oggetti e avere privilegi sul database. Può essere un utente individuale o un gruppo di utenti. Si possono raggruppare gli utenti per facilitare la gestione dei privilegi: così i privilegi possono essere concessi a, o revocati da, un gruppo nel suo insieme. Questo viene fatto creando un ruolo che rappresenta il gruppo, e poi concedendo l'appartenenza al ruolo di gruppo ai singoli ruoli utente. I ruoli del database valgono per tutti i database in un cluster, ma i permessi sono poi associati ai singoli oggetti di ogni database. Esempi di permessi sono: lettura, modifica, inserimento, cancellazione. Ad ogni utente assieme al ruolo è assegnata una password per garantire la sicurezza dei dati. Lo stesso accesso al server può essere limitato ad alcuni indirizzi IP. In PostgreSQL i permessi possono arrivare fino al livello di singolo record.  
 
 ### Viste  
 Le VIEW (o viste) sono una importante funzionalità che consente di vedere in modo semplice i dati nella forma desiderata, combinando varie tabelle e calcolando valori derivati.  

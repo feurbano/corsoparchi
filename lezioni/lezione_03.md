@@ -20,7 +20,8 @@ Si può scaricare PgAdmin4 da qui:
 * <ins>[**Download PgAdmin for MAC**](https://www.pgadmin.org/download/pgadmin-4-macos/)</ins>  
 Versione consigliata: PgAdmin4 v5.0 (anche versioni precedenti vanno bene).
 
-Quando viene aperto la prima volta, PgAdmin chiede di creare una password. Questa non è la password di accesso ai database, ma solo la password di accesso a PgAdmin (visto che poi PgAdmin salva al suo interno tutte le password di accesso ai database). Potete mettere qualsiasi password facile da ricordare (ad esempio 'postgres').
+Quando viene aperto la prima volta, PgAdmin chiede di creare una password. Questa non è la password di accesso ai database, ma solo la password di accesso a PgAdmin (visto che poi PgAdmin salva al suo interno tutte le password di accesso ai database). Potete mettere qualsiasi password facile da ricordare (ad esempio 'postgres').  
+C'è una alternativa a PgAdmin che non richiede l'installazione di nessun client in locale perché usa un tool installato sul server: PhpPgAdmin. L'interfaccia è simile a PgAdmin, ma ha meno funzionalità e può avere problemi in caso di connessione non stabile.
 
 ### Struttura di PgAdmin
 
@@ -114,9 +115,15 @@ Per creare una connessione al database di test del corso con PgAdmin  bisogna se
 
 Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'icona *Server*.
 
+È possibile utilizza PhpPgAdmin, la versione online di PgAdmin installata sullo stesso server del database, collegandosi all'indirizzo: <ins>[**https://db.parco.gran-paradiso.g3wsuite.it/**]</ins>(https://db.parco.gran-paradiso.g3wsuite.it/) e inserendo nome utente e password.
+
 ### Oggetti del database
 Nel menù ad albero del pannello di sinistra è ora disponibile la nuova connessione. Espandendo l'icona *Server* si vedono tutti server a cui si è creata una connessione. Aprendo la connessione che è stata creata, vengono visualizzati tutti i database creati in quel server. Anche se il nome degli oggetti negli altri database è visibile, l'utente *corso_user* non potrà visualizzare i dati in essi contenuti ad eccezione del database *corsoparchi*.  
-Cliccando sul database *corsoparchi*, si visualizza il primo livello di classi di oggetti contenuti nel database. Gli oggetti visibili dipendono dagli elementi selezioni nelle opzioni *Nodi* (vedi figura sotto). L'elemento più rilevante nel primo livello della struttura ad albero sotto il database è lo **SCHEMA**.   
+Cliccando sul database *corsoparchi*, si visualizza il primo livello di classi di oggetti contenuti nel database. Gli oggetti visibili dipendono dagli elementi selezioni nelle opzioni *Nodi* (vedi figura sotto). L'elemento più rilevante nel primo livello della struttura ad albero sotto il database è lo **SCHEMA**.  
+
+    INSERIRE IMMAGINE DELLA STRUTTURA AD ALBERO  
+    PROPRIO QUI  
+
 #### Schemi
 L'unico elemento rilevante nel primo livello della struttura ad albero sotto il database è **SCHEMA**. Gli schemi sono dei contenitori logici usati per organizzare gli elementi del database secondo specific criteri, ma non hanno nessun effetto sugli oggetti stessi. Sono sostanzialmente analoghi alle cartelle a un file system. Nel database utilizzato per il corso ci sono 4 schemi:
 * basedata  
@@ -138,40 +145,101 @@ Associata ad ogni tabelle ci sono una serie di vincoli:
 * Primary keys (un campo o combinazione di campi che identifica univocamente un record e che non può essere nullo)  
 * Foreign keys (dipendenza di un campo o di una combinazione di campi dai valori contenuti in una tabella esterna "padre")  
 #### Sequenze
-All'interno di uno schema, oltre alle tabelle e alle viste sono contenute anche le **SEQUENZE**.
+All'interno di uno schema, oltre alle tabelle e alle viste sono contenute anche le **SEQUENZE**. Una sequenza è un oggetto che genera valori numerici interi incrementali. Ogni volta che viene richiesto un numero, la sequenza aumenta del valore specificato (generalmente 1) in modo da non generare mai due volte lo stesso numero. Di solito è associata a una tabella e crea i valori utilizzati come chiave primari (tramite il tipo di dato serial), ma può essere utilizzata anche da più tabelle o query degli utenti. Questi oggetti non dovrebbero essere modificati dagli utenti.
 #### Utenti e gruppi di utenti  
-PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.
+PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.  
+Gli utenti vengono creati a livello di database server e possono quindi essere utilizzati per tutti i database ivi contenuti. I permessi invece vengono dati a livello di singolo oggetto dentro ogni database. Per questo nel menù ad albero del pannello di sinistra, i *Login/Group roles* sono visibili allo stesso livello dei database, in fondo alla lista di elementi.
 
-  Al momento ci sono 3 livelli di utenza:
+In generale nei database dei parchi ci sono 3 livelli di utenza:
+* Amministratore del database (possibilità di modificare, creare o eliminare ogni oggetto del database, ed assegnare i permessi alle tabelle)
+* Curatore di ogni dataset (possibilità di leggere e modificare le tabelle di uno specifico dataset ma nessun accesso alle tabelle degli altri dataset)
+* Lettore (possibilità di leggere tutte le tabelle del database)
 
-      Amministratore del database
-      (possibilità di modificare, creare o eliminare ogni oggetto del database, ed assegnare i permessi alle tabelle)
-      Curatore di ogni dataset
-      (possibilità di leggere e modificare le tabelle di uno specifico dataset ma nessun accesso alle tabelle degli altri dataset)
-      Lettore
-      (possibilità di leggere tutte le tabelle del database)
-
-  Per ogni livello esiste un "gruppo" a cui vengono associati i singoli utenti. Ogni operatore del Parco che usa il database ha la sua utenza specifica con associata password. Questa utenza è associata a uno o più dei tre gruppi da cui eredita i relativi permessi. In questo modo i permessi di accesso alle tabelle vengono associati ai 3 gruppi e non devono essere riassegnati ogni volta che viene creato un nuovo utente (ad esempio, un nuovo collaboratore del parco).
-  Gli operatori del parco possono ottenere un nome utente e una password contattando l'amministrazione del sistema.
-  In futuro potranno essere create ulteriori tipologie di utenza per dati o per gruppi specifici.
+Per ogni livello esiste un "gruppo" a cui vengono associati i permessi. Poi ogni utente specifico viene assegnato a uno di questi gruppi e ne eredita i permessi. In questo modo i permessi di accesso alle tabelle vengono associati ai 3 gruppi e non devono essere riassegnati ogni volta che viene creato un nuovo utente (ad esempio, un nuovo collaboratore del parco). Ogni operatore del Parco che usa il database ha la sua utenza specifica con associata password, che può essere cambiata qui. Gli operatori di ogni Parco possono ottenere un nome utente e una password contattando l'amministrazione del proprio database.
 
 ### Interagire con una tabella
-  visualizzare tabella
-  modificare un valore
-  cancellare un valore
-  selezionare i dati
-  esportare i dati
-  visualizzare i dati spaziali
-  visualizzare ed esportare una view
-  creare una tabella con interfaccia grafica
+In questa sezione, viene mostrato come visualizzare una tabella nell'interfaccia grafica, ordinare e selezionare i dati, modificare i valori dei campi, inserire un nuovo record, cancellare un record. In seguito viene spiegato come esportare i dati. Alla fine viene mostrato come visualizzare i dati geografici, aprire una view e creare una tabella via interfaccia grafica.  
+
+#### Visualizzare i dati di una tabella
+
+#### Ordinare e selezionare i dati
+
+#### Modificare i valore di un campo
+
+#### Cancellare un record
+
+#### Esportare i dati di una tabella
+
+#### Visualizzare i dati spaziali
+
+#### Visualizzare una view
+
+#### Creare una tabella via interfaccia grafica
 
 ### Collegarsi al DB con altri tool
- Esempi di applicazioni client sono pgAdmin (per la gestione del database, per interagire con le tabelle e per interrogare i dati), QGIS e volendo anche ArcGIS (per visualizzare i dati spaziali), R (per analisi statistiche), fogli di calcolo come Calc di Libreoffice o anche Excel (per visualizzare ma non modificare i dati delle tabelle). Un altro client interessante è DBeaver (per interrogare i dati e per creare degli schemi con il modello dati come quelli riportati in questo documento).
+Ci sono client che possono essere usati per applicazioni specifiche, ad esempio creazione di mappe, analisi statistiche, produzioni di report. In questa sezione viene spiegato come collegarsi a 3 programmi: QGIS, R e LibreOffice Calc (è possibile in modo simile collegarsi ad esempio ad ArcGIS, MS Access ed Excel: per spiegazioni dettagliate cercare tutorial specifici su internet).
 
 #### Collegarsi al database con QGIS
+[QGIS](www.qgis.org) è un GIS desktop perfettamente integrato con PostgreSQL e PostGIS e offre una vasta gamma di strumenti per gestire i dati spaziali archiviati nel database. La connessione al database è semplice e il processo è ben documentato. È possibile accedere ai dati in tre passaggi:  
+* creare una connessione al database  
+* aprire la connessione  
+* carica i dati  
+La prima volta che ci si collega al database, è necessario creare la connessione utilizzando l'icona **Open data source manager** (vedere la schermata seguente) e inserire i parametri di connessione.  
+
+[![](images/client_qgis_connection.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_qgis_connection.png?raw=true)
+
+Una volta creata la connessione, è possibile utilizzare l'interfaccia ** DB Manager ** (vedi immagine) in cui è possibile esplorare, importare, esportare e caricare in QGIS i dati spaziali (sia vettoriali che raster).  
+
+[![](images/client_qgis_export.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_qgis_export.png?raw=true)
+
+Una caratteristica interessante di QGIS è la possibilità di visualizzare i dati PNGP sovrapposti a layer come Google map o Bing map (ad esempio, con il plugin QuickMapServices).  
+
 #### Collegarsi al database con R
+Per importare dati dal database in [R](https://www.r-project.org/) è sufficiente usare il codice riportato qui sotto (tramite la libreria RPostgreSQL):  
+
+```
+library(RPostgreSQL)
+drv <- dbDriver("PostgreSQL")
+con <- dbConnect(drv, dbname="corsoparchi", host="db.parco.gran-paradiso.g3wsuite.it",
+port="2345", user="corso_user", password="YOURPASSWORD")
+rs <- dbSendQuery(con, "select * from biodiversita.biodiversita_animali")
+df <- fetch(rs,-1)
+df[1:4,]
+str(df)
+dbClearResult(rs)
+```  
+
+Nel comando *dbSendQuery* è possibile inserire qualsiasi codice SQL che verrà eseguito dal database e inserito poi in un dataframe come specificato dall'utente (nel codice sopra, *df*). Nell'esempio, la lista delle guardie (*rangers*) viene caricata nel dataframe *df*.
+
+È anche possibile importare dati nel database da R. Su Internet è possibile trovare tutta la documentazione e la lista dei pacchetti più interessanti per lavorare con un database PostgreSQL da R.  
 #### Collegarsi al database con Libre Office
 
+BASE e CALC sono due software della suite open source [LibreOffice](https://www.libreoffice.org/). Possono essere collegati al database e offrono la possibilità di creare query con strumenti grafici, creare maschere, modificare i dati in un ambiente intuitivo (BASE, equivalente di MS ACCESS) o di visualizzare le informazioni come foglio di calcolo (CALC, ma in questo caso, se si modificano i dati, le modifiche non vengono archiviate nel database).
+Prima di tutto, bisogna creare una connessione al database in BASE (vedi le due immagini seguenti per i parametri da inserire nei primi due passaggi, quindi inserisci le tue credenziali e salva e registra la connessione).  
+
+[![](images/client_base1.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_base1.png?raw=true)
+
+[![](images/client_base2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_base2.png?raw=true)
+
+Una volta creata la connessione, sarai in grado di visualizzare tutte le tabelle di pngp_db, creare query e maschere di inserimento dati.  
+
+[![](images/client_base3.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_base3.png?raw=true)
+
+Se si desidera visualizzare e manipolare i dati in CALC (equivalente di MS EXCEL), una volta creata la connessione in BASE, è possibile caricare le tabelle pngp_db tramite **Data Source Manager** (per visualizzare questa funzione, andare su View/Data Source, vedi immagine sotto).  
+
+[![](images/client_calc1.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_calc1.png?raw=true)
+
+Ora si può semplicemente trascinare e rilasciare la tabella nel foglio di calcolo (vedi sotto). Nota che le modifiche apportate ai dati nel foglio di calcolo non si riflettono nel database.  
+
+[![](images/client_calc2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_calc2.png?raw=true)
+
+### <a name="Altritool"></a> Altri tool  
+
+Ci sono molte altre applicazioni client che possono essere facilmente collegate al database. Alcuni esempi sono SAS, STATA, MS ACCESS, MS EXCEL, ArcGIS. La maggior parte delle funzionalità (e spesso anche di più) offerte da questi software commerciali sono disponibili anche nei software open source descritti nelle sezioni precedenti. Chi è abituato a interagire coi dati con uno di questi software (o qualsiasi altro software non descritto qui), può consultare la documentazione specifica del software su come connetterti a un database PostgreSQL/PostGIS.  
+
+Ad esempio è possibile usare MS ACCESS per creare maschere di inserimento dati, anche se è un approccio un pochino, come dire, *vintage* (maschere basate su qualche semplice applicazione php web-based sarebbero di sicuro più efficienti e flessibili anche se meno semplici da realizzare).  
+
+Un'ottima alternativa gratuita a pgAdmin4 (che in effetti non è intuitivo come il suo predecessore pgAdmin3) è [DBeaver](https://dbeaver.io/). Esistono moltissimi altri progetti open source di interfacce generiche ai database (incluso PostgreSQL) e tutte hanno gli strumenti necessari a rendere utilizzare il database da parte degli operatori e collaboratori del Parco.
 
 ### Esercizio riassuntivo
 
