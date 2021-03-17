@@ -1,5 +1,7 @@
 <p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
 
+# WORK IN PROGRESS
+
 #### Lezione 3
 ## USARE E GESTIRE UN DATABASE
 ---
@@ -79,6 +81,21 @@ Per impostazione predefinita, ogni volta che si apre uno strumento, pgAdmin apri
     Usa il campo segnaposto del titolo della scheda Visualizza/Modifica per personalizzare il titolo della scheda Visualizza/Modifica dati.
 
 * Aggiunta di un nuovo server  
+
+
+Il database è fisicamente installato su una macchina gestita dal Parco ed è accessibile da ovunque, sia dentro sia fuori la rete interna del Parco. Funziona come un server centralizzato che invia i dati, quando richiesto, alle applicazioni client. Un client è un software che accede ad un servizio remoto (il database) installato su un altro computer (il server), tramite una rete (Internet). Il client può essere installato su un qualsiasi computer/device e il database può gestire più connessioni contemporaneamente (il database può essere usato allo stesso momento da più utenti senza rischio di corrompere i dati). Esempi di applicazioni client sono pgAdmin (per la gestione del database, per interagire con le tabelle e per interrogare i dati), QGIS e volendo anche ArcGIS (per visualizzare i dati spaziali), R (per analisi statistiche), fogli di calcolo come Calc di Libreoffice o anche Excel (per visualizzare ma non modificare i dati delle tabelle). Un altro client interessante è DBeaver (per interrogare i dati e per creare degli schemi con il modello dati come quelli riportati in questo documento). In generale, praticamente tutti i software per la gestione, visualizzazione e analisi dei dati si possono interfacciare con il database.
+
+Per collegarsi al database, qualunque sia il client utilizzato sono necessari 5 parametri:
+
+    Indirizzo IP del server: richiedi questa informazione al coordinatore scientifico [pnsnas]
+    Nome utente: richiedi questa informazione al coordinatore scientifico
+    Password utente: richiedi questa informazione al coordinatore scientifico
+    Porta: 5433
+    Nome del database: pstelvio_db
+
+Per accedere al database è necessario richiedere un nome utente e password al responsabile del database.
+Nelle sezioni seguenti verrà illustrato in modo sintetico come collegarsi al database con i client più comunemente usati.
+Sul server PostgresSQL del Parco sono presenti anche altri database. Per poter accedere è necessario fare richiesta al responsabile scientifico del Parco.
   Nome: database test  
   Host: localhost  
   Porta: 5432  
@@ -92,6 +109,23 @@ Per impostazione predefinita, ogni volta che si apre uno strumento, pgAdmin apri
   viste
   sequenze
   utenti e gruppi di utenti  
+
+
+  PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.
+
+  Al momento ci sono 3 livelli di utenza:
+
+      Amministratore del database
+      (possibilità di modificare, creare o eliminare ogni oggetto del database, ed assegnare i permessi alle tabelle)
+      Editor del database
+      (possibilità di leggere e modificare i dati di tutte le tabelle ma non di creare/cancella/modificare oggetti del database)
+      Lettore
+      (possibilità di leggere i dati di tutte le tabelle del database)
+
+  Per ogni livello esiste un "gruppo" a cui vengono associati i singoli utenti. Ogni soggetto che usa il database ha la sua utenza specifica con associata password. Questa utenza è associata a uno o più dei tre gruppi da cui eredita i relativi permessi. In questo modo i permessi di accesso alle tabelle vengono associati ai 3 gruppi e non devono essere riassegnati ogni volta che viene creato un nuovo utente (ad esempio, un nuovo collaboratore del parco).
+  I soggetti interessati (e autorizzati) possono ottenere un nome utente e una password contattando l'amministrazione del sistema.
+  In futuro potranno essere create ulteriori tipologie di utenza per dati o per gruppi specifici.
+
 * Interagire con una tabella
   visualizzare tabella
   modificare un valore
@@ -100,12 +134,17 @@ Per impostazione predefinita, ogni volta che si apre uno strumento, pgAdmin apri
   esportare i dati
   visualizzare i dati spaziali
   visualizzare ed esportare una view
+  creare una tabella con interfaccia grafica
 * Interfaccia SQL  
   semplice query
   aprire più tab
   chiudere un tab
+  creare una tabella con sql
 
-
+* Collegarsi al database con QGIS
+* Collegarsi al database con R
+* Collegarsi al database con Libre Office
+* Esercizi riassuntivi
 
 
 ---
