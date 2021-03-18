@@ -104,9 +104,13 @@ Per collegarsi al database, qualunque sia il client utilizzato sono in generale 
 Il nome utente e la password possono essere creati dal gestore del database. Nelle sezioni seguenti verrà illustrato in modo sintetico come collegarsi a un database con i client più comunemente usati. Per illustrare gli esempi discussi in queste lezioni e per poter fare pratica, il Parco del Gran Paradiso ha gentilmente offerto la sua infrastruttura per ospitare un database "di lavoro" dove sono stati caricati alcuni dati del progetto Biodiversità relativi ai 4 Parchi. Sullo stesso server sono presenti altri database del Parco che non sono però accessibile dall'utente create appositamente per questo corso. I parametri di connessione sono i seguenti:
 * Indirizzo IP: db.parco.gran-paradiso.g3wsuite.it  
 * Porta: 2345  
-* Nome database: corsoparchi  
+* Nome database: corso_parchi  
 * Utente: corso_user
 * Password: LA PASSWORD SARÀ COMUNICATA DURANTE LE LEZIONI
+
+Un ulteriore parametro che è necessario inserire in PgAdmin, ma non è richiesto da altri client è Mantaince DB, che deve essere settato come 'gisdata' invece che come 'postgres':
+
+* Mantaince DB: gisdata
 
 Per creare una connessione al database di test del corso con PgAdmin  bisogna selezionare dal menù *Object/Create/Server* (oppure cliccare con il pulsante destro sull'icona Server nel pannello con il menu ad albero e selezionare *Create/Server*). Si apre una finestra in cui vanno inseriti i parametri di connessione elencati sopra. Nella scheda *General* va solo inserito un nome (qualsiasi) da dare alla connessione, ad esempio 'database corso'. Nella scheda *Connection* vanno inseriti indirizzo IP del server, porta, utente e password (vedi figura sotto). In questo caso non è necessario inserire il nome del database (saranno visibili tutti i database installati su quel server) Per non dover inserire la password a ogni nuova connessione, attivare l'opzione *Save password*.
 [<img src="materiale/l03_connessione_server.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_connessione_server.png?raw=true)  
@@ -116,8 +120,8 @@ Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'ico
 È possibile utilizza PhpPgAdmin, la versione online di PgAdmin installata sullo stesso server del database, collegandosi all'indirizzo: <ins>[**https://db.parco.gran-paradiso.g3wsuite.it/**](https://db.parco.gran-paradiso.g3wsuite.it/)</ins> e inserendo nome utente e password.
 
 ### Oggetti del database
-Nel menù ad albero del pannello di sinistra è ora disponibile la nuova connessione. Espandendo l'icona *Server* si vedono tutti server a cui si è creata una connessione. Aprendo la connessione che è stata creata, vengono visualizzati tutti i database creati in quel server. Anche se il nome degli oggetti negli altri database è visibile, l'utente *corso_user* non potrà visualizzare i dati in essi contenuti ad eccezione del database *corsoparchi*.  
-Cliccando sul database *corsoparchi*, si visualizza il primo livello di classi di oggetti contenuti nel database. Gli oggetti visibili dipendono dagli elementi selezioni nelle opzioni *Nodi* (vedi figura sotto). L'elemento più rilevante nel primo livello della struttura ad albero sotto il database è lo **SCHEMA**.  
+Nel menù ad albero del pannello di sinistra è ora disponibile la nuova connessione. Espandendo l'icona *Server* si vedono tutti server a cui si è creata una connessione. Aprendo la connessione che è stata creata, vengono visualizzati tutti i database creati in quel server. Anche se il nome degli oggetti negli altri database è visibile, l'utente *corso_user* non potrà visualizzare i dati in essi contenuti ad eccezione del database *corso_parchi*.  
+Cliccando sul database *corso_parchi*, si visualizza il primo livello di classi di oggetti contenuti nel database. Gli oggetti visibili dipendono dagli elementi selezioni nelle opzioni *Nodi* (vedi figura sotto). L'elemento più rilevante nel primo livello della struttura ad albero sotto il database è lo **SCHEMA**.  
 
     INSERIRE IMMAGINE DELLA STRUTTURA AD ALBERO  
     PROPRIO QUI  
@@ -227,7 +231,7 @@ Per importare dati dal database in [R](https://www.r-project.org/) è sufficient
 ```
 library(RPostgreSQL)
 drv <- dbDriver("PostgreSQL")
-con <- dbConnect(drv, dbname="corsoparchi",
+con <- dbConnect(drv, dbname="corso_parchi",
 host="db.parco.gran-paradiso.g3wsuite.it",
 port="2345", user="corso_user", password="YOURPASSWORD")
 rs <- dbSendQuery(con, "select * from biodiversita.biodiversita_animali")
@@ -262,7 +266,7 @@ Ora si può semplicemente trascinare e rilasciare la tabella nel foglio di calco
 [![](materiale/l03_client_calc2.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_calc2.png?raw=true)
 
 ### Esercizio riassuntivo
-*Collegarsi al database **corsoparchi**, accedere alla tabella basedata.scientific_name_species, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.*
+*Collegarsi al database **corso_parchi**, accedere alla tabella basedata.scientific_name_species, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.*
 
 ---
 [**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]
