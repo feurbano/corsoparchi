@@ -172,7 +172,9 @@ Se si vuole esportare alcune righe, si possono selezionare e poi copiare/incolla
 
 [![](materiale/l03_client_pgadmin4_table7.png)](https://github.com/feurbano/pngp_db/blob/master/materiale/l03_client_pgadmin4_table7.png?raw=true)
 
-Per esportare tutti i dati, si possono selezionare tutti i dati (cliccando nell'angolo in alto a sinistra della tabella, come nei fogli di calcolo) e poi usando copia/incolla, oppure si può usare l'icona con la freccia verso il basso: [![](materiale/l03_client_pgadmin4_table4.png)](https://github.com/feurbano/pngp_db/blob/master/materiale/l03_client_pgadmin4_table4.png?raw=true). I dati verranno salvati in un file .csv.  
+Per esportare tutti i dati, si possono selezionare tutti i dati (cliccando nell'angolo in alto a sinistra della tabella, come nei fogli di calcolo) e poi usando copia/incolla, oppure si può usare l'icona con la freccia verso il basso (vedi figura sotto). I dati verranno salvati in un file .csv.  
+
+[![](materiale/l03_client_pgadmin4_table4.png)](https://github.com/feurbano/pngp_db/blob/master/materiale/l03_client_pgadmin4_table4.png?raw=true)
 
 #### Visualizzare i dati spaziali
 Come vedremo in una lezione successiva, nel database possono essere archiviati gli attributi spaziali di un oggetto (ad esempio posizione puntuale, linea o poligono) come fossero normali attributi, quindi contenuti in un campo della tabella.  
