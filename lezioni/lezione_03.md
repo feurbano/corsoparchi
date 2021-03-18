@@ -201,7 +201,8 @@ Il tool migliore per visualizzare i dati spaziali è QGIS, ma anche PgAdmin offr
 #### Visualizzare una view
 Per visualizzare una view, il procedimento è identico a quello usato per una tabella. Selezionare la view desiderata e procedere come illustrato sopra per la visualizzazione e lo scaricamento dei dati (non è invece possibile modificare i dati).
 
-#### Creare una tabella via interfaccia grafica
+#### Creare oggetti via interfaccia grafica
+ possibile creare nuovi oggetti (ad esempio, schemi, tabelle e campi aggiuntivi di una tabella) tramite una interfaccia grafica dove tutte le informazioni necessarie vengono inserite con un percorso guidato da PgAdmin. Per farlo è necessario selezionare l'oggetto richiesto (ad esempio, tabella), nel menù ad albero del pannello di sinistra, cliccare con il pulsante dentro e selezionare *Nuovo*.  
 
 ### Collegarsi al DB con altri tool
 Ci sono client che possono essere usati per applicazioni specifiche, ad esempio creazione di mappe, analisi statistiche, produzioni di report. In questa sezione viene spiegato come collegarsi a 3 programmi: QGIS, R e LibreOffice Calc (è possibile in modo simile collegarsi ad esempio ad ArcGIS, MS Access ed Excel: per spiegazioni dettagliate cercare tutorial specifici su internet).
@@ -261,14 +262,6 @@ Se si desidera visualizzare e manipolare i dati in CALC (equivalente di MS EXCEL
 Ora si può semplicemente trascinare e rilasciare la tabella nel foglio di calcolo (vedi sotto). Nota che le modifiche apportate ai dati nel foglio di calcolo non si riflettono nel database.  
 
 [![](materiale/l03_client_calc2.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_calc2.png?raw=true)
-
-### <a name="Altritool"></a> Altri tool  
-
-Ci sono molte altre applicazioni client che possono essere facilmente collegate al database. Alcuni esempi sono SAS, STATA, MS ACCESS, MS EXCEL, ArcGIS. La maggior parte delle funzionalità (e spesso anche di più) offerte da questi software commerciali sono disponibili anche nei software open source descritti nelle sezioni precedenti. Chi è abituato a interagire coi dati con uno di questi software (o qualsiasi altro software non descritto qui), può consultare la documentazione specifica del software su come connetterti a un database PostgreSQL/PostGIS.  
-
-Ad esempio è possibile usare MS ACCESS per creare maschere di inserimento dati, anche se è un approccio un pochino, come dire, *vintage* (maschere basate su qualche semplice applicazione php web-based sarebbero di sicuro più efficienti e flessibili anche se meno semplici da realizzare).  
-
-Un'ottima alternativa gratuita a pgAdmin4 (che in effetti non è intuitivo come il suo predecessore pgAdmin3) è [DBeaver](https://dbeaver.io/). Esistono moltissimi altri progetti open source di interfacce generiche ai database (incluso PostgreSQL) e tutte hanno gli strumenti necessari a rendere utilizzare il database da parte degli operatori e collaboratori del Parco.
 
 ### Esercizio riassuntivo
 *Collegarsi al database **corsoparchi**, accedere alla tabella basedata.scientific_name_species, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.*
