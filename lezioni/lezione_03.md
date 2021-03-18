@@ -18,6 +18,7 @@ Si può scaricare PgAdmin4 da qui:
 
 * <ins>[**Download PgAdmin for WINDOWS**](https://www.pgadmin.org/download/pgadmin-4-windows/)</ins>  
 * <ins>[**Download PgAdmin for MAC**](https://www.pgadmin.org/download/pgadmin-4-macos/)</ins>  
+
 Versione consigliata: PgAdmin4 v5.0 (anche versioni precedenti vanno bene).
 
 Quando viene aperto la prima volta, PgAdmin chiede di creare una password. Questa non è la password di accesso ai database, ma solo la password di accesso a PgAdmin (visto che poi PgAdmin salva al suo interno tutte le password di accesso ai database). Potete mettere qualsiasi password facile da ricordare (ad esempio 'postgres').  
@@ -114,7 +115,7 @@ Per creare una connessione al database di test del corso con PgAdmin  bisogna se
 
 Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'icona *Server*.
 
-È possibile utilizza PhpPgAdmin, la versione online di PgAdmin installata sullo stesso server del database, collegandosi all'indirizzo: <ins>[**https://db.parco.gran-paradiso.g3wsuite.it/**]</ins>(https://db.parco.gran-paradiso.g3wsuite.it/) e inserendo nome utente e password.
+È possibile utilizza PhpPgAdmin, la versione online di PgAdmin installata sullo stesso server del database, collegandosi all'indirizzo: <ins>[**https://db.parco.gran-paradiso.g3wsuite.it/**](https://db.parco.gran-paradiso.g3wsuite.it/)</ins> e inserendo nome utente e password.
 
 ### Oggetti del database
 Nel menù ad albero del pannello di sinistra è ora disponibile la nuova connessione. Espandendo l'icona *Server* si vedono tutti server a cui si è creata una connessione. Aprendo la connessione che è stata creata, vengono visualizzati tutti i database creati in quel server. Anche se il nome degli oggetti negli altri database è visibile, l'utente *corso_user* non potrà visualizzare i dati in essi contenuti ad eccezione del database *corsoparchi*.  
@@ -124,18 +125,18 @@ Cliccando sul database *corsoparchi*, si visualizza il primo livello di classi d
     PROPRIO QUI  
 
 #### Schemi
-L'unico elemento rilevante nel primo livello della struttura ad albero sotto il database è **SCHEMA**. Gli schemi sono dei contenitori logici usati per organizzare gli elementi del database secondo specific criteri, ma non hanno nessun effetto sugli oggetti stessi. Sono sostanzialmente analoghi alle cartelle a un file system. Nel database utilizzato per il corso ci sono 4 schemi:
+L'unico elemento rilevante nel primo livello della struttura ad albero sotto il database è SCHEMA. Gli schemi sono dei contenitori logici usati per organizzare gli elementi del database secondo specific criteri, ma non hanno nessun effetto sugli oggetti stessi. Sono sostanzialmente analoghi alle cartelle a un file system. Nel database utilizzato per il corso ci sono 4 schemi:
 * basedata  
 * biodiversita  
 * public  
 * test  
 
 Nel primo schema *basedata* ci sono tutte le tabelle e le view con i dati di interesse generale per tutti i data set (ad esempio informazioni sulla tassonomia, confini comunali, confini regionali, confini dei parchi). In *biodiversita* ci sono tutte le tabelle e le view relative al Progetto Biodiversità dei 4 parchi utilizzati durante il corso. Lo schema *public* è invece usato dal database per mettere degli oggetti "di sistema", e non dovrebbe essere usato dagli utenti. Lo schema *test* è invece utilizzato per creare nuovi oggetti per esercitarsi durante il corso.  
-Espandendo uno schema, verranno visualizzati gli oggetti che contiene, sempre in base alle opzioni selezionate in *Nodi*. I due elementi più importanti sono le **VISTE** e le **TABELLE**.
+Espandendo uno schema, verranno visualizzati gli oggetti che contiene, sempre in base alle opzioni selezionate in *Nodi*. I due elementi più importanti sono le VISTE e le TABELLE.
 #### Viste  
 Le VIEW (o viste) sono delle tabelle "virtuali" che consentono di vedere in modo semplice i dati nella forma desiderata. I dati sono fisicamente contenuti nelle tabelle, ma per l'utente finale le viste equivalgono a delle tabelle, con la differenza (nella loro versione più semplice) che non possono essere modificate. La vista viene costruite con una query SQL preparata a priori dal gestore del database in base alle richieste degli utenti.  
 #### Tabelle  
-Le tabelle sono le strutture in cui vengono fisicamente archiviati i dati organizzati per colonne (o campi). Oltre che dai campi, una tabella è caratterizzata dai vincoli interni ed esterni. I **CAMPI** e i **VINCOLI** sono visibili quando una specifica tabella viene selezionata nel menù ad albero del pannello di sinistra.  
+Le tabelle sono le strutture in cui vengono fisicamente archiviati i dati organizzati per colonne (o campi). Oltre che dai campi, una tabella è caratterizzata dai vincoli interni ed esterni. I CAMPI e i VINCOLI sono visibili quando una specifica tabella viene selezionata nel menù ad albero del pannello di sinistra.  
 #### Campi  
 I campi sono le colonne di cui è composta una tabella. La lista dei campi è visibile nel menù ad albero, mentre nelle proprietà degli oggetti si può vedere il tipo di dato associato ad ogni campo.  
 #### Vincoli  
@@ -146,7 +147,7 @@ Associata ad ogni tabelle ci sono una serie di vincoli:
 * Foreign keys (dipendenza di un campo o di una combinazione di campi dai valori contenuti in una tabella esterna "padre")  
 
 #### Sequenze
-All'interno di uno schema, oltre alle tabelle e alle viste sono contenute anche le **SEQUENZE**. Una sequenza è un oggetto che genera valori numerici interi incrementali. Ogni volta che viene richiesto un numero, la sequenza aumenta del valore specificato (generalmente 1) in modo da non generare mai due volte lo stesso numero. Di solito è associata a una tabella e crea i valori utilizzati come chiave primari (tramite il tipo di dato serial), ma può essere utilizzata anche da più tabelle o query degli utenti. Questi oggetti non dovrebbero essere modificati dagli utenti.
+All'interno di uno schema, oltre alle tabelle e alle viste sono contenute anche le SEQUENZE. Una sequenza è un oggetto che genera valori numerici interi incrementali. Ogni volta che viene richiesto un numero, la sequenza aumenta del valore specificato (generalmente 1) in modo da non generare mai due volte lo stesso numero. Di solito è associata a una tabella e crea i valori utilizzati come chiave primari (tramite il tipo di dato serial), ma può essere utilizzata anche da più tabelle o query degli utenti. Questi oggetti non dovrebbero essere modificati dagli utenti.
 
 #### Utenti e gruppi di utenti  
 PostgreSQL offre la possibilità di decidere le operazioni che i vari utenti possono fare sugli oggetti del database (in particolare, le tabelle) attraverso un sistema di permessi. Esempi di permessi sono la sola lettura (non è possibile inserire nuovi dati o modificare e cancellare dati esistenti), oppure lettura e scrittura (compresa modifica e cancellazione dei record esistenti), o ancora la possibilità di creare nuove tabelle o eliminare tabelle esistenti.  
@@ -191,9 +192,9 @@ La prima volta che ci si collega al database, è necessario creare la connession
 
 [![](materiale/l03_client_qgis_connection.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_qgis_connection.png?raw=true)
 
-Una volta creata la connessione, è possibile utilizzare l'interfaccia ** DB Manager ** (vedi immagine) in cui è possibile esplorare, importare, esportare e caricare in QGIS i dati spaziali (sia vettoriali che raster).  
+Una volta creata la connessione, è possibile utilizzare l'interfaccia **DB Manager** (vedi immagine) in cui è possibile esplorare, importare, esportare e caricare in QGIS i dati spaziali (sia vettoriali che raster).  
 
-[![](client_qgis_export.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_qgis_export.png?raw=true)
+[![](materiale/l03_client_qgis_export.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_qgis_export.png?raw=true)
 
 Una caratteristica interessante di QGIS è la possibilità di visualizzare i dati PNGP sovrapposti a layer come Google map o Bing map (ad esempio, con il plugin QuickMapServices).  
 
