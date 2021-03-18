@@ -108,7 +108,7 @@ Il nome utente e la password possono essere creati dal gestore del database. Nel
 * Utente: corso_user
 * Password: LA PASSWORD SARÀ COMUNICATA DURANTE LE LEZIONI
 
-Un ulteriore parametro che è necessario inserire in PgAdmin, ma non è richiesto da altri client è Mantaince DB, che deve essere settato come 'gisdata' invece che come 'postgres':
+Un ulteriore parametro che è necessario inserire in PgAdmin, ma non è richiesto da altri client, è **Mantaince DB**, che deve essere settato come 'gisdata' invece che come il valore di default 'postgres':
 
 * Mantaince DB: gisdata
 
@@ -123,8 +123,7 @@ Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'ico
 Nel menù ad albero del pannello di sinistra è ora disponibile la nuova connessione. Espandendo l'icona *Server* si vedono tutti server a cui si è creata una connessione. Aprendo la connessione che è stata creata, vengono visualizzati tutti i database creati in quel server. Anche se il nome degli oggetti negli altri database è visibile, l'utente *corso_user* non potrà visualizzare i dati in essi contenuti ad eccezione del database *corso_parchi*.  
 Cliccando sul database *corso_parchi*, si visualizza il primo livello di classi di oggetti contenuti nel database. Gli oggetti visibili dipendono dagli elementi selezioni nelle opzioni *Nodi* (vedi figura sotto). L'elemento più rilevante nel primo livello della struttura ad albero sotto il database è lo **SCHEMA**.  
 
-    INSERIRE IMMAGINE DELLA STRUTTURA AD ALBERO  
-    PROPRIO QUI  
+[<img src="materiale/l03_menualbero.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_menualbero.png?raw=true) 
 
 #### Schemi
 L'unico elemento rilevante nel primo livello della struttura ad albero sotto il database è SCHEMA. Gli schemi sono dei contenitori logici usati per organizzare gli elementi del database secondo specific criteri, ma non hanno nessun effetto sugli oggetti stessi. Sono sostanzialmente analoghi alle cartelle a un file system. Nel database utilizzato per il corso ci sono 4 schemi:
