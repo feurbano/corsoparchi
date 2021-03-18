@@ -163,36 +163,40 @@ Per ogni livello esiste un "gruppo" a cui vengono associati i permessi. Poi ogni
 ### Interagire con una tabella
 In questa sezione, viene mostrato come visualizzare una tabella nell'interfaccia grafica, ordinare e selezionare i dati, modificare i valori dei campi, inserire un nuovo record, cancellare un record. In seguito viene spiegato come esportare i dati. Alla fine viene mostrato come visualizzare i dati geografici, aprire una view e creare una tabella via interfaccia grafica.  
 
-
-
-È possibile aggiungere criteri (icona a forma di imbuto) per ordinare i record e/o limitare la selezione a un sottoinsieme di record (nei criteri di selezione si possono usare [sub-queries](http://www.postgresqltutorial.com/postgresql-subquery/), cosa a volte utile se si vogliono vedere record in base a criteri impostati anche su altre tabelle).  
-
-[![](images/client_pgadmin4_table2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table2.png?raw=true)
-
-Se si selezionano delle righe, è possibile copiare/incollare i record come valori separati da virgola. Da questa interfaccia è anche possibile modificare manualmente i dati.  
-
-[![](images/client_pgadmin4_table3.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table3.png?raw=true)
-
-Per visualizzare i dati usando una query SQL, aprite un pannello SQL (nella pagina principale, menù TOOLS). Si aprirà una nuova finestra dove potrete scrivere il vostro codice SQL. Per vedere i dati , cliccare l'icona a forma di fulmine: i dati verranno visualizzati nel pannello inferiore (secondo i criteri impostati nella query). Per esportare tutti i dati, invece della selezione con copia incolla vista prima, si può scaricare tutto il dataset cliccando sull'icona con la freccia verso il basso (vedi figura). I dati verranno salvati in un file .csv.  
-
 [![](images/client_pgadmin4_sql.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_sql.png?raw=true)
 #### Visualizzare i dati di una tabella
-Per visualizzare i dati di una tabella, bisogna selezionarla nel menù ad albero nel pannello di sinistra e poi fare click sull'icona a forma di tabella nel menù degli strumenti in alto (vedi immagine sotto). Lo stesso risultato si può ottenere cliccando col pulsante destro sulla tabella nel menù ad albero. Si aprirà una nuova finestra nel browser.  
+Per visualizzare i dati di una tabella, bisogna selezionarla nel menù ad albero nel pannello di sinistra e poi fare click sull'icona a forma di tabella nel menù degli strumenti in alto (vedi immagine sotto). Lo stesso risultato si può ottenere cliccando col pulsante destro sulla tabella nel menù ad albero. Nella lista dei tab verrà aggiunto un nuovo elemento che fa visualizzare nel pannello a destra (contenuto delle schede) diviso in due parti: nella sezione superiore c'è il codice SQL che PgAdmin usa per richiedere i dati al server, nella sezione inferiore c'è la tabella con i dati. In questo caso non è possibile modificare il codice SQL. Vedremo come usare direttamente il linguaggio SQL nelle lezioni del secondo modulo.  
 
-[![](materiale/l03_client_pgadmin4_table1.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_pgadmin4_table1.png?raw=true)
+[![](materiale/l03_client_pgadmin4_table1.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_pgadmin4_table1.png?raw=true)  
 
+La tabella a questo punto è disponibile e i dati possono essere letti, modificati, aggiunti, rimossi come se fosse un foglio di calcolo (e poi, se necessario, esportati come file csv).
 
 #### Ordinare e selezionare i dati
 
-#### Modificare i valore di un campo
+È possibile aggiungere criteri (icona a forma di imbuto nella barra degli strumenti, di fianco a quello per aprire la tabella) per ordinare i record e/o limitare la selezione a un sottoinsieme di record (nei criteri di selezione si possono usare [sub-queries](http://www.postgresqltutorial.com/postgresql-subquery/), cosa a volte utile se si vogliono vedere record in base a criteri impostati anche su altre tabelle). I criteri vengono definiti secondo la sintassi del linguaggio SQL che vedremo insieme. nell'esempio riportato qui sotto, i dati vengono ordinati per il campo *species_id* e i record limitati alle specie che iniziano con "Ad".
 
-#### Cancellare un record
+[![](images/client_pgadmin4_table2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table2.png?raw=true)
+
+
+#### Modificare, cancellare e aggiungere un record
+Per modificare il valore di un campo bisogna fare un doppio click sulla cella: si aprirà una piccola finestra dove potrà essere inserito il nuovo valore. Per eleminare un record, bisogna selezionare tutta la riga e poi cliccare sull'icona a forma di pattumiera nella barra sotto il pannello delle schede. Per aggiungere un record, bisogna andare alla fine della tabella e inserire i valori nell'ultima riga (che è vuota). I cambiamenti apportati sono evidenziati con carattere in grassetto (e con una riga rossa sui record eliminati). Le modifiche però non sono ancora applicate alla tabella. Per renderli definitivi, vanno confermati con l'icona a forma di freccia sovrapposta alla tabella (nel menu che appare sotto le schede quando viene aperta una tabella, vedi figura sotto).
+
+[![](images/client_pgadmin4_table3.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table3.png?raw=true)
 
 #### Esportare i dati di una tabella
 
+Se si vuole esportare alcune righe, si possono selezionare e poi copiare/incollare i record come valori separati da virgola (si può modificare il formato di esportazione nelle proprietà, come visto all'inizio della lezione).  
+Per esportare tutti i dati, si possono selezionare tutti i dati (cliccando nell'angolo in alto a sinistra della tabella, come nei fogli di calcolo) e poi usando copia/incolla, oppure si può usare l'icona con la freccia verso il basso: [![](images/client_pgadmin4_table4.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table4.png?raw=true). I dati verranno salvati in un file .csv.  
+
 #### Visualizzare i dati spaziali
+Come vedremo in una lezione successiva, nel database possono essere archiviati gli attributi spaziali di un oggetto (ad esempio posizione puntuale, linea o poligono) come fossero normali attributi, quindi contenuti in un campo della tabella.  
+Il tool migliore per visualizzare i dati spaziali è QGIS, ma anche PgAdmin offre l'opportunità per vedere i dati spaziali in una interfaccia molto semplificata. Quando viene aperta una tabella, di fianco al nome con il campo geometrico c'è una piccola icona a forma di occhio. Cliccandoci sopra i dati verranno visualizzati come mappa. Se i dati sono in longitudine/latitudine, viene aggiunta di default la mappa di opensteetmap come sfondo (vedi immagini sotto).  
+[![](images/client_pgadmin4_table5.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table5.png?raw=true)  
+
+[![](images/client_pgadmin4_table6.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table6.png?raw=true)
 
 #### Visualizzare una view
+Per visualizzare una view, il procedimento è identico a quello usato per una tabella. Selezionare la view desiderata e procedere come illustrato sopra per la visualizzazione e lo scaricamento dei dati (non è invece possibile modificare i dati).
 
 #### Creare una tabella via interfaccia grafica
 
@@ -263,7 +267,7 @@ Ad esempio è possibile usare MS ACCESS per creare maschere di inserimento dati,
 Un'ottima alternativa gratuita a pgAdmin4 (che in effetti non è intuitivo come il suo predecessore pgAdmin3) è [DBeaver](https://dbeaver.io/). Esistono moltissimi altri progetti open source di interfacce generiche ai database (incluso PostgreSQL) e tutte hanno gli strumenti necessari a rendere utilizzare il database da parte degli operatori e collaboratori del Parco.
 
 ### Esercizio riassuntivo
-
+*Collegarsi al database **corsoparchi**, accedere alla tabella basedata.scientific_name_species, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.* 
 
 ---
 [**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]
