@@ -185,7 +185,10 @@ Per modificare il valore di un campo bisogna fare un doppio click sulla cella: s
 
 #### Esportare i dati di una tabella
 
-Se si vuole esportare alcune righe, si possono selezionare e poi copiare/incollare i record come valori separati da virgola (si può modificare il formato di esportazione nelle proprietà, come visto all'inizio della lezione).  
+Se si vuole esportare alcune righe, si possono selezionare e poi copiare/incollare i record come valori separati da virgola con l'icona corrispondente (vedi immagine sotto). Si può modificare il formato di esportazione nelle proprietà, come visto all'inizio della lezione.  
+
+[![](images/client_pgadmin4_table7.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table7.png?raw=true)
+
 Per esportare tutti i dati, si possono selezionare tutti i dati (cliccando nell'angolo in alto a sinistra della tabella, come nei fogli di calcolo) e poi usando copia/incolla, oppure si può usare l'icona con la freccia verso il basso: [![](images/client_pgadmin4_table4.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table4.png?raw=true). I dati verranno salvati in un file .csv.  
 
 #### Visualizzare i dati spaziali
@@ -238,6 +241,7 @@ dbClearResult(rs)
 Nel comando *dbSendQuery* è possibile inserire qualsiasi codice SQL che verrà eseguito dal database e inserito poi in un dataframe come specificato dall'utente (nel codice sopra, *df*). Nell'esempio, la lista delle specie viene caricata nel dataframe *df*.
 
 È anche possibile importare dati nel database da R. Su Internet è possibile trovare tutta la documentazione e la lista dei pacchetti più interessanti per lavorare con un database PostgreSQL da R.  
+
 #### Collegarsi al database con Libre Office
 
 BASE e CALC sono due software della suite open source [LibreOffice](https://www.libreoffice.org/). Possono essere collegati al database e offrono la possibilità di creare query con strumenti grafici, creare maschere, modificare i dati in un ambiente intuitivo (BASE, equivalente di MS ACCESS) o di visualizzare le informazioni come foglio di calcolo (CALC, ma in questo caso, se si modificano i dati, le modifiche non vengono archiviate nel database).
@@ -267,7 +271,7 @@ Ad esempio è possibile usare MS ACCESS per creare maschere di inserimento dati,
 Un'ottima alternativa gratuita a pgAdmin4 (che in effetti non è intuitivo come il suo predecessore pgAdmin3) è [DBeaver](https://dbeaver.io/). Esistono moltissimi altri progetti open source di interfacce generiche ai database (incluso PostgreSQL) e tutte hanno gli strumenti necessari a rendere utilizzare il database da parte degli operatori e collaboratori del Parco.
 
 ### Esercizio riassuntivo
-*Collegarsi al database **corsoparchi**, accedere alla tabella basedata.scientific_name_species, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.* 
+*Collegarsi al database **corsoparchi**, accedere alla tabella basedata.scientific_name_species, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.*
 
 ---
 [**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]
