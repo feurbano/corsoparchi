@@ -160,27 +160,27 @@ La tabella a questo punto è disponibile e i dati possono essere letti, modifica
 #### Ordinare e selezionare i dati
 È possibile aggiungere criteri (icona a forma di imbuto nella barra degli strumenti, di fianco a quello per aprire la tabella) per ordinare i record e/o limitare la selezione a un sottoinsieme di record (nei criteri di selezione si possono usare [sub-queries](http://www.postgresqltutorial.com/postgresql-subquery/), cosa a volte utile se si vogliono vedere record in base a criteri impostati anche su altre tabelle). I criteri vengono definiti secondo la sintassi del linguaggio SQL che vedremo insieme. nell'esempio riportato qui sotto, i dati vengono ordinati per il campo *species_id* e i record limitati alle specie che iniziano con "Ad".
 
-[![](images/client_pgadmin4_table2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table2.png?raw=true)
+[![](images/l03_client_pgadmin4_table2.png)](https://github.com/feurbano/pngp_db/blob/master/images/l03_client_pgadmin4_table2.png?raw=true)
 
 #### Modificare, cancellare e aggiungere un record
 Per modificare il valore di un campo bisogna fare un doppio click sulla cella: si aprirà una piccola finestra dove potrà essere inserito il nuovo valore. Per eleminare un record, bisogna selezionare tutta la riga e poi cliccare sull'icona a forma di pattumiera nella barra sotto il pannello delle schede. Per aggiungere un record, bisogna andare alla fine della tabella e inserire i valori nell'ultima riga (che è vuota). I cambiamenti apportati sono evidenziati con carattere in grassetto (e con una riga rossa sui record eliminati). Le modifiche però non sono ancora applicate alla tabella. Per renderli definitivi, vanno confermati con l'icona a forma di freccia sovrapposta alla tabella (nel menu che appare sotto le schede quando viene aperta una tabella, vedi figura sotto).
 
-[![](images/client_pgadmin4_table3.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table3.png?raw=true)
+[![](images/l03_client_pgadmin4_table3.png)](https://github.com/feurbano/pngp_db/blob/master/images/l03_client_pgadmin4_table3.png?raw=true)
 
 #### Esportare i dati di una tabella
 Se si vuole esportare alcune righe, si possono selezionare e poi copiare/incollare i record come valori separati da virgola con l'icona corrispondente (vedi immagine sotto). Si può modificare il formato di esportazione nelle proprietà, come visto all'inizio della lezione.  
 
-[![](images/client_pgadmin4_table7.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table7.png?raw=true)
+[![](images/l03_client_pgadmin4_table7.png)](https://github.com/feurbano/pngp_db/blob/master/images/l03_client_pgadmin4_table7.png?raw=true)
 
-Per esportare tutti i dati, si possono selezionare tutti i dati (cliccando nell'angolo in alto a sinistra della tabella, come nei fogli di calcolo) e poi usando copia/incolla, oppure si può usare l'icona con la freccia verso il basso: [![](images/client_pgadmin4_table4.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table4.png?raw=true). I dati verranno salvati in un file .csv.  
+Per esportare tutti i dati, si possono selezionare tutti i dati (cliccando nell'angolo in alto a sinistra della tabella, come nei fogli di calcolo) e poi usando copia/incolla, oppure si può usare l'icona con la freccia verso il basso: [![](images/l03_client_pgadmin4_table4.png)](https://github.com/feurbano/pngp_db/blob/master/images/l03_client_pgadmin4_table4.png?raw=true). I dati verranno salvati in un file .csv.  
 
 #### Visualizzare i dati spaziali
 Come vedremo in una lezione successiva, nel database possono essere archiviati gli attributi spaziali di un oggetto (ad esempio posizione puntuale, linea o poligono) come fossero normali attributi, quindi contenuti in un campo della tabella.  
 Il tool migliore per visualizzare i dati spaziali è QGIS, ma anche PgAdmin offre l'opportunità per vedere i dati spaziali in una interfaccia molto semplificata. Quando viene aperta una tabella, di fianco al nome con il campo geometrico c'è una piccola icona a forma di occhio. Cliccandoci sopra i dati verranno visualizzati come mappa. Se i dati sono in longitudine/latitudine, viene aggiunta di default la mappa di opensteetmap come sfondo (vedi immagini sotto).  
 
-[![](images/client_pgadmin4_table5.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table5.png?raw=true)  
+[![](images/l03_client_pgadmin4_table5.png)](https://github.com/feurbano/pngp_db/blob/master/images/l03_client_pgadmin4_table5.png?raw=true)  
 
-[![](images/client_pgadmin4_table6.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table6.png?raw=true)
+[![](images/l03_client_pgadmin4_table6.png)](https://github.com/feurbano/pngp_db/blob/master/images/l03_client_pgadmin4_table6.png?raw=true)
 
 #### Visualizzare una view
 Per visualizzare una view, il procedimento è identico a quello usato per una tabella. Selezionare la view desiderata e procedere come illustrato sopra per la visualizzazione e lo scaricamento dei dati (non è invece possibile modificare i dati).  
