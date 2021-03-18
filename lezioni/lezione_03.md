@@ -27,7 +27,7 @@ C'è una alternativa a PgAdmin che non richiede l'installazione di nessun client
 
 L'interfaccia di PgAdmin è organizzata in 5 sezioni principali (vedi immagine). La visualizzazione degli elementi può essere ottimizzata attraverso le opzioni di personalizzazione.  
 
-[<img src="materiale/l03_pgadmin_panels.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_pgadmin_panels.png)  
+[<img src="materiale/l03_pgadmin_panels.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_pgadmin_panels.png?raw=true)  
 
 Le 5 sezioni (o pannelli) sono:
 1. La barra dei menù
@@ -68,12 +68,11 @@ Usa i campi del pannello Nodi per selezionare i tipi di oggetti che verranno vis
 Il pannello visualizza un elenco di oggetti del database; fai scorrere l'interruttore situato accanto a ciascun oggetto per mostrare o nascondere l'oggetto del database. Quando si interrogano i cataloghi di sistema, è possibile ridurre il numero di tipi di oggetti visualizzati per aumentare la velocità.
 
 #### PANNELLO 2. La barra degli strumenti
-La barra degli strumenti mostra i pulsanti di scelta rapida per le funzioni utilizzate più di frequente come aprire una tabella o aprire una nuova finestra per fare delle interrogazioni in SQL.  I pulsanti vengono abilitati/disabilitati in base al nodo del browser selezionato.
-Barra degli strumenti pgAdmin
-    Usare il pulsante Query Tool per aprire il Query Tool nel contesto del database corrente.
-    Usa il pulsante Visualizza dati per visualizzare/modificare i dati memorizzati in una tabella selezionata.
-    Usate il pulsante Righe filtrate per accedere al popup Filtro dati per applicare un filtro a un insieme di dati da visualizzare/modificare.
-    Usa il pulsante Cerca oggetti per accedere alla finestra di dialogo degli oggetti di ricerca. Ti aiuta a cercare qualsiasi oggetto del database.
+La barra degli strumenti mostra i pulsanti di scelta rapida per le funzioni utilizzate più di frequente come aprire una tabella o aprire una nuova finestra per fare delle interrogazioni in SQL.  I pulsanti vengono abilitati/disabilitati in base al nodo del browser selezionato. I pulsanti di default sono:
+* Query Tool per aprire il l'editor SQL
+* Visualizza dati per visualizzare/modificare i dati memorizzati in una tabella selezionata
+* Righe filtrate per accedere al popup Filtro dati per applicare un filtro a un insieme di dati da visualizzare/modificare
+* Cerca oggetti per accedere alla finestra di dialogo degli oggetti di ricerca
 
 #### PANNELLO 3. La barra delle schede
 Nella barra delle schede, si trovano tutti gli oggetti selezionati, in particolare tabelle e finestre per interrogazioni SQL. Si può aprire un numero indefinito di tab, anche se la navigazione può diventare complicata con molte schede aperte. Selezionando una scheda (tab) si visualizza in suo contenuto nel pannello sottostante (5).  
@@ -111,7 +110,7 @@ Il nome utente e la password possono essere creati dal gestore del database. Nel
 * Password: LA PASSWORD SARÀ COMUNICATA DURANTE LE LEZIONI
 
 Per creare una connessione al database di test del corso con PgAdmin  bisogna selezionare dal menù *Object/Create/Server* (oppure cliccare con il pulsante destro sull'icona Server nel pannello con il menu ad albero e selezionare *Create/Server*). Si apre una finestra in cui vanno inseriti i parametri di connessione elencati sopra. Nella scheda *General* va solo inserito un nome (qualsiasi) da dare alla connessione, ad esempio 'database corso'. Nella scheda *Connection* vanno inseriti indirizzo IP del server, porta, utente e password (vedi figura sotto). In questo caso non è necessario inserire il nome del database (saranno visibili tutti i database installati su quel server) Per non dover inserire la password a ogni nuova connessione, attivare l'opzione *Save password*.
-[<img src="materiale/l03_connessione_server.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_connessione_server.png)  
+[<img src="materiale/l03_connessione_server.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_connessione_server.png?raw=true)  
 
 Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'icona *Server*.
 
@@ -188,13 +187,13 @@ Ci sono client che possono essere usati per applicazioni specifiche, ad esempio 
 * aprire la connessione  
 * carica i dati  
 
-La prima volta che ci si collega al database, è necessario creare la connessione utilizzando l'icona **Open data source manager** (vedere la schermata seguente) e inserire i parametri di connessione.  
+La prima volta che ci si collega al database, è necessario creare la connessione utilizzando l'icona **Open data source manager** (vedere la schermata seguente) e inserire i parametri di connessione.   
 
-[![](images/client_qgis_connection.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_qgis_connection.png?raw=true)
+[![](materiale/l03_client_qgis_connection.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_qgis_connection.png?raw=true)
 
 Una volta creata la connessione, è possibile utilizzare l'interfaccia ** DB Manager ** (vedi immagine) in cui è possibile esplorare, importare, esportare e caricare in QGIS i dati spaziali (sia vettoriali che raster).  
 
-[![](images/client_qgis_export.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_qgis_export.png?raw=true)
+[![](client_qgis_export.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_qgis_export.png?raw=true)
 
 Una caratteristica interessante di QGIS è la possibilità di visualizzare i dati PNGP sovrapposti a layer come Google map o Bing map (ad esempio, con il plugin QuickMapServices).  
 
@@ -222,21 +221,20 @@ Nel comando *dbSendQuery* è possibile inserire qualsiasi codice SQL che verrà 
 BASE e CALC sono due software della suite open source [LibreOffice](https://www.libreoffice.org/). Possono essere collegati al database e offrono la possibilità di creare query con strumenti grafici, creare maschere, modificare i dati in un ambiente intuitivo (BASE, equivalente di MS ACCESS) o di visualizzare le informazioni come foglio di calcolo (CALC, ma in questo caso, se si modificano i dati, le modifiche non vengono archiviate nel database).
 Prima di tutto, bisogna creare una connessione al database in BASE (vedi le due immagini seguenti per i parametri da inserire nei primi due passaggi, quindi inserisci le tue credenziali e salva e registra la connessione).  
 
-[![](images/client_base1.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_base1.png?raw=true)
+[![](materiale/l03_client_base1.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_base1.png?raw=true)
 
-[![](images/client_base2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_base2.png?raw=true)
+[![](materiale/l03_client_base2.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_base2.png?raw=true)
 
 Una volta creata la connessione, sarai in grado di visualizzare tutte le tabelle di pngp_db, creare query e maschere di inserimento dati.  
 
-[![](images/client_base3.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_base3.png?raw=true)
-
+[![](materiale/l03_client_base3.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_base3.png?raw=true)
 Se si desidera visualizzare e manipolare i dati in CALC (equivalente di MS EXCEL), una volta creata la connessione in BASE, è possibile caricare le tabelle pngp_db tramite **Data Source Manager** (per visualizzare questa funzione, andare su View/Data Source, vedi immagine sotto).  
 
-[![](images/client_calc1.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_calc1.png?raw=true)
+[![](materiale/l03_client_calc1.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_calc1.png?raw=true)
 
 Ora si può semplicemente trascinare e rilasciare la tabella nel foglio di calcolo (vedi sotto). Nota che le modifiche apportate ai dati nel foglio di calcolo non si riflettono nel database.  
 
-[![](images/client_calc2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_calc2.png?raw=true)
+[![](materiale/l03_client_calc2.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_calc2.png?raw=true)
 
 ### <a name="Altritool"></a> Altri tool  
 
