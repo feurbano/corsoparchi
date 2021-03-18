@@ -137,6 +137,7 @@ Associata ad ogni tabelle ci sono una serie di vincoli:
 * Check (specifica il domini di valori validi per un certo campo)  
 * Primary keys (un campo o combinazione di campi che identifica univocamente un record e che non può essere nullo)  
 * Foreign keys (dipendenza di un campo o di una combinazione di campi dai valori contenuti in una tabella esterna "padre")  
+
 #### Sequenze
 All'interno di uno schema, oltre alle tabelle e alle viste sono contenute anche le SEQUENZE. Una sequenza è un oggetto che genera valori numerici interi incrementali. Ogni volta che viene richiesto un numero, la sequenza aumenta del valore specificato (generalmente 1) in modo da non generare mai due volte lo stesso numero. Di solito è associata a una tabella e crea i valori utilizzati come chiave primari (tramite il tipo di dato serial), ma può essere utilizzata anche da più tabelle o query degli utenti. Questi oggetti non dovrebbero essere modificati dagli utenti.  
 #### Utenti e gruppi di utenti  
