@@ -163,7 +163,24 @@ Per ogni livello esiste un "gruppo" a cui vengono associati i permessi. Poi ogni
 ### Interagire con una tabella
 In questa sezione, viene mostrato come visualizzare una tabella nell'interfaccia grafica, ordinare e selezionare i dati, modificare i valori dei campi, inserire un nuovo record, cancellare un record. In seguito viene spiegato come esportare i dati. Alla fine viene mostrato come visualizzare i dati geografici, aprire una view e creare una tabella via interfaccia grafica.  
 
+
+
+È possibile aggiungere criteri (icona a forma di imbuto) per ordinare i record e/o limitare la selezione a un sottoinsieme di record (nei criteri di selezione si possono usare [sub-queries](http://www.postgresqltutorial.com/postgresql-subquery/), cosa a volte utile se si vogliono vedere record in base a criteri impostati anche su altre tabelle).  
+
+[![](images/client_pgadmin4_table2.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table2.png?raw=true)
+
+Se si selezionano delle righe, è possibile copiare/incollare i record come valori separati da virgola. Da questa interfaccia è anche possibile modificare manualmente i dati.  
+
+[![](images/client_pgadmin4_table3.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_table3.png?raw=true)
+
+Per visualizzare i dati usando una query SQL, aprite un pannello SQL (nella pagina principale, menù TOOLS). Si aprirà una nuova finestra dove potrete scrivere il vostro codice SQL. Per vedere i dati , cliccare l'icona a forma di fulmine: i dati verranno visualizzati nel pannello inferiore (secondo i criteri impostati nella query). Per esportare tutti i dati, invece della selezione con copia incolla vista prima, si può scaricare tutto il dataset cliccando sull'icona con la freccia verso il basso (vedi figura). I dati verranno salvati in un file .csv.  
+
+[![](images/client_pgadmin4_sql.png)](https://github.com/feurbano/pngp_db/blob/master/images/client_pgadmin4_sql.png?raw=true)
 #### Visualizzare i dati di una tabella
+Per visualizzare i dati di una tabella, bisogna selezionarla nel menù ad albero nel pannello di sinistra e poi fare click sull'icona a forma di tabella nel menù degli strumenti in alto (vedi immagine sotto). Lo stesso risultato si può ottenere cliccando col pulsante destro sulla tabella nel menù ad albero. Si aprirà una nuova finestra nel browser.  
+
+[![](materiale/l03_client_pgadmin4_table1.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_pgadmin4_table1.png?raw=true)
+
 
 #### Ordinare e selezionare i dati
 
@@ -214,7 +231,7 @@ str(df)
 dbClearResult(rs)
 ```  
 
-Nel comando *dbSendQuery* è possibile inserire qualsiasi codice SQL che verrà eseguito dal database e inserito poi in un dataframe come specificato dall'utente (nel codice sopra, *df*). Nell'esempio, la lista delle guardie (*rangers*) viene caricata nel dataframe *df*.
+Nel comando *dbSendQuery* è possibile inserire qualsiasi codice SQL che verrà eseguito dal database e inserito poi in un dataframe come specificato dall'utente (nel codice sopra, *df*). Nell'esempio, la lista delle specie viene caricata nel dataframe *df*.
 
 È anche possibile importare dati nel database da R. Su Internet è possibile trovare tutta la documentazione e la lista dei pacchetti più interessanti per lavorare con un database PostgreSQL da R.  
 #### Collegarsi al database con Libre Office
