@@ -33,17 +33,69 @@ Per poter inviare una richiesta al database tramite una query SQL, si deve aprir
 [![](materiale/l05_sql_editor.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_sql_editor.png?raw=true)  
 
 L'editor è strutturato in due sezioni. In quella superiore si può scrivere il codice SQL, mentre in quella inferiore vengono visualizzati i risultati ottenuti dal database (cioè, i dati in formato tabellare). Nella sezione superiore, a destra può esserci una sottosezione *Scratch Pad*, la cui utilità è limitata e può essere chiuso per non prendere spazio all'editor SQL.  
-
-Una volta aperta la finestra di SQL
-
+Una volta aperta la finestra di SQL, è possibile cominciare ad interrogare il database per visualizzare i dati di interesse.
 
 ### SELECT, FROM
+L'operazione di selezione dei record da visualizzare si chiama *selezione*: il comando `SELECT` vi permette di definire quali colonne (campi) vi servono, quali righe e in quale ordine. Si possono anche generare dati calcolati o derivati da dati esistenti. La struttura di base di un comando `SELECT` è la seguente:
 
-  create script
+```sql
+SELECT
+   <una o più colonne, o '*' per tutte le colonne di una tabella>
+FROM
+   <una o più tabelle>
+WHERE
+   <condizioni per filtrare i record in base ai criteri specificati dagli utenti>
+;
+```
+
+SQL è insensibile alle lettere minuscole/maiuscole. Le istruzioni SQL possono essere lunghe e estendersi su più righe (il carattere di ritorno riga è semplicemente ignorato). Per segnalare al database che una query finisce, bisogna terminarla con un punto e virgola `;`.
+
+Il comando `SELECT` può essere usato anche da solo, senza altri comandi. Qui alcuni esempi. Per verificare il risultato, bisogna copiarli e incollarli nella finestra SQL. Per eseguire il comando SQL, bisogna usare il pulsante a forma di 'play':
+
+[![](materiale/l05_run.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_run.png?raw=true)  
+
+Si possono eseguire operazioni matematiche:  
+```sql
+SELECT 1 + 1;
+```
+
+Si può manipolare del testo (in SQL una stringa di testo è sempre racchiusa dal simbolo di apice singolo):  
+```sql
+SELECT 'Ciao a tutti';
+```
+
+Si può richiedere l'ora esatta:  
+```sql
+SELECT now();
+```
+Ogni tipo di dato ha poi associati una serie di operatori coerenti con la natura stessa del dato (ad esempio, operazioni algebriche per i numeri, o concatenazioni di stringhe per i caratteri).
+
+
+
+  create script - selezione editor
 
 #### Esercizio
 
 ### WHERE, =
+
+
+`FROM` command specifies the tables where is stored the required information. If a table is specified, after `SELECT` you must list the columns of the table that you want to retrieve. If you use `*`, all the columns are returned.
+
+```sql
+SELECT
+  animals_id,
+  animals_code,
+  name
+FROM
+  main.animals;
+```
+
+```sql
+SELECT
+  *
+FROM
+  main.animals;
+```
 
 #### Esercizio
 
@@ -63,7 +115,7 @@ di colonne e tabelle AS
 
 ### DISTINCT
 
-### Stringhe, numeri, booleiani
+### Stringhe, numeri, booleani
 INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN, SERIAL number  
 
 ### CAST

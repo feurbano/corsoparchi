@@ -10,8 +10,8 @@ MODULO 1 - Lunedì  22/3/2021 09:00-13:00
 [**Lezione 3.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_03.md) Usare e gestire un database - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html)</ins>]  
 <br>
 MODULO 2 - Martedì 23/3/2021 09:00-13:00  
-[**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]    
-[**Lezione 5.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_05.md) Organizzazione dei dati del Progetto Biodiversità - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_05.html)</ins>]      
+[**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Organizzazione dei dati del Progetto Biodiversità - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]    
+[**Lezione 5.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_05.md)  Comandi SQL base -[<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_05.html)</ins>]      
 <br>
 MODULO 3 - Lunedì 29/3/2021 09:00-13:00  
 [**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse  
