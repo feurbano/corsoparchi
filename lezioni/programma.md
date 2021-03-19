@@ -68,7 +68,6 @@
 - Review della struttura delle singole tabelle
 - Tassonomia nei database Biodiversità
 - Tabelle esterne
-- Tabelle di Look up
 - VIEWS del database biodiversità condiviso
 - Modello dati di altri data sets dei parchi
 

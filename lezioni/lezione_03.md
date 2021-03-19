@@ -8,12 +8,12 @@ Per interagire con un database PostgreSQL non è necessario installare PostgreSQ
 PgAdmin è la più comune interfaccia grafica per l'interrogazione dei dati e la gestione di PostgreSQL. È possibile visualizzare le tabelle, interrogare e scaricare i dati, creare nuove tabelle e view, modificare e inserire dati, gestire gli utenti, fare backup.  
 Le versioni fino alla PgAdmin4 v4.50 sono basate su browser (il tool viene aperto in Google Chrome, Firefox, Safari o altro). Dalla versione PgAdmin4 v5.0 il tool è invece stand alone (si apre come programma a se). Le due versioni sono comunque equivalenti.  
 PgAdmin è un software open source e ha aggiornamenti molto frequenti. Se si installa PostgreSQL, PgAdmin4 viene installato automaticamente.  
-PgAdmin non è l'unico client che si può usare per manipolare i dati e gli oggetti nel database. Alcuni tool per finalità specifiche sono presentati in  seguito. Una alternativa a PgAdmin4 per la gestione del database è ad esempio dBeaver ([https://dbeaver.io/download/](https://dbeaver.io/download/), versione Community), molto utile anche per generare i diagrammi ER (è il tool utilizzato per creare le immagini riportate in queste pagine).  
+PgAdmin non è l'unico client che si può usare per manipolare i dati e gli oggetti nel database. Alcuni tool per finalità specifiche sono presentati in  seguito. Una alternativa a PgAdmin4 per la gestione del database è ad esempio [dBeaver](https://dbeaver.io/download/) (versione Community), molto utile anche per generare i diagrammi ER (è il tool utilizzato per creare le immagini riportate in queste pagine).  
 
 Si può scaricare PgAdmin4 da qui:
 
-* <ins>[**Download PgAdmin for WINDOWS**](https://www.pgadmin.org/download/pgadmin-4-windows/)</ins>  
-* <ins>[**Download PgAdmin for MAC**](https://www.pgadmin.org/download/pgadmin-4-macos/)</ins>  
+* <ins>[**Download PgAdmin per WINDOWS**](https://www.pgadmin.org/download/pgadmin-4-windows/)</ins>  
+* <ins>[**Download PgAdmin per MAC**](https://www.pgadmin.org/download/pgadmin-4-macos/)</ins>  
 
 Versione consigliata: PgAdmin4 v5.0 (anche versioni precedenti vanno bene).
 
@@ -42,6 +42,7 @@ Si possono utilizzare le opzioni della finestra di dialogo Preferenze (*File/Pre
 * Check Constraints  
 * Columns  
 * Constraints  
+* Databases
 * Extensions  
 * Foreign Keys  
 * Functions  
@@ -102,7 +103,7 @@ Il nome utente e la password possono essere creati dal gestore del database. Nel
 
 L'ultimo parametro (**Maintenance DB**) è richiesto da PgAdmin, ma di solito non da altri client. Deve essere settato come 'gisdata' invece che come il valore di default 'postgres'.  
 
-Per creare una connessione al database di test del corso con PgAdmin  bisogna selezionare dal menù *Object/Create/Server* (oppure cliccare con il pulsante destro sull'icona Server nel pannello con il menu ad albero e selezionare *Create/Server*). Si apre una finestra in cui vanno inseriti i parametri di connessione elencati sopra. Nella scheda *General* va solo inserito un nome (qualsiasi) da dare alla connessione, ad esempio 'database corso'. Nella scheda *Connection* vanno inseriti indirizzo IP del server, porta, utente e password (vedi figura sotto). In questo caso non è necessario inserire il nome del database (saranno visibili tutti i database installati su quel server) Per non dover inserire la password a ogni nuova connessione, attivare l'opzione *Save password*.
+Per creare una connessione al database di test del corso con PgAdmin  bisogna selezionare dal menù *Object/Create/Server* (oppure cliccare con il pulsante destro sull'icona Server nel pannello con il menu ad albero e selezionare *Create/Server*). Si apre una finestra in cui vanno inseriti i parametri di connessione elencati sopra. Nella scheda *General* va solo inserito un nome (qualsiasi) da dare alla connessione, ad esempio 'database corso'. Nella scheda *Connection* vanno inseriti indirizzo IP del server, porta, utente e password (vedi figura sotto). In questo caso non è necessario inserire il nome del database (saranno visibili tutti i database installati su quel server) Per non dover inserire la password a ogni nuova connessione, attivare l'opzione *Save password*.  
 [<img src="materiale/l03_connessione_server.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_connessione_server.png?raw=true)  
 
 Una volta salvata, la connessione apparirà nel menù ad albero espandendo l'icona *Server*.  

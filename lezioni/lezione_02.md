@@ -165,7 +165,9 @@ Lo sviluppo di un modello dati e la sua implementazione in un database ha tre fa
 * Il livello logico genera un modello dettagliato, guidato dalle relazioni di significato tra i dati (definizione delle tabelle con indicazione di colonne e data type, chiavi primarie, regole di integrità).  
 * Il livello fisico definisce le caratteristiche utili per l'ottimizzazione delle prestazioni e della memoria.  
 
-### Esempio di modello dati ER  
+### Esempio di modello dati ER
+> "In informatica, nell'ambito della progettazione dei database, il modello entity-relationship è un modello teorico per la rappresentazione concettuale e grafica dei dati a un alto livello di astrazione. Il modello entità-associazione viene spesso utilizzato nella prima fase della progettazione di una base di dati, nella quale è necessario tradurre le informazioni risultanti dall'analisi di un determinato dominio in uno schema concettuale, chiamato schema E-R (schema entità-associazione) o diagramma E-R (diagramma entità-associazione). Il modello E-R si basa su un insieme di concetti molto vicini alla realtà di interesse: quindi facilmente intuibili dai progettisti (e in genere considerati sufficientemente comprensibili e significativi anche per i non-tecnici), ma non implementabili sugli elaboratori."
+
 **Monitoraggio ortotteri**   
 Oggetti principali:  
 * Plot  
