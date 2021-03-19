@@ -4,6 +4,9 @@
 
 #### Lezione 5
 ## SQL AVANZATO
+
+Autore: Ferdinando Urbano  
+
 ---
 
 1. DATE, TIMESTAMP, EXTRACT, TIMEZONE

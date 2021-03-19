@@ -2,6 +2,9 @@
 
 #### Lezione 3
 ## USARE E GESTIRE UN DATABASE
+
+Autore: Ferdinando Urbano  
+
 ---
 ### Installare PgAdmin
 Per interagire con un database PostgreSQL non è necessario installare PostgreSQL, ma è sufficiente installare un client che si collega al database (server). Il database con i dati è invece fisicamente installato su un server del Parco (o nel cloud). Installare PostgreSQL sul proprio computer è necessario solo per creare un nuovo database in locale per farsi il proprio database personale.  
