@@ -44,7 +44,7 @@ SELECT
 FROM
    <una o + tabelle>
 WHERE
-   <condizioni per filtrare i record in base ai criteri specificati dagli utenti>
+   <condizioni per filtrare i record>
 ;
 ```
 
@@ -75,7 +75,7 @@ A volte PgAdmin può metterci molto ad eseguire il comando perché nel frattempo
 #### Esercizio
 > Aprire un editor SQL ed eseguire tramite SELECT l'operazione 10 diviso 5 e visualizzare il risultato.
 
-Il comando `FROM` specifica le tabelle in cui sono memorizzate le informazioni richieste. Se viene specificata una tabella, dopo `SELECT` bisogna elencare le colonne della tabella che si vogliono visualizzare (separate da una virgola). Se usi `*`, vengono restituite tutte le colonne.  
+Il comando `FROM` specifica le tabelle in cui sono memorizzate le informazioni richieste. Se viene specificata una tabella, dopo `SELECT` bisogna elencare le colonne della tabella che si vogliono visualizzare (separate da una virgola). Se si usa `*`, vengono restituite tutte le colonne.  
 In Postgres, una tabella viene identificata con `nome dello schema` + `.` + `nome della tabella` (di fatto, lo schema rappresenta una sorta di 'cognome' della tabella).  
 Ad esempio, se si vogliono visualizzare i campi *parco_code* e *plot_code* della tabella plot contenuta nello schema *biodiversita* (vedi menu ad albero del pannello di sinistra) il codice SQL sarà il seguente:  
 ```sql
@@ -94,7 +94,8 @@ FROM
   biodiversita.plot;
 ```
 
-Un modo molto conveniente per preparare una query senza dover scrivere manualmente tutti i nomi dei campi di una tabella, è cliccare con il pulsante destro sulla tabella nel menu ad albero nel pannello di sinistra e selezionale l'opzione *Script/Select script* (vedi figura sotto).
+Un modo molto conveniente per preparare una query senza dover scrivere manualmente tutti i nomi dei campi di una tabella, è cliccare con il pulsante destro sulla tabella nel menu ad albero nel pannello di sinistra e selezionale l'opzione *Script/Select script* (vedi figura sotto).  
+Un altra funzionalità interessante dell'editor SQL è che se viene evidenziata una parte del testo, viene eseguita solo quella e ignorato il resto del codice nella finestra.
 
 [![](materiale/l05_script_select.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_script_select.png?raw=true)
 
@@ -102,29 +103,37 @@ Un modo molto conveniente per preparare una query senza dover scrivere manualmen
 > Aprire un nuovo editor SQL e creare il codice per visualizzare i campi parco_code, plot_code, data_controllo della tabella ortotteri_controllo nello schema biodiversita.
 
 ### WHERE, =
-
-
-`FROM` command specifies the tables where is stored the required information. If a table is specified, after `SELECT` you must list the columns of the table that you want to retrieve. If you use `*`, all the columns are returned.
-
+Il comando `WHERE` (in inglese, dove) è usato per impostare i criteri sui dati che volete recuperare e limitare il risultato alle sole informazioni di interesse.  
+In questo esempio, vengono selezionate i campi *animale_code* e *numero_totale* dalla tabella *ortotteri_monitoraggio* (con le informazioni sulle determinazioni degli orotteri) dello schema *biodiversita*, limitando il risultato ai record in cui sono stati trovati 20 individui totali:
 ```sql
 SELECT
-  animals_id,
-  animals_code,
-  name
+  animale_code,
+  numero_totale
 FROM
-  main.animals;
+  biodiversita.ortotteri_monitoraggio
+WHERE
+  numero_totale = 20;
 ```
 
+Un esempio di un criterio impostato su un campo testuale è il seguente, dove vengono richiesti tutti i record relativi alla specie Omocestus viridulus (il testo deve essere sempre incluso fra apostrofi singoli):
 ```sql
 SELECT
-  *
+  animale_code, 
+  numero_totale
 FROM
-  main.animals;
+  biodiversita.ortotteri_monitoraggio
+WHERE
+  animale_code = 'Omocestus viridulus';
 ```
+
+Una descrizione completa di `SELECT` e dei comandi relativi è disponibile [qui](https://www.postgresql.org/docs/devel/static/sql-select.html).
 
 #### Esercizio
+> Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code il campo 'parzialmente coperto'. Il simbolo '*' può aiutare a chiedere tutte le colone di una tabella in modo semplice e veloce.
 
 ### AND, OR
+Si possono specificare criteri multipli nella clausola `WHERE` della query SQL combinandoli attraverso l'uso degli operatori logici `AND` e `OR`. Il primo fa si che i criteri debbano essere verificati entrambi per restituire un record, mentre nel secondo caso basta che sia realizzata una delle due condizioni.
+
 
 ### IN, NOT IN
 
@@ -135,7 +144,14 @@ FROM
 
 ### Alias
 di colonne e tabelle AS
+You can use `AS` to specify an alias for columns (and also tables).
 
+```sql
+SELECT
+  animals_id AS id,
+  animals_code AS CODE
+FROM
+  main.animals;
 ### ORDER BY, LIMIT
 
 ### DISTINCT
