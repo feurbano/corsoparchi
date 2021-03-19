@@ -132,10 +132,50 @@ Una descrizione completa di `SELECT` e dei comandi relativi è disponibile [qui]
 > Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code il campo 'parzialmente coperto'. Il simbolo '*' può aiutare a chiedere tutte le colone di una tabella in modo semplice e veloce.
 
 ### AND, OR
-Si possono specificare criteri multipli nella clausola `WHERE` della query SQL combinandoli attraverso l'uso degli operatori logici `AND` e `OR`. Il primo fa si che i criteri debbano essere verificati entrambi per restituire un record, mentre nel secondo caso basta che sia realizzata una delle due condizioni.
+Si possono specificare criteri multipli nella clausola `WHERE` della query SQL combinandoli attraverso l'uso degli operatori logici `AND` e `OR`. Il primo fa si che i criteri debbano essere verificati entrambi per restituire un record, mentre nel secondo caso basta che sia realizzata una delle due condizioni.  
+In questo esempio, vengono selezionati alcuni campi della tabella *biodiversita.ortotteri_controllo* dove nel plot c'erano più 20 ovini (usando `AND`)
 
+```sql
+SELECT
+  parco_code,
+  plot_code,
+  data_controllo,
+  pascolo_impatto_code,
+  pascolo_bestiame_code,
+  stima_n_capi
+FROM
+  biodiversita.ortotteri_controllo
+where
+  stima_n_capi > 20 AND
+  pascolo_bestiame_code = 'ovini'
+```
+
+Il risultato è due record. Usando `or`  invece di `AND` basta che almeno uno dei criteri sia soddisfatto quindi vengono restutiti tutti i record con ovini o con più di 20 capi, anche di altri animali.
+
+```sql
+SELECT
+  parco_code,
+  plot_code,
+  data_controllo,
+  pascolo_impatto_code,
+  pascolo_bestiame_code,
+  stima_n_capi
+FROM
+  biodiversita.ortotteri_controllo
+where
+  stima_n_capi > 20 or
+  pascolo_bestiame_code = 'ovini'
+```
+
+#### Esercizio
+> Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code il campo 'parzialmente coperto' (come nell'esercizio precedente) ma che devono anche soddisfare il criterio di avere 'pascolo' come valore di pascolo_impatto_code.
 
 ### IN, NOT IN
+Si possono specificare più valori accettabili per un dato campo. Per introdurre una lista si deve usare il comando `in` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole.  
+Nell'esempio sotto:
+
+
+
 
 ### !=, >, <
 
@@ -152,6 +192,7 @@ SELECT
   animals_code AS CODE
 FROM
   main.animals;
+
 ### ORDER BY, LIMIT
 
 ### DISTINCT
