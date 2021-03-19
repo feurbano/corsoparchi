@@ -3,7 +3,7 @@
 # WORK IN PROGRESS
 
 #### Lezione 5
-## SQL E COMANDI SQL BASE
+## INTRODUZIONE A SQL E COMANDI BASE
 
 Autore: Ferdinando Urbano  
 
