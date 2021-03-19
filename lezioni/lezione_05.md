@@ -68,13 +68,32 @@ Si può richiedere l'ora esatta:
 ```sql
 SELECT now();
 ```
-Ogni tipo di dato ha poi associati una serie di operatori coerenti con la natura stessa del dato (ad esempio, operazioni algebriche per i numeri, o concatenazioni di stringhe per i caratteri).
-
-
-
-  create script - selezione editor
+Ogni tipo di dato ha poi associati una serie di operatori coerenti con la natura stessa del dato (ad esempio, operazioni algebriche per i numeri, o concatenazioni di stringhe per i caratteri).  
+A volte PgAdmin può metterci molto ad eseguire il comando perchè nel frattempo ha perso la connessione al server.
 
 #### Esercizio
+Aprire un editor SQL ed eseguire tramite SELECT l'operazione 10 diviso 5 e visualizzare il risultato.
+
+Il comando `FROM` specifica le tabelle in cui sono memorizzate le informazioni richieste. Se viene specificata una tabella, dopo `SELECT` bisogna elencare le colonne della tabella che si vogliono visualizzare (separate da una virgola). Se usi `*`, vengono restituite tutte le colonne.  
+In Postgres, una tabella viene identificata con *nome dello schema* + *.* + *nome della tabella* (di fatto, lo schema rappresenta una sorta di 'cognome' della tabella).  
+Ad esempio, se si vogliono visualizzare i campi *parco_code* e *plot_code* della tabella plot contenuta nello schema *biodiversita* (vedi menu ad albero del pannello di sinistra) il codice SQL sarà il seguente:  
+```sql
+SELECT
+  parco_code,
+  plot_code
+FROM
+  biodiversita.plot;
+```
+
+Usando il simbolo '*' al posto del nome dei campi, vengono restituiti tutti campi di quella tabella:
+```sql
+SELECT
+  *
+FROM
+  biodiversita.plot;
+```
+
+Un modo molto conveniente per preparare una query senza dover scrivere manualmente tutti i nomi dei campi di una tabella,
 
 ### WHERE, =
 
