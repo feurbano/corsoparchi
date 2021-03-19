@@ -172,9 +172,20 @@ where
 
 ### IN, NOT IN
 Si possono specificare più valori accettabili per un dato campo. Per introdurre una lista si deve usare il comando `in` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole.  
-Nell'esempio sotto:
+Nell'esempio sotto vengono selezionati tutti i plot dei Parchi Orsiera Rocciavrè e Alpe Veglia e Alpe Devero:
 
-
+```sql
+SELECT
+  parco_code,
+  plot_code,
+  x_utm32wgs84,
+  y_utm32wgs84,
+  geom
+FROM
+  biodiversita.plot
+WHERE
+  parco_code in ('pnor','pndv');
+```
 
 
 ### !=, >, <
