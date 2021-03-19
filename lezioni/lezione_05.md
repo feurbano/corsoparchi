@@ -40,14 +40,15 @@ L'operazione di selezione dei record da visualizzare si chiama *selezione*: il c
 
 ```sql
 SELECT
-   <una o più colonne, o '*' per tutte le colonne di una tabella>
+   <una o + colonne, o '*' per tutte le colonne di una tabella>
 FROM
-   <una o più tabelle>
+   <una o + tabelle>
 WHERE
    <condizioni per filtrare i record in base ai criteri specificati dagli utenti>
 ;
 ```
 
+Nei box neri di testo sono sempre include linee di codice.  
 SQL è insensibile alle lettere minuscole/maiuscole. Le istruzioni SQL possono essere lunghe e estendersi su più righe (il carattere di ritorno riga è semplicemente ignorato). Per segnalare al database che una query finisce, bisogna terminarla con un punto e virgola `;`.
 
 Il comando `SELECT` può essere usato anche da solo, senza altri comandi. Qui alcuni esempi. Per verificare il risultato, bisogna copiarli e incollarli nella finestra SQL. Per eseguire il comando SQL, bisogna usare il pulsante a forma di 'play':
@@ -69,13 +70,13 @@ Si può richiedere l'ora esatta:
 SELECT now();
 ```
 Ogni tipo di dato ha poi associati una serie di operatori coerenti con la natura stessa del dato (ad esempio, operazioni algebriche per i numeri, o concatenazioni di stringhe per i caratteri).  
-A volte PgAdmin può metterci molto ad eseguire il comando perchè nel frattempo ha perso la connessione al server.
+A volte PgAdmin può metterci molto ad eseguire il comando perché nel frattempo ha perso la connessione al server.
 
 #### Esercizio
-Aprire un editor SQL ed eseguire tramite SELECT l'operazione 10 diviso 5 e visualizzare il risultato.
+> Aprire un editor SQL ed eseguire tramite SELECT l'operazione 10 diviso 5 e visualizzare il risultato.
 
 Il comando `FROM` specifica le tabelle in cui sono memorizzate le informazioni richieste. Se viene specificata una tabella, dopo `SELECT` bisogna elencare le colonne della tabella che si vogliono visualizzare (separate da una virgola). Se usi `*`, vengono restituite tutte le colonne.  
-In Postgres, una tabella viene identificata con *nome dello schema* + *.* + *nome della tabella* (di fatto, lo schema rappresenta una sorta di 'cognome' della tabella).  
+In Postgres, una tabella viene identificata con `nome dello schema` + `.` + `nome della tabella` (di fatto, lo schema rappresenta una sorta di 'cognome' della tabella).  
 Ad esempio, se si vogliono visualizzare i campi *parco_code* e *plot_code* della tabella plot contenuta nello schema *biodiversita* (vedi menu ad albero del pannello di sinistra) il codice SQL sarà il seguente:  
 ```sql
 SELECT
@@ -93,7 +94,12 @@ FROM
   biodiversita.plot;
 ```
 
-Un modo molto conveniente per preparare una query senza dover scrivere manualmente tutti i nomi dei campi di una tabella,
+Un modo molto conveniente per preparare una query senza dover scrivere manualmente tutti i nomi dei campi di una tabella, è cliccare con il pulsante destro sulla tabella nel menu ad albero nel pannello di sinistra e selezionale l'opzione *Script/Select script* (vedi figura sotto).
+
+[![](materiale/l05_script_select.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_script_select.png?raw=true)
+
+#### Esercizio
+> Aprire un nuovo editor SQL e creare il codice per visualizzare i campi parco_code, plot_code, data_controllo della tabella ortotteri_controllo nello schema biodiversita.
 
 ### WHERE, =
 
