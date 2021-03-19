@@ -98,10 +98,9 @@ Il nome utente e la password possono essere creati dal gestore del database. Nel
 * Nome database: corso_parchi  
 * Utente: corso_user
 * Password: LA PASSWORD SARÀ COMUNICATA DURANTE LE LEZIONI
-
-Un ulteriore parametro che è necessario inserire in PgAdmin, ma non è richiesto da altri client, è **Maintenance DB**, che deve essere settato come 'gisdata' invece che come il valore di default 'postgres':
-
 * Maintenance DB: gisdata
+
+L'ultimo parametro (**Maintenance DB**) è richiesto da PgAdmin, ma di solito non da altri client. Deve essere settato come 'gisdata' invece che come il valore di default 'postgres'.  
 
 Per creare una connessione al database di test del corso con PgAdmin  bisogna selezionare dal menù *Object/Create/Server* (oppure cliccare con il pulsante destro sull'icona Server nel pannello con il menu ad albero e selezionare *Create/Server*). Si apre una finestra in cui vanno inseriti i parametri di connessione elencati sopra. Nella scheda *General* va solo inserito un nome (qualsiasi) da dare alla connessione, ad esempio 'database corso'. Nella scheda *Connection* vanno inseriti indirizzo IP del server, porta, utente e password (vedi figura sotto). In questo caso non è necessario inserire il nome del database (saranno visibili tutti i database installati su quel server) Per non dover inserire la password a ogni nuova connessione, attivare l'opzione *Save password*.
 [<img src="materiale/l03_connessione_server.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_connessione_server.png?raw=true)  
@@ -244,7 +243,7 @@ Ora si può semplicemente trascinare e rilasciare la tabella nel foglio di calco
 [![](materiale/l03_client_calc2.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_calc2.png?raw=true)
 
 ### Esercizio riassuntivo
-> Collegarsi al database **corso_parchi**, accedere alla tabella **basedata.scientific_name_species**, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.
+Collegarsi al database **corso_parchi**, accedere alla tabella **basedata.scientific_name_species**, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.  
 
 ---
-[**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Comandi SQL base - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]
+[**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Dati progetto Biodiversità - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]

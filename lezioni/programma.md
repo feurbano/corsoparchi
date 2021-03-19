@@ -1,5 +1,8 @@
+<p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
+
 ### Introduzione alla gestione dei dati per i Parchi Nazionali Alpini Italiani
 ## PROGRAMMA DETTAGLIATO DEL CORSO
+---
 
 ### MODULO 1: Introduzione alla gestione dei dati e database  
 
