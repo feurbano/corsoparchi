@@ -9,9 +9,10 @@ Autore: Ferdinando Urbano
 
 ---
 
-SQL (sigla che sta per Structured Query Language)  ́e un linguaggio testuale standard per ope-rare con le basi di dati.  Standard vuol dire che  ́e (quasi) indipendente la particolare database scelto (Oracle, Microsoft SQL Server, PostgreSQL, Mysql, etc.).  Il linguaggio  ́e funzionale (un solo costrutto esegue le operazioni specificate), non imperativo (non ci sono variabili o elenchi di operazioni), anche se una sua estensione (il PL-SQL) permette di dichiarare funzioni in modo imperativo.  Un’introduzione al linguaggio richiederebbe un corso annuale:  in questa breve nota si vuole dare una breve descrizione alla struttura del linguaggio, in modo che poi sia possibile introdurne la parte propriamente spaziale.  Inizieremo col vedere gli elementi di base (tipi di dato:  numeri e parole), passeremo quindi alla definizione dei dati (schemi, colonne e tabelle), alle operazioni di inserimento e modifica dei dati, quindi all’interrogazione degli stessi.  Per finire faremo un breve accenno agli elementi avanzati:  indici, chiavi e relazioni.
+SQL, che sta per Structured Query Language, e il linguaggio che si utilizza per interagire (interrogare i dati, manipolare i dati, creare degli oggetti) con i database relazionali. SQL è un linguaggio standard, il che vuol dire che è (quasi) indipendente dal particolare database scelto (ad esempio PostgreSQL, Oracle, Microsoft SQL Server, Mysql). SQL, per quanto sia un linguaggio di programmazione e quindi richieda esperienza per essere usato al pieno delle sue potenzialità, è comunque un linguaggio di alto livello, quindi semplice almeno per quanto riguarda i comandi principali. Infatti, mentre le query (codice SQL finalizzato a chiedere dati al database nella forma richiesta dall'utente) complesse possono essere difficili da progettare, SQL combina un insieme molto limitato di comandi che sono in qualche modo vicini al linguaggio naturale.  
+L'obiettivo delle prossime lezione è fornire i rudimenti per ottenere dal database i dati desiderati. Alcuni elementi più avanzati saranno solo di interesse per le persone che devono più direttamente essere coinvolte nell'uso e aggiornamento del database. In particolare, le lezioni 5 e 6 si concentrano sul recupero dei dati da un database esistente. In lezioni successive si vedrà come usare SQL per creare nuovi oggetti e per manipolare gli oggetti spaziali.
 
-Il numero delle operazioni che si possono fare sul database aumenta esponenzialmente con un po' di familiarità con SQL. Per chi fosse interessato, esistono tantissimi tutorial gratuiti online. Ad esempio (tra i tanti):  
+Il numero delle operazioni che si possono fare sul database aumenta esponenzialmente all'aumentare della conoscenza di SQL. Per gli utenti che desiderano sviluppare ulteriormente le proprie conoscenza in materia, esistono tantissimi tutorial gratuiti online. Ad esempio (tra i tanti):  
 
 * [PostgreSQL official tutorial](https://www.postgresql.org/docs/current/static/tutorial.html)  
 * [postgresqltutorial](http://www.postgresqltutorial.com/)  
@@ -20,23 +21,31 @@ Il numero delle operazioni che si possono fare sul database aumenta esponenzialm
 * [webcheatsheet](http://webcheatsheet.com/sql/interactive_sql_tutorial/)  
 * [www.sql.org](www.sql.org)  
 
-Per una introduzione all'estensione spaziale PostGIS, una fonte utile è:  
+Per una introduzione all'estensione spaziale PostGIS, una fonte di informazioni utile è:  
 
 * [PostGIS Intro by BoundlessGeo](http://workshops.boundlessgeo.com/postgis-intro/)  
 
-Per questioni complesse, gli operatori e i collaboratori del Parco possono sempre chiedere il supporto all'amministratore o allo sviluppatore del database.
-
+In futuro, per l'uso e aggiornamento dei database dei singoli Parchi, gli operatori e i collaboratori potranno eventualmente chiedere il supporto tecnico al curatore e al gestore del database del proprio Parco.
 
 ### PgAdmin SQL editor
-  aprire editor
-  struttura editor
-  semplice query
-  aprire più tab
-  chiudere un tab
+Per poter inviare una richiesta al database tramite una query SQL, si deve aprire la finestra SQL (o SQL editor) del client che si utilizza, nel nostro caso PgAdmin. L'icona del SQL editor è nella barra dei menù in alto a sinistra (vedi figura sotto). La finestra SQL verrà aggiunta alla lista delle schede (Le schede con gli SQL editor non vanno confuse con la scheda chiamata *SQL* che è utilizzata da PaAdmin per mostrare il codice SQL che genera l'oggetto selezionato nel menù ad albero del pannello di sinistra). Si possono aprire quante finestre SQL si vogliono, navigando fra poi fra le finestre come in qualsiasi pannello a schede. Ogni scheda può essere chiusa cliccando sul bottone (X) in alto a destra. Si sconsiglia di aprire troppe schede per non rendere la navigazione troppo complicata.  
+
+[![](materiale/l05_sql_editor.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_sql_editor.png?raw=true)  
+
+L'editor è strutturato in due sezioni. In quella superiore si può scrivere il codice SQL, mentre in quella inferiore vengono visualizzati i risultati ottenuti dal database (cioè, i dati in formato tabellare). Nella sezione superiore, a destra può esserci una sottosezione *Scratch Pad*, la cui utilità è limitata e può essere chiuso per non prendere spazio all'editor SQL.  
+
+Una volta aperta la finestra di SQL
+
 
 ### SELECT, FROM
 
+  create script
+
+#### Esercizio
+
 ### WHERE, =
+
+#### Esercizio
 
 ### AND, OR
 
