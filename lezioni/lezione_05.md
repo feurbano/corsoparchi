@@ -115,10 +115,10 @@ WHERE
   numero_totale = 20;
 ```
 
-Un esempio di un criterio impostato su un campo testuale è il seguente, dove vengono richiesti tutti i record relativi alla specie Omocestus viridulus (il testo deve essere sempre incluso fra apostrofi singoli):
+Un esempio di un criterio impostato su un campo testuale è il seguente, dove vengono richiesti tutti i record relativi alla specie Omocestus viridulus (il testo deve essere sempre incluso fra virgolette singole):
 ```sql
 SELECT
-  animale_code, 
+  animale_code,
   numero_totale
 FROM
   biodiversita.ortotteri_monitoraggio
