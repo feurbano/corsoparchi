@@ -120,7 +120,7 @@ Cliccando sul database *corso_parchi*, si visualizza il primo livello di classi 
 [<img src="materiale/l03_menualbero.png" />](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_menualbero.png?raw=true)
 
 #### Schemi
-L'unico elemento rilevante nel primo livello della struttura ad albero sotto il database è SCHEMA. Gli schemi sono dei contenitori logici usati per organizzare gli elementi del database secondo specific criteri, ma non hanno nessun effetto sugli oggetti stessi. Sono sostanzialmente analoghi alle cartelle a un file system. Nel database utilizzato per il corso ci sono 4 schemi:
+L'unico elemento rilevante nel primo livello della struttura ad albero sotto il database è SCHEMA. Gli schemi sono dei contenitori logici usati per organizzare gli elementi del database secondo specifici criteri, ma non hanno nessun effetto sugli oggetti stessi. Sono sostanzialmente analoghi alle cartelle a un file system. Nel database utilizzato per il corso ci sono 4 schemi:
 * basedata  
 * biodiversita  
 * public  
@@ -129,7 +129,7 @@ L'unico elemento rilevante nel primo livello della struttura ad albero sotto il 
 Nel primo schema *basedata* ci sono tutte le tabelle e le view con i dati di interesse generale per tutti i data set (ad esempio informazioni sulla tassonomia, confini comunali, confini regionali, confini dei parchi). In *biodiversita* ci sono tutte le tabelle e le view relative al Progetto Biodiversità dei 4 parchi utilizzati durante il corso. Lo schema *public* è invece usato dal database per mettere degli oggetti "di sistema", e non dovrebbe essere usato dagli utenti. Lo schema *test* è invece utilizzato per creare nuovi oggetti per esercitarsi durante il corso.  
 Espandendo uno schema, verranno visualizzati gli oggetti che contiene, sempre in base alle opzioni selezionate in *Nodi*. I due elementi più importanti sono le VISTE e le TABELLE.  
 #### Viste  
-Le VIEW (o viste) sono delle tabelle "virtuali" che consentono di vedere in modo semplice i dati nella forma desiderata. I dati sono fisicamente contenuti nelle tabelle, ma per l'utente finale le viste equivalgono a delle tabelle, con la differenza (nella loro versione più semplice) che non possono essere modificate. La vista viene costruite con una query SQL preparata a priori dal gestore del database in base alle richieste degli utenti.  
+Le VIEW (o viste) sono delle tabelle "virtuali" che consentono di vedere in modo semplice i dati nella forma desiderata. I dati sono fisicamente contenuti nelle tabelle, ma per l'utente finale le viste equivalgono a delle tabelle, con la differenza (nella loro versione più semplice) che non possono essere modificate. La vista viene costruita con una query SQL preparata a priori dal gestore del database in base alle richieste degli utenti.  
 #### Tabelle  
 Le tabelle sono le strutture in cui vengono fisicamente archiviati i dati organizzati per colonne (o campi). Oltre che dai campi, una tabella è caratterizzata dai vincoli interni ed esterni. I CAMPI e i VINCOLI sono visibili quando una specifica tabella viene selezionata nel menù ad albero del pannello di sinistra.  
 #### Campi  
@@ -137,7 +137,7 @@ I campi sono le colonne di cui è composta una tabella. La lista dei campi è vi
 #### Vincoli  
 Associata ad ogni tabelle ci sono una serie di vincoli:  
 * Unique constraint (non accetta valori ripetuti per un campo o un set di campi)  
-* Check (specifica il domini di valori validi per un certo campo)  
+* Check (specifica il dominio di valori validi per un certo campo, cioè i valori ammessi per quel campo)  
 * Primary keys (un campo o combinazione di campi che identifica univocamente un record e che non può essere nullo)  
 * Foreign keys (dipendenza di un campo o di una combinazione di campi dai valori contenuti in una tabella esterna "padre")  
 
@@ -155,18 +155,20 @@ Per ogni livello esiste un "gruppo" a cui vengono associati i permessi. Poi ogni
 ### Interagire con una tabella
 In questa sezione, viene mostrato come visualizzare una tabella nell'interfaccia grafica, ordinare e selezionare i dati, modificare i valori dei campi, inserire un nuovo record, cancellare un record. In seguito viene spiegato come esportare i dati. Alla fine viene mostrato come visualizzare i dati geografici, aprire una view e creare una tabella via interfaccia grafica.  
 #### Visualizzare i dati di una tabella
-Per visualizzare i dati di una tabella, bisogna selezionarla nel menù ad albero nel pannello di sinistra e poi fare click sull'icona a forma di tabella nel menù degli strumenti in alto (vedi immagine sotto). Lo stesso risultato si può ottenere cliccando col pulsante destro sulla tabella nel menù ad albero. Nella lista dei tab verrà aggiunto un nuovo elemento che fa visualizzare nel pannello a destra (contenuto delle schede) diviso in due parti: nella sezione superiore c'è il codice SQL che PgAdmin usa per richiedere i dati al server, nella sezione inferiore c'è la tabella con i dati. In questo caso non è possibile modificare il codice SQL. Vedremo come usare direttamente il linguaggio SQL nelle lezioni del secondo modulo.  
+Per visualizzare i dati di una tabella, bisogna selezionarla nel menù ad albero nel pannello di sinistra e poi fare click sull'icona a forma di tabella nel menù degli strumenti in alto (vedi immagine sotto).
 
 [![](materiale/l03_client_pgadmin4_table1.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_pgadmin4_table1.png?raw=true)  
 
+Lo stesso risultato si può ottenere cliccando col pulsante destro sulla tabella nel menù ad albero e cliccando *View/Edit data - All Rows*. Nella lista dei tab verrà aggiunto un nuovo elemento che fa visualizzare nel pannello a destra (contenuto delle schede) diviso in due parti: nella sezione superiore c'è il codice SQL che PgAdmin usa per richiedere i dati al server, nella sezione inferiore c'è la tabella con i dati. In questo caso non è possibile modificare il codice SQL. Vedremo come usare direttamente il linguaggio SQL nelle lezioni del secondo modulo.  
 La tabella a questo punto è disponibile e i dati possono essere letti, modificati, aggiunti, rimossi come se fosse un foglio di calcolo (e poi, se necessario, esportati come file csv).  
+
 #### Ordinare e selezionare i dati
-È possibile aggiungere criteri (icona a forma di imbuto nella barra degli strumenti, di fianco a quello per aprire la tabella) per ordinare i record e/o limitare la selezione a un sottoinsieme di record (nei criteri di selezione si possono usare [sub-queries](http://www.postgresqltutorial.com/postgresql-subquery/), cosa a volte utile se si vogliono vedere record in base a criteri impostati anche su altre tabelle). I criteri vengono definiti secondo la sintassi del linguaggio SQL che vedremo insieme. nell'esempio riportato qui sotto, i dati vengono ordinati per il campo *species_id* e i record limitati alle specie che iniziano con "Ad".
+È possibile aggiungere criteri (icona a forma di imbuto nella barra degli strumenti, di fianco a quello per aprire la tabella) per ordinare i record e/o limitare la selezione a un sottoinsieme di record (nei criteri di selezione si possono usare [sub-queries](http://www.postgresqltutorial.com/postgresql-subquery/), cosa a volte utile se si vogliono vedere record in base a criteri impostati anche su altre tabelle). I criteri vengono definiti secondo la sintassi del linguaggio SQL che vedremo insieme. nell'esempio riportato qui sotto, i dati vengono ordinati per il campo *species_id* e i record limitati alle specie che iniziano con "Ac".
 
 [![](materiale/l03_client_pgadmin4_table2.png)](https://github.com/feurbano/pngp_db/blob/master/materiale/l03_client_pgadmin4_table2.png?raw=true)
 
 #### Modificare, cancellare e aggiungere un record
-Per modificare il valore di un campo bisogna fare un doppio click sulla cella: si aprirà una piccola finestra dove potrà essere inserito il nuovo valore. Per eleminare un record, bisogna selezionare tutta la riga e poi cliccare sull'icona a forma di pattumiera nella barra sotto il pannello delle schede. Per aggiungere un record, bisogna andare alla fine della tabella e inserire i valori nell'ultima riga (che è vuota). I cambiamenti apportati sono evidenziati con carattere in grassetto (e con una riga rossa sui record eliminati). Le modifiche però non sono ancora applicate alla tabella. Per renderli definitivi, vanno confermati con l'icona a forma di freccia sovrapposta alla tabella (nel menu che appare sotto le schede quando viene aperta una tabella, vedi figura sotto).
+Per modificare il valore di un campo bisogna fare un doppio click sulla cella: si aprirà una piccola finestra dove potrà essere inserito il nuovo valore. Per eliminare un record, bisogna selezionare tutta la riga e poi cliccare sull'icona a forma di pattumiera nella barra sotto il pannello delle schede. Per aggiungere un record, bisogna andare alla fine della tabella e inserire i valori nell'ultima riga (che è vuota). I cambiamenti apportati sono evidenziati con carattere in grassetto (e con una riga rossa sui record eliminati). Le modifiche però non sono ancora applicate alla tabella. Per renderli definitivi, vanno confermati con l'icona a forma di freccia sovrapposta alla tabella (nel menu che appare sotto le schede quando viene aperta una tabella, vedi figura sotto).
 
 [![](materiale/l03_client_pgadmin4_table3.png)](https://github.com/feurbano/pngp_db/blob/master/materiale/l03_client_pgadmin4_table3.png?raw=true)
 
@@ -190,7 +192,7 @@ Il tool migliore per visualizzare i dati spaziali è QGIS, ma anche PgAdmin offr
 #### Visualizzare una view
 Per visualizzare una view, il procedimento è identico a quello usato per una tabella. Selezionare la view desiderata e procedere come illustrato sopra per la visualizzazione e lo scaricamento dei dati (non è invece possibile modificare i dati).  
 #### Creare oggetti via interfaccia grafica
- possibile creare nuovi oggetti (ad esempio, schemi, tabelle e campi aggiuntivi di una tabella) tramite una interfaccia grafica dove tutte le informazioni necessarie vengono inserite con un percorso guidato da PgAdmin. Per farlo è necessario selezionare l'oggetto richiesto (ad esempio, tabella), nel menù ad albero del pannello di sinistra, cliccare con il pulsante dentro e selezionare *Nuovo*.  
+È possibile creare nuovi oggetti (ad esempio, schemi, tabelle e campi aggiuntivi di una tabella) tramite l'interfaccia grafica di PgAdmin dove tutte le informazioni necessarie vengono inserite con un percorso guidato. Per farlo è necessario selezionare l'oggetto richiesto (ad esempio, tabella), nel menù ad albero del pannello di sinistra, cliccare con il pulsante dentro e selezionare *Create/Table* (o il tipo di oggetto selezionato).  
 ### Collegarsi al DB con altri tool
 Ci sono client che possono essere usati per applicazioni specifiche, ad esempio creazione di mappe, analisi statistiche, produzioni di report. In questa sezione viene spiegato come collegarsi a 3 programmi: QGIS, R e LibreOffice Calc (è possibile in modo simile collegarsi ad esempio ad ArcGIS, MS Access ed Excel: per spiegazioni dettagliate cercare tutorial specifici su internet).  
 #### Collegarsi al database con QGIS
