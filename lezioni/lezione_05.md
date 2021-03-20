@@ -133,7 +133,7 @@ Una descrizione completa di `SELECT` e dei comandi relativi è disponibile [qui]
 
 ### AND, OR
 Si possono specificare criteri multipli nella clausola `WHERE` della query SQL combinandoli attraverso l'uso degli operatori logici `AND` e `OR`. Il primo fa si che i criteri debbano essere verificati entrambi per restituire un record, mentre nel secondo caso basta che sia realizzata una delle due condizioni.  
-In questo esempio, vengono selezionati alcuni campi della tabella *biodiversita.ortotteri_controllo* dove nel plot c'erano più 20 ovini (usando `AND`)
+In questo esempio, vengono selezionati alcuni campi della tabella *biodiversita.ortotteri_controllo* dove nel plot ci sono più 20 ovini (usando `AND`):
 
 ```sql
 SELECT
@@ -146,11 +146,11 @@ SELECT
 FROM
   biodiversita.ortotteri_controllo
 where
-  stima_n_capi > 20 AND
-  pascolo_bestiame_code = 'ovini'
+  stima_n_capi = 20 AND
+  pascolo_bestiame_code = 'ovini';
 ```
 
-Il risultato è due record. Usando `or`  invece di `AND` basta che almeno uno dei criteri sia soddisfatto quindi vengono restutiti tutti i record con ovini o con più di 20 capi, anche di altri animali.
+Il risultato è due record. Usando `or`  invece di `AND` basta che almeno uno dei criteri sia soddisfatto quindi vengono restituiti tutti i record con ovini o con 20 capi, anche di altri animali.
 
 ```sql
 SELECT
@@ -163,15 +163,15 @@ SELECT
 FROM
   biodiversita.ortotteri_controllo
 where
-  stima_n_capi > 20 or
-  pascolo_bestiame_code = 'ovini'
+  stima_n_capi = 20 or
+  pascolo_bestiame_code = 'ovini';
 ```
 
 #### Esercizio
 > Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code il campo 'parzialmente coperto' (come nell'esercizio precedente) ma che devono anche soddisfare il criterio di avere 'pascolo' come valore di pascolo_impatto_code.
 
 ### IN, NOT IN
-Si possono specificare più valori accettabili per un dato campo. Per introdurre una lista si deve usare il comando `in` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole.  
+Si possono specificare più valori accettabili per un dato campo. Invece che usare una lunga serie di comandi `or` sullo stesso campo, per introdurre una lista si può usare il comando `in` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole.  
 Nell'esempio sotto vengono selezionati tutti i plot dei Parchi Orsiera Rocciavrè e Alpe Veglia e Alpe Devero:
 
 ```sql
@@ -187,11 +187,34 @@ WHERE
   parco_code in ('pnor','pndv');
 ```
 
+#### Esercizio
+> Selezionare tutti i record della tabella biodiversita.ortotteri_controllo che hanno come codice controllo_esito_code il valore 2 (controllo effettuato senza specie) o 3 (controllo non effettuato). I valori numerici non hanno bisogno di essere compresi fra virgolette singole quando vengono scritti.
 
 ### !=, >, <
+Quando vengono impostate le condizioni di selezione con la clausola `where`, l'operatore `=` non è l'unico che si può usare. Gli operatori maggiore `>` e minore `<` possono essere applicati a quasi tutti i tipi di dati (numerici, testo, date). In SQL la condizione di diverso (non uguale) si può esprimere con `!=` o con `<>`.  
+Ritornando all'esempio della tabella *biodiversita.ortotteri_controllo*, possiamo ora specificare che nel plot ci devono essere più di 20 capi e che non devono essere ovini:
 
-### NULL
-, IS NULL, IS NOT NULL
+```sql
+SELECT
+  parco_code,
+  plot_code,
+  data_controllo,
+  pascolo_impatto_code,
+  pascolo_bestiame_code,
+  stima_n_capi
+FROM
+  biodiversita.ortotteri_controllo
+where
+  stima_n_capi > 20 AND
+  pascolo_bestiame_code != 'ovini';
+```
+
+#### Esercizio
+> Quanti sono nella tabella *biodiversita.ortotteri_controllo* i record che hanno meno di 30 capi e che NON fanno parte del Parco dell'Orsiera (codice parco_code 'pnor').
+
+### NULL, IS NULL, IS NOT NULL
+Il concetto di dato nullo `NULL` è molto importante
+
 
 ### Alias
 di colonne e tabelle AS

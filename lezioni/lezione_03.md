@@ -249,7 +249,7 @@ Ora si può semplicemente trascinare e rilasciare la tabella nel foglio di calco
 [![](materiale/l03_client_calc2.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_calc2.png?raw=true)
 
 ### Esercizio riassuntivo
-Collegarsi al database **corso_parchi**, accedere alla tabella **basedata.scientific_name_species**, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.  
+> Collegarsi al database **corso_parchi**, accedere alla tabella **basedata.scientific_name_species**, visualizzarla, ordinarla per nome scientifico in ordine decrescente e scaricare i dati in formato csv.  
 
 ---
 [**Lezione 4.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_04.md) Dati progetto Biodiversità - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_04.html)</ins>]
