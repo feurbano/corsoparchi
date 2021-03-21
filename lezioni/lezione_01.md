@@ -8,7 +8,7 @@ Autore: Ferdinando Urbano
 ---
 Lezione in formato [<ins>[**PRESENTAZIONE GOOGLE**](https://docs.google.com/presentation/d/1XyWKH8GZxVzKnz5JL4B-3uMMULKOEaAzruW7Ps_FQeI/edit?usp=sharing)</ins>]  
 
-Lezione in formato [<ins>[**PDF**](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l01_presentazione.pdf)</ins>]  
+Lezione in formato [<ins>[**PDF**](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l01_presentazione.pdf?raw=true)</ins>]  
 
 ### SOMMARIO
 

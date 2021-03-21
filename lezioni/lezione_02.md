@@ -8,7 +8,7 @@ Autore: Ferdinando Urbano
 ---
 Materiale in formato [<ins>[**PRESENTAZIONE**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]  
 
-Lezione in formato [<ins>[**PDF**](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l02_presentazione.pdf)</ins>]  
+Lezione in formato [<ins>[**PDF**](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l02_presentazione.pdf?raw=true)</ins>]  
 
 ### SOMMARIO  
 * Cos'è un database relazionale  
@@ -67,7 +67,7 @@ Per accedere ad un DB bisogna conoscere l’indirizzo IP del server, la porta e 
 PgAdmin è uno dei (molti) possibili client e la principale interfaccia per la gestione dei database di PostgreSQL.  
 L'applicazione è indirizzata sia agli amministratori del database, sia agli utenti principianti ed esperti.  
 Permette tramite interfaccia grafica di visualizzare le tabelle, interrogare e scaricare i dati tramite il linguaggio SQL, creare oggetti del database, gestire gli utenti, fare backup.  
-Può essere eseguito sia come applicazione web che desktop. È open source e si può scaricare dal sito: https://www.pgadmin.org/.  
+Può essere eseguito sia come applicazione web che desktop. È open source e si può scaricare dal sito: [https://www.pgadmin.org/](https://www.pgadmin.org/).  
 È possibile utilizzare i dati anche usando altri client, ma questo è probabilmente il migliore per la gestione del DB.  
 
 ### PostGIS  
@@ -184,7 +184,7 @@ Altri oggetti:
 * Operatori  
 * Altre look up tables  
 
-[<img src="materiale/l02_er_ortotteri.png"/>](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l02_er_ortotteri.png)
+[<img src="materiale/l02_er_ortotteri.png"/>](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l02_er_ortotteri.png?raw=true)
 
 ### Modello dati: caso studio  
 **Monitoraggio con fototrappole**  
