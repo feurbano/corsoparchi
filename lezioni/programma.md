@@ -93,14 +93,15 @@
 
 #### Lezione 6. Comandi SQL per unire dati da tabelle diverse e per raggrupparli [3 ore; Lezione + Esercizi]
 1. DATE, TIMESTAMP, EXTRACT, TIMEZONE
-2. JOIN di tabelle
-3. LEFT JOIN
-4. GROUP BY
-5. HAVING
-6. COALESCE
-7. CASE
-7. Creare una tabella
-8. Creare una VIEW
+2. UNION
+3. JOIN di tabelle
+4. LEFT JOIN
+5. GROUP BY
+6. HAVING
+7. COALESCE
+8. CASE
+9. Creare una tabella
+10. Creare una VIEW
 
 #### Lezione 7. Dati spaziali [1 ora; Lezione + Esercizi]
 1. Oggetti spaziali in PostGIS

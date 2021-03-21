@@ -17,6 +17,7 @@ La struttura delle tabelle creata nei singoli database garantisce in buona misur
 I database dei Parchi costituiscono a questo punto il riferimento unico quanto alla versione valida dei dati. Qualsiasi modifica/miglioramento ai dati dovrebbe quindi essere fatto nel database, per evitare di generate potenziali versioni incoerenti.  
 Per questo corso è stata fatta una copia semplificata delle tabelle condivise riassuntive di alcuni taxa del progetto Biodiversità (ortotteri, lepidotteri) in modo di avere dei dati da utilizzare per fare esempi ed esercizi nell'uso del database e del linguaggio SQL. Questi dati sono una "copia di lavoro" e non il riferimento ufficiale, che rimane il database condiviso.  
 In questa lezione viene illustrato il modello dati delle informazioni archiviate nel database del corso in modo da spiegare come sono organizzati i dati Biodiversità e facilitare gli esercizi di interrogazione dei dati delle lezioni successive.  
+I modelli dati sono riportati in questa pagina e verranno descritti e spiegati nel dettaglio durante la video lezione.
 
 ### Altri dati nei DB dei Parchi
 Prima di spiegare i grafici Entità Relazioni (ER) del progetto Biodiversità, in questa sezioni vengono schematicamente riportati i data set che al momento (Marzo 2021) sono stati processati o sono in corso di elaborazione, nei database dei 4 Parchi.

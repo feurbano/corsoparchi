@@ -104,7 +104,7 @@ Un altra funzionalità interessante dell'editor SQL è che se viene evidenziata 
 
 ### WHERE, =
 Il comando `WHERE` (in inglese, dove) è usato per impostare i criteri sui dati che volete recuperare e limitare il risultato alle sole informazioni di interesse.  
-In questo esempio, vengono selezionate i campi *animale_code* e *numero_totale* dalla tabella *ortotteri_monitoraggio* (con le informazioni sulle determinazioni degli orotteri) dello schema *biodiversita*, limitando il risultato ai record in cui sono stati trovati 20 individui totali:
+In questo esempio, vengono selezionate i campi *animale_code* e *numero_totale* dalla tabella *ortotteri_monitoraggio* (con le informazioni sulle determinazioni degli orotteri) dello schema *biodiversita*, limitando il risultato ai record in cui sono stati trovati 20 individui totali (l'uguaglianza si indica con l'operatore matematico `=` per tutti i tipi di dato inclusi numeri, testo, date):
 ```sql
 SELECT
   animale_code,
@@ -213,8 +213,27 @@ where
 > Quanti sono nella tabella *biodiversita.ortotteri_controllo* i record che hanno meno di 30 capi e che NON fanno parte del Parco dell'Orsiera (codice parco_code 'pnor').
 
 ### NULL, IS NULL, IS NOT NULL
-Il concetto di dato nullo `NULL` è molto importante
+Il concetto di dato nullo (`NULL`) è molto importante nella gestione delle informazioni. In generale, corrisponde a "non si sa". Questo è fondamentalmente diverso dal valore 0 o dal fatto che non si verifichi un determinato evento. Ad esempio, se in un monitoraggio vedo 2 adulti di una specie e nessun piccolo, devo riportare 2 adulti e 0 piccoli e non lasciare il campo piccoli senza valore, perché questo vorrebbe dire che non so se c'erano dei piccoli o meno. Allo stesso modo, se devo indicare che un individuo adulto femmina non era assieme ad un piccolo in un campo della tabella sì/no (booleano), devo indicare "no". Lasciando il campo senza valore, vorrebbe dire che non si sa se la femmina era insieme a un piccolo.  
+Il valore nullo si indica con un campo "vuoto", ma nelle query SQL viene indicato con `NULL` (senza virgolette, in quanto non è un testo ma una "parole chiave" del linguaggio).  
+Per interrogare un campo richiedendo solo le righe con valore `NULL` si usa l'espressione `IS NULL`  
+Nell'esempio, si interrogano i record della tabella *biodiversita.ortotteri_controllo* in cui il campo *pascolo_impatto_code* è nullo e il campo *pascolo_bestiame_code* non è nullo:
 
+```sql
+SELECT
+  parco_code,
+  plot_code,
+  data_controllo,
+  pascolo_impatto_code,
+  pascolo_bestiame_code
+FROM
+  biodiversita.ortotteri_controllo
+where
+  pascolo_impatto_code IS NOT NULL AND
+  pascolo_bestiame_code IS NULL;
+```
+
+#### Esercizio
+> Verificare se ci sono record nella tabella *biodiversita.ortotteri_controllo* dove il campo *pascolo_bestiame_code* non è nullo e allo stesso tempo il campo *pascolo_impatto_code* ha il valore 'assente'. Se così fosse, ci sarebbe probabilmente un errore, visto che la presenza di bestiamo presuppone che ci sia un impatto. Una query può anche dare come risultato 0 righe.
 
 ### Alias
 di colonne e tabelle AS
@@ -226,6 +245,7 @@ SELECT
   animals_code AS CODE
 FROM
   main.animals;
+```
 
 ### ORDER BY, LIMIT
 

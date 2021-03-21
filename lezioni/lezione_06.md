@@ -10,6 +10,7 @@ Autore: Ferdinando Urbano
 ---
 
 1. DATE, TIMESTAMP, EXTRACT, TIMEZONE
+2. UNION
 2. JOIN di tabelle
 3. LEFT JOIN
 4. GROUP BY
