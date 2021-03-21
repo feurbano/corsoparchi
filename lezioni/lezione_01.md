@@ -147,7 +147,7 @@ Per i dati storici, tipicamente archiviati in fogli di calcolo non strutturati, 
 41. Modelli di dati con relazioni formali complesse
 42. Performance nell'uso dei dati
 
-### Perché i Parchi stanno creando un database
+### Perché i Parchi stanno creando il proprio database
 
 * Rendere fruibili i dati raccolti (adesso e in passato)
 * Preservare i dati sul lungo periodo
@@ -172,4 +172,4 @@ Per i dati storici, tipicamente archiviati in fogli di calcolo non strutturati, 
 * Esperienza pilota per future collaborazioni anche con altri parchi  
 
 ---
-[**Lezione 2.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_02.md) Introduzione ai database - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_02.html)</ins>] [<ins>[**Link presentazione**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]
+[**Lezione 2.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_02.md) Introduzione ai database - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_02.html)</ins>] [<ins>[**Link presentazione Google**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]

@@ -213,7 +213,7 @@ Una caratteristica interessante di QGIS è la possibilità di visualizzare i dat
 #### Collegarsi al database con R
 Per importare dati dal database in [R](https://www.r-project.org/) è sufficiente usare il codice riportato qui sotto (tramite la libreria RPostgreSQL):  
 
-```
+```R
 library(RPostgreSQL)
 drv <- dbDriver("PostgreSQL")
 con <- dbConnect(drv, dbname="corso_parchi",
