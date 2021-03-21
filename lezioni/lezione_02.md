@@ -7,7 +7,8 @@ Autore: Ferdinando Urbano
 
 ---
 Materiale in formato [<ins>[**PRESENTAZIONE**](https://docs.google.com/presentation/d/1c5SVeZIgyzI1XVzP-DYiVm4xGygObjy3FZR4bRpEIQY/edit?usp=sharing)</ins>]  
-Autore: Ferdinando Urbano
+
+Lezione in formato [<ins>[**PDF**](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l02_presentazione.pdf)</ins>]  
 
 ### SOMMARIO  
 * Cos'è un database relazionale  
