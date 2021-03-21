@@ -384,8 +384,9 @@ WHERE
 > Cercare tutti i nomi di animali che terminano in 'x'.
 
 ### Scaricare i dati
-Per scaricare la tabella che risulta da una query si possono usare i metodi già illustrati per una tabella. In più, nell'interfaccia PgAdmin del SQL Editor c'è una icona (vedi figura sotto) che permette di fare il download dei dati ina un file .csv.
-[![](materiale/l05_sql_scaricare.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_sql_scaricare.png?raw=true)
+Per scaricare la tabella che risulta da una query si possono usare i metodi già illustrati per una tabella. In più, nell'interfaccia PgAdmin del SQL Editor c'è una icona (vedi figura sotto) che permette di fare il download dei dati ina un file .csv.  
+
+[![](materiale/l05_sql_scaricare.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_sql_scaricare.png?raw=true)  
 
 ### Esercizi ricapitolativi
 
