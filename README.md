@@ -32,7 +32,7 @@ CISCO WebEx del Parco Nazionale del Gran Paradiso (il link verrà inviato via em
 Coordinatori tecnici, tecnici faunistici, esperti informatici e potenziali curatori dei dati dei Parchi; consulenti e collaboratori dei Parchi per la raccolta e la gestione dei dati.  
 
 ### Obiettivi
-L'obiettivo generale del corso è rendere i Parchi il più possibile autonomi nella gestione e aggiornamento dei propri database e favorirne l'ulteriore sviluppo. In particolare:
+L'obiettivo generale del corso è rendere i Parchi il più possibile autonomi nella gestione e aggiornamento dei propri database e favorirne l'ulteriore sviluppo. Non tutto il personale di un Parco deve saper gestire o anche solo usare un database, ma è importante che tutte le persone coinvolte siano a conoscenza di quello che è necessario per gestire correttamente i dati e per coordinare il lavoro con il responsabile del database, che è la struttura finale dove i dati vengono inseriti e conservati. In particolare:  
   * per i **coordinatori scientifici** l'obiettivo è comprendere come i database sono strutturati e come funzionano per poter coordinare il loro sviluppo e potere usare i dati nel database in modo basico;
   * per i **tecnici** l'obiettivo è approfondire come i dati possono essere manipolati e utilizzati in modo avanzato una volta inseriti nel database;
   * per i **collaboratori** l'obiettivo è conoscere le problematiche legate alla raccolta dei dati in relazione al loro inserimento nel database e all'utilizzo dei dati contenuti nel database in fase di analisi e reportistica;

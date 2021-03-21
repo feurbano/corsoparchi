@@ -236,29 +236,142 @@ where
 > Verificare se ci sono record nella tabella *biodiversita.ortotteri_controllo* dove il campo *pascolo_bestiame_code* non è nullo e allo stesso tempo il campo *pascolo_impatto_code* ha il valore 'assente'. Se così fosse, ci sarebbe probabilmente un errore, visto che la presenza di bestiamo presuppone che ci sia un impatto. Una query può anche dare come risultato 0 righe.
 
 ### Alias
-di colonne e tabelle AS
-You can use `AS` to specify an alias for columns (and also tables).
-
+Gli alias sono dei nomi alternativi che possono essere assegnati agli oggetti di una query durante la sua esecuzione, in particolare a tabelle o a campi (colonne). Un alias si può specificare usando il termine `AS`. As esempio:
 ```sql
 SELECT
-  animals_id AS id,
-  animals_code AS CODE
+  parco_code AS nome_parco,
+  plot_code,
+  data_controllo
 FROM
-  main.animals;
+  biodiversita.ortotteri_controllo;
 ```
 
+Assegnerà il nome *nome_parco* alla colonna *parco_code*. Lo stesso risultato si otterrà omettendo `AS` e specificando l'alias subito dopo il nome del campo o della tabella:
+```sql
+SELECT
+  parco_code nome_parco,
+  plot_code,
+  data_controllo
+FROM
+  biodiversita.ortotteri_controllo;
+```
+
+Il nome della tabella e del campo cambieranno nell'output e nell'esecuzione della query, ma non cambieranno i loro valori nel database.  
+Lo scopo principale degli alias di colonna è quello di rendere le intestazioni dell'output di una query più comprensibili.  
+
+Allo stesso modo può essere usato un alias per il nome di una tabella. In questo caso gli alias vengono spesso usati per rendere più leggibili i nomi lunghi di tabelle e per semplificare il codice nelle operazioni di join (integrazione) di diverse tabelle, come si vedrà in una delle prossime lezioni.  
+
+Una nota importante sul nome degli oggetti di un database, che vale anche per gli alias. Nei nomi di tabelle, campi, viste etc non sono previsti caratteri speciali, spazi e lettere maiuscole. Se si vuole usare un nome con queste caratteristiche (fortemente sconsigliato) è necessario circondarlo con doppi apici come questo: `"Nome con Spazi e Maiuscole!"`.
+
 ### ORDER BY, LIMIT
+In una query, oltre a definire *quali* dati devono essere visualizzati, si può controllare anche *come* vengono visualizzati. In particolare, si può definire il criterio di ordinamento basato su uno o più campi (analogamente a quanto si può fare in un foglio di calcolo) usando `ORDER BY (colonna a) ASC/DESC, (colonna b) ASC/DESC ...`. ASC vuol dire ordine crescente (default), DESC invece ordine decrescente. `ORDER BY` deve essere inserito alla fine della query.
+
+In questo esempio i record della tabella *biodiversita.ortotteri_controllo* relativi al parco 'pnvg' vengono ordinati per plot e per data:
+```sql
+SELECT
+  parco_code,
+  plot_code,
+  data_controllo
+FROM
+  biodiversita.ortotteri_controllo
+ORDER BY plot_code, data_controllo;
+```
+
+Con `LIMIT` si può specificare di riportare solo un certo numero di record, il che è conveniente quando le tabelle hanno molti record e si vuole esplorare solo il contenuto di una tabella. Spesso è utile combinare `ORDER BY` e `LIMIT` per ottenere solo i record con i valori maggiori per un certo campo. `LIMIT` deve essere specificato come ultimo elmento della query. In questo esempio, i record della tabella *biodiversita.ortotteri_controllo* vengono ordinati per numero di capi di bestiamo (*stima_n_capi*) in ordine decrescente e poi il risultato limitato a 10 record per vedere solo quelli con il maggior numero di animali:
+```sql
+SELECT
+  parco_code,
+  plot_code,
+  data_controllo,
+  stima_n_capi
+FROM
+  biodiversita.ortotteri_controllo
+ORDER BY stima_n_capi DESC
+LIMIT 10;
+```
+
+#### Esercizio
+> Visualizzare (solo) i 5 record con più individui (*numero_totale*) della tabella *biodiversita.ortotteri_monitoraggio*.  
 
 ### DISTINCT
+A volte si può essere interessati a verificare solo quali valori univoci appaiono in una determinata serie di campi, e non tutti i record. In questo caso è possibile usare il comando `DISTINCT` per eliminare i record con valori uguali i valori duplicati. Il comando `DISTINCT` deve essere specificato subito dopo il comando `SELECT`. Ad esempio, con questa query visualizzo solo le combinazioni di valori *pascolo_impatto_code* e *pascolo_bestiame_code* nella tabella *biodiversita.ortotteri_controllo*:
+
+```sql
+SELECT DISTINCT
+  pascolo_impatto_code,
+  pascolo_bestiame_code
+FROM
+  biodiversita.ortotteri_controllo
+order by
+  pascolo_impatto_code;
+```
+
+
 
 ### Stringhe, numeri, booleani
 INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN, SERIAL number  
 
 ### CAST
 Cambiare tipo di dato:
+There are many cases that you want to convert one data type into another. PostgreSQL provides the syntax for converting one type into another. The easiest way is to use `::` followed by the new data type. Note that not all the conversions are allowed. A text cannot be cast as number, but numbers can be transformed into text, or a decimal number into an integer.
 
+
+```sql
+SELECT
+  7 AS example1a,
+  7::text AS example1b,
+  7.8::integer AS example2,
+  now() AS example3a,
+  now()::text AS example3b,
+  10/3 AS example4a,
+  10/3.0 AS example4b;
+```
 ### LIKE
 Ricerca nelle stringhe di testo:
+PostreSQL provides many tools to deal with string object. The most notable is **[LIKE](https://www.postgresql.org/docs/devel/static/functions-matching.html)**. The LIKE expression returns true if the string matches the supplied pattern. If pattern does not contain percent signs or underscores, then the pattern only represents the string itself; in that case LIKE acts like the equals operator. An underscore ( `_` ) in pattern stands for (matches) any single character; a percent sign ( `%` ) matches any sequence of zero or more characters.
+
+Some examples are reported below.
+
+```sql
+SELECT
+  pro_com,
+  nome_com
+FROM
+  env_data.adm_boundaries;
+```
+
+```sql
+SELECT
+  pro_com,
+  nome_com
+FROM
+  env_data.adm_boundaries
+WHERE
+nome_com like 'C%';
+```
+
+```sql
+SELECT
+  pro_com,
+  nome_com
+FROM
+  env_data.adm_boundaries
+WHERE
+nome_com like 'C%e';
+```
+
+```sql
+SELECT
+  pro_com,
+  nome_com
+FROM
+  env_data.adm_boundaries
+WHERE
+nome_com like 'C____e';
+```
+
+##### EXERCISE
+* Retrieve all the animals that have the letter 'a' in their name
 
 ### Scaricare i dati
 di una query in un file .csv
