@@ -306,7 +306,8 @@ order by
   pascolo_impatto_code;
 ```
 
-
+#### Esercizio
+> Quante sono le specie riportate nella tabella *biodiversita.ortotteri_conteggio* (se viene visualizzato un record per specie, è sufficiente poi vedere il numero totlae di righe).  
 
 ### Stringhe, numeri, booleani
 INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN, SERIAL number  
