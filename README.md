@@ -26,7 +26,7 @@ MODULO 4 - Martedì 30/3/2021 09:00-13:00
 Ferdinando Urbano
 
 ### Piattaforma di videoconferenza
-CISCO WebEx del Parco Nazionale del Gran Paradiso (il link verrà inviato via email)  
+CISCO WebEx del Parco Nazionale del Gran Paradiso (il link verrà inviato via email).  
 
 ### Utenti
 Coordinatori tecnici, tecnici faunistici, esperti informatici e potenziali curatori dei dati dei Parchi; consulenti e collaboratori dei Parchi per la raccolta e la gestione dei dati.  
@@ -37,7 +37,7 @@ L'obiettivo generale del corso è rendere i Parchi il più possibile autonomi ne
   * per i **tecnici** l'obiettivo è approfondire come i dati possono essere manipolati e utilizzati in modo avanzato una volta inseriti nel database;
   * per i **collaboratori** l'obiettivo è conoscere le problematiche legate alla raccolta dei dati in relazione al loro inserimento nel database e all'utilizzo dei dati contenuti nel database in fase di analisi e reportistica;
   * per gli **esperti informatici** l'obiettivo è acquisire le competenze base per integrare il database nel sistema informativo del Parco e gestire la componente software e hardware;
-  * per i futuri **curatori dei dati** l'obiettivo è saper gestire il processo di controllo dei dati e caricamento dei dati nel database e cominciare a capire come estende il database con nuovi set di dati.
+  * per i futuri **curatori dei dati** l'obiettivo è saper gestire il processo di controllo dei dati e caricamento dei dati nel database e cominciare a capire come estende il database con nuovi set di dati.  
 
 Per tutti i gruppi un obiettivo ulteriore è approfondire le problematiche generali legate alla gestione dei dati e le possibili soluzioni tecniche.  
 
