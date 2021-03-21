@@ -25,7 +25,7 @@ Per una introduzione all'estensione spaziale PostGIS, una fonte di informazioni 
 In futuro, per l'uso e aggiornamento dei database dei singoli Parchi, gli operatori e i collaboratori potranno eventualmente chiedere il supporto tecnico al curatore e al gestore del database del proprio Parco.
 
 ### PgAdmin SQL editor
-Per poter inviare una richiesta al database tramite una query SQL, si deve aprire la finestra SQL (o SQL editor) del client che si utilizza, nel nostro caso PgAdmin. L'icona del SQL editor è nella barra dei menù in alto a sinistra (vedi figura sotto). La finestra SQL verrà aggiunta alla lista delle schede (Le schede con gli SQL editor non vanno confuse con la scheda chiamata *SQL* che è utilizzata da PaAdmin per mostrare il codice SQL che genera l'oggetto selezionato nel menù ad albero del pannello di sinistra). Si possono aprire quante finestre SQL si vogliono, navigando fra poi fra le finestre come in qualsiasi pannello a schede. Ogni scheda può essere chiusa cliccando sul bottone (X) in alto a destra. Si sconsiglia di aprire troppe schede per non rendere la navigazione troppo complicata.  
+Per poter inviare una richiesta al database tramite una query SQL, si deve aprire la finestra SQL (o SQL editor) del client che si utilizza, nel nostro caso PgAdmin. L'icona del SQL editor è nella barra dei menù in alto a sinistra (vedi figura sotto). La finestra SQL verrà aggiunta alla lista delle schede (Le schede con gli SQL editor non vanno confuse con la scheda chiamata *SQL* che è utilizzata da PaAdmin per mostrare il codice SQL che genera l'oggetto selezionato nel menù ad albero del pannello di sinistra). Si possono aprire quante finestre SQL si vogliono, navigando poi fra le finestre come in qualsiasi pannello a schede. Ogni scheda può essere chiusa cliccando sul bottone (X) in alto a destra. Si sconsiglia di aprire troppe schede per non rendere la navigazione troppo complicata.  
 
 [![](materiale/l05_sql_editor.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_sql_editor.png?raw=true)  
 
@@ -45,7 +45,7 @@ WHERE
 ;
 ```
 
-Nei box neri di testo sono sempre include linee di codice.  
+Nei box neri/grigi di testo sono sempre incluse linee di codice.  
 SQL è insensibile alle lettere minuscole/maiuscole. Le istruzioni SQL possono essere lunghe e estendersi su più righe (il carattere di ritorno riga è semplicemente ignorato). Per segnalare al database che una query finisce, bisogna terminarla con un punto e virgola `;`.
 
 Il comando `SELECT` può essere usato anche da solo, senza altri comandi. Qui alcuni esempi. Per verificare il risultato, bisogna copiarli e incollarli nella finestra SQL. Per eseguire il comando SQL, bisogna usare il pulsante a forma di 'play':
@@ -330,7 +330,7 @@ SELECT
 Un ulteriore tipo di dati usato spesso è `BOOLEAN`, che può assumere 3 valori: TRUE, FALSE o NULL. Il database come valori per TRUE accetta anche `'t', 'true','y','yes','on','1'` e il corrispettivo per FALSE `'f','false','n','no','off','0'`, ma in tutti questi casi devono essere usate le virgolette (`FALSE` e `TRUE` come `NULL` non hanno bisogno di virgolette).
 
 ### CAST
-Ci sono molti casi in cui si può voler convertire un tipo di dati in un altro. In PostgreSQL fornisce la sintassi per compiere questa operazione è usare `::` attaccato al nome di un campo seguito dal nuovo tipo di dati. Ovviamente non tutte le conversioni sono permesse. Ad esempio, un testo non può essere convertito in un numero, ma i numeri possono essere trasformati in testo, o un numero decimale in un intero, come in questo esempio (notate i tipi di dato nella tabella risultante):
+Ci sono molti casi in cui si può voler convertire un tipo di dati in un altro. In PostgreSQL per compiere questa operazione è necessario usare `::` attaccato al nome di un campo seguito dal nuovo tipo di dati. Ovviamente non tutte le conversioni sono permesse. Ad esempio, un testo non può essere convertito in un numero, ma i numeri possono essere trasformati in testo, o un numero decimale in un intero, come in questo esempio (notate i tipi di dato nella tabella risultante):
 
 ```sql
 SELECT
