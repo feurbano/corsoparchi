@@ -171,7 +171,7 @@ where
 > Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code il campo 'parzialmente coperto' (come nell'esercizio precedente) ma che devono anche soddisfare il criterio di avere 'pascolo' come valore di pascolo_impatto_code.
 
 ### IN, NOT IN
-Si possono specificare più valori accettabili per un dato campo. Invece che usare una lunga serie di comandi `or` sullo stesso campo, per introdurre una lista si può usare il comando `in` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole.  
+Si possono specificare più valori accettabili per un dato campo. Invece che usare una lunga serie di comandi `OR` sullo stesso campo, per introdurre una lista si può usare il comando `IN` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole. `NOT IN` viene usato per specificare che i valori richiesti sono tutti tranne quelli elencati fra parentesi.  
 Nell'esempio sotto vengono selezionati tutti i plot dei Parchi Orsiera Rocciavrè e Alpe Veglia e Alpe Devero:
 
 ```sql
@@ -274,6 +274,8 @@ SELECT
   data_controllo
 FROM
   biodiversita.ortotteri_controllo
+WHERE 
+  parco_code = 'pnvg'
 ORDER BY plot_code, data_controllo;
 ```
 
@@ -286,7 +288,8 @@ SELECT
   stima_n_capi
 FROM
   biodiversita.ortotteri_controllo
-ORDER BY stima_n_capi DESC
+ORDER BY
+  stima_n_capi DESC
 LIMIT 10;
 ```
 
