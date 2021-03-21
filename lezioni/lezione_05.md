@@ -341,7 +341,7 @@ SELECT
 PostreSQL fornisce molti strumenti per fare ricerche nei campi con stringhe di caratteri. Oltre all'operatore di uguaglianza `=` usato per trovare stringhe uguali e quelli di maggiore `>` e minore `<` basati sull'ordine alfabetico, il comando più interessante è **[LIKE](https://www.postgresql.org/docs/devel/static/functions-matching.html)**. L'espressione `LIKE` restituisce TRUE se la stringa corrisponde al pattern fornito. Se il pattern non contiene segni di percentuale o underscore, allora il pattern rappresenta solo la stringa stessa; in questo caso LIKE agisce come l'operatore di uguaglianza. Un carattere di underscore `_` nel pattern sta per 'qualsiasi singolo carattere'; un segno di percentuale `%` corrisponde a una qualsiasi sequenza di caratteri.
 
 In questo esempio, like specifica il nome di un animale da ricercare nella tabella *biodiversita.biodiversita_animali* senza usare caratteri speciali nel pattern e quindi di fatto corrisponde all'operatore `=`:
-```
+```sql
 SELECT
   animale_code
 FROM
@@ -351,7 +351,7 @@ WHERE
 ```
 
 In questa query vengono cercati tutti i nomi che iniziano con 'Amara' e che hanno qualsiasi stringa dopo (quindi, di fatto tutte le specie del genere Amara):
-```  
+```sql  
 SELECT
   animale_code
 FROM
@@ -361,7 +361,7 @@ WHERE
 ```
 
 In questo caso, si specifica che dopo il termine 'Amara' deve esserci uno spazio e poi 5 caratteri qualsiasi (né più né meno):
-```  
+```sql  
 SELECT
   animale_code
 FROM
@@ -371,7 +371,7 @@ WHERE
 ```
 
 In questo ultimo esempio ci cercano tutti i nomi che hanno la stringa 'erd' al loro interno:
-```  
+```sql  
 SELECT
   animale_code
 FROM
@@ -399,7 +399,7 @@ Per scaricare la tabella che risulta da una query si possono usare i metodi già
 > Visualizzare i record della tabella *biodiversita.lepidotteri_monitoraggio* in ordine crescente di *data_controllo* che hanno più di 10 individui come numero totale.
 
 #### Esercizio 4
-> Nella tabella *biodiversita.lepidotteri_monitoraggio*, quali sono i record del Parco delle Dolomiti Bellunesi ('pndb') che hanno una nota (cioè in cui il campo *nota* è non nullo)?
+> Nella tabella *biodiversita.lepidotteri_monitoraggio*, quali sono i record del Parco delle Dolomiti Bellunesi ('pndb') e del Parco del Gran Paradiso ('pngp') che hanno una nota (cioè in cui il campo *nota* è non nullo)?
 
 #### Esercizio 5
 > Nella tabella *biodiversita.lepidotteri_monitoraggio*, cercare tutti i record appartenenti al genere 'Pieris'.
