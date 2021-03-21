@@ -85,7 +85,7 @@
 11. Cambiare tipo di dato: CAST
 12. Ricerca nelle stringhe di testo: LIKE
 13. Scaricare i dati di una query in un file .csv
-13. Esercizi ricapitolativi
+14. Esercizi ricapitolativi
 
 ---
 

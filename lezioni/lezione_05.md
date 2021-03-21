@@ -1,10 +1,7 @@
 <p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
 
-# WORK IN PROGRESS
-
 #### Lezione 5
 ## INTRODUZIONE A SQL E COMANDI BASE
-
 Autore: Ferdinando Urbano  
 
 ---
@@ -321,77 +318,91 @@ SELECT
   'a' || 'b' AS esempio_caratteri;
 ```
 
+Il tipo di dato della colonne risultante è riportato sotto il suo nome nella tabella restituita dall'editor SQL (in questo caso, `INTEGER` e `TEXT`).  
+Il database quando effettua una operazione fra due valori con un certo tipo di dati, calcolerà il risultato secondo lo stesso tipo di dato. In questo esempio si può vedere come il risultato della divisione di due interi si un intero (approssimato in caso di valori decimali), mentre vengono riportati i decimali se almeno uno dei numeri era espresso in formato decimale (`FLOAT` o `NUMERIC`):
 
+```sql
+SELECT
+  10 / 4 AS divisione_interi,
+  10 / 4.0 AS divisione_decimali;
+```
 
-
-INTEGER, FLOAT, CHARACTER VARYING, TEXT, BOOLEAN, SERIAL number  
+Un ulteriore tipo di dati usato spesso è `BOOLEAN`, che può assumere 3 valori: TRUE, FALSE o NULL. Il database come valori per TRUE accetta anche `'t', 'true','y','yes','on','1'` e il corrispettivo per FALSE `'f','false','n','no','off','0'`, ma in tutti questi casi devono essere usate le virgolette (`FALSE` e `TRUE` come `NULL` non hanno bisogno di virgolette).
 
 ### CAST
-Cambiare tipo di dato:
-There are many cases that you want to convert one data type into another. PostgreSQL provides the syntax for converting one type into another. The easiest way is to use `::` followed by the new data type. Note that not all the conversions are allowed. A text cannot be cast as number, but numbers can be transformed into text, or a decimal number into an integer.
-
+Ci sono molti casi in cui si può voler convertire un tipo di dati in un altro. In PostgreSQL fornisce la sintassi per compiere questa operazione è usare `::` attaccato al nome di un campo seguito dal nuovo tipo di dati. Ovviamente non tutte le conversioni sono permesse. Ad esempio, un testo non può essere convertito in un numero, ma i numeri possono essere trasformati in testo, o un numero decimale in un intero, come in questo esempio (notate i tipi di dato nella tabella risultante):
 
 ```sql
 SELECT
-  7 AS example1a,
-  7::text AS example1b,
-  7.8::integer AS example2,
-  now() AS example3a,
-  now()::text AS example3b,
-  10/3 AS example4a,
-  10/3.0 AS example4b;
+  7::text || 'a' AS numero2testo,
+  7.8::integer AS numerico2intero;
 ```
 ### LIKE
-Ricerca nelle stringhe di testo:
-PostreSQL provides many tools to deal with string object. The most notable is **[LIKE](https://www.postgresql.org/docs/devel/static/functions-matching.html)**. The LIKE expression returns true if the string matches the supplied pattern. If pattern does not contain percent signs or underscores, then the pattern only represents the string itself; in that case LIKE acts like the equals operator. An underscore ( `_` ) in pattern stands for (matches) any single character; a percent sign ( `%` ) matches any sequence of zero or more characters.
+PostreSQL fornisce molti strumenti per fare ricerche nei campi con stringhe di caratteri. Oltre all'operatore di uguaglianza `=` usato per trovare stringhe uguali e quelli di maggiore `>` e minore `<` basati sull'ordine alfabetico, il comando più interessante è **[LIKE](https://www.postgresql.org/docs/devel/static/functions-matching.html)**. L'espressione `LIKE` restituisce TRUE se la stringa corrisponde al pattern fornito. Se il pattern non contiene segni di percentuale o underscore, allora il pattern rappresenta solo la stringa stessa; in questo caso LIKE agisce come l'operatore di uguaglianza. Un carattere di underscore `_` nel pattern sta per 'qualsiasi singolo carattere'; un segno di percentuale `%` corrisponde a una qualsiasi sequenza di caratteri.
 
-Some examples are reported below.
-
-```sql
-SELECT
-  pro_com,
-  nome_com
-FROM
-  env_data.adm_boundaries;
+In questo esempio, like specifica il nome di un animale da ricercare nella tabella *biodiversita.biodiversita_animali* senza usare caratteri speciali nel pattern e quindi di fatto corrisponde all'operatore `=`:
 ```
-
-```sql
 SELECT
-  pro_com,
-  nome_com
+  animale_code
 FROM
-  env_data.adm_boundaries
+  biodiversita.biodiversita_animali
 WHERE
-nome_com like 'C%';
+  animale_code like 'Amara aenea';
 ```
 
-```sql
+In questa query vengono cercati tutti i nomi che iniziano con 'Amara' e che hanno qualsiasi stringa dopo (quindi, di fatto tutte le specie del genere Amara):
+```  
 SELECT
-  pro_com,
-  nome_com
+  animale_code
 FROM
-  env_data.adm_boundaries
+  biodiversita.biodiversita_animali
 WHERE
-nome_com like 'C%e';
+  animale_code like 'Amara%';
 ```
 
-```sql
+In questo caso, si specifica che dopo il termine 'Amara' deve esserci uno spazio e poi 5 caratteri qualsiasi (né più né meno):
+```  
 SELECT
-  pro_com,
-  nome_com
+  animale_code
 FROM
-  env_data.adm_boundaries
+  biodiversita.biodiversita_animali
 WHERE
-nome_com like 'C____e';
+  animale_code like 'Amara _____';
 ```
 
-##### EXERCISE
-* Retrieve all the animals that have the letter 'a' in their name
+In questo ultimo esempio ci cercano tutti i nomi che hanno la stringa 'erd' al loro interno:
+```  
+SELECT
+  animale_code
+FROM
+  biodiversita.biodiversita_animali
+WHERE
+  animale_code like '%erd%';
+```
+
+#### Esercizio
+> Cercare tutti i nomi di animali che terminano in 'x'.
 
 ### Scaricare i dati
-di una query in un file .csv
+Per scaricare la tabella che risulta da una query si possono usare i metodi già illustrati per una tabella. In più, nell'interfaccia PgAdmin del SQL Editor c'è una icona (vedi figura sotto) che permette di fare il download dei dati ina un file .csv.
+[![](materiale/l05_sql_scaricare.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_sql_scaricare.png?raw=true)
 
 ### Esercizi ricapitolativi
+
+#### Esercizio 1
+> Qual è il record della tabella *biodiversita.lepidotteri_monitoraggio* relativo al Parco dello Stelvio ('pns') con più individui (*numero_totale*)?
+
+#### Esercizio 2
+> Quanti sono i Parchi (*parco_code*) che hanno dati nella tabella *biodiversita.lepidotteri_monitoraggio*?
+
+#### Esercizio 3
+> Visualizzare i record della tabella *biodiversita.lepidotteri_monitoraggio* in ordine crescente di *data_controllo* che hanno più di 10 individui come numero totale.
+
+#### Esercizio 4
+> Nella tabella *biodiversita.lepidotteri_monitoraggio*, quali sono i record del Parco delle Dolomiti Bellunesi ('pndb') che hanno una nota (cioè in cui il campo *nota* è non nullo)?
+
+#### Esercizio 5
+> Nella tabella *biodiversita.lepidotteri_monitoraggio*, cercare tutti i record appartenenti al genere 'Pieris'.
 
 ---
 [**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL avanzati - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_06.html)</ins>]
