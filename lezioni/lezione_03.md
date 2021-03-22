@@ -230,7 +230,9 @@ Nel comando *dbSendQuery* è possibile inserire qualsiasi codice SQL che verrà 
 È anche possibile importare dati nel database da R. Su Internet è possibile trovare tutta la documentazione e la lista dei pacchetti più interessanti per lavorare con un database PostgreSQL da R.  
 #### Collegarsi al database con Libre Office
 BASE e CALC sono due software della suite open source [LibreOffice](https://www.libreoffice.org/). Possono essere collegati al database e offrono la possibilità di creare query con strumenti grafici, creare maschere, modificare i dati in un ambiente intuitivo (BASE, equivalente di MS ACCESS) o di visualizzare le informazioni come foglio di calcolo (CALC, ma in questo caso, se si modificano i dati, le modifiche non vengono archiviate nel database).  
-Prima di tutto, bisogna creare una connessione al database in BASE (vedi le due immagini seguenti per i parametri da inserire nei primi due passaggi, quindi inserisci le tue credenziali e salva e registra la connessione).  
+Prima di tutto, bisogna creare una connessione al database in BASE (vedi le due immagini seguenti per i parametri da inserire nei primi due passaggi, quindi inserisci le tue credenziali e salva e registra la connessione). La stringa da inserire è:
+
+* postgres://db.parco.gran-paradiso.g3wsuite.it:2345/corso_parchi
 
 [![](materiale/l03_client_base1.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l03_client_base1.png?raw=true)
 

@@ -57,7 +57,7 @@ Si possono eseguire operazioni matematiche:
 SELECT 1 + 1;
 ```
 
-Si può manipolare del testo (in SQL una stringa di testo è sempre racchiusa dal simbolo di apice singolo):  
+Si può manipolare del testo (in SQL una stringa di testo è sempre racchiusa dal simbolo di virgoletta singola `'`):  
 ```sql
 SELECT 'Ciao a tutti';
 ```
@@ -91,13 +91,13 @@ FROM
   biodiversita.plot;
 ```
 
-Un modo molto conveniente per preparare una query senza dover scrivere manualmente tutti i nomi dei campi di una tabella, è cliccare con il pulsante destro sulla tabella nel menu ad albero nel pannello di sinistra e selezionale l'opzione *Script/Select script* (vedi figura sotto).  
-Un altra funzionalità interessante dell'editor SQL è che se viene evidenziata una parte del testo, viene eseguita solo quella e ignorato il resto del codice nella finestra.
+Un modo molto conveniente per preparare una query senza dover scrivere manualmente tutti i nomi dei campi di una tabella, è cliccare con il pulsante destro sulla tabella nel menu ad albero nel pannello di sinistra e selezionare l'opzione *Script/Select script* (vedi figura sotto).  
+Un'altra funzionalità interessante dell'editor SQL è che se viene evidenziata una parte del testo, viene eseguita solo quella e ignorato il resto del codice nella finestra.
 
 [![](materiale/l05_script_select.png)](https://github.com/feurbano/corsoparchi/blob/main/lezioni/materiale/l05_script_select.png?raw=true)
 
 #### Esercizio
-> Aprire un nuovo editor SQL e creare il codice per visualizzare i campi parco_code, plot_code, data_controllo della tabella ortotteri_controllo nello schema biodiversita.
+> Aprire un nuovo editor SQL e creare il codice per visualizzare i campi parco_code, plot_code, data_controllo della tabella ortotteri_controllo nello schema biodiversita (biodiversita.ortotteri_controllo).
 
 ### WHERE, =
 Il comando `WHERE` (in inglese, dove) è usato per impostare i criteri sui dati che volete recuperare e limitare il risultato alle sole informazioni di interesse.  
@@ -168,7 +168,7 @@ where
 > Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code il campo 'parzialmente coperto' (come nell'esercizio precedente) ma che devono anche soddisfare il criterio di avere 'pascolo' come valore di pascolo_impatto_code.
 
 ### IN, NOT IN
-Si possono specificare più valori accettabili per un dato campo. Invece che usare una lunga serie di comandi `OR` sullo stesso campo, per introdurre una lista si può usare il comando `IN` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole. `NOT IN` viene usato per specificare che i valori richiesti sono tutti tranne quelli elencati fra parentesi.  
+Si possono specificare più valori accettabili per un dato campo. Invece che usare una lunga serie di comandi `OR` sullo stesso campo, per introdurre una lista si può usare il comando `IN` seguito dai valori separati da una virgola fra parentesi. Nel caso di testo, i valori devono ovviamente essere inclusi fra virgolette singole. `NOT IN` viene usato per specificare che i valori richiesti sono tutti ad esclusione quelli elencati fra parentesi.  
 Nell'esempio sotto vengono selezionati tutti i plot dei Parchi Orsiera Rocciavrè e Alpe Veglia e Alpe Devero:
 
 ```sql
@@ -230,7 +230,7 @@ where
 ```
 
 #### Esercizio
-> Verificare se ci sono record nella tabella *biodiversita.ortotteri_controllo* dove il campo *pascolo_bestiame_code* non è nullo e allo stesso tempo il campo *pascolo_impatto_code* ha il valore 'assente'. Se così fosse, ci sarebbe probabilmente un errore, visto che la presenza di bestiamo presuppone che ci sia un impatto. Una query può anche dare come risultato 0 righe.
+> Verificare se ci sono record nella tabella *biodiversita.ortotteri_controllo* dove il campo *pascolo_bestiame_code* non è nullo e allo stesso tempo il campo *pascolo_impatto_code* ha il valore 'assente'. Se così fosse, ci sarebbe probabilmente un errore, visto che la presenza di bestiame presuppone che ci sia un impatto. Una query può anche dare come risultato 0 righe.
 
 ### Alias
 Gli alias sono dei nomi alternativi che possono essere assegnati agli oggetti di una query durante la sua esecuzione, in particolare a tabelle o a campi (colonne). Un alias si può specificare usando il termine `AS`. As esempio:
@@ -276,7 +276,7 @@ WHERE
 ORDER BY plot_code, data_controllo;
 ```
 
-Con `LIMIT` si può specificare di riportare solo un certo numero di record, il che è conveniente quando le tabelle hanno molti record e si vuole esplorare solo il contenuto di una tabella. Spesso è utile combinare `ORDER BY` e `LIMIT` per ottenere solo i record con i valori maggiori per un certo campo. `LIMIT` deve essere specificato come ultimo elmento della query. In questo esempio, i record della tabella *biodiversita.ortotteri_controllo* vengono ordinati per numero di capi di bestiamo (*stima_n_capi*) in ordine decrescente e poi il risultato limitato a 10 record per vedere solo quelli con il maggior numero di animali:
+Con `LIMIT` si può specificare di riportare solo un certo numero di record, il che è conveniente quando le tabelle hanno molti record e si vuole esplorare solo il contenuto di una tabella. Spesso è utile combinare `ORDER BY` e `LIMIT` per ottenere solo i record con i valori maggiori per un certo campo. `LIMIT` deve essere specificato come ultimo elmento della query. In questo esempio, i record della tabella *biodiversita.ortotteri_controllo* vengono ordinati per numero di capi di bestiame (*stima_n_capi*) in ordine decrescente e poi il risultato limitato a 10 record per vedere solo quelli con il maggior numero di animali:
 ```sql
 SELECT
   parco_code,
@@ -294,7 +294,7 @@ LIMIT 10;
 > Visualizzare (solo) i 5 record con più individui (*numero_totale*) della tabella *biodiversita.ortotteri_monitoraggio*.  
 
 ### DISTINCT
-A volte si può essere interessati a verificare solo quali valori univoci appaiono in una determinata serie di campi, e non tutti i record. In questo caso è possibile usare il comando `DISTINCT` per eliminare i record con valori uguali i valori duplicati. Il comando `DISTINCT` deve essere specificato subito dopo il comando `SELECT`. Ad esempio, con questa query visualizzo solo le combinazioni di valori *pascolo_impatto_code* e *pascolo_bestiame_code* nella tabella *biodiversita.ortotteri_controllo*:
+A volte si può essere interessati a verificare solo quali valori univoci appaiono in una determinata serie di campi, e non tutti i record. In questo caso è possibile usare il comando `DISTINCT` per eliminare i record con valori duplicati. Il comando `DISTINCT` deve essere specificato subito dopo il comando `SELECT`. Ad esempio, con questa query visualizzo solo le combinazioni di valori *pascolo_impatto_code* e *pascolo_bestiame_code* nella tabella *biodiversita.ortotteri_controllo*:
 
 ```sql
 SELECT DISTINCT
@@ -307,7 +307,7 @@ order by
 ```
 
 #### Esercizio
-> Quante sono le specie riportate nella tabella *biodiversita.ortotteri_conteggio* (se viene visualizzato un record per specie, è sufficiente poi vedere il numero totlae di righe).  
+> Quante sono le specie riportate nella tabella *biodiversita.ortotteri_conteggio* (se viene visualizzato un record per specie, è sufficiente poi vedere il numero totale di righe).  
 
 ### Stringhe, numeri, booleani
 Come già discusso in precedenza, ogni colonna di una database è caratterizzata da un tipo di dato che ne limita i possibili valori. Ad esempio, se un campo è definito come intero (`INTEGER`), non potrà avere valori come '>5'. Se si cerca di inserire questo valore, il database darà un errore e l'operazione verrà interrotta. A ogni tipo di dato è anche associato un determinato insieme di operazioni. Ad esempio non è possibile sommare due stringhe: `SELECT 'a' + 'b';`. Il database da un errore se si prova a inviare questa query. Allo stesso modo non è possibile concatenare (unire, operatore: `||`) due interi, perché questa è una operazione riservata alle stringhe di caratteri:  `SELECT 3 || 4;`.  
@@ -319,7 +319,7 @@ SELECT
 ```
 
 Il tipo di dato della colonne risultante è riportato sotto il suo nome nella tabella restituita dall'editor SQL (in questo caso, `INTEGER` e `TEXT`).  
-Il database quando effettua una operazione fra due valori con un certo tipo di dati, calcolerà il risultato secondo lo stesso tipo di dato. In questo esempio si può vedere come il risultato della divisione di due interi si un intero (approssimato in caso di valori decimali), mentre vengono riportati i decimali se almeno uno dei numeri era espresso in formato decimale (`FLOAT` o `NUMERIC`):
+Il database quando effettua una operazione fra due valori con un certo tipo di dati, calcolerà il risultato secondo lo stesso tipo di dato. In questo esempio si può vedere come il risultato della divisione di due interi è un intero (approssimato in caso di valori decimali), mentre vengono riportati i decimali se almeno uno dei numeri è espresso in formato decimale (`FLOAT` o `NUMERIC`):
 
 ```sql
 SELECT
@@ -338,7 +338,7 @@ SELECT
   7.8::integer AS numerico2intero;
 ```
 ### LIKE
-PostreSQL fornisce molti strumenti per fare ricerche nei campi con stringhe di caratteri. Oltre all'operatore di uguaglianza `=` usato per trovare stringhe uguali e quelli di maggiore `>` e minore `<` basati sull'ordine alfabetico, il comando più interessante è **[LIKE](https://www.postgresql.org/docs/devel/static/functions-matching.html)**. L'espressione `LIKE` restituisce TRUE se la stringa corrisponde al pattern fornito. Se il pattern non contiene segni di percentuale o underscore, allora il pattern rappresenta solo la stringa stessa; in questo caso LIKE agisce come l'operatore di uguaglianza. Un carattere di underscore `_` nel pattern sta per 'qualsiasi singolo carattere'; un segno di percentuale `%` corrisponde a una qualsiasi sequenza di caratteri.
+PostgreSQL fornisce molti strumenti per fare ricerche nei campi con stringhe di caratteri. Oltre all'operatore di uguaglianza `=` usato per trovare stringhe uguali e quelli di maggiore `>` e minore `<` basati sull'ordine alfabetico, il comando più interessante è **[LIKE](https://www.postgresql.org/docs/devel/static/functions-matching.html)**. L'espressione `LIKE` restituisce TRUE se la stringa corrisponde al pattern fornito. Se il pattern non contiene segni di percentuale o underscore, allora il pattern rappresenta solo la stringa stessa; in questo caso LIKE agisce come l'operatore di uguaglianza. Un carattere di underscore `_` nel pattern sta per 'qualsiasi singolo carattere'; un segno di percentuale `%` corrisponde a una qualsiasi sequenza di caratteri.
 
 In questo esempio, like specifica il nome di un animale da ricercare nella tabella *biodiversita.biodiversita_animali* senza usare caratteri speciali nel pattern e quindi di fatto corrisponde all'operatore `=`:
 ```sql
