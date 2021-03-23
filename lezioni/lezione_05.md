@@ -126,7 +126,7 @@ WHERE
 Una descrizione completa di `SELECT` e dei comandi relativi è disponibile [qui](https://www.postgresql.org/docs/devel/static/sql-select.html).
 
 #### Esercizio
-> Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code il campo 'parzialmente coperto'. Il simbolo '*' può aiutare a chiedere tutte le colone di una tabella in modo semplice e veloce.
+> Visualizzare tutte le colonne della tabella biodiversita.ortotteri_controllo che hanno come valore del campo cielo_copertura_code la stringa di test 'parzialmente coperto'. Il simbolo '*' può aiutare a chiedere tutte le colone di una tabella in modo semplice e veloce.
 
 ### AND, OR
 Si possono specificare criteri multipli nella clausola `WHERE` della query SQL combinandoli attraverso l'uso degli operatori logici `AND` e `OR`. Il primo fa si che i criteri debbano essere verificati entrambi per restituire un record, mentre nel secondo caso basta che sia realizzata una delle due condizioni.  
