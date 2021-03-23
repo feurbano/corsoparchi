@@ -44,7 +44,6 @@ Prima di spiegare i grafici Entità Relazioni (ER) del progetto Biodiversità, i
 * Cervo controllo
 * Monitoraggio marcati
 * Ungulati dinamica
-* Ungulati tracking
 * Galliformi (in corso)
 
 #### Dati nel DB del Parco della Val Grande
