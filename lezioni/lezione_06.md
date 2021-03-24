@@ -12,77 +12,73 @@ In questa lezioni si continua l'esplorazione del linguaggio SQL aggiungendo coma
 
 
 ### GROUP BY
-
-The `GROUP BY` clause divides the rows returned from the `SELECT` statement into groups. For each group, you can apply an aggregate function to the values of the columns that are nto used as criteria to group the rows. The main aggregate functions (at least for numbers) are `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `STDDEV`. For example SUM calculates the sum of items and COUNT gets the number of items in the groups.
-
-Se si vuole raggruppare le righe in base ad alcuni campi ma non si devono calcolare statistiche sui campi aggregati, invece del comando `GROUP BY` si può usare il comando `DISTINCT` visto nella lezione precedente.
-
-The GROUP BY clause must appear right after the FROM or WHERE clause. Followed by the GROUP BY clause is one column or a list of comma-separated columns. You can also put an expression in the GROUP BY clause.
-
+In alcuni casi può essere utile raggruppare le righe di una tabella secondo alcuni criteri. Ad esempio, per vedere quante individui di ogni specie sono stati trovati in un monitoraggio, o quanti individui sono stati trovati durante un controllo per ogni plot. Questo è possibile con SQL in modo semplice tramite il comando `GROUP BY` che divide le righe restituite dall'istruzione `SELECT` in gruppi con lo stesso valore di una o più tabelle (ad esempio il plot o la specie). Per ogni gruppo, si può poi applicare una funzione di aggregazione ai valori delle colonne che non sono usate come criteri per raggruppare le righe. Le principali funzioni di aggregazione (per i numeri) sono `COUNT` (conta quante righe sono state raggruppate), `SUM` (fai la somma di tutti i valori di quel campo, ad esempio il numero di individui), `MIN` (il valore minimo di quel campo per tutto il gruppo), `MAX` (il valore massimo di quel campo per tutto il gruppo), `AVG` (il valore medio di quel campo per tutto il gruppo, ad esempio il numero medio di individui trovati in ogni controllo dei plot), `STDDEV` (deviazione standard).  
+La clausola `GROUP BY` deve apparire subito dopo la clausola `FROM` o `WHERE`. La clausola `GROUP BY` è seguita da una colonna o da una lista di colonne separate da virgola.  
+La struttura generale del comando è:  
 ```sql
-SELECT column_x, aggregate_function(column_y)
-FROM table_x
-GROUP BY column_x;
-```
+SELECT colonna_x, funzione_aggregazione(colonna_y)
+FROM tabella_x
+GROUP BY colonna_x;
+```  
 
-The following statement illustrates the syntax of the GROUP BY clause.
-```sql
-SELECT
-  sex,
-  count(animals_id) as number_animals
-FROM
-  main.animals
-GROUP BY
-  sex;
-```
+Le colonne specificate dopo `SELECT` devono essere elencate nella lista definita dopo `GROUP BY` o associate a una funzione di aggregazione, altrimenti la query non verrà eseguita e verrà restituito un errore.  
+Se si vuole raggruppare le righe in base ad alcuni campi ma non si devono calcolare statistiche sui campi aggregati, invece del comando `GROUP BY` si può usare il comando `DISTINCT` visto nella lezione precedente.  
+
+Il modo più semplice per capire cosa fa e come funziona `GROUP BY` è guardare un esempio. Supponiamo di voler sapere per ogni specie il numero totale di lepidotteri trovati in tutti i monitoraggi di tutti i parchi. Per fare questo devo specificare che voglio "raggruppare" le mie righe per *animale_code* (una riga per ogni animale) e poi che voglio calcolare la somma del numero di individui trovati per quella specie. Per facilitare la lettura dei dati voglio anche chiedere che il risultato sia restituito mettendo in ordine alfabetico i nomi degli animali. Questa richiesta si può tradurre inizialmente come "Raggruppa tutte le righe della tabella *biodiversita.lepidotteri_monitoraggio* e calcola il numero totali di individui". La traduzione in SQL di questa richiesta è:  
 
 ```sql
 SELECT
-  gps_sensors_id,
-  max(roads_dist)
+  animale_code, SUM(numero_totale)
 FROM
-  main.gps_data_animals
+  biodiversita.lepidotteri_monitoraggio
 GROUP BY
-  gps_sensors_id;
+  animale_code
+ORDER BY
+  animale_code;
 ```
 
-##### EXERCISE
+Se invece voglio raggruppare per specie e per parco, devo inserire entrambi i criteri dopo `GROUP BY`. In questo caso invece che ordinare per specie, voglio ordinare per numero complessivo di utenti. Voglio anche sapere quanti record facevano parte di ogni gruppo (quindi in quanti transetti è stata trovata ogni specie):
 
-* Count how many records you have per animal with coordinates not null (table *main.gps_data_animals*) and the average altitude.
+```sql
+SELECT
+  parco_code, animale_code, SUM(numero_totale), COUNT(numero_totale)
+FROM
+  biodiversita.lepidotteri_monitoraggio
+GROUP BY
+  parco_code, animale_code
+ORDER BY
+  SUM(numero_totale) DESC;
+```
+
+#### ESECIZIO
+> Verificare quanti individui totali sono stati contati in ogni parco nel monitoraggio degli ortotteri (*biodiversita.lepidotteri_monitoraggio*).
+
+> Contare quanti plot ci sono in ogni parco.  
 
 ### HAVING
+Il comando `HAVING` può essere usato in associazione con `GROUP BY` per filtrare il risultato del raggruppamento escludendo i gruppi che non soddisfano una specifica condizione di aggregazione. La clausola `HAVING` applica la condizione alle righe del gruppo dopo l'applicazione del comando `GROUP BY`, mentre il comando `WHERE` applica la condizione per le righe individuali prima dell'applicazione della clausola `GROUP BY`. Con riferimento agli esempi precedenti, se volessi escludere tutte le specie che hanno meno di 100 individui complessivi (risultato della somma di tutti i record di quella specie) dovrei aggiungere `HAVING SUM(numero_totale) > 100`, mentre se volessi escludere tutti i record raccolti prima del 2015 dovrei aggiungere `WHERE data_controllo > '2015-01-01'` (la prima condizione elimina dai risultati i gruppi che non soddisfano la condizione mentre la seconda condizione limita i record che sono raggruppati). La condizione `HAVING` si mette dopo `GROUP BY` (quindi dopo `WHERE`, infatti una condizione che viene logicamente applicata dopo).
 
-We often use the `HAVING` clause in conjunction with the `GROUP BY` clause to filter group rows that do not satisfy a specified condition. The `HAVING` clause sets the condition for group rows created by the `GROUP BY` clause after the GROUP BY clause applies while the `WHERE` clause sets the condition for individual rows before `GROUP BY` clause applies. This is the main difference between the `HAVING` and `WHERE` clauses, as illustrated in the examples.
 
 ```sql
 SELECT
-  animals_id,
-  count(animals_id),
-  avg(roads_dist)
+  animale_code, SUM(numero_totale)
 FROM
-  main.gps_data_animals
+  biodiversita.lepidotteri_monitoraggio
 WHERE
-  roads_dist < 900
+  data_controllo > '2015-01-01'
 GROUP BY
-  animals_id
+  animale_code
+HAVING
+  SUM(numero_totale) > 100
 ORDER BY
-  animals_id;
+  SUM(numero_totale) DESC;
 ```
 
-```sql
-SELECT
-  animals_id,
-  count(animals_id),
-  avg(roads_dist)::integer
-FROM
-  main.gps_data_animals
-GROUP BY
-  animals_id
-HAVING
-  avg(roads_dist) < 900
-ORDER BY
-  animals_id;
-```
+#### ESECIZIO
+> biodiversita.view_lepidotteri_specie_presenza
+
+SELECT animale_code, livello_tassonomico, species_name, genus_name, family_name, order_name, esemplari_pns, esemplari_pnvg, esemplari_pngp, esemplari_pnor, esemplari_pnvd, esemplari_pndb, esemplari_totali
+	FROM biodiversita.view_lepidotteri_specie_presenza;
 
 
 ### UNION
