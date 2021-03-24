@@ -75,47 +75,50 @@ ORDER BY
 ```
 
 #### ESECIZIO
-> biodiversita.view_lepidotteri_specie_presenza
+> Estrarre dalla tabella *biodiversita.view_lepidotteri_specie_presenza* il numero totale di individui (*esemplari_totali*) per ogni famiglia (*family_name*) che ha almeno 300 individui in totale (criterio da applicare sulla somma totale).
 
-SELECT animale_code, livello_tassonomico, species_name, genus_name, family_name, order_name, esemplari_pns, esemplari_pnvg, esemplari_pngp, esemplari_pnor, esemplari_pnvd, esemplari_pndb, esemplari_totali
-	FROM biodiversita.view_lepidotteri_specie_presenza;
-
+> Estrarre dalla tabella *biodiversita.view_lepidotteri_specie_presenza* il numero totale di individui (*esemplari_totali*) per ogni genus (*family_name*) escludendo le specie che hanno meno di 100 individui (criterio da applicare per definire i record che devono essere inclusi nella somma).
 
 ### UNION
-Per ora abbiamo sempre interrogato una tabella alla volta. In questa e nelle prossime sezioni cominceremo a combinare più tabelle insieme.  
-L'operatore `UNION` combina i set di risultati di due o più istruzioni `SELECT` in un unico set di risultati.
+Per ora abbiamo sempre interrogato una tabella alla volta. In questa e nelle prossime sezioni cominceremo a combinare più tabelle insieme. Il primo e più semplice comando che si può utilizzare dati da tabelle diverse è `UNION`. Questo comando combina il risultato di due (o più)  `SELECT` in un unico set di risultati. In sostanza è come incollare i risultati di una query sotto quelli di un'altra per forare un'unica tabella. Perché questo sia possibile il numero e l'ordine delle colonne nella lista di `SELECT` di entrambe le query devono essere gli stessi (non si può accodare una tabella di 6 colonne a una tabella di 5 colonne) e i tipi di dati devono essere compatibili (non si può accodare una colonna di numeri a una colonna di testo). Il nome di ogni campo verrà preso dalla prima query.  
 
-La seguente illustra la sintassi dell'operatore UNION che combina gli insiemi di risultati di due query.
-
-Per combinare i set di risultati di due query usando l'operatore `UNION`, le query devono essere conformi alle seguenti regole:
-
-    Il numero e l'ordine delle colonne nella lista di selezione di entrambe le query devono essere gli stessi.
-    I tipi di dati devono essere compatibili.
-
-L'operatore UNION rimuove tutte le righe duplicate dal set di dati combinato. Per mantenere le righe duplicate, si usa invece l'operatore `UNION ALL`.
-
-PostgreSQL UNION con clausola ORDER BY
+La struttura generale di una query con `UNION` è:
+```sql
+SELECT colonna1, colonna2 FROM tabella 1
+UNION
+SELECT colonna1, colonna2 FROM tabella 1;
+```  
 
 L'operatore UNION può mettere le righe del risultato della prima query prima, dopo o tra le righe del risultato della seconda query.
-
 Per ordinare le righe nel set di risultati finale, si usa la clausola `ORDER BY` nella seconda query.
 
-In pratica, si usa spesso l'operatore `UNION` per combinare dati da tabelle simili,
+In questo esempio `UNION` unisce in una sola tabella i record della tabella *biodiversita.view_lepidotteri_specie_presenza* con quelli della tabella *biodiversita.view_ortotteri_specie_presenza*:
 
 ```sql
 SELECT
+  animale_code, esemplari_totali
 FROM
+  biodiversita.view_lepidotteri_specie_presenza
 UNION
 SELECT
+  animale_code, esemplari_totali
 FROM
-ORDER BY ;
-```
+  biodiversita.view_ortotteri_specie_presenza
+ORDER BY
+animale_code;
+```  
+
+In pratica, si usa spesso l'operatore `UNION` per combinare dati da tabelle simili,
+L'operatore `UNION` rimuove tutte le righe duplicate dal set di dati combinato. Per mantenere le righe duplicate, si usa invece l'operatore `UNION ALL`.  
 
 #### ESERCIZIO
->
+> Creare una tabella che contiene i campi *parco_code*, *plot_code* e *data_controllo* di tutti i record della tabella *biodiversita.lepidotteri_controllo* e della tabella * biodiversita.lepidotteri_controllo*.
 
-### JOIN di tabelle
-Finora, le nostre query hanno avuto accesso solo a una tabella alla volta. Le query possono accedere a più tabelle contemporaneamente, coinvolgendo le informazioni di tutte le tabelle coinvolte. Una query che accede a più righe della stessa tabella o di tabelle diverse in una sola volta è chiamata join query. Ci sono diverse sintassi che possono essere usate. Quella più semplice è illustrata nel prossimo esempio. Se voglio visualizzare tutti i record della tabella main.gps_data_animals che appartengono ad animali maschi, devo includere tutte le informazioni nella tabella main.animals dove è memorizzato il sesso e poi devo selezionare le coppie di righe dove questi animals_id (che è presente in entrambe le tabelle e li "collega") corrispondono.
+### JOIN
+Una query di `UNION` attacca una tabella sotto un'altra ma le query rimangono separate. Le query possono però accedere a più tabelle contemporaneamente, coinvolgendo e combinando le informazioni archiviate in tabelle diverse. Ad esempio, se si vogliono sapere le condizioni meteo in cui sono strati trovati degli individui bisogna estrarre una parte del dato dalla tabella di monitoraggio (la specie) e una parte dalla tabella di controllo (le condizioni meteo). Queste due tabelle possono comunicare perché hanno dei campi uguali (parco, plot e data).  
+Una query che accede a tabelle diverse contemporaneamente è chiamata `JOIN`. Ci sono diverse sintassi che possono essere usate per collegare le tabelle. Quella più semplice è illustrata nel prossimo esempio.  
+
+Se voglio visualizzare tutti i record della tabella main.gps_data_animals che appartengono ad animali maschi, devo includere tutte le informazioni nella tabella main.animals dove è memorizzato il sesso e poi devo selezionare le coppie di righe dove questi animals_id (che è presente in entrambe le tabelle e li "collega") corrispondono.
 
 SELEZIONA
   animali.animals_id,
