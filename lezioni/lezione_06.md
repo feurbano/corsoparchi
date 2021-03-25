@@ -157,8 +157,8 @@ ON
   (scientific_name_species.genus_name = scientific_name_genus.genus_name);
 ```
 
-Quando sono coinvolte più tabelle, è una buona pratica qualificare il nome di ogni colonna con il nome della tabella a cui appartiene. Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse, altrimenti il database non saprebbe a quale ci riferiamo. Se il nome della tabella è lungo si possono usare degli `ALIAS` di tabella per semplificare il codice.  
-In questo esempio il codice SQL genera la tabella che mette insieme i dati meteo e le determinazioni per i lepidotteri:
+Quando sono coinvolte più tabelle, è una buona pratica qualificare il nome di ogni colonna con il nome della tabella ("nome_tabella.nome_campo") a cui appartiene analogamente a quanto si fa con le tabelle a cui ci si riferisce usando la forma "nome_schema.nome_tabella". Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse, altrimenti il database non saprebbe a quale ci riferiamo. Se il nome della tabella è lungo si possono usare degli `ALIAS` di tabella per semplificare il codice.  
+In questo esempio, più complesso perché le tabelle sono legate da 3 campi, il codice SQL genera la tabella che mette insieme i dati meteo e le determinazioni per i lepidotteri:
 
 ```sql
 SELECT
@@ -178,8 +178,12 @@ con.parco_code = mon.parco_code AND
 con.data_controllo = mon.data_controllo;
 ```
 
+Si possono unire più di due tabelle, usando lo stesso approccio visto con il caso di 2 sole tabelle.
+
 #### ESERCIZIO
-> 
+> Scrivere una query che mostra nella stessa tabella il nome della famiglia (*family_name*), della classe (*class_name*) e dell'ordine (*order_name*) utilizzando le tabelle *basedata.scientific_name_family* e *basedata.scientific_name_class*.
+
+> Visualizzare tutti gli ortotteri che sono stati identificati (tabella *biodiversita.ortotteri_monitoraggio*) in un controllo con un impatto di pascolo (*pascolo_impatto_code* non nullo nella tabella *biodiversita.ortotteri_controllo*).
 
 ### LEFT JOIN
 Nell'esempio precedente, solo i record della prima e della seconda tabella che corrispondono alle condizioni della join sono inclusi nei risultati. Usando la sintassi JOIN è possibile includere TUTTI i record della prima tabella e solo i record della seconda tabella che corrispondono alle condizioni di unione. Questo si ottiene con l'uso di LEFT JOIN. Questo tipo di join è utile in molte situazioni.
