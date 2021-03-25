@@ -1,8 +1,6 @@
 <p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
 
-# WORK IN PROGRESS
-
-#### Lezione 5
+#### Lezione 6
 ## SQL AVANZATO
 
 Autore: Ferdinando Urbano  
@@ -377,7 +375,7 @@ ADD CONSTRAINT tabella_test_pk PRIMARY KEY (parco_code, plot_code);
 ```
 
 ### Creare una VIEW
-Creare una *VIEW* è una operazione molto semplice: è sufficiente scrivere la query SQL che genera la tabella desiderata e farla precedere dal comando che specifica quale deve essere il nome (e lo schema) della tabella: `CREATE VIEW nome_schema.nome_vista AS` (in modo analogo a quanto fatto con la creazioni di una tabella da una query).  
+Creare una *VIEW* è una operazione molto semplice: è sufficiente scrivere la query SQL che genera la tabella desiderata e farla precedere dal comando che specifica quale deve essere il nome (e lo schema) della tabella: `CREATE VIEW nome_schema.nome_vista AS` (in modo analogo a quanto fatto con la creazioni di una tabella da una query). Per maggiori informazioni si può consultare la documentazione di PostgreSQL: **[VIEWS](https://www.postgresql.org/docs/devel/static/sql-createview.html)**.
 In questo esempio viene creata una view analoga alla tabella dell'esempio precedente:
 
 ```sql
@@ -389,8 +387,7 @@ SELECT
 FROM
   biodiversita.lepidotteri_controllo
 WHERE
-  parco_code = 'pns'
-;
+  parco_code = 'pns';
 ```
 
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_07.html)</ins>]
