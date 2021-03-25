@@ -157,7 +157,7 @@ ON
   (scientific_name_species.genus_name = scientific_name_genus.genus_name);
 ```
 
-Quando sono coinvolte più tabelle, è una buona pratica qualificare il nome di ogni colonna con il nome della tabella ("nome_tabella.nome_campo") a cui appartiene analogamente a quanto si fa con le tabelle a cui ci si riferisce usando la forma "nome_schema.nome_tabella". Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse, altrimenti il database non saprebbe a quale ci riferiamo. Se il nome della tabella è lungo si possono usare degli `ALIAS` di tabella per semplificare il codice.  
+Quando sono coinvolte più tabelle, è una buona pratica identificare ogni colonna con il nome della tabella cui appartiere + "." + nome della collona ("nome_tabella.nome_campo"), analogamente a quanto si fa con le tabelle a cui ci si riferisce usando la forma "nome_schema.nome_tabella". Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse, altrimenti il database non saprebbe a quale ci riferiamo. Se il nome della tabella è lungo si possono usare degli `ALIAS` di tabella per semplificare il codice.  
 In questo esempio, più complesso perché le tabelle sono legate da 3 campi, il codice SQL genera la tabella che mette insieme i dati meteo e le determinazioni per i lepidotteri:
 
 ```sql
@@ -186,23 +186,46 @@ Si possono unire più di due tabelle, usando lo stesso approccio visto con il ca
 > Visualizzare tutti gli ortotteri che sono stati identificati (tabella *biodiversita.ortotteri_monitoraggio*) in un controllo con un impatto di pascolo (*pascolo_impatto_code* non nullo nella tabella *biodiversita.ortotteri_controllo*).
 
 ### LEFT JOIN
-Nell'esempio precedente, solo i record della prima e della seconda tabella che corrispondono alle condizioni della join sono inclusi nei risultati. Usando la sintassi JOIN è possibile includere TUTTI i record della prima tabella e solo i record della seconda tabella che corrispondono alle condizioni di unione. Questo si ottiene con l'uso di LEFT JOIN. Questo tipo di join è utile in molte situazioni.
+Nell'esempio precedente, solo i record della prima e della seconda tabella che corrispondono alle condizioni di join sono inclusi nei risultati. Usando una diversa sintassi di `JOIN` è possibile includere TUTTI i record della prima tabella e solo i record della seconda tabella che corrispondono alle condizioni di unione. Questo si ottiene con l'uso di `LEFT JOIN`. Questo tipo di join è utile in molte situazioni. Ad esempio, io posso avere dei controlli di un plot in cui non sono stati trovati individui. Quando faccio un join con la tabella di monitoraggio, la tabella dei controlli senza specie in un `JOIN` normale verrebbero esclusi perché non hanno un corrispettivo nei monitoraggi. Utilizzando `LEFT JOIN` vengono inclusi tutti i record della prima tabella e quelli che soddisfano la condizione di `JOIN` della seconda tabella. Nel caso nella seconda tabella non ci sia una corrispondenza a una riga della prima colonna, i campi della seconda tabella rimangono vuoti nel risultato. Ordinando il risultato per le colonne della seconda tabella è immediatamente possibile verificare quali sono i controlli in cui non sono stati trovati individui.
 
-SELEZIONA
-  lu_age_class.age_class_code,
-  lu_age_class.age_class_description,
-  animali.nome,
-  animali.sesso
-DA
-  lu_tables.lu_age_class
-LEFT JOIN
-  main.animals
-SU
-  lu_age_class.age_class_code = animals.age_class_code;
+```sql
+SELECT
+  con.parco_code,
+  con.plot_code,
+  con.data_controllo,
+  con.controllo_esito_code,
+  mon.plot_code,
+  mon.data_controllo,
+  mon.animale_code,
+  mon.numero_totale
+FROM
+  biodiversita.lepidotteri_controllo AS con LEFT JOIN
+  biodiversita.lepidotteri_monitoraggio AS mon
+ON
+con.plot_code = mon.plot_code AND
+con.parco_code = mon.parco_code AND
+con.data_controllo = mon.data_controllo
+ORDER BY
+mon.plot_code,
+mon.data_controllo,
+con.plot_code,
+con.data_controllo;
+```
 
-In questo caso, vengono riportati anche i codici delle classi di età senza animali associati.
+Invertendo l'ordine delle tabelle (monitoraggio a sinistre del LEFT JOIN e controllo a destra), si può ad esempio controllare con i dati di un monitoraggio corrispondono a un controllo (nel caso del nostro database questo è sicuramente vero perché abbiamo una chiave esterna che lo garantisce).
+
 #### ESERCIZIO
-> Contare quanti animali sono inclusi nella tabella main.animals per ogni specie elencata nella tabella lu_tables.lu_species (riportare '0' invece di NULL se non ci sono animali per quella specie).
+> Verificare che tutti i plot dei parchi sono stati (o meno) utilizzati per il monitoraggio degli ortotteri (tutti i plot della lista in tabella *biodiversita.plot* hanno associati dei record della tabella *biodiversita.ortotteri_controllo*).  
+
+Una possibile soluzione per verificare la correttezza della risposta all'esercizio è riportata qui sotto:
+
+```sql
+SELECT a.parco_code, a.plot_code, b.data_controllo
+FROM biodiversita.plot a
+LEFT JOIN biodiversita.ortotteri_controllo b
+ON a.parco_code = b.parco_code and a.plot_code = b.plot_code
+ORDER BY b.data_controllo DESC;
+```
 
 ### DATE, TIMESTAMP, EXTRACT, TIMEZONE
 Per i dati di monitoraggio raccolti dai Parchi, il tempo e lo spazio sono spesso informazioni importanti. Qui introduciamo un nuovo tipo di dati specifico per le informazioni sulla data/ora temporale, con associato uno specifico formato e un set di operazioni possibili: **[timestamp](http://www.postgresql.org/docs/devel/static/datatype-datetime.html)**, cioè data, ora e la loro combinazione (con indicazione o meno del fuso orario).  
@@ -287,7 +310,7 @@ SELECT
   numero_totale,
   numero_maschi,
   coalesce(numero_maschi,0) AS numero_maschi_0null
-	FROM biodiversita.lepidotteri_monitoraggio;
+FROM biodiversita.lepidotteri_monitoraggio;
 ```
 #### ESERCIZIO
 > Visualizzare i dati della tabella *biodiversita.lepidotteri_controllo* sostituendo il valore NULL nel campo *pascolo_impatto_code* con la stringe 'Impatto non noto'.
@@ -318,13 +341,56 @@ ORDER BY
 > Visualizzare i campi *animale_code* e *numero_totale* della tabella *biodiversita.lepidotteri_controllo* aggiungendo un campo testo 'individui > 10' quando il campo *numero_totale* è < 10 e 'individui >= 10' quando il campo *numero_totale* è >= 10.
 
 ### Creare una tabella
+Una nuova tabella può essere costruita in due modi: attraverso l'interfaccia grafica di PgAdmin che chiederà in sequenza tutte le informazioni necessarie (nome della tabella, nome e tipo di dato di ogni colonna, chiave primaria, eventuali chiavi esterne e vincoli, permessi associati alla tabella) che tradurrà poi nel codice SQL che la genera; oppure scrivere direttamente il codice SQL. In questo secondo caso è ad esempio molto utile selezionare una tabella nel menù ad albero del pannello di sinistra di PgAdmin e visualizzare il tab *SQL* Da qui si può copiare il codice che ha generato quella tabella e incollarlo per poi modificarlo a piacere.  
+Nella versione più semplice (con definiti alcuni campi e la sola chiave primaria) il codice SQL è del tipo:  
 
-codice sql
-da una query + chiave primaria
+```sql
+CREATE TABLE nome_schema.nome_tabella
+(
+  campo1 integer,
+  campo2 character varying,
+  campo3 date,
+  CONSTRAINT nome_tabella_pk PRIMARY KEY (campo1)
+);
+```
+
+Il nome di ogni oggetto (tabella ,chiave primaria, chiavi esterne) deve essere univoco nel database, quindi se un nome è già usato il database restituirà un messaggio di errore.  
+Come accennato in precedenza, si sconsiglia di usare lettere maiuscole e caratteri speciali nei nomi di campi e tabelle.  
+Un altro metodo per creare una tabella a partire da una query SQL è usare il comando `CREATE TABLE nome_schema.nome_tabella AS`. In questo modo la tabella generata dalla query verrà trasformata in una tabella con il nome prescelto. In un secondo momento si deve poi aggiungere la chiave primaria. Un esempio è riportato qui sotto:
+
+```sql
+CREATE TABLE temp.tabella_test AS
+SELECT  
+  parco_code,
+  plot_code,
+  data_controllo
+FROM
+  biodiversita.lepidotteri_controllo
+WHERE
+  parco_code = 'pns';
+```
+
+E qui aggiungo una chiave primaria:
+```sql
+ALTER TABLE temp.tabella_test
+ADD CONSTRAINT tabella_test_pk PRIMARY KEY (parco_code, plot_code);
+```
 
 ### Creare una VIEW
-Creare una *VIEW* è una operazione molto semplice: è sufficiente scrivere la query SQL che genera la tabella desiderata a farla precedere da comanda che specifica quale deve essere il nome (e lo schema) della tabella: `CREATE VIEW nome_schema.nome_vista AS`.  
-In questo esempio viene creata la view XXX nello schema YYY in base al comando di select specificato nel codice:
+Creare una *VIEW* è una operazione molto semplice: è sufficiente scrivere la query SQL che genera la tabella desiderata e farla precedere dal comando che specifica quale deve essere il nome (e lo schema) della tabella: `CREATE VIEW nome_schema.nome_vista AS` (in modo analogo a quanto fatto con la creazioni di una tabella da una query).  
+In questo esempio viene creata una view analoga alla tabella dell'esempio precedente:
 
+```sql
+CREATE view temp.view_test AS
+SELECT  
+  parco_code,
+  plot_code,
+  data_controllo
+FROM
+  biodiversita.lepidotteri_controllo
+WHERE
+  parco_code = 'pns'
+;
+```
 
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_07.html)</ins>]
