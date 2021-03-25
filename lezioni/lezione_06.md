@@ -115,42 +115,71 @@ L'operatore `UNION` rimuove tutte le righe duplicate dal set di dati combinato. 
 > Creare una tabella che contiene i campi *parco_code*, *plot_code* e *data_controllo* di tutti i record della tabella *biodiversita.lepidotteri_controllo* e della tabella * biodiversita.lepidotteri_controllo*.
 
 ### JOIN
-Una query di `UNION` attacca una tabella sotto un'altra ma le query rimangono separate. Le query possono però accedere a più tabelle contemporaneamente, coinvolgendo e combinando le informazioni archiviate in tabelle diverse. Ad esempio, se si vogliono sapere le condizioni meteo in cui sono strati trovati degli individui bisogna estrarre una parte del dato dalla tabella di monitoraggio (la specie) e una parte dalla tabella di controllo (le condizioni meteo). Queste due tabelle possono comunicare perché hanno dei campi uguali (parco, plot e data).  
-Una query che accede a tabelle diverse contemporaneamente è chiamata `JOIN`. Ci sono diverse sintassi che possono essere usate per collegare le tabelle. Quella più semplice è illustrata nel prossimo esempio.  
+Una query di `UNION` attacca una tabella sotto un'altra, ma le query che generano le due tabelle rimangono distinte. Una singola query però coinvolgere più tabelle contemporaneamente, combinando le informazioni archiviate in ognuna di essere. Ad esempio, se si vogliono sapere le condizioni meteo in cui sono strati trovati degli individui bisogna estrarre una parte del dato dalla tabella di monitoraggio (la specie) e una parte dalla tabella di controllo (le condizioni meteo). Queste due tabelle possono essere collegate perché hanno dei campi in comune (parco, plot e data).  
+Una query che accede a tabelle diverse contemporaneamente è chiamata `JOIN`. Ci sono diverse sintassi che possono essere usate per collegare le tabelle. Quella più semplice ha questa struttura:  
 
-Se voglio visualizzare tutti i record della tabella main.gps_data_animals che appartengono ad animali maschi, devo includere tutte le informazioni nella tabella main.animals dove è memorizzato il sesso e poi devo selezionare le coppie di righe dove questi animals_id (che è presente in entrambe le tabelle e li "collega") corrispondono.
+```sql
+SELECT
+  tabella1.colonna_x, tabella1.colonna_y,
+  tabella2.colonna_w, tabella2.colonna_z
+FROM
+  tabella1,
+  tabella2
+WHERE
+  tabella1.colonna_comune = tabella2.colonna_comune;
+```  
 
-SELEZIONA
-  animali.animals_id,
-  animali.sesso,
-  gps_data_animals.acquisition_time,
-  gps_data_animals.longitude,
-  gps_data_animali.latitudine
-DA
-  main.gps_data_animals,
-  main.animals
-DOVE
-  animals.animals_id = gps_data_animals.animals_id;
+Un esempio concreto è riportato qui sotto, dove si collegano le tabelle con la tassonomia della specie e del genus, in modo da visualizzare specie, genus e famiglia. Il campo in comune fra queste due tabelle è *genus_name*:
 
-Quando sono coinvolte più tabelle, è una buona pratica qualificare il nome di ogni colonna con il nome della tabella a cui appartiene. Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse.
+```sql
+SELECT
+  species_name,
+  scientific_name_species.genus_name,
+  family_name
+FROM
+  basedata.scientific_name_species,
+  basedata.scientific_name_genus
+WHERE
+  scientific_name_species.genus_name = scientific_name_genus.genus_name;
+```
 
 Il join illustrato nell'esempio può essere scritto anche in questa forma alternativa ed equivalente:
 
+```sql
 SELECT
-  animali.animali_id,
-  animali.sesso,
-  gps_data_animals.acquisition_time,
-  gps_data_animali.longitudine,
-  gps_data_animali.latitudine
-DA
-  main.gps_data_animals
-INNER JOIN
-  main.animals
-ON (animals.animals_id = gps_data_animals.animals_id);
+  species_name,
+  scientific_name_species.genus_name,
+  family_name
+FROM
+  basedata.scientific_name_species INNER JOIN
+  basedata.scientific_name_genus
+ON
+  (scientific_name_species.genus_name = scientific_name_genus.genus_name);
+```
 
-ESERCIZIO
+Quando sono coinvolte più tabelle, è una buona pratica qualificare il nome di ogni colonna con il nome della tabella a cui appartiene. Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse, altrimenti il database non saprebbe a quale ci riferiamo. Se il nome della tabella è lungo si possono usare degli `ALIAS` di tabella per semplificare il codice.  
+In questo esempio il codice SQL genera la tabella che mette insieme i dati meteo e le determinazioni per i lepidotteri:
 
-    Recuperare il nome di ogni animale con il timestamp della sua prima e ultima posizione
+```sql
+SELECT
+  con.plot_code,
+  con.parco_code,
+  con.data_controllo,
+  con.cielo_copertura_code,
+  con.vento_quantita_code,
+  mon.animale_code,
+  mon.numero_totale
+FROM
+  biodiversita.lepidotteri_controllo AS con,
+  biodiversita.lepidotteri_monitoraggio AS mon
+WHERE
+con.plot_code = mon.plot_code AND
+con.parco_code = mon.parco_code AND
+con.data_controllo = mon.data_controllo;
+```
+
+#### ESERCIZIO
+> 
 
 ### LEFT JOIN
 Nell'esempio precedente, solo i record della prima e della seconda tabella che corrispondono alle condizioni della join sono inclusi nei risultati. Usando la sintassi JOIN è possibile includere TUTTI i record della prima tabella e solo i record della seconda tabella che corrispondono alle condizioni di unione. Questo si ottiene con l'uso di LEFT JOIN. Questo tipo di join è utile in molte situazioni.
