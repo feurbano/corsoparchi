@@ -388,6 +388,8 @@ FROM
   biodiversita.lepidotteri_controllo
 WHERE
   parco_code = 'pns';
-```
+```  
+
+---
 
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_07.html)</ins>]

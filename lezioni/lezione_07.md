@@ -189,3 +189,7 @@ FROM basedata.comuni_istat_confini;
 
 ### Trovare in quale comune ricade un punto
 Un ultimo esempio dell'utilizzo delle funzioni spaziali dentro il database è quello di `ST_Intersects`. Questa funzione restituisce `TRUE` se due geometrie si intersecano. Usiamo ora questo comando per vedere in quale comune ricade ogni plot, utilizzando le tabelle...
+
+
+
+[**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_08.md) Comandi SQL avanzati - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_08.html)</ins>]
