@@ -39,7 +39,7 @@ SELECT
 FROM biodiversita.trappole;
 ```
 
-##### Esercizio
+#### Esercizio
 > Scrivere una query per generare una tabella con un buffer di 500 metri per ogni plot e salvarla come una vista nello schema *test* e visualizzarla poi in QGIS. Si consiglia di mettere *plot_code* come prima colonna della tabella così che può essere riconosciuta più facilmente da QGIS come chiave univoca.
 
 ### Creare un punto a partire dalle coordinate
@@ -85,69 +85,107 @@ SELECT * FROM geometry_columns;
 
 La query precedente ci informa che all'interno del nostro database ci sono un certo numero di tabelle con una colonna geometria, e che ognuna di queste colonne si chiama *geom* e contiene dati bidimensionali e accetta solo un tipo di dati specifico. Inoltre, portano anche informazioni sul sistema di coordinate di riferimento in uso, tramite il parametro <ins>[SRID](https://en.wikipedia.org/wiki/SRID)</ins>.
 
-
-
 ### Sistemi di riferimento e coordinate
 
-The earth is approximately spheric whereas maps are two-dimensional. Projections are used to give such a two-dimensional representation of the earth. Many different projection systems exist, each using different mathematical formulas to estimate the earth on a flat surface. Some commonly used projections are the [(Transverse) Mercator projection](https://map-projections.net/compare.php?p1=mercator-84&p2=miller&w=0), the [Robinson projection](https://map-projections.net/compare.php?p1=robinson&p2=schjerning-1&w=0) and the [Lambert Conformal Conic](https://map-projections.net/compare.php?p1=lambert-conformal-conic&p2=mercator-84&w=0). Projections always give a certain distortion of the shape, size, distance and/or angle between different features on the earth's surface. For instance the Mercator projection, from which a variant (Spherical Normal equatorial Mercator projection) is used in google maps, shows large overestimation of the surface area towards the poles. At this website ([The True Size](https://thetruesize.com)) you can compare the size of a country at different latitudes using the Mercator projection. Here you can find some more interesting links to explore map projections and map distortion.
+La terra è (molto) approssimativamente sferica, mentre le mappe sono bidimensionali. Le proiezioni sono usate per dare una rappresentazione bidimensionale della terra in modo che la superficie sferica della terra possa essere rappresentata su un piano. Esistono molti sistemi di proiezione diversi, ognuno dei quali utilizza diverse formule matematiche per "ricondurre" la superficie della terra a una superficie piana. Alcune proiezioni comunemente usate sono la [(Transverse) Mercator projection](https://map-projections.net/compare.php?p1=mercator-84&p2=miller&w=0) e la [Lambert Conformal Conic](https://map-projections.net/compare.php?p1=lambert-conformal-conic&p2=mercator-84&w=0). Le proiezioni danno sempre una certa distorsione della forma, dimensione, distanza e/o angolo degli oggetti della superficie terrestre. Per esempio la proiezione di Mercator, di cui una variante (proiezione sferica normale equatoriale di Mercatore) è usata in google maps, mostra una grande sovrastima della superficie verso i poli. In questo sito ([The True Size](https://thetruesize.com)) si possono confrontare le dimensioni di un paese a diverse latitudini usando la proiezione Mercator. Qui puoi trovare altri link interessanti per esplorare le proiezioni delle mappe e le loro distorsioni.
 
-* [Map distortion](http://www.gis.osu.edu/misc/map-projections/)
-* [Map characteristics](http://bl.ocks.org/syntagmatic/raw/ba569633d51ebec6ec6e/)
-* [Compare projections](https://map-projections.net/imglist.php)
+* [Distorsione delle mappe](http://www.gis.osu.edu/misc/map-projections/)
+* [Caratteristiche delle mappe](http://bl.ocks.org/syntagmatic/raw/ba569633d51ebec6ec6e/)
+* [Confronta le proiezioni](https://map-projections.net/imglist.php)
 
-Coordinates alone do not allow to understand where on earth spatial objects (points, lines, polygons) are located. In addition a corresponding **geographical reference system** needs to be identified. A geographical reference system uses an ellipsoid and a datum including a reference zero X and Y axis, in order to assign coordinates to certain locations. Some commonly used geographical reference systems are the [World Geodetic System](http://spatialreference.org/ref/epsg/4326/) (WGS84, EPSG:4326), [the Projected coordinate system for Europe](http://spatialreference.org/ref/epsg/3035/) (ETRS89, EPSG:3035) and the [Universal Transverse Mercator coordinate system](https://gisgeography.com/utm-universal-transverse-mercator-projection/) (UTM).
-There are two types of geographical reference systems, **global or spherical reference systems** and **projected reference systems** often defined more locally (e.g., country, continental). A typical example of a global reference system is EPSG:4326, which uses as geodetic datum and ellipsoid WGS84 and as zero reference axes the prime meridian at Greenwich (longitude) and the equator (latitude). Since this is a spherical reference system the measurement unit is in degrees (e.g., [we are here](https://goo.gl/maps/7WyJ7bYBp892): longitude = 11°08'10.7"E, latitude = 46°11'30.5"N). An example of a projected reference system is the Universal Transverse Mercator (UTM) coordinate system. In UTM the earth is devided into a grid, where each grid cell is projected using a standard set of map projections with a central meridian for each six-degree wide UTM zone. In UTM the measurement unit is in meters.
+Le coordinate da sole non permettono di capire dove si trovano sulla terra gli oggetti spaziali (punti, linee, poligoni). Bisogna inoltre identificare un **sistema di riferimento geografico** corrispondente. Un sistema di riferimento geografico utilizza un ellissoide e un datum che include un asse X e Y di riferimento zero, per assegnare le coordinate a certe località. Alcuni sistemi di riferimento geografico comunemente usati sono il [World Geodetic System](http://spatialreference.org/ref/epsg/4326/) (WGS84, EPSG:4326), [il sistema di coordinate proiettato per l'Europa](http://spatialreference.org/ref/epsg/3035/) (ETRS89, EPSG:3035) e il [sistema di coordinate Universal Transverse Mercator](https://gisgeography.com/utm-universal-transverse-mercator-projection/) (UTM).
+Ci sono due tipi di sistemi di riferimento geografici, **sistemi di riferimento globali o sferici** e **sistemi di riferimento proiettati** spesso definiti più localmente (ad esempio, paese, continente). Un esempio tipico di un sistema di riferimento globale è EPSG:4326, che usa come datum geodetico ed ellissoide WGS84 e come assi di riferimento zero il primo meridiano di Greenwich (longitudine) e l'equatore (latitudine). Trattandosi di un sistema di riferimento sferico l'unità di misura è in gradi (ad esempio, [questo punto](https://goo.gl/maps/7WyJ7bYBp892): longitudine = 11°08'10.7 "E, latitudine = 46°11'30.5 "N). Un esempio di sistema di riferimento proiettato è il sistema di coordinate Universal Transverse Mercator (UTM). In UTM la terra è divisa in una griglia, dove ogni cella della griglia è proiettata usando una serie standard di proiezioni di mappe con un meridiano centrale per ogni zona UTM di sei gradi. In UTM l'unità di misura è in metri.
 
-All spatial reference systems available in a postgresql-postgis spatial database can be called using:
+La lista dei sistemi di riferimento spaziale disponibili nel database può essere visualizzata usando:
 
 ```sql
 SELECT * FROM spatial_ref_sys;
 ```
 
-Each reference system has a specific spatial reference identifier (SRID). For instance, the World Geodetic System (SRID = 4326), the Projected coordinate system for Europe (SRID = 3035), UTM for North-Italy (SRID = 32632).
+Ogni sistema di riferimento ha uno specifico identificatore di riferimento spaziale (SRID). Per esempio, il World Geodetic System (SRID = 4326), il Projected coordinate system for Europe (SRID = 3035), UTM per il Nord-Italia zona 32 (SRID = 32632). Quest'ultimo è il sistema usando nella maggior parte dei casi dai parchi, anche se alcuni dati provenienti ad esempio da sensori, possono essere archiviati nel sistema SRID = 4326 (latitudine e longitudine riferite a WGS84).
 
 ```sql
 SELECT * FROM spatial_ref_sys WHERE srid in (4326, 3035, 32632);
 ```
 
-The reference system of a spatial objects can be set as follows:
+Il sistema di riferimento di un oggetto spaziale può essere impostato quando viene creato attraverso il comando `ST_SetSRID` come un questo esempio:
+
 ```sql
 SELECT ST_SetSRID(ST_MakePoint(11.136293,46.191794),4326);
 ```
 
-When using real world spatial data obtained from various sources, you will likely encounter different coordinate systems. One of the tasks that you will need to accomplish will be to re-project the data into a common SRID, in order to be able to do any useful work.
+Quando si usano dati spaziali del mondo reale ottenuti da varie fonti, è probabile che si incontrino diversi sistemi di coordinate. Una funzionalità che è spesso utile è la riproiezione dei dati verso un sistema di riferimento (SRID) comune.
 
-If you feed in geometries with differing SRIDs you will just get an error:
+Se si prova a comparare gemetrie con coordinate riferite a sistemi diversi si ottiene un errore, come in questo caso dove vengono confrontati due punti definiti in isstemi diversi tramite l'operatore `ST_Equals` (tutte le funzioni spaziali in PostGIS cominciano con *ST_*):
 ```sql
-SELECT ST_Equals(
-        ST_GeomFromText('POINT(0 0)', 4326),
-        ST_GeomFromText('POINT(0 0)', 32632)
-);
+SELECT
+  ST_Equals(
+   ST_SetSRID(ST_MakePoint(0,0),4326),
+   ST_SetSRID(ST_MakePoint(0,0),32632));
 ```
 
-Once the SRID code is set you can transform it into another reference system:
+Il modo corretto di procedere è riproiettare uno dei due punti in modo da avere entrambi nello stesso sistema di riferimento. Il comando `ST_Transform` serve per riproiettare una geometria e ha la sintassi `ST_Transform(geometria, nuovo_srid)`. In questo esempio si crea un punto in coordinate geografiche e poi si riproietta in UTM32.
 ```sql
-SELECT ST_Transform(ST_SetSRID(ST_MakePoint(11.136293,46.191794),4326),32632);
+SELECT
+  ST_Transform(
+   ST_SetSRID(ST_MakePoint(11.136293,46.191794),4326),
+  32632);
 ```
 
-If you compare, the units are clearly different (WGS84 = degrees; UTM = meters):
+Se si confrontano i punti nei due sistemi di riferimento, le unità sono chiaramente diverse (WGS84 = gradi; UTM = metri):
 ```sql
-SELECT  ST_AsText(ST_SetSRID(ST_MakePoint(11.136293,46.191794),4326)) wgs84,
+SELECT
+  ST_AsText(ST_SetSRID(ST_MakePoint(11.136293,46.191794),4326)) wgs84,
 	ST_AsText(ST_Transform(ST_SetSRID(ST_MakePoint(11.136293,46.191794),4326),32632)) utm32;
 ```
 
-**Take home message:**
-Coordinates only do not identify a position on earth and the same position has different values according to the reference system.
-When performing spatial operations (such as intersection, union, distance between points from two layers) always make sure the coordinate reference systems are the same.
+Le coordinate non identificano solo una posizione sulla terra e la stessa posizione ha valori diversi a seconda del sistema di riferimento.  
+Quando si eseguono operazioni spaziali (come intersezione, unione, distanza tra punti di due livelli) bisogna assicurarsi sempre che i sistemi di riferimento delle coordinate siano gli stessi.
 
-In our database, we are not storing planar Euclidean coordinates, but use latitude and longitude to identify a point on the ellipsoid expressed by the geodetic datum WGS\_1984 - the one used globally by GPS systems.
-
-##### EXERCISE
-* Visualize the coordinates of your points in both WGS84 and UTM32 (SRID 32632)
+#### Esercizio
+> Visualizzare le coordinare dei plot nel sistema 4326 (longitudine, latitudine). Per vedere le coordinate si può usare la funzione ST_AsText oppure le funzioni ST_X e ST_Y che estraggono le due componenti delle coordinate di un punto.
 
 
 ### Calcolare l'area di un poligono
-Ci sono molte proprietà di un elemento spaziale che sono implicite nella geometria dell'oggetto e che quindi non è necessario salvare come colonne aggiuntive in una tabella
+Ci sono molte proprietà di un elemento spaziale che sono implicite nella geometria dell'oggetto e che quindi non è necessario salvare come colonne aggiuntive in una tabella. Un esempio è l'area di un poligono. Si può calcolare l'area di un poligono usando la funzione `ST_Area`. Analogamente si può calcolare il perimetro usando la funzione `ST_Perimeter`. Un esempio applicato al layer dei parchi è:  
 
-### Riproiettare le coordinate di un punto
+```sql
+SELECT
+  parco_code,
+  ST_Area(geom)::integer area,
+  ST_Perimeter(geom)::integer perimetro
+FROM
+  basedata.parchi
+ORDER BY
+  ST_Area(geom)::integer;
+```
+
+Nella query si è utilizzato l'operatore CAST `::` per trasformare il numero in intero e non visualizzare i decimali che in questo caso sono ininfluenti.  
+
+L'area e il perimetro vengono calcolati in base al sistema di riferimento della geometria. Se la geometria è in coordinate geografiche il risultato non avrà senso:
+
+```sql
+SELECT
+  nome_com,
+  ST_Area(geom) area,
+  ST_Perimeter(geom) perimetro
+FROM basedata.comuni_istat_confini;
+```
+
+Per calcolare un valore corretto è quindi necessario prima riproiettare la geometria in UTM32, come nell'esempio seguente:
+
+```sql
+SELECT
+  nome_com,
+  ST_Area(
+   st_transform(geom,32632)) area,
+  ST_Perimeter(
+   st_transform(geom,32632)) perimetro
+FROM basedata.comuni_istat_confini;
+```
+
+#### Esercizio
+> Calcolare l'area e il perimetro dei buffer di 100 metri calcolati intorno ad ogni plot. In questo caso bisogna calcolare l'area a partire dall'oggetto creato con il buffer con una struttura come ST_Area(ST_Buffer(...)).
+
 ### Trovare in quale comune ricade un punto
+Un ultimo esempio dell'utilizzo delle funzioni spaziali dentro il database è quello di `ST_Intersects`. Questa funzione restituisce `TRUE` se due geometrie si intersecano. Usiamo ora questo comando per vedere in quale comune ricade ogni plot, utilizzando le tabelle...

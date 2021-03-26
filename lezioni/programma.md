@@ -137,10 +137,3 @@
 9. Documentazione della qualità dei dati
 10. Estensione del database con nuovi dataset
 11. Esercitazione pratica con i dati sugli uccelli raccolti dal PNDB
-
-#### Lezione 10. Manutenzione del Database
-1. Backup
-2. Restore
-3. Creazione di utenti
-4. Creazione di gruppi
-5. Assegnazione dei permessi

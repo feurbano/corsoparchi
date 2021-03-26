@@ -20,7 +20,6 @@ MODULO 3 - Lunedì 29/3/2021 09:00-13:00
 MODULO 4 - Martedì 30/3/2021 09:00-13:00   
 [**Lezione 8.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
 [**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati  
-[**Lezione 10.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_10.md) Manutenzione del database  
 
 ### Docente
 Ferdinando Urbano
@@ -49,7 +48,7 @@ Il corso è strutturato in 4 moduli con obiettivi distinti, suddivisi in 10 lezi
 * **Modulo 1**: *Introduzione alla gestione dei dati e database*. Questo modulo da ai partecipanti nozioni di base di gestione dei dati, spiega cosa è e come è fatto un database relazionale, mostra come collegarsi ai database dei Parchi con vari strumenti, visualizzare una tabella e scaricare i dati in formato csv o shapefile.
 * **Modulo 2**: *Introduzione a SQL*. Questo modulo spiega come interagire in modo semplice con i database tramite comandi SQL di base, come modificare i dati nelle tabelle e come scaricare i dati formattandoli a piacere.
 * **Modulo 3**: *Comandi SQL per interagire con il database in modo complesso*. Questo modulo insegna ad interagire con i dati in modo avanzato con comandi SQL più complessi in modo da poter combinare dati di diverse tabelle ed analizzare i dati in modo strutturato.
-* **Modulo 4**: *Gestione e aggiornamento del database*. Questo modulo spiega come creare nuovi oggetti nel database, processare e verificare nuovi dati raccolti sul campo e inserirli nel database.
+* **Modulo 4**: *Aggiornamento del database*. Questo modulo spiega come creare nuovi oggetti nel database, processare e verificare nuovi dati raccolti sul campo e inserirli nel database.
 
 ### Materiale
 Il materiale del corso (presentazioni, lezioni, esercizi) è disponibile in questo sito. Nelle 4 mezze giornate di corso il materiale verrà presentato e spiegato, rimanendo poi a disposizione di tutti per approfondirne lo studio. Se possibile, le lezioni online verranno registrate e condivise. Ulteriore materiale di approfondimento sui database, PostgreSQL e la gestione dei dati può facilmente essere reperito online (libri, tutorial, corsi sia gratuiti sia a pagamento).  
