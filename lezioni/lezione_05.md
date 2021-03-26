@@ -20,7 +20,7 @@ Il numero delle operazioni che si possono fare sul database aumenta esponenzialm
 
 Per una introduzione all'estensione spaziale PostGIS, una fonte di informazioni utile è:  
 
-* [PostGIS Intro by BoundlessGeo](http://workshops.boundlessgeo.com/postgis-intro/)  
+* [PostGIS Intro](https://postgis.net/workshops/postgis-intro/)  
 
 In futuro, per l'uso e aggiornamento dei database dei singoli Parchi, gli operatori e i collaboratori potranno eventualmente chiedere il supporto tecnico al curatore e al gestore del database del proprio Parco.
 
