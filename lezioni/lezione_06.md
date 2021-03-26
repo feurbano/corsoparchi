@@ -110,7 +110,7 @@ In pratica, si usa spesso l'operatore `UNION` per combinare dati da tabelle simi
 L'operatore `UNION` rimuove tutte le righe duplicate dal set di dati combinato. Per mantenere le righe duplicate, si usa invece l'operatore `UNION ALL`.  
 
 #### ESERCIZIO
-> Creare una tabella che contiene i campi *parco_code*, *plot_code* e *data_controllo* di tutti i record della tabella *biodiversita.lepidotteri_controllo* e della tabella * biodiversita.lepidotteri_controllo*.
+> Creare una tabella che contiene i campi *parco_code*, *plot_code* e *data_controllo* di tutti i record della tabella *biodiversita.lepidotteri_controllo* e della tabella *biodiversita.lepidotteri_controllo*.
 
 ### JOIN
 Una query di `UNION` attacca una tabella sotto un'altra, ma le query che generano le due tabelle rimangono distinte. Una singola query però coinvolgere più tabelle contemporaneamente, combinando le informazioni archiviate in ognuna di essere. Ad esempio, se si vogliono sapere le condizioni meteo in cui sono strati trovati degli individui bisogna estrarre una parte del dato dalla tabella di monitoraggio (la specie) e una parte dalla tabella di controllo (le condizioni meteo). Queste due tabelle possono essere collegate perché hanno dei campi in comune (parco, plot e data).  
@@ -155,7 +155,7 @@ ON
   (scientific_name_species.genus_name = scientific_name_genus.genus_name);
 ```
 
-Quando sono coinvolte più tabelle, è una buona pratica identificare ogni colonna con il nome della tabella cui appartiere + "." + nome della collona ("nome_tabella.nome_campo"), analogamente a quanto si fa con le tabelle a cui ci si riferisce usando la forma "nome_schema.nome_tabella". Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse, altrimenti il database non saprebbe a quale ci riferiamo. Se il nome della tabella è lungo si possono usare degli `ALIAS` di tabella per semplificare il codice.  
+Quando sono coinvolte più tabelle, è una buona pratica identificare ogni colonna con il nome della tabella cui appartiene + '.' + nome della colonna (*nome_tabella.nome_campo*), analogamente a quanto si fa con le tabelle a cui ci si riferisce usando la forma *nome_schema.nome_tabella*. Questo è obbligatorio se lo stesso nome di colonna è usato in due tabelle diverse, altrimenti il database non saprebbe a quale ci riferiamo. Se il nome della tabella è lungo si possono usare degli `ALIAS` di tabella per semplificare il codice.  
 In questo esempio, più complesso perché le tabelle sono legate da 3 campi, il codice SQL genera la tabella che mette insieme i dati meteo e le determinazioni per i lepidotteri:
 
 ```sql
@@ -171,9 +171,9 @@ FROM
   biodiversita.lepidotteri_controllo AS con,
   biodiversita.lepidotteri_monitoraggio AS mon
 WHERE
-con.plot_code = mon.plot_code AND
-con.parco_code = mon.parco_code AND
-con.data_controllo = mon.data_controllo;
+  con.plot_code = mon.plot_code AND
+  con.parco_code = mon.parco_code AND
+  con.data_controllo = mon.data_controllo;
 ```
 
 Si possono unire più di due tabelle, usando lo stesso approccio visto con il caso di 2 sole tabelle.
@@ -200,14 +200,14 @@ FROM
   biodiversita.lepidotteri_controllo AS con LEFT JOIN
   biodiversita.lepidotteri_monitoraggio AS mon
 ON
-con.plot_code = mon.plot_code AND
-con.parco_code = mon.parco_code AND
-con.data_controllo = mon.data_controllo
+  con.plot_code = mon.plot_code AND
+  con.parco_code = mon.parco_code AND
+  con.data_controllo = mon.data_controllo
 ORDER BY
-mon.plot_code,
-mon.data_controllo,
-con.plot_code,
-con.data_controllo;
+  mon.plot_code,
+  mon.data_controllo,
+  con.plot_code,
+  con.data_controllo;
 ```
 
 Invertendo l'ordine delle tabelle (monitoraggio a sinistre del LEFT JOIN e controllo a destra), si può ad esempio controllare con i dati di un monitoraggio corrispondono a un controllo (nel caso del nostro database questo è sicuramente vero perché abbiamo una chiave esterna che lo garantisce).
