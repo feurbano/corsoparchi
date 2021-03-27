@@ -125,7 +125,7 @@
 7. Subquery con WHERE
 8. Funzioni WINDOW
 
-#### Lezione 9. Inserimento di nuovi dati
+#### Lezione 9. Controllo e importazione di un nuovo dataset
 1. Controllo preliminare dei dati
 2. Verifica della completezza e correttezza dei dati nei fogli di calcolo
 3. Formattazione dei dati per l'importazione

@@ -1,4 +1,13 @@
+<p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
+
 # WORK IN PROGRESS
+
+#### Lezione 8
+## Controllo e importazione di un nuovo dataset
+
+Autore: Ferdinando Urbano  
+
+---
 
 Di solito, l'interazione fra utenti e database, in particolare per l'inserimento dei dati, passa attraverso l'uso di applicativi specifici (ad esempio maschere) che permettono all'utente di immettere i dati in modo semplice e diretto, riorganizzando le informazioni "dietro le quinte" prima di essere inserite nel database.
 

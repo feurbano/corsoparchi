@@ -1,7 +1,5 @@
 <p align="center"> <img src="materiale/loghi.png" width="315" height="100" /></p>
 
-# WORK IN PROGRESS
-
 #### Lezione 7
 ## Dati spaziali
 
@@ -211,4 +209,5 @@ ORDER BY
 #### Esercizio
 > Trovare in quali comuni ricadono i Parchi. In questo caso il poligono di ogni Parco potrà intersecare più comuni, quindi mi posso aspettare una tabella con più righe per ogni Parco.
 
+---
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_08.md) Comandi SQL avanzati - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_08.html)</ins>]
