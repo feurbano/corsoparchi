@@ -25,7 +25,7 @@ Per visualizzare i dati spaziali, come tutti gli altri dati di un database, è n
 Un modo comune per esplorare il contenuto di una query con una componente spaziale è di creare una view che può poi essere visualizzata in ambiente GIS.  
 Se una tabella con un campo spaziale è visualizzata in un GIS, la geometria può essere editata direttamente nel GIS come se fosse uno shapefile.  
 
-In questo esempio si usa la funzione `ST_BUFFER` per generare un'area circolare con raggio 50 metri intorno a ogni plot. Per rendere disponibile il risultato a QGIS viene creata una view. Questa view può essere poi caricata nel GIS. The column with the spatial information is *geom*
+In questo esempio si usa la funzione `ST_BUFFER` per generare un'area circolare con raggio 100 metri intorno a ogni plot. Per rendere disponibile il risultato a QGIS viene creata una view. Questa view può essere poi caricata nel GIS. The column with the spatial information is *geom*
 
 ```sql
 CREATE VIEW test.miavista1 AS
@@ -33,7 +33,7 @@ SELECT
   trappola_code
   parco_code,
   plot_code,
-  ST_BUFFER(geom, 50) as geom
+  ST_BUFFER(geom, 100) as geom
 FROM biodiversita.trappole;
 ```
 
@@ -114,7 +114,7 @@ SELECT ST_SetSRID(ST_MakePoint(11.136293,46.191794),4326);
 
 Quando si usano dati spaziali del mondo reale ottenuti da varie fonti, è probabile che si incontrino diversi sistemi di coordinate. Una funzionalità che è spesso utile è la riproiezione dei dati verso un sistema di riferimento (SRID) comune.
 
-Se si prova a comparare gemetrie con coordinate riferite a sistemi diversi si ottiene un errore, come in questo caso dove vengono confrontati due punti definiti in isstemi diversi tramite l'operatore `ST_Equals` (tutte le funzioni spaziali in PostGIS cominciano con *ST_*):
+Se si prova a comparare gemetrie con coordinate riferite a sistemi diversi si ottiene un errore, come in questo caso dove vengono confrontati due punti definiti in sistemi diversi tramite l'operatore `ST_Equals` (tutte le funzioni spaziali in PostGIS cominciano con *ST_*):
 ```sql
 SELECT
   ST_Equals(
