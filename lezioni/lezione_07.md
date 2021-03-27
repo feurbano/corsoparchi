@@ -178,18 +178,37 @@ Per calcolare un valore corretto è quindi necessario prima riproiettare la geom
 SELECT
   nome_com,
   ST_Area(
-   st_transform(geom,32632)) area,
+   ST_Transform(geom,32632)) area,
   ST_Perimeter(
-   st_transform(geom,32632)) perimetro
-FROM basedata.comuni_istat_confini;
+   ST_Transform(geom,32632)) perimetro
+FROM
+  basedata.comuni_istat_confini;
 ```
 
 #### Esercizio
 > Calcolare l'area e il perimetro dei buffer di 100 metri calcolati intorno ad ogni plot. In questo caso bisogna calcolare l'area a partire dall'oggetto creato con il buffer con una struttura come ST_Area(ST_Buffer(...)).
 
 ### Trovare in quale comune ricade un punto
-Un ultimo esempio dell'utilizzo delle funzioni spaziali dentro il database è quello di `ST_Intersects`. Questa funzione restituisce `TRUE` se due geometrie si intersecano. Usiamo ora questo comando per vedere in quale comune ricade ogni plot, utilizzando le tabelle...
+Un ultimo esempio dell'utilizzo delle funzioni spaziali dentro il database è quello di `ST_Intersects`. Questa funzione restituisce `TRUE` se due geometrie si intersecano. Usiamo ora questo comando per vedere in quale comune ricade ogni plot, utilizzando le tabelle *basedata.plot* e *basedata.comuni_istat_confini*. In questo caso la condizione di join (`WHERE`) non è l'equivalenza di un campo, ma l'intersezione dei due strati geografici (cioè quando il punto del plot è dentro il poligono del comune). La geometria dei comuni è però in coordinate geografiche, mentre quella dei plot è in UTM32. Per poterli confrontare devo quindi prima riproiettare uno dei due. Dentro il comando `ST_Intersects` avrò quindi anche un comando `ST_Transform`:
 
+```sql
+SELECT
+  plot.parco_code,
+  plot.plot_code,
+  comuni_istat_confini.pro_com,
+  comuni_istat_confini.nome_com
+FROM
+  biodiversita.plot,
+  basedata.comuni_istat_confini
+WHERE
+  ST_Intersects(
+   comuni_istat_confini.geom,
+   ST_Transform(plot.parchi,4326))
+ORDER BY
+  plot_code;
+```
 
+#### Esercizio
+> Trovare in quali comuni ricadono i Parchi. In questo caso il poligono di ogni Parco potrà intersecare più comuni, quindi mi posso aspettare una tabella con più righe per ogni Parco.
 
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_08.md) Comandi SQL avanzati - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_08.html)</ins>]
