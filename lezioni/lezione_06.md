@@ -84,7 +84,7 @@ La struttura generale di una query con `UNION` è:
 ```sql
 SELECT colonna1, colonna2 FROM tabella 1
 UNION
-SELECT colonna1, colonna2 FROM tabella 1;
+SELECT colonna1, colonna2 FROM tabella 2;
 ```  
 
 L'operatore UNION può mettere le righe del risultato della prima query prima, dopo o tra le righe del risultato della seconda query.
