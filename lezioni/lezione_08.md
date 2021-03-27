@@ -3,21 +3,86 @@
 # WORK IN PROGRESS
 
 #### Lezione 8
-## Comandi SQL avanzati
+## Comandi SQL per aggiornare il database
 
 Autore: Ferdinando Urbano  
 
 ---
 
+### Inserimento di nuovi dati nel database
+Ci sono varie opzioni per inserire nuovi dati nella tabella di un database.  
+Se in ogni caso bisogna fare data entry, cioè portare le informazioni dalle schede cartacee di campo al formato digitale, **la prima opzione** è quella dell'inserimento manuale record per record direttamente nella tabella finale. Questo avviene sempre tramite interfacce. La più immediata è PgAdmin. In questo caso, come visto nella [lezione 3](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html), si può aprire la tabella, andare nell'ultima riga, cliccare campo per campo e aggiungere riga per riga tutti i nuovi dati (dando conferma alla fine dell'operazione). Il database farà un controllo dei dati in base alle regole impostate (chiavi primarie, chiavi esterne, check sui campi, tipi di dato) restituendo un errore se queste regole non sono rispettate. L'inserimento dei dati in questo modo non è particolarmente agevole. Un modo per facilitarlo è creare delle maschere di inserimento utilizzando MS Access, LibreOffice Calc o una applicazione web-based (ad esempio sviluppata in linguaggio PhP) come client per creare delle interfacce grafiche dedicate con funzioni specifiche come menù a tendina o verifica immeditata dei valori inseriti (prima che vengano inviati al database). L'inserimento riga per riga può essere fatta anche attraverso il comando `INSERT INTO` con la sintassi `INSERT INTO tabella_destinazione (campo1, campo2, ...) VALUES (valore1, valore2, ...);`.  
 
-1. Inserimento di nuovi dati: INSERT
-2. Inserimento di nuovi dati: COPY
-3. Inserimento di nuovi dati: /COPY
-4. Aggiornamento di dati: UPDATE
-5. Cancellazione di dati: DELETE
-6. Subquery con FROM
-7. Subquery con WHERE
-8. Funzioni WINDOW
+**La seconda opzione**, quando i dati vengono raccolti tramite palmare, è di inviare i dati direttamente al database dove possono poi essere verificati da un operatore esperto prima di essere formalmente integrati ai dati "ufficiali" (ad esempio attraverso un campo booleano *validato* che verrà marcato come TRUE dopo verifica, oppure passando attraverso una tabella intermedia prima di venire caricati nella tabella finale). Questa opzione deve essere sviluppata quando si crea l'applicazione su tablet per registrare i dati.  
+
+**La terza opzione** riguarda i dati che sono già disponibili in un foglio di calcolo o in formato .csv (ad esempio prodotto dall'applicazione per la raccolta dati via tablet, se questa non è connessa direttamente al database). In questo caso, si può fare una verifica preliminare della validità dei dati direttamente nei foglio di calcolo (per quanto possibile). I dati devono essere organizzati in una struttura analoga a quella creata nel database (un file .csv per ogni tabella, con stessi campi e stesso formato). A questo punto si può utilizzare l'interfaccia di PgAdmin che offre una funzione di import/export dei dati (selezionare la tabella nel menù ad albero nel pannello di sinistra e cliccare il pulsante destro). L'interfaccia permette di specificare se è una operazione di importazione o di esportazione, il nome del file di destinazione/provenienza, se c'è o menu un header (la prima riga con il nome delle colonne), il separatore usato (virgola, punto e virgola, tabulazione), l'encoding del file di origine/destinazione (importante quando ci sono caratteri accentati) e, infine, la lista dei campi che verranno importati (nel caso dell'importazione, non tutti i campi della tabella del database possono essere presenti nel .csv, in particolare i campi *serial*). Invece di utilizzare l'interfaccia grafica, si possono usare anche il comando SQL `COPY` se il file è sullo stesso server del database, o il comando `/COPY` da lanciare dall'interfaccia *psql* che permette di specificare un file da un computer diverso dal server che ospita il database (ad esempio il computer locale del tecnico che effettua l'operazione di importazione). In questo processo, la parte problematica è la correttezza dei dati. Inserendo i dati nella tabella finale, questi devono essere corretti altrimenti l'operazione non si completerà e il database segnalerà il primo errore trovato che potrà poi essere corretto nel file .csv originale. Se ci sono tanti errori (che possono essere di vario tipo, ad esempio l'uso della virgola invece del punto per i decimali, la presenza di valori non coerenti con il tipo di dato come ad esempio '>5' invece di un intero, valori non presenti nella lista di quelli ammessi per quel campo, coerenza con dati di altre tabelle come la data di una determinazione rispetto alla data del controllo della trappola), le iterazioni diventano molte e il processo diventa lento e complesso da gestire.  
+
+Per ovviare all'inconveniente menzionato sopra, **la quarta opzione** prevede che i dati vengano inseriti in una tabella del database temporanea dove non sono implementati controlli (nessuna chiave esterna o vincoli sui campi, tipi di dato generici come testo anche per valori che dovrebbero essere specifici come date o numeri) e che ha esattamente la stessa struttura del file di origine. Questo garantisce che l'operazione di importazione avvenga senza problemi. I dati possono poi essere controllati e corretti nel database in modo più semplice, specie se le correzione coinvolgono molte righe (ad esempio, correggere il formato di una data, modificare valore scorretti ripetuti, togliere spazi all'inizio o alla fine di una stringa di testo, sostituire nomi di specie scorretti, numero di individui totali non coerente con la somma del numero di maschi + femmine + piccoli + indeterminati, e la lista potrebbe continuare per ore...) utilizzando il comando SQL `UPDATE`. Una volta ripuliti i dati nella tabella temporanea di importazione, questi possono essere caricati nella tabella finale usando il comando `INSERT INTO` in una variante che prevede, invece dell'uso di VALUES più la lista dei valori da inserire, una query di `SELECT` che genera i valori da importare: `INSERT INTO tabella_destinazione (campo1, campo2, ...) SELECT (campo1, campo2, ...) FROM tabella_temporanea;`. Questa quarta opzione è quella che in generale è stata utilizzata, nella maggior parte dei casi, per importare i dati dei Parchi nei rispettivi database.  
+
+Nelle sezioni seguenti vengono mostrati esempi dell'uso dei comandi citati, mentre nella [lezione 9](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html), in particolare durante la dimostrazione online, verranno mostrati esempi concreti dell'applicazione di queste procedure ai dati del Progetto Biodiversità.  
+Alla fine di questa sezione vengono velocemente introdotti
+
+### Il comando INSERT INTO
+
+Inserire utente: Aieie Brazu, nato il 3 dicembre 1987, lavora per la società ACME, pesa 66 chili e non è sposato.
+Popolare una tabella con SQL (INSERT INTO and VALUES)
+
+INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
+  VALUES ('Gino', 'Pasticcino', '01-05-1978', 'ACME', 73, TRUE);
+
+INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
+  VALUES ('Felice', 'Caccamo', '05-09-1951', 'ACME', 93, TRUE);
+
+INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
+  VALUES ('Ciccio', 'Pasticcio', '01-04-1972', 'IQ s.p.a.', '79,4', FALSE);
+
+INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
+  VALUES ('Grunnio', 'Corocotta', '21-01-1982', 'IQ spa', '65,4', TRUE);
+
+INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
+  VALUES ('Ottone', 'Bugusciusciu', '11-12-1994', 'ACME', 67, FALSE);
+
+Popolare una tabella da un file csv
+
+    Esempio con PgAdmin (file dipendenti.csv)
+
+Codice (il percorso del file deve essere adattato):
+
+COPY data.dipendenti (nome, cognome, data_nascita, societa_nome, peso, sposato)
+  FROM 'C:\corso_postgres\dipendenti.csv' WITH CSV DELIMITER ';';
+
+    Esempio con SQL (file societa.csv)
+
+Codice (il percorso del file deve essere adattato):
+
+COPY data.societa (societa_nome,settore,num_dipendenti)
+  FROM 'C:\corso_postgres\societa.csv' WITH CSV DELIMITER ';';
+
+Esportare i dati in un file esterno
+
+    Con PgAdmin (tabella dipendenti
+    Usando SQL
+
+Codice (il percorso del file deve essere adattato):
+
+COPY data.dipendenti
+  TO 'C:\corso_postgres\dipendenti_completo.csv' WITH CSV DELIMITER ';' HEADER;
+
+### Inserimento di nuovi dati: COPY
+### Inserimento di nuovi dati: /COPY
+### Aggiornamento di dati: UPDATE
+
+Se avete molti record da cambiare, è meglio usare una query UPDATE invece di modificare manualmente tutti i record interessati. Per esempio se nel set di dati originale i record NULL sono contrassegnati con "N/A":
+
+UPDATE temp.import_datagroup_dataset_raw
+SET età = NULL
+WHERE age = 'N/A';
+
+
+### Cancellazione di dati: DELETE
+### Subquery con FROM
+### Subquery con WHERE
+### Funzioni WINDOW
 
 
 
@@ -64,13 +129,6 @@ Se ci sono record con una data non valida, riceverete un errore da Postgres. Pot
 SELECT DISTINCT date_capture FROM temp.import_datagroup_dataset_raw ORDER BY date_capture;
 
 
-Se avete molti record da cambiare, è meglio usare una query UPDATE invece di modificare manualmente tutti i record interessati. Per esempio se nel set di dati originale i record NULL sono contrassegnati con "N/A":
-
-UPDATE temp.import_datagroup_dataset_raw
-SET età = NULL
-WHERE age = 'N/A';
-
-
 
 Il comando "LIKE" nell'istruzione WHERE è spesso utile per cercare le stringhe (vedere il manuale di postgres).
 Quando tutte le colonne sono formattate correttamente puoi caricare nelle tabelle principali fondendole nel tipo di dati corretto (altrimenti, se cerchi di inserire un carattere che varia in un campo numerico o di data, otterrai un messaggio di errore e l'importazione fallirà).
@@ -106,6 +164,5 @@ Si prega di notare che mentre alcuni (limitati) codici SQL sono riportati qui, i
 
 
 
-
 ---
-[**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_08.md) Controllo e importazione di un nuovo dataset - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_08.html)</ins>]
+[**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_09.md) Controllo e importazione di un nuovo dataset: dimostrazione pratica - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html)</ins>]

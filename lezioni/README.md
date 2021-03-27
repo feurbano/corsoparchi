@@ -15,5 +15,5 @@
 * [**Lezione 7.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_07.md) Dati spaziali
 
 ### MODULO 4: Gestione e aggiornamento del database
-* [**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati
-* [**Lezione 9.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_9.md) Controllo e importazione di un nuovo dataset
+* [**Lezione 8.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_8.md) Comandi SQL per aggiornare il database
+* [**Lezione 9.**](https://github.com/feurbano/gestione_dati_parchi/blob/master/lezioni/lezione_9.md) Controllo e importazione di un nuovo dataset: dimostrazione pratica

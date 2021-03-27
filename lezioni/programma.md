@@ -115,7 +115,7 @@
 
 ### MODULO 4: Gestione e aggiornamento del database
 
-#### Lezione 8. Comandi SQL avanzati
+#### Lezione 8. Comandi SQL per aggiornare il database
 1. Inserimento di nuovi dati: INSERT
 2. Inserimento di nuovi dati: COPY
 3. Inserimento di nuovi dati: /COPY

@@ -2,8 +2,8 @@
 
 # WORK IN PROGRESS
 
-#### Lezione 8
-## Controllo e importazione di un nuovo dataset
+#### Lezione 9
+## Controllo e importazione di un nuovo dataset: dimostrazione pratica
 
 Autore: Ferdinando Urbano  
 
@@ -73,3 +73,5 @@ ESEMPIO FILE UCCELLI PNDB
 	-
 - Verifica delle note per informazioni aggiuntive
 	-
+
+---

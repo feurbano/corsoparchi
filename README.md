@@ -18,14 +18,14 @@ MODULO 3 - Lunedì 29/3/2021 09:00-13:00
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_07.html)</ins>]  
 <br>
 MODULO 4 - Martedì 30/3/2021 09:00-13:00   
-[**Lezione 8.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_8.md) Comandi SQL avanzati  
-[**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Inserimento di nuovi dati  
+[**Lezione 8.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_8.md) Comandi SQL  per aggiornare il database - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_08.html)</ins>]  
+[**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Controllo e importazione di un nuovo dataset: dimostrazione pratica - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html)</ins>]   
 
 ### Docente
 Ferdinando Urbano
 
-### Piattaforma di videoconferenza
-CISCO WebEx del Parco Nazionale del Gran Paradiso (il link verrà inviato via email).  
+### Link lezioni online
+A breve verrà aggiunto il link alla registrazione delle 4 video lezioni tenute sulla piattaforma CISCO WebEx del Parco Nazionale del Gran Paradiso.  
 
 ### Utenti
 Coordinatori tecnici, tecnici faunistici, esperti informatici e potenziali curatori dei dati dei Parchi; consulenti e collaboratori dei Parchi per la raccolta e la gestione dei dati.  

@@ -406,4 +406,4 @@ Per scaricare la tabella che risulta da una query si possono usare i metodi già
 > Nella tabella *biodiversita.lepidotteri_monitoraggio*, cercare tutti i record appartenenti al genere 'Pieris'.
 
 ---
-[**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL avanzati - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_06.html)</ins>]
+[**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse e per raggrupparli - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_06.html)</ins>]
