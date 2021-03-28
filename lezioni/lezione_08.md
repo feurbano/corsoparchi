@@ -11,6 +11,7 @@ Autore: Ferdinando Urbano
 
 ### Inserimento di nuovi dati nel database
 Ci sono varie opzioni per inserire nuovi dati nella tabella di un database.  
+
 Se in ogni caso bisogna fare data entry, cioè portare le informazioni dalle schede cartacee di campo al formato digitale, **la prima opzione** è quella dell'inserimento manuale record per record direttamente nella tabella finale. Questo avviene sempre tramite interfacce. La più immediata è PgAdmin. In questo caso, come visto nella [lezione 3](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html), si può aprire la tabella, andare nell'ultima riga, cliccare campo per campo e aggiungere riga per riga tutti i nuovi dati (dando conferma alla fine dell'operazione). Il database farà un controllo dei dati in base alle regole impostate (chiavi primarie, chiavi esterne, check sui campi, tipi di dato) restituendo un errore se queste regole non sono rispettate. L'inserimento dei dati in questo modo non è particolarmente agevole. Un modo per facilitarlo è creare delle maschere di inserimento utilizzando MS Access, LibreOffice Calc o una applicazione web-based (ad esempio sviluppata in linguaggio PhP) come client per creare delle interfacce grafiche dedicate con funzioni specifiche come menù a tendina o verifica immeditata dei valori inseriti (prima che vengano inviati al database). L'inserimento riga per riga può essere fatta anche attraverso il comando `INSERT INTO` con la sintassi `INSERT INTO tabella_destinazione (campo1, campo2, ...) VALUES (valore1, valore2, ...);`.  
 
 **La seconda opzione**, quando i dati vengono raccolti tramite palmare, è di inviare i dati direttamente al database dove possono poi essere verificati da un operatore esperto prima di essere formalmente integrati ai dati "ufficiali" (ad esempio attraverso un campo booleano *validato* che verrà marcato come TRUE dopo verifica, oppure passando attraverso una tabella intermedia prima di venire caricati nella tabella finale). Questa opzione deve essere sviluppata quando si crea l'applicazione su tablet per registrare i dati.  
@@ -23,24 +24,71 @@ Nelle sezioni seguenti vengono mostrati esempi dell'uso dei comandi citati, ment
 Alla fine di questa sezione vengono velocemente introdotti
 
 ### Il comando INSERT INTO
+Il comando SQL `INSERT` inserisce nuove righe in una tabella. Si possono inserire una o più righe specificando i valori da inserire oppure utilizzare il risultato di un'altra query. Nella struttura del comando `INSERT INTO tabella_destinazione (campo1, campo2, ...) VALUES (valore1, valore2, ...);` che inserisce i valori specificati dalla query e del suo equivalente `INSERT INTO tabella_destinazione (campo1, campo2, ...) SELECT (campo1, campo2, ...) FROM tabella_temporanea;` che utizza un'altra query per generare i valori da inserire, i nomi delle colonne di destinazione dell'inserimento possono essere elencati in qualsiasi ordine, basta che lo stesso ordine sia rispettato dai valori che vengono inseriti (i nomi dei campi di origine e destinazione non devono essere uguali: i nomi sono ininfluenti, l'unico elemento rilevante è l'ordine ed è in base a quello che il database associa il valore da inserire alla colonna relativa nella tabella di destinazione). Se non viene fornita alcuna lista di nomi di colonna, il default è che si considerano tutte le colonne della tabella nell'ordine in cui compaiono nella tabella di destinazione.  
+Non è necessario che venga fornito un valore per tutti i campi della tabella di destinazione: si possono includere solo i campi desiderati (obbligatori sono solo i campi che costituiscono la chiave primaria, a meno che questa non sia un campo `SERIAL` perché in questo caso il database assegnerà un valore autonomamente).  
+Se l'espressione per qualsiasi colonna non è del tipo di dati corretto (ad esempio viene fornito un numero invece di un testo), verrà tentata una conversione automatica del tipo che può avere o meno successo (si può sempre convertire un numero a un testo, ma non sempre si può convertire un testo a un numero).  
+È necessario avere il privilegio `INSERT` su una tabella per poterla inserire.
 
-Inserire utente: Aieie Brazu, nato il 3 dicembre 1987, lavora per la società ACME, pesa 66 chili e non è sposato.
-Popolare una tabella con SQL (INSERT INTO and VALUES)
+Per mostrare un esempio di come funzioni il comando `INSERT` creiamo una tabella vuota che popoleremo poi con i nomi degli animali e indicata specie e genere (se volete creare una vostra tabella di test, dovete cambiare il nome della tabella e della chiave primaria, ad esempio sostituendo il vostro nome a *ferdi*, altrimenti otterrete un errore perché c'è già nel database un oggetto con quel nome). Oltre al nome, alla specie e al genus, aggiungo un campo *bellezza*. Dopo la dichiarazione della lista dei campi e del loro tipo di dato, aggiungo la chiave primaria (*nome_animale*) e un vincolo sul campo *bellezza* (che deve essere compreso fra 0 e 10).  
 
-INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
-  VALUES ('Gino', 'Pasticcino', '01-05-1978', 'ACME', 73, TRUE);
+```sql
+CREATE TABLE test.tabella_di_ferdi
+(
+    nome_animale character varying ,
+    species_nome character varying NOT NULL,
+    genus_nome character varying,
+    bellezza integer,
+    CONSTRAINT tabella_di_ferdi_chiaveprimaria PRIMARY KEY (nome_animale),
+    CONSTRAINT bellezza_controllo CHECK (bellezza >= 0 and bellezza <= 10)
+);
+```
 
-INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
-  VALUES ('Felice', 'Caccamo', '05-09-1951', 'ACME', 93, TRUE);
+Se necessario posso anche specificare altri utenti che hanno il permesso di vedere e modificare questa tabella:
 
-INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
-  VALUES ('Ciccio', 'Pasticcio', '01-04-1972', 'IQ s.p.a.', '79,4', FALSE);
+```sql
+GRANT INSERT, SELECT, UPDATE
+ON TABLE test.tabella_di_ferdi
+TO furbano;
+```
 
-INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
-  VALUES ('Grunnio', 'Corocotta', '21-01-1982', 'IQ spa', '65,4', TRUE);
+Ora posso inserire dati nella tabella vuota. Comincio con un record inserito tramite comando `VALUES`
 
-INSERT INTO data.dipendenti(nome, cognome, data_nascita, societa_nome, peso, sposato)
-  VALUES ('Ottone', 'Bugusciusciu', '11-12-1994', 'ACME', 67, FALSE);
+```sql
+INSERT INTO test.tabella_di_ferdi
+  (nome_animale, species_nome, genus_nome, bellezza)
+VALUES
+  ('Uomo', 'Homo sapiens', 'Homo', '7');
+```
+
+Inserisco ora due record con il comando `VALUES` ma in questo caso non inserisco il campo *bellezza* e inverto l'ordine di specie e genus:
+
+```sql
+INSERT INTO test.tabella_di_ferdi
+  (nome_animale, genus_nome, species_nome)
+VALUES
+  ('Cimice', 'Halyomorpha', 'Halyomorpha halys'),
+  ('Beluga', 'Delphinapterus', 'Delphinapterus leucas');
+```
+
+Inserisco ora dei record prendendoli dalla tabelle *biodiversita.biodiversita_animali*. Uso la funzione SQL `RANDOM()` che genera un numero casuale fra 0 e 1 per popolare il campo *bellezza*. Per ottenere un numero intero fra 0 e 10, moltiplico per 10 e trasformo in intero, per esempio: `SELECT (RANDOM()*10)::integer;`.  
+In questo esempio inserisco nella nuova tabella tutte le specie dalla tabella *biodiversita.biodiversita_animali* che appartengono alla famiglia *Strigidae*.  
+Per verificare i dati che verranno inseriti, è sempre utile prima visualizzare il risultato della query di `SELECT` prima di lanciare il comando con `INSERT`.
+
+```sql
+INSERT INTO test.tabella_di_ferdi
+  (nome_animale, species_nome ,genus_nome, bellezza)  
+
+SELECT
+  animale_code, species_name, genus_name, (RANDOM()*10)::integer
+FROM
+  biodiversita.biodiversita_animali
+where
+  livello_tassonomico = 'species' AND
+  family_name = 'Strigidae';
+```
+
+### Inserimento di dati da un file esterno: il comando COPY
+
 
 Popolare una tabella da un file csv
 
@@ -68,7 +116,7 @@ Codice (il percorso del file deve essere adattato):
 COPY data.dipendenti
   TO 'C:\corso_postgres\dipendenti_completo.csv' WITH CSV DELIMITER ';' HEADER;
 
-### Inserimento di nuovi dati: COPY
+
 ### Inserimento di nuovi dati: /COPY
 ### Aggiornamento di dati: UPDATE
 
