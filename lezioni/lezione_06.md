@@ -390,6 +390,15 @@ WHERE
   parco_code = 'pns';
 ```  
 
+### Approfondimenti
+A causa della brevità del corso e della varietà dei partecipanti non è possibile introdurre alcune funzionalità di PostgreSQL che sono potenzialmente molto utili a chi lavoro con il database e i dati in modo sistematico e continuativo (in particolare i curatori dei dati e il gestore del database).  
+In particolare, a questi ultimi si consiglia di approfondire:
+
+* <ins>[Subquery](https://www.postgresqltutorial.com/postgresql-subquery/)</ins>
+* <ins>[Funzioni window](https://www.postgresql.org/docs/devel/functions-window.html)</ins>
+
+Con l'uso del database e la pratica, emergeranno esigenze tecniche specifiche per cui probabilmente già esiste una soluzione tecnica. Si consiglia sempre di cercare in rete possibili soluzioni o suggerimenti, o anche contattare gli esperti tecnici a cui i Parchi fanno riferimento.
+
 ---
 
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_07.html)</ins>]

@@ -121,9 +121,6 @@
 3. Inserimento di nuovi dati: /COPY
 4. Aggiornamento di dati: UPDATE
 5. Cancellazione di dati: DELETE
-6. Subquery con FROM
-7. Subquery con WHERE
-8. Funzioni WINDOW
 
 #### Lezione 9. Controllo e importazione di un nuovo dataset
 1. Controllo preliminare dei dati
