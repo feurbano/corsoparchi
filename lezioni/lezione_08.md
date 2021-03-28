@@ -12,7 +12,7 @@ Autore: Ferdinando Urbano
 ### Inserimento di nuovi dati nel database
 Ci sono varie opzioni per inserire nuovi dati nella tabella di un database.  
 
-Se in ogni caso bisogna fare data entry, cioè portare le informazioni dalle schede cartacee di campo al formato digitale, **la prima opzione** è quella dell'inserimento manuale record per record direttamente nella tabella finale. Questo avviene sempre tramite interfacce. La più immediata è PgAdmin. In questo caso, come visto nella [lezione 3](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html), si può aprire la tabella, andare nell'ultima riga, cliccare campo per campo e aggiungere riga per riga tutti i nuovi dati (dando conferma alla fine dell'operazione). Il database farà un controllo dei dati in base alle regole impostate (chiavi primarie, chiavi esterne, check sui campi, tipi di dato) restituendo un errore se queste regole non sono rispettate. L'inserimento dei dati in questo modo non è particolarmente agevole. Un modo per facilitarlo è creare delle maschere di inserimento utilizzando MS Access, LibreOffice Calc o una applicazione web-based (ad esempio sviluppata in linguaggio PhP) come client per creare delle interfacce grafiche dedicate con funzioni specifiche come menù a tendina o verifica immeditata dei valori inseriti (prima che vengano inviati al database). L'inserimento riga per riga può essere fatta anche attraverso il comando `INSERT INTO` con la sintassi `INSERT INTO tabella_destinazione (campo1, campo2, ...) VALUES (valore1, valore2, ...);`.  
+Se in ogni caso bisogna fare data entry, cioè portare le informazioni dalle schede cartacee di campo al formato digitale, **la prima opzione** è quella dell'inserimento manuale record per record direttamente nella tabella finale. Questo avviene sempre tramite interfacce. La più immediata è PgAdmin. In questo caso, come visto nella <ins>[lezione 3](https://feurbano.github.io/corsoparchi/lezioni/lezione_03.html)</ins>, si può aprire la tabella, andare nell'ultima riga, cliccare campo per campo e aggiungere riga per riga tutti i nuovi dati (dando conferma alla fine dell'operazione). Il database farà un controllo dei dati in base alle regole impostate (chiavi primarie, chiavi esterne, check sui campi, tipi di dato) restituendo un errore se queste regole non sono rispettate. L'inserimento dei dati in questo modo non è particolarmente agevole. Un modo per facilitarlo è creare delle maschere di inserimento utilizzando MS Access, LibreOffice Calc o una applicazione web-based (ad esempio sviluppata in linguaggio PhP) come client per creare delle interfacce grafiche dedicate con funzioni specifiche come menù a tendina o verifica immeditata dei valori inseriti (prima che vengano inviati al database). L'inserimento riga per riga può essere fatta anche attraverso il comando `INSERT INTO` con la sintassi `INSERT INTO tabella_destinazione (campo1, campo2, ...) VALUES (valore1, valore2, ...);`.  
 
 **La seconda opzione**, quando i dati vengono raccolti tramite palmare, è di inviare i dati direttamente al database dove possono poi essere verificati da un operatore esperto prima di essere formalmente integrati ai dati "ufficiali" (ad esempio attraverso un campo booleano *validato* che verrà marcato come TRUE dopo verifica, oppure passando attraverso una tabella intermedia prima di venire caricati nella tabella finale). Questa opzione deve essere sviluppata quando si crea l'applicazione su tablet per registrare i dati.  
 
@@ -20,10 +20,10 @@ Se in ogni caso bisogna fare data entry, cioè portare le informazioni dalle sch
 
 Per ovviare all'inconveniente menzionato sopra, **la quarta opzione** prevede che i dati vengano inseriti in una tabella del database temporanea dove non sono implementati controlli (nessuna chiave esterna o vincoli sui campi, tipi di dato generici come testo anche per valori che dovrebbero essere specifici come date o numeri) e che ha esattamente la stessa struttura del file di origine. Questo garantisce che l'operazione di importazione avvenga senza problemi. I dati possono poi essere controllati e corretti nel database in modo più semplice, specie se le correzione coinvolgono molte righe (ad esempio, correggere il formato di una data, modificare valore scorretti ripetuti, togliere spazi all'inizio o alla fine di una stringa di testo, sostituire nomi di specie scorretti, numero di individui totali non coerente con la somma del numero di maschi + femmine + piccoli + indeterminati, e la lista potrebbe continuare per ore...) utilizzando il comando SQL `UPDATE`. Una volta ripuliti i dati nella tabella temporanea di importazione, questi possono essere caricati nella tabella finale usando il comando `INSERT INTO` in una variante che prevede, invece dell'uso di VALUES più la lista dei valori da inserire, una query di `SELECT` che genera i valori da importare: `INSERT INTO tabella_destinazione (campo1, campo2, ...) SELECT (campo1, campo2, ...) FROM tabella_temporanea;`. Questa quarta opzione è quella che in generale è stata utilizzata, nella maggior parte dei casi, per importare i dati dei Parchi nei rispettivi database.  
 
-Nelle sezioni seguenti vengono mostrati esempi dell'uso dei comandi citati, mentre nella [lezione 9](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html), in particolare durante la dimostrazione online, verranno mostrati esempi concreti dell'applicazione di queste procedure ai dati del Progetto Biodiversità.  
+Nelle sezioni seguenti vengono mostrati esempi dell'uso dei comandi citati, mentre nella <ins>[lezione 9](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html)</ins>, in particolare durante la dimostrazione online, verranno mostrati esempi concreti dell'applicazione di queste procedure ai dati del Progetto Biodiversità.  
 Alla fine di questa sezione vengono velocemente introdotti
 
-### Il comando INSERT INTO
+### INSERT INTO
 Il comando SQL `INSERT` inserisce nuove righe in una tabella. Si possono inserire una o più righe specificando i valori da inserire oppure utilizzare il risultato di un'altra query. Nella struttura del comando `INSERT INTO tabella_destinazione (campo1, campo2, ...) VALUES (valore1, valore2, ...);` che inserisce i valori specificati dalla query e del suo equivalente `INSERT INTO tabella_destinazione (campo1, campo2, ...) SELECT (campo1, campo2, ...) FROM tabella_temporanea;` che utizza un'altra query per generare i valori da inserire, i nomi delle colonne di destinazione dell'inserimento possono essere elencati in qualsiasi ordine, basta che lo stesso ordine sia rispettato dai valori che vengono inseriti (i nomi dei campi di origine e destinazione non devono essere uguali: i nomi sono ininfluenti, l'unico elemento rilevante è l'ordine ed è in base a quello che il database associa il valore da inserire alla colonna relativa nella tabella di destinazione). Se non viene fornita alcuna lista di nomi di colonna, il default è che si considerano tutte le colonne della tabella nell'ordine in cui compaiono nella tabella di destinazione.  
 Non è necessario che venga fornito un valore per tutti i campi della tabella di destinazione: si possono includere solo i campi desiderati (obbligatori sono solo i campi che costituiscono la chiave primaria, a meno che questa non sia un campo `SERIAL` perché in questo caso il database assegnerà un valore autonomamente).  
 Se l'espressione per qualsiasi colonna non è del tipo di dati corretto (ad esempio viene fornito un numero invece di un testo), verrà tentata una conversione automatica del tipo che può avere o meno successo (si può sempre convertire un numero a un testo, ma non sempre si può convertire un testo a un numero).  
@@ -87,7 +87,10 @@ where
   family_name = 'Strigidae';
 ```
 
-### Inserimento di dati da un file esterno: il comando COPY
+#### Esercizio
+> Nella vostra tabella inserire manualmente l'aquila reale, poi con il comando VALUES il cinghiale e infine son il comando SELECT tutte i carabidi importandoli dalla tabella *biodiversita.biodiversita_animali*.
+
+### COPY
 
 
 Popolare una tabella da un file csv
@@ -117,8 +120,8 @@ COPY data.dipendenti
   TO 'C:\corso_postgres\dipendenti_completo.csv' WITH CSV DELIMITER ';' HEADER;
 
 
-### Inserimento di nuovi dati: /COPY
-### Aggiornamento di dati: UPDATE
+### /COPY
+### UPDATE
 
 Se avete molti record da cambiare, è meglio usare una query UPDATE invece di modificare manualmente tutti i record interessati. Per esempio se nel set di dati originale i record NULL sono contrassegnati con "N/A":
 
