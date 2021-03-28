@@ -32,12 +32,12 @@ Per mostrare un esempio di come funzioni il comando `INSERT` creiamo una tabella
 ```sql
 CREATE TABLE test.tabella_di_ferdi
 (
-    nome_animale character varying ,
-    species_nome character varying NOT NULL,
-    genus_nome character varying,
-    bellezza integer,
-    CONSTRAINT tabella_di_ferdi_chiaveprimaria PRIMARY KEY (nome_animale),
-    CONSTRAINT bellezza_controllo CHECK (bellezza >= 0 and bellezza <= 10)
+  nome_animale character varying ,
+  species_nome character varying NOT NULL,
+  genus_nome character varying,
+  bellezza integer,
+  CONSTRAINT tabella_di_ferdi_chiaveprimaria PRIMARY KEY (nome_animale),
+  CONSTRAINT bellezza_controllo CHECK (bellezza >= 0 and bellezza <= 10)
 );
 ```
 
