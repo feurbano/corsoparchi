@@ -14,7 +14,7 @@ MODULO 2 - Martedì 23/3/2021 09:00-13:00
 [**Lezione 5.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_05.md)  Comandi SQL base - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_05.html)</ins>]      
 <br>
 MODULO 3 - Lunedì 29/3/2021 09:00-13:00  
-[**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_06.html)</ins>]
+[**Lezione 6.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_06.md) Comandi SQL per unire dati da tabelle diverse - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_06.html)</ins>]  
 [**Lezione 7.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_07.md) Dati spaziali - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_07.html)</ins>]  
 <br>
 MODULO 4 - Martedì 30/3/2021 09:00-13:00   
