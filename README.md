@@ -19,7 +19,7 @@ MODULO 3 - Lunedì 29/3/2021 09:00-13:00
 <br>
 MODULO 4 - Martedì 30/3/2021 09:00-13:00   
 [**Lezione 8.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_8.md) Comandi SQL  per aggiornare il database - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_08.html)</ins>]  
-[**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Controllo e importazione di un nuovo dataset: dimostrazione pratica - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html)</ins>]   
+[**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_9.md) Controllo e importazione di un nuovo dataset: demo - [<ins>[LINK PAGINA WEB](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html)</ins>]   
 
 ### Docente
 Ferdinando Urbano
