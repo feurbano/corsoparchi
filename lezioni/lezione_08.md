@@ -130,29 +130,48 @@ In ogni manuale online sarà poi possibile verificare le diverse opzioni di impo
 ### UPDATE
 Se c'è la necessità di cambiare molti record ed è possibile usare una regola (ad esempio eliminare gli spazi all'inizio e alla fine di una stringa o settare come maiuscola solo la prima lettera di una parola) è meglio usare una query `UPDATE` invece di modificare manualmente i record interessati. In un comando `UPDATE` bisogna indicare la tabella di origine e poi tramite il comando `SET` specificare quali campi vanno modificati e con quale valore. Si possono indicare delle condizioni `WHERE` per limitare l'aggiornamento solo ad alcune righe.  
 
-Per fare un esempio prima inseriamo alcuni record nella nostra tabella con evidenti errori:
+Per fare un esempio prima inseriamo alcuni record nella nostra tabella con evidenti errori (in particolare, gli spazi prima e dopo il nome dell'animale, non sempre evidenti quando si visualizza una tabella):
 
 ```sql
 INSERT INTO test.tabella_di_ferdi
-  (nome_animale, genus_nome, species_nome)
+  (nome_animale, species_nome, genus_nome, bellezza)
 VALUES
-  ('Cimice', 'Halyomorpha', 'Halyomorpha halys'),
-  ('Beluga', 'Delphinapterus', 'Delphinapterus leucas');
+  (' Giraffa ', 'Giraffa camelopardalisss', 'Giraffa', 10),
+  ('Zebra ', 'Equus quagga', 'Equus', 9);
 ```
 
+Se si prova a visualizzare il record corrispondente al nome *Giraffa* il risultato è nullo perché la stringa è scritta in modo diverso e quindi non corrisponde a quanto richiesto:
+```sql
+SELECT * FROM test.tabella_di_ferdi
+WHERE nome_animale = 'Giraffa';
+```
 
-Per esempio se nel set di dati originale i record NULL sono contrassegnati con "N/A":
+Utilizzando la funzione SQL `TRIM()` si possono togliere tutti gli spazi all'inizio e alla fine di una stringa (ma non al suo interno) grazie al comando `UPDATE`:
 
-UPDATE temp.import_datagroup_dataset_raw
-SET età = NULL
-WHERE age = 'N/A';
+```sql
+UPDATE test.tabella_di_ferdi
+SET nome_animale = TRIM(nome_animale);
+```
 
+A questo punto la query preedente dovrebbe restituire la riga corretta.  
+Per correggere invece la parola *camelopardalisss* scritta in modo scorretto si può ancora utilizzare `UPDATE` specificando con `WHERE` le righe a cui si vuole applicare il cambio, come illustrato nel codice:  
+
+```sql
+UPDATE test.tabella_di_ferdi
+SET nome_animale = 'Giraffa camelopardalis'
+WHERE nome_animale = 'Giraffa camelopardalisss';
+```
 
 ### Cancellazione di dati: DELETE
+Il comando `DELETE` di PostgreSQL permette di cancellare una o più righe da una tabella (per eliminare completamente la tabella dal database bisogna invece usare il comando `DROP TABLE`).  
+La seguente mostra la sintassi di base dell'istruzione DELETE: `DELETE FROM table_name WHERE condizione;`.  
+Per prima cosa, si specifica il nome della tabella da cui volete cancellare i dati dopo le parole chiave `DELETE FROM`. Poi si usa una condizione nella sezione `WHERE` per specificare quali righe della tabella eliminare. La clausola `WHERE è opzionale`. Se si omette la clausola `WHERE`, l'istruzione `DELETE` cancellerà tutte le righe della tabella.  
+In questo esempio vengono eliminate tutte le righe che come genere hanno 'Equus':
 
-
-
-
+```sql
+DELETE FROM test.tabella_di_ferdi
+WHERE genus_nome = 'Equus';
+```
 
 ---
 [**Lezione 9.**](https://github.com/feurbano/corsoparchi/blob/master/lezioni/lezione_09.md) Controllo e importazione di un nuovo dataset: dimostrazione pratica - [<ins>[**Link pagina web**](https://feurbano.github.io/corsoparchi/lezioni/lezione_09.html)</ins>]
