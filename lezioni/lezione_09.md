@@ -3,7 +3,7 @@
 # WORK IN PROGRESS
 
 #### Lezione 9
-## Controllo e importazione di un nuovo dataset: dimostrazione pratica
+## CONTROLLO E IMPORTAZIONE DI UN NUOVO DATASET: DIMOSTRAZIONE PRATICA
 
 Autore: Ferdinando Urbano  
 

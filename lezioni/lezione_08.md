@@ -3,7 +3,7 @@
 # WORK IN PROGRESS
 
 #### Lezione 8
-## Comandi SQL per aggiornare il database
+## COMANDI SQL PER AGGIORNARE IL DATABASE
 
 Autore: Ferdinando Urbano  
 
