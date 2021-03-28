@@ -165,7 +165,7 @@ WHERE nome_animale = 'Giraffa camelopardalisss';
 ### Cancellazione di dati: DELETE
 Il comando `DELETE` di PostgreSQL permette di cancellare una o più righe da una tabella (per eliminare completamente la tabella dal database bisogna invece usare il comando `DROP TABLE`).  
 La seguente mostra la sintassi di base dell'istruzione DELETE: `DELETE FROM table_name WHERE condizione;`.  
-Per prima cosa, si specifica il nome della tabella da cui volete cancellare i dati dopo le parole chiave `DELETE FROM`. Poi si usa una condizione nella sezione `WHERE` per specificare quali righe della tabella eliminare. La clausola `WHERE è opzionale`. Se si omette la clausola `WHERE`, l'istruzione `DELETE` cancellerà tutte le righe della tabella.  
+Per prima cosa, si specifica il nome della tabella da cui volete cancellare i dati dopo le parole chiave `DELETE FROM`. Poi si usa una condizione nella sezione `WHERE` per specificare quali righe della tabella eliminare. La clausola `WHERE` è opzionale. Se si omette la clausola `WHERE`, l'istruzione `DELETE` cancella tutte le righe della tabella.  
 In questo esempio vengono eliminate tutte le righe che come genere hanno 'Equus':
 
 ```sql
