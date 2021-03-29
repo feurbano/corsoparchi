@@ -58,40 +58,52 @@ File ricevuti dal Parco:
   - Distanza con simboli scritti con e senza spazi
   - 10/20 minuti scritto con codici (oltre che struttura) diversi
 
-- Unire dati dai vari file in un unico file
+- Unire dati dai vari file in un unico file PLOT
   - Creare copia dei file
   - Creare struttura analoga fra i 4 fogli
   - Creare un unico foglio che mette insieme PLOT
+  - Sistemazione formato Data
+  - Correggo Plot
+  - Correggo Ora Fine
+  - Correggo codifiche Sole
+  - Correggo codifiche Vento
+  - Riempire dati mancanti Operatore
+  - Esporto come CSV
+
+- Unire dati dai vari file in un unico file ASCOLTO
+  - Creare copia dei file
+  - Creare struttura analoga fra i 4 fogli
   - Creare un unico foglio che mette insieme ASCOLTO
+  - Sistemazione formato Data
+  - Ordino per eliminare righe vuote
+  - Verifica Specie: molte differenze, pulire nel database
+  - Verifica Comportamento: molte differenze, pulire nel database
+  - Verifica Osservazione: molte differenze, pulire nel database
+  - Verifica N individui: 1 nullo
+  - Verifica 10/20 minuti: 1 codice scorretto, non rilevato da convertire in NULL nel database
+  - Nota da associare al PLOT, da fare nel database
+  - Esporto come CSV
 
-
-- Validazione dati
-	- lista date
-	- lista ore
-	- numero individui
-	- nome plot
-
-- Verifica dati codificati
-	- sole
-	- vento
-	- nomi
-
-- Correzione errori evidenti
-
-- Nota per domande da fare
-	-
+- Note per eventuali domande da fare
+  - Operartore mancante
+  - ...
 
 - Creare tabelle di importazione
-	- lista campi
-	- chiave primaria
-	- SQL creazione tabella
+  - Lista campi dai csv
+  - Creazione chiave primaria
+  - Definizione dei tipi di dati
+  - SQL creazione tabella
+  - Creazione delle tabelle PLOT e ASCOLTO nello schema TEMP
 
-- Importazione
-	- Interfaccia
-	- Riga di comando
+- Importazione dei dati dal CSV
+  - 1 da interfaccia
+  - 1 da riga di comando
 
-- Verifica dati con SQL
-	-
+- Verifica conformità struttura degli altri Parchi
+
+- Verifica e correzione dati con SQL
+  -
+  -
 
 - Utilizzo codici corretti
 	-
