@@ -11,22 +11,27 @@ Autore: Ferdinando Urbano
 
 In questa ultima lezione viene data una dimostrazione pratica di alcuni dei passaggi tipici del processo di controllo e importazione di informazioni disponibili in formato foglio di calcolo.  
 Come esempio di riferimento vengono utilizzati i dati raccolti sugli uccelli nell'ambito del Progetto Biodiversità dal Parco Nazionale delle Dolomiti Bellunesi. I file messi a disposizione del Parco hanno una struttura abbastanza semplice ideale per mostrare la procedura senza problemi tecnici eccessivi e presentano, sebbene in misura abbastanza limitata, molti dei problemi che si incontrano nella verifica di qualità dei dati.  
-Questa lezione viene presentata interamente online e in questa pagina si riporta solo una lista dei principali passi che vengono mostrati nella dimostrazione. Per avere le informazioni complete si può visualizzare la registrazione della video lezione.
+Questa lezione viene presentata interamente online e in questa pagina si riporta solo una lista dei principali passi che vengono illustrati nella dimostrazione. Per le spiegazioni complete si deve vedere la registrazione della video lezione.
 
-ESEMPIO FILE UCCELLI PNDB
+### ESEMPIO DI RIFERMENTO: FILE BIODIVERSITÀ UCCELLI PNDB 2013-2014-2018-2019
+File ricevuti dal Parco:
 
-- Analizzare struttura file
-	- uno per anno
+* 2019_Uccelli_Mon_Bd_-COMPILATO_per_PARCO.xls
+* Ornitofauna_PNDB_2014_PuntiAscolto.xls.xls
+* Ornitofauna_rilievi_2015_ok.xls
+* Uccelli_Mon Bd_2018_Compilato.xls
 
+#### Elenco dei passi per il controllo e l'importazione dei dati nel database
+- Analizzare distribuzione dei dati fra file
+  - Un foglio di calcolo per anno
 - Analizzare struttura fogli
-	- 3 fogli: monitoraggio, controllo, legenda
-	- diversa lista dei dati
-
+  - 3 fogli: monitoraggio, controllo, legenda
+  - diversa lista dei dati
 - Analizzare struttura dati
 	- operatore deve andare in controllo
 	- manca operatore 2 anni
 	- parco ridondante
-	-
+	- anno ridondante
 
 - Unire dati dai vari file
 	- creazione di un file excel
