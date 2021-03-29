@@ -307,7 +307,7 @@ order by
 ```
 
 #### Esercizio
-> Quante sono le specie riportate nella tabella *biodiversita.ortotteri_conteggio* (se viene visualizzato un record per specie, è sufficiente poi vedere il numero totale di righe).  
+> Quante sono le specie riportate nella tabella *biodiversita.ortotteri_monitoraggio* (se viene visualizzato un record per specie, è sufficiente poi vedere il numero totale di righe).  
 
 ### Stringhe, numeri, booleani
 Come già discusso in precedenza, ogni colonna di una database è caratterizzata da un tipo di dato che ne limita i possibili valori. Ad esempio, se un campo è definito come intero (`INTEGER`), non potrà avere valori come '>5'. Se si cerca di inserire questo valore, il database darà un errore e l'operazione verrà interrotta. A ogni tipo di dato è anche associato un determinato insieme di operazioni. Ad esempio non è possibile sommare due stringhe: `SELECT 'a' + 'b';`. Il database da un errore se si prova a inviare questa query. Allo stesso modo non è possibile concatenare (unire, operatore: `||`) due interi, perché questa è una operazione riservata alle stringhe di caratteri:  `SELECT 3 || 4;`.  
