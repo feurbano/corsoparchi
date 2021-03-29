@@ -49,7 +49,7 @@ ORDER BY
 ```
 
 #### ESECIZIO
-> Verificare quanti individui totali sono stati contati in ogni parco nel monitoraggio degli ortotteri (*biodiversita.lepidotteri_monitoraggio*).
+> Verificare quanti individui totali sono stati contati in ogni parco nel monitoraggio degli ortotteri (*biodiversita.ortotteri_monitoraggio*).
 
 > Contare quanti plot ci sono in ogni parco.  
 
