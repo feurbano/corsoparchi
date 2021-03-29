@@ -16,10 +16,10 @@ Questa lezione viene presentata interamente online e in questa pagina si riporta
 ### ESEMPIO DI RIFERMENTO: FILE BIODIVERSITÀ UCCELLI PNDB 2013-2014-2018-2019
 File ricevuti dal Parco:
 
-* 2019_Uccelli_Mon_Bd_-COMPILATO_per_PARCO.xls
-* Ornitofauna_PNDB_2014_PuntiAscolto.xls.xls
-* Ornitofauna_rilievi_2015_ok.xls
-* Uccelli_Mon Bd_2018_Compilato.xls
+* 2019-Uccelli-Mon-Bd-COMPILAT-per-PARCO.xls
+* Ornitofauna-PNDB-2014_PuntiAscolto.xls.xls
+* Ornitofauna-rilievi-2015-ok.xls
+* Uccelli-Mon Bd-2018-Compilato.xls
 
 #### Elenco dei passi per il controllo e l'importazione dei dati nel database
 - Analizzare distribuzione dei dati fra file
