@@ -26,7 +26,7 @@ File ricevuti dal Parco:
   - Un foglio di calcolo per anno
 - Analizzare struttura fogli
   - 3 fogli: monitoraggio, controllo, legenda
-  - diversa lista dei dati
+  - Diversa lista dei dati
 - Analizzare struttura dati
 	- operatore deve andare in controllo
 	- manca operatore 2 anni
