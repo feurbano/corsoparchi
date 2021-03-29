@@ -24,24 +24,45 @@ File ricevuti dal Parco:
 #### Elenco dei passi per il controllo e l'importazione dei dati nel database
 - Analizzare distribuzione dei dati fra file
   - Un foglio di calcolo per anno
+
 - Analizzare struttura fogli
   - 3 fogli: monitoraggio, controllo, legenda
   - Diversa lista dei dati
+
 - Analizzare struttura dati
-	- operatore deve andare in controllo
-	- manca operatore 2 anni
-	- parco ridondante
-	- anno ridondante
+  - Struttura PLOT consistente
+  - Struttura ASCOLTO
+    - 10/20 minuti strutturato in modo diverso
+    - Alcuni record vuoti
 
-- Unire dati dai vari file
-	- creazione di un file excel
+- Analisi dei singoli campi PLOT
+  - Sole e Vento diverse codifiche
+  - Manca operatore 2 anni
+  - Campo Parco ridondante
+  - Campo anno ridondante
+  - Plot scritto in modo scorretto
+  - Note aggiuntive e colori celle
+  - Ora fine inconsistente
+  - Data scritta in modo potenzialmente ambiguo
+- Analisi dei singoli campi ASCOLTO
+  - Campi Zona e Anno ridondanti
+  - Data scritta in modo potenzialmente ambiguo
+  - Comportamento non codificato
+  - Osservazioni con vari codici equivalenti
+  - Note riferite al PLOT e non all'ASCOLTO
+  - Specie
+    - Scritte con lettere maiuscole/minuscole
+    - Stesso nome scritto in diverse varianti
+    - Indeterminato non specificato
+  - Distanza con simboli scritti con e senza spazi
+  - 10/20 minuti scritto con codici (oltre che struttura) diversi
 
-- Completezza dati
-	-
+- Unire dati dai vari file in un unico file
+  - Creare copia dei file
+  - Creare struttura analoga fra i 4 fogli
+  - Creare un unico foglio che mette insieme PLOT
+  - Creare un unico foglio che mette insieme ASCOLTO
 
-- Formato dati
-	- data
-	- ora
 
 - Validazione dati
 	- lista date
