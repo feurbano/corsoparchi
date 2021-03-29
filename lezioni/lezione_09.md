@@ -42,6 +42,7 @@ File ricevuti dal Parco:
   - Campo anno ridondante
   - Plot scritto in modo scorretto
   - Note aggiuntive e colori celle
+  - Informazioni nelle note che dovrebbero essere nelle codifiche
   - Ora fine inconsistente
   - Data scritta in modo potenzialmente ambiguo
 - Analisi dei singoli campi ASCOLTO
