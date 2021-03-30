@@ -250,10 +250,13 @@ Qui alcuni esempi del diverso comportamento del timestamp con o senza fuso orari
 ```sql
 SELECT
  now() ora_qui,
+ now() AT TIME ZONE 'Europe/Rome' ora_in_roma,
  now() AT TIME ZONE 'America/Los_Angeles' ora_in_la,
+ '2018-06-32' as datatesto,
+ '2018-06-30'::date datadata,
  '2018-06-17 10:00:00'::timestamp no_tz,
  '2018-06-17 10:00:00'::timestamp with time zone tz_no_specificato,
- '2018-06-17 10:00:00+02'::timestamp with AS tz_specificato,
+ '2018-06-17 10:00:00+02'::timestamp with time zone AS tz_specificato,
  now()::date AS date,
  now()::time AS time;
 ```
