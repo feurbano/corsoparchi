@@ -25,7 +25,7 @@ MODULO 4 - Martedì 30/3/2021 09:00-13:00
 Ferdinando Urbano
 
 ### Test per il rilascio del certificato
-Il test, creato usando Google Form, è disponibile <ins>[**qui**](https://forms.gle/XUooDsvDrxFuiE7TA)</ins>
+Il test, creato usando Google Form, è disponibile <ins>[qui](https://forms.gle/XUooDsvDrxFuiE7TA)</ins>
 
 ### Link lezioni online
 * Video registrazione <ins>[PRIMA GIORNATA](https://pngp.webex.com/pngp/ldr.php?RCID=64ef6a927b293a1fedf13bff0761fd95)</ins> (Modulo 1)
